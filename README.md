@@ -8,10 +8,14 @@ WordPress originale ayant été perdue, les articles ont été récupérés de l
 Le site généré est en lecture seule, sans dépendance côté serveur, hébergeable
 gratuitement sur Cloudflare Pages ou GitHub Pages.
 
-L'identité visuelle reprend celle du site actuel en version simplifiée :
-polices Playfair Display (titres) et Inter (texte) via Google Fonts, rouge de
-marque `#fc1a1d`, bleu `#008bff`, et le logo `assets/intextologo2.png`
-suivi du mot « Archives » dans le bandeau.
+L'identité visuelle reproduit celle du site actuel (code React de
+`intexto-react`, voir `src/styles/App.css` et `src/components/layout/`) en
+version statique simplifiée : polices Playfair Display (titres) et Inter
+(texte) via Google Fonts, rouge de marque `#fc1a1d` (foncé `#d44545`), gris
+`#6c757d`, bordures `rgba(0,0,0,.1)` ; bandeau plein largeur collant avec logo
+`assets/intextologo2.png` + le mot « Archives », navigation en majuscules à
+souligné rouge, bouton-pilule rouge « Site actuel » ; pied de page à trois
+colonnes avec ligne de copyright.
 
 ## Structure des répertoires
 

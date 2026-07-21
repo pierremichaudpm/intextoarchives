@@ -9,83 +9,149 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
 <style>
-:root { --accent: #fc1a1d; --accent-fonce: #d44545; --bleu: #008bff;
-  --texte: #1a1a1a; --gris: #6c757d; --bordure: rgba(0,0,0,.1); }
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
 * { box-sizing: border-box; }
 html { font-size: 100%; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.7; color: var(--texte); background: #fff;
-  margin: 0; padding: 0 1rem;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
-.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 0 4rem; }
-h1, h2 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
-  'Liberation Serif', serif; }
-a { color: var(--accent); text-decoration: none; }
-a:hover, a:focus { color: var(--accent-fonce); text-decoration: underline; }
-header.site { border-bottom: 1px solid var(--bordure); padding-bottom: 1.25rem;
-  margin-bottom: 2rem; }
-h1.logo { margin: 0 0 .5rem; line-height: 1; }
-h1.logo a { display: inline-flex; align-items: baseline; gap: .5rem;
-  color: inherit; }
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
 h1.logo a:hover { text-decoration: none; }
-h1.logo img { height: 40px; width: auto; display: block;
-  align-self: center; }
+h1.logo img { height: 40px; width: auto; display: block; }
 h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 600; font-size: 1.6rem; color: var(--accent); }
-header.site p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 .75rem; }
-p.site-actuel { font-size: .9rem; margin: 0 0 .75rem; }
-nav.site { font-size: .95rem; margin-bottom: .75rem; }
-nav.site a { margin-right: 1rem; }
-.recherche { width: 100%; max-width: 22rem; padding: .45rem .6rem;
-  font: inherit; border: 1px solid var(--bordure); border-radius: 3px; }
-h2.annee { font-size: 1.4rem; font-weight: 600; color: var(--accent);
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
   border-bottom: 1px solid var(--bordure);
   padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
 ul.articles { list-style: none; margin: 0; padding: 0; }
 ul.articles li { margin: 0 0 1.1rem; }
-ul.articles .titre { font-size: 1.08rem; font-weight: 500; }
-ul.articles .meta { color: var(--gris); font-size: .88rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
 article.corps p { margin: 0 0 1.15rem; }
-article h1.titre { font-size: 1.8rem; font-weight: 700; line-height: 1.3;
-  margin: 0 0 .5rem; }
-p.meta { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
 p.meta .approx { font-style: italic; }
 .avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
   background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
-  font-size: .95rem; }
+  font-size: .95rem; color: var(--texte-secondaire); }
 span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
-.lien-retour { font-size: .92rem; margin-bottom: 1.5rem; display: block; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
 .lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
   padding-top: 1rem; font-size: .9rem; color: var(--gris); }
-footer.site { border-top: 1px solid var(--bordure); margin-top: 3rem;
-  padding-top: 1rem; color: var(--gris); font-size: .85rem; }
 .cache { display: none !important; }
 .resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; }
+  .actions-entete { flex: 1; }
+}
 @media print {
-  nav.site, .recherche, .lien-retour, .site-actuel, footer.site { display: none; }
-  body { background: #fff; font-size: 11pt; }
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
   a { color: inherit; }
-  h1.logo img { height: 28px; }
+  .conteneur { padding: 0; }
 }
 </style>
 </head>
 <body>
-<div class="conteneur">
 <header class="site">
-  <h1 class="logo"><a href="../index.html"><img
-    src="../assets/intextologo2.png" alt="inTexto" height="40"><span
-    class="mot-archives">Archives</span></a></h1>
-  <p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2026. Site d’archives en lecture seule, reconstitué à partir de la Wayback Machine.</p>
-  <p class="site-actuel"><a href="https://www.intexto.ca/" rel="noopener">Visiter le site actuel intexto.ca &rarr;</a></p>
-  <nav class="site">
-    <a href="../index.html">Articles</a>
-    <a href="../auteurs.html">Auteurs</a>
-    <a href="../index.html#annees">Années</a>
-  </nav>
-  
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener">Site actuel intexto.ca &rarr;</a>
+    </div>
+  </div>
 </header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2026. Site d’archives en lecture seule, reconstitué à partir de la Wayback Machine.</p>
 <main>
 
 <a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
@@ -94,358 +160,378 @@ footer.site { border-top: 1px solid var(--bordure); margin-top: 3rem;
   
   <li>
     <a class="titre" href="../posts/municipales-les-questions-de-la-communaute-haitienne.html">Municipales: les questions de la communauté haïtienne</a><br>
-    <span class="meta">28 octobre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">28 octobre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/municipales-2025-plus-de-80-noirs-sur-les-poteaux.html">Municipales 2025: plus de 80 Noirs sur les poteaux</a><br>
-    <span class="meta">23 octobre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">23 octobre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/entrepreneuriat-noir-189-millions-investis-par-le-federal.html">Entrepreneuriat noir : 189 millions investis par le fédéral</a><br>
-    <span class="meta">20 octobre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">20 octobre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/futur-montreal-et-les-candidates-dorigine-haitienne.html">Futur Montréal et les candidates d’origine haïtienne</a><br>
-    <span class="meta">8 octobre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">8 octobre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/campagne-municipale-luc-rabouin-chez-les-noirs.html">Campagne municipale: Luc Rabouin chez les Noirs</a><br>
-    <span class="meta">5 octobre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">5 octobre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/montreal-nord-roger-petit-frere-se-lance-a-la-mairie.html">Montréal-Nord : Roger Petit-Frère se lance à la mairie</a><br>
-    <span class="meta">8 septembre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">8 septembre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/quebec-a-encore-trop-danalphabetes-en-2025.html">Québec a encore trop d’analphabètes en 2025</a><br>
-    <span class="meta">5 septembre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">5 septembre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/reniee-par-futur-montreal-anastasia-marcelin-reste-en-election.html">Reniée par Futur Montréal, Anastasia Marcelin reste en élection</a><br>
-    <span class="meta">3 septembre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">3 septembre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/contre-vents-et-marees-t-vice-a-atteint-lage-du-christ.html">Contre vents et marées, T-Vice a atteint l’âge du Christ</a><br>
-    <span class="meta">2 septembre 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">2 septembre 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/montreal-nord-futur-montreal-presente-anastasia-marcelin-a-la-mairie.html">Montréal-Nord : Futur Montréal présente Anastasia Marcelin à la mairie</a><br>
-    <span class="meta">2 septembre 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">2 septembre 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/pres-de-30-experts-reflechissent-sur-la-crise-haitienne.html">Près de 30 experts réfléchissent sur la crise haïtienne</a><br>
-    <span class="meta">27 août 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">27 août 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/concert-reussi-de-fatima-a-lolympia-de-montreal.html">Concert réussi de Fatima à l’Olympia de Montréal.</a><br>
-    <span class="meta">26 août 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">26 août 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/le-festival-de-film-black-honore-la-carriere-de-dany-laferriere.html">Le Festival de Film Black honore la carrière de Dany Laferrière</a><br>
-    <span class="meta">26 août 2025 — Par Admin</span>
+    <span class="meta">26 août 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/succes-phenomenal-pour-bayo-a-montreal-ce-22-aout.html">Succès phénoménal pour BAYO à Montréal ce 22 août</a><br>
-    <span class="meta">25 août 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">25 août 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/un-noir-chef-et-candidat-a-la-mairie-de-futur-montreal.html">Un Noir chef et candidat à la mairie de Futur Montréal</a><br>
-    <span class="meta">25 août 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">25 août 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/montreal-tapis-rouge-pour-accueillir-zafem-le-15-aout.html">Montréal : tapis rouge pour accueillir ZAFEM le 15 août</a><br>
-    <span class="meta">18 août 2025 — Par Admin</span>
+    <span class="meta">18 août 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/fatima-en-concert-a-lolympia-de-montreal-avec-protejem.html">Fatima en concert à l’Olympia de Montréal avec « Proteje’m »</a><br>
-    <span class="meta">17 août 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">17 août 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/carla-beauvais-une-candidate-vedette-pour-luc-rabouin.html">Carla Beauvais: « une candidate vedette » pour Luc Rabouin</a><br>
-    <span class="meta">14 août 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">14 août 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/grande-presence-des-haitiens-au-festival-caribo-latino-de-montreal.html">Grande présence des Haïtiens au festival Caribo-Latino de Montréal</a><br>
-    <span class="meta">4 août 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">4 août 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/les-70-ans-du-kompa-celebres-a-la-19eme-de-haiti-en-folie.html">Les 70 ans du Kompa célébrés à «Haïti en folie»</a><br>
-    <span class="meta">1 août 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">1 août 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/wesli-band-ambassadeur-international-de-la-musique-haitienne.html">Wesli Band : ambassadeur international de la musique haïtienne</a><br>
-    <span class="meta">23 juillet 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">23 juillet 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/la-racisme-en-ligne-objet-dune-recherche.html">La racisme en ligne objet d’une recherche</a><br>
-    <span class="meta">17 juillet 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">17 juillet 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/kompa-et-musique-vaudou-dans-haiti-en-folie.html">Kompa et musique vaudou dans « Haïti en folie »</a><br>
-    <span class="meta">16 juillet 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">16 juillet 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/baisse-de-regime-pour-la-12e-du-festival-international-mizik-kreyol-de-montreal.html">Baisse de régime pour la 12e du Festival International Mizik Kreyol de Montréal</a><br>
-    <span class="meta">15 juillet 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">15 juillet 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/montreal-nouvelle-destination-de-la-musique-haitienne-cet-ete.html">Montréal, nouvelle destination de la musique haïtienne cet été?</a><br>
-    <span class="meta">10 juillet 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">10 juillet 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/asile-la-fin-du-tps-hausse-les-demandes-au-canada.html">Asile: la fin du TPS hausse les demandes au Canada</a><br>
-    <span class="meta">8 juillet 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">8 juillet 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/halte-la-dit-fred-lizaire.html">« HALTE-LÀ », dit Fred Lizaire</a><br>
-    <span class="meta">7 juillet 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">7 juillet 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/le-premier-de-durkheim-sous-les-yeux-de-medjy-toussaint-et-bic-ti-zon-dife.html">Le premier de Durkheim sous les yeux de Medjy Toussaint et BIC Ti Zon Dife</a><br>
-    <span class="meta">1 juillet 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">1 juillet 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/spvm-une-politique-dinterpellation-qui-divise.html">SPVM: une politique d’interpellation qui divise</a><br>
-    <span class="meta">29 juin 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">29 juin 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/montreal-festival-de-jazz-paul-beaubrun-ouvre-la-45eme-edition.html">Montréal/Festival de Jazz: Paul Beaubrun ouvre la 45eme édition</a><br>
-    <span class="meta">28 juin 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">28 juin 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/montreal-zile-se-lance-alors-que-klass-fait-le-plein.html">Montréal : ZILE se lance alors que Klass fait le plein</a><br>
-    <span class="meta">25 juin 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">25 juin 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/les-chansons-doccasion-seffritent-la-creation-aussi.html">Les chansons d’occasion s’effritent…, la création aussi</a><br>
-    <span class="meta">20 juin 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">20 juin 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/rea-lance-une-saison-riche-pour-les-aines.html">REA lance une saison riche pour les aînés</a><br>
-    <span class="meta">18 juin 2025 — Par Lucmane Vieux</span>
+    <span class="meta">18 juin 2025 — Par <span class="auteur">Lucmane Vieux</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/mort-dans-une-famille-daccueil-de-la-dpj.html">Mort dans une famille d’accueil de la DPJ</a><br>
-    <span class="meta">7 juin 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">7 juin 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/haiti-a-perdu-3-1-contre-le-canada-mais-la-fete-etait-belle.html">Haïti a perdu 3-1 contre le Canada, mais la fête était belle</a><br>
-    <span class="meta">5 juin 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">5 juin 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/alan-cave-toujours-dans-la-tete-des-melomanes-montrealais.html">Alan Cavé, toujours dans la tête des mélomanes montréalais</a><br>
-    <span class="meta">2 juin 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">2 juin 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/le-icrpaiq-est-lance.html">Le ICRPAIQ est lancé</a><br>
-    <span class="meta">2 juin 2025 — Par Admin</span>
+    <span class="meta">2 juin 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/jean-jean-roosevelt-et-disip-un-tandem-inhabituel-a-montreal.html">Jean Jean Roosevelt et DISIP : un tandem inhabituel à Montréal</a><br>
-    <span class="meta">23 mai 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">23 mai 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/letincelle-de-tamara-suffren-a-mis-le-feu-au-college-ahuntsic-de-montreal.html">L’Etincelle de Tamara Suffren a mis le feu au Collège Ahuntsic de Montréal</a><br>
-    <span class="meta">14 mai 2025 — Par Admin</span>
+    <span class="meta">14 mai 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/audio-lhaitienne-gagne-terrebonne-par-une-voix.html">(Audio) l’Haïtienne gagne Terrebonne par une voix</a><br>
-    <span class="meta">10 mai 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">10 mai 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/coupe-cloue-une-forte-marque-musicale.html">Coupé Cloué : une forte marque musicale</a><br>
-    <span class="meta">9 mai 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">9 mai 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/le-crave-fete-7-ans-aux-cotes-des-communautes-noires-de-montreal.html">Le CRAVE fête 7 ans aux côtés des communautés noires de Montréal</a><br>
-    <span class="meta">9 mai 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">9 mai 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/dpj-quebec-veut-nationaliser-lapproche-du-bchm.html">DPJ : Québec veut nationaliser l’approche du BCHM</a><br>
-    <span class="meta">8 mai 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">8 mai 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/les-deux-ans-de-las-de-zafem-celebres-a-montreal.html">Les deux ans de LAS de ZAFEM célébrés à Montréal</a><br>
-    <span class="meta">6 mai 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">6 mai 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/tamara-suffren-enflammera-montreal-avec-une-soiree-etincelle-le-10-mai.html">Tamara Suffren enflammera Montréal avec une «Soirée Étincelle» le 10 mai</a><br>
-    <span class="meta">1 mai 2025 — Par Admin</span>
+    <span class="meta">1 mai 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/retour-rate-de-phantoms-a-montreal.html">Retour raté de Phantoms à Montréal</a><br>
-    <span class="meta">30 avril 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">30 avril 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/une-releve-percutante-pour-la-maison-dhaiti.html">Une relève percutante pour la Maison d’Haïti</a><br>
-    <span class="meta">24 avril 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">24 avril 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/oswald-introduit-le-compas-a-place-des-arts-a-montreal.html">Oswald introduit le Compas à Place des Arts à Montréal.</a><br>
-    <span class="meta">22 avril 2025 — Par Pierre-Phaill Goudou</span>
+    <span class="meta">22 avril 2025 — Par <span class="auteur">Pierre-Phaill Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/quebec-pas-de-programme-pour-les-demandeurs-dasile.html">Québec: pas de programme pour les demandeurs d’asile</a><br>
-    <span class="meta">15 avril 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">15 avril 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/repentigny-le-candidat-liberal-reste-positif-face-aux-attaques-du-bloc.html">Repentigny: le candidat libéral reste «positif » face aux attaques du Bloc</a><br>
-    <span class="meta">14 avril 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">14 avril 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/malavoi-a-la-7eme-edition-du-festival-theatre-des-communautes-noires.html">MALAVOI à la 7eme édition du Festival théâtre des communautés noires.</a><br>
-    <span class="meta">26 mars 2025 — Par Admin</span>
+    <span class="meta">26 mars 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/journees-internationales-de-la-diaspora-haitienne-du-canada-jidhc-nouvelle-gouvernance.html">Journées Internationales de la Diaspora Haïtienne du Canada (JIDHC) : nouvelle gouvernance</a><br>
-    <span class="meta">25 mars 2025 — Par Admin</span>
+    <span class="meta">25 mars 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/103-millions-pour-un-centre-sportif-pour-montreal-nord.html">103 millions pour un centre sportif pour Montréal-Nord</a><br>
-    <span class="meta">19 mars 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">19 mars 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/canada-sauf-exceptions-les-demandeurs-dasile-sont-barres.html">Canada : sauf exceptions, les demandeurs d’asile sont barrés</a><br>
-    <span class="meta">10 mars 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">10 mars 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/klass-a-montreal-le-8-mars-2025.html">Klass à Montréal le 8 mars 2025</a><br>
-    <span class="meta">10 mars 2025 — Par Admin</span>
+    <span class="meta">10 mars 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/victimes-de-discrimination-a-mtl-nord-une-entente-de-principe-est-trouvee.html">Victimes de discrimination à Mtl-Nord: une entente de principe est trouvée</a><br>
-    <span class="meta">8 mars 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">8 mars 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/7e-edition-du-fethecomnoirs-inspirer-la-jeunesse.html">7e édition du FETHECOMNOIRS: inspirer la jeunesse</a><br>
-    <span class="meta">4 mars 2025 — Par Admin</span>
+    <span class="meta">4 mars 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/un-mois-de-lhistoire-des-noirs-sans-histoire.html">Un «Mois de l’histoire des Noirs» sans histoire</a><br>
-    <span class="meta">28 février 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">28 février 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/pour-sensibiliser-au-racisme-et-profilage-racial-lakay-presente-eyes-of-justice.html">Pour sensibiliser au racisme et profilage racial Lakay présente “EYES OF JUSTICE”</a><br>
-    <span class="meta">25 février 2025 — Par Lucmane Vieux</span>
+    <span class="meta">25 février 2025 — Par <span class="auteur">Lucmane Vieux</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/limpossible-medjy-toussaint-embrase-laval-avec-48-rebeca.html">L’impossible Medjy Toussaint embrase Laval avec 48 Rebeca!</a><br>
-    <span class="meta">23 février 2025 — Par Admin</span>
+    <span class="meta">23 février 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/claudel-toussaint-une-carriere-dediee-a-linclusion-et-a-la-diversite.html">Claudel Toussaint, une carrière dédiée à l’inclusion et à la diversité</a><br>
-    <span class="meta">20 février 2025 — Par Admin</span>
+    <span class="meta">20 février 2025 — Par <span class="auteur">Admin</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/jeunes-noirs-au-quebec-des-donnees-qui-choquent.html">Jeunes noirs au Québec: des données qui «choquent»</a><br>
-    <span class="meta">28 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">28 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/8e-sommet-afro-le-racisme-au-coeur-des-discussions.html">8e Sommet afro: le racisme au cœur des discussions</a><br>
-    <span class="meta">27 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">27 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/apres-ndg-elle-vise-la-ville-de-montreal.html">Après NDG, elle vise la Ville de Montréal</a><br>
-    <span class="meta">23 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">23 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/un-8e-sommet-afro-dans-lere-de-la-donnee.html">Un 8e Sommet Afro dans l’ère de la donnée</a><br>
-    <span class="meta">19 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">19 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/mois-de-lhistoire-des-noirs-sous-une-ambiguite-constante-au-quebec.html">Mois de l’Histoire des Noirs sous une «ambiguïté constante» au Québec</a><br>
-    <span class="meta">18 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">18 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/apres-une-blanche-une-noire-a-la-mairie-de-montreal.html">Après une Blanche, une Noire à la mairie de Montréal?</a><br>
-    <span class="meta">17 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">17 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/un-maire-noir-a-montreal.html">Un maire noir à Montréal?</a><br>
-    <span class="meta">13 janvier 2025 — Par Jean Numa Goudou</span>
+    <span class="meta">13 janvier 2025 — Par <span class="auteur">Jean Numa Goudou</span></span>
   </li>
   
   <li>
     <a class="titre" href="../posts/haiti-retour-a-ma-soupe-du-premier-janvier.html">Haïti : Retour à ma soupe du premier janvier</a><br>
-    <span class="meta">6 janvier 2025 — Par Jean Claude Icart</span>
+    <span class="meta">6 janvier 2025 — Par <span class="auteur">Jean Claude Icart</span></span>
   </li>
   
 </ul>
 
 </main>
-<footer class="site">
-  <p>inTexto Archives — articles récupérés depuis
-  <a href="https://web.archive.org/">archive.org</a> · Site actuel :
-  <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a></p>
-</footer>
 </div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
