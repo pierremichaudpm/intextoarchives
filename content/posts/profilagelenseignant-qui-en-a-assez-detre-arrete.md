@@ -1,0 +1,115 @@
+---
+title: "Profilage:l’enseignant qui en a assez d’être arrêté"
+date: 2018-10-08
+date_source: article
+author: "Jean Numa Goudou"
+slug: "profilagelenseignant-qui-en-a-assez-detre-arrete"
+source_url: "https://www.intexto.ca/profilagelenseignant-qui-en-a-assez-detre-arrete/"
+wayback_url: "https://web.archive.org/web/20250904152033/https://www.intexto.ca/profilagelenseignant-qui-en-a-assez-detre-arrete/"
+---
+
+Profilage:l’enseignant qui en a assez d’être arrêté
+À la suite de son quart de travail à l’école L’Horizon, situé dans le quartier Le-Gardeur à Repentigny, l’enseignant François Ducas saute dans sa BMW pour renter chez lui. À peine qu’il quitte l’établissement, il est pris en chasse par une patrouille de police.
+La filature s’étend sur 2.5 kms jusqu’au boul. Brien où deux policières activent le gyrophare et l’interpellent avec une question : Est-ce que la voiture vous appartient? M.Ducas, 50 ans, le prend mal et fait savoir aux policières qu’il s’agit là d’un cas de profilage racial et refuse toute collaboration.
+Une deuxième voiture arrive en renfort et l’enseignant est arrêté ce jour là, 8 décembre 2017, puis conduit au poste de police. C’était la quatrième fois que M. Ducas s’est fait serrer à Repentigny. Pire, certains de ses élèves ont déjà assisté à la scène.
+« J’allais voir une de mes élèves qui travaillait en face de l’école, se souvient-il, ce matin-là les deux bras derrière le dos, menottes aux poignets. Ils m’ont insulté et cela m’a rendu…. », dit-il en pinçant les lèvres et en grinçant les dents.
+« L’élève m’a interrogé sur ce qui s’est passé et je lui ai répondu que la police ne comprend pas qu’un Noir puisse rouler en BMW.»-Francois Ducas
+C’est sur la rue Brien à l’endroit même où il s’est fait arrêter de manière spectaculaire que nous les avons rencontrés, lui et sa femme, la Dre Karine Chevrette. Elle est médecin à l’urgence de l’hôpital Pierre-Le-Gardeur et s’occupe des soins intensifs également dans Lanaudière.
+Au volant d’une voiture de l’année, on retrouve la Dre comme dans 99% du temps lorsqu’ils sortent en couple. « Je ne me suis jamais fait arrêter alors que je conduis d’autres genres de véhicules que lui, dit-elle, il ne prend jamais mes autos, car, il sait qu’il va se faire arrêter la première journée »
+Au regard de ce que vit son père tous les jours, l’aîné des Ducas, 16 ans, refusait récemment d’aller apprendre à conduire en vue d’obtenir un permis. Il a fallu que la mère insiste.
+«Il voit bien ce qui arrive à son père.Il sait que c’est ce qui va lui arriver aussi. Il n’a pas le teint blanc. Les enfants arabes se font arrêter beaucoup et comme toutes les communautés autres que blanches.»-Karine Chrevrette.
+Ils ont quitté Repentigny
+Pour sa part, Stanley Jossirain, 22 ans, se fait arrêter, «harceler, insulter», dit –il, par les policiers de Repentigny depuis l’âge de 18 ans. Il affirme que certains policiers viennent même devant chez lui pour lui faire des grimaces.
+Comme pour François Ducas, il se fait demander les mêmes questions à propos d’une Nissan Altima 2010 lorsqu’il roule. Et même plus: « Ils me demandent souvent : combien je l’ai payée, combien de kilométrage y-a-t-il dessus?»
+La dernière fois qu’il s’est fait arrêter, la patrouille lui a collé une contravention pour « flanage », alors qu’il attendait en voiture son cousin qui commandait un café à l’intérieur d’un commerce de Repentigny. Et ce fut brutal avec des menottes très serrées et trop longtemps.
+«25 minutes plus tard on m’a enlevé mes menottes. Mes poignets étaient enflés. J’avais des blessures au niveau du bassin, du dos et des genoux. Quand on m’a mis à terre, les policiers ont embarqué sur moi.», raconte Stanley Jossirain.
+L’homme de 22 ans qui dit souffrir d’insomnie et d’anxiété voit régulièrement une travailleuse sociale et est suivi par une clinique de santé mentale afin de l’aider à se remettre en selle. Depuis que deux policiers lui ont mis en joug en pleine rue alors qu’il prenait une marche avec un de ses cousins, la scène tourne en boucle dans sa tête, dit-il.
+Stanley Jossirain qui voulait devenir ambulancier, a dû suspendre ses cours au CEGEP L’Assomption en raison d’un manque de concentration dû à ses démêlés avec la police de Repentigny depuis quatre ans.
+Sa mère, Monique Pierre-Louis, a quitté Repentigny pour Toronto avec ses sept enfants dont Stanley afin, dit-elle, de sauver la vie d’un de ses fils qui avait 15 ans à l’époque.
+«Les policiers l’ont arrêté dans la rue, ont pris son téléphone cellulaire pour fouiller dedans, lui ont demandé ses papiers. Et parce qu’il ne les avait pas sur lui, il lui ont passé les menottes, mis dans la voiture de patrouille et ont débarqué chez moi pour vérifier ses documents », rapporte la résidante de Toronto.
+« L’enfant de 15 ans ne comprenait pas et il a eu au moins trois tentatives de suicide »-Monique Pierre-Louis. Mais, après un an passé à Toronto, Stanley Jossirain décide de revenir dans son patelin, Repentigny.
+La police s’en défend
+« Action prise pour des raisons de sûreté, de sécurité ou de protection du public par une ou des personnes en situation d’autorité. Cette action vise une personne ou un groupe de personnes selon des facteurs d’appartenance réelle ou présumée, tels la race, la couleur, l’origine ethnique ou nationale ou la religion. L’action, posée sans motif réel ou soupçon raisonnable, expose la personne visée à un examen ou à un traitement différentiel. »- définition officielle du profilage
+Marlène Girard directrice des communications à la Ville de Repentigny a rappel, en entrevue au journal, que le profilage racial « comme tout autre, que ce soit social, n’est pas accepté » sur son territoire et qu’il n’y en «jamais eu».
+Elle a ajouté que la Ville applique une politique tolérance zéro par rapport à cette question et que les policiers sont formés à cet effet.
+« Peu de plaintes »
+Pour sa part le Service de police de la Ville de Repentigny (SPVR) affirme que tout le monde est traité de façon égale sur le territoire. Daniel Archibald, directeur adjoint du SPVR, insiste sur le fait qu’aucun policier de son service n’ait été condamné en lien avec le profilage racial.
+Le Service de police de la Ville de Montréal (SPVM), lui, a déjà été condamné. En mars dernier, le SPVM a écopé d’une peine pour profilage après l’arrestation d’un jeune automobiliste noir à Montréal-Nord en 2011. Le corps de police et les deux agents impliqués devaient lui verser 14 000 $ pour le dédommager.
+« Il peut y avoir de plaintes, mais jamais un policier de Repentigny n’a été condamné pour profilage.»- Daniel Archibald , chef adjoint du SPVR.
+Plaintes aux Droits de la personne
+La femme de François Ducas, la Dre Karine Chrevrette, a voulu, quant à elle, avoir plus de précisions sur la question. Elle affirme avoir demandé à la Ville qu’elle lui sorte des statistiques qu’au prorata des habitants (communautés visibles versus blanche) que les arrestations se faisaient au même pourcentage.
+« Jamais ils n’ont voulu me les sortir, dénonce la Dre Chrevrette, ils disent ah non… on peut pas… on n’a pas ses chiffres là etc… »
+Le couple Ducas a eu plusieurs rencontres avec le SPVR depuis les derniers évènements en vue de travailler sur la question du profilage, un terme que le chef adjoint semble éviter d’utiliser selon François Ducas.
+« Jamais il n’a parlé de profilage, dit-il. Sauf un enquêteur des services internes, Sylvain Grenier, qui m’a dit lors de la deuxième réunion que ce qui m’est arrivé c’est du profilage.»-François Ducas
+Nous n’avons pas réussi à parler à l’enquêteur des services internes au SPVR. Au moment d’écrire ces lignes il ne nous a pas retourné notre appel. Outre à la déontologie, la famille Ducas a porté plainte également à la Ville ainsi qu’aux Droits de la personne depuis le début de l’année.
+À date, aucun suivi n’a été effectué déplore les Ducas. «Ils m’ont dit que cela risque d’être long ».
+Écoutez la version audio de ce reportage Ici
+Vous pourriez aussi aimer!
+13 Comments on “Profilage:l’enseignant qui en a assez d’être arrêté”
+- 
+            Rien ne m’étonne ds cette histoire car moi aussi à part les nombreux tickets qui ne cessent de pleuvoir sur moi à Montréal. J’ai été deux fois interpellé par des policiers à Montréal qui me laissent perplexe. Puis une fois me faire dire par un juge lors d’une contestation d’une contravention que le rapport du policier est sa preuve que j’ai commis l’infraction. 
+ Quoiqu’ils en fassent la race noire survivra toujours et toujours.- 
+            Je m’étais faite interpellé l’année dernière par 2 policiers à L’Assomption me demandant si la voiture que je conduisais qui etait une voiture de l’année etait la mienne. Je lui ai demandé si elle a été déclarée volée car si ce n’est pas là cas mienne ou non je dois certainement avoir l’autorisation de la conduire 
+ 
+- 
+            
+- 
+            Tout à fait d”accord avec votre profilage de Trump. Chez lui, s”ajoute un non-conformisme exacerbé qu”on taxe de grossière brutalité. Il ne fait pas la politique qu”il veut, entravé par les coups d”état permanents des néocons Reps/Dems et de l”état profond (services de renseignement, CMI). Au demeurant, quelle politique ? Mystère… Des tweets pleuvent contredits par les faits. L”American Dream s”estompera à coup d”émeutes sur attrition sociale, de gifles (sédition des “alliés), de coups de pied aux fesses (opérations militaires ratées), de confiscations successives des revenus (dédollarisation et mise à l”écart de l”initiative chinoise eurasiatique BRI), voire de la marmite “Palestine qui va fatalement exploser, ces gens n”ayant plus rien à perdre et réinitialiser pour le compte le monde arabe que l”Occident détruit ! Vu les moyens de destruction à disposition, je doute que les USA engagent une guerre mondiale militaire. Mais je n”en préjuge pas tant ces gens paranoïyent et vivent en lévitation. Dans son délire de puissance, Hitler avait bien cru vaincre la Russie… NYC house 
+- 
+            N’étant moi meme pas de couleur, j’ai beaucoup d’amis qui subsiste ce genre d’abus de la pars des policier. Arrestation aleatoi 
+- 
+            N’étant moi meme pas de couleur, j’ai beaucoup d’amis qui subsiste ce genre d’abus de la pars des policiers. Arrestation en voiture ou a pied , se faire suivre a distance pars des patrouilles etc… ces vraiment triste et dommage espérons que d’ici quelques générations les choses s’améliorent. 
+- 
+            « Jamais ils n’ont voulu me les sortir, dénonce la Dre Chrevrette, ils disent ah non… on peut pas… on n’a pas ses chiffres là etc… » Je n’en crois rien, la plupart des corps policiers collectent des données à caractère racial 
+- 
+            Une fois sur le boul Rosemond à montréal, je roulais direction est et le policier direction ouest, après avoir traverser papineau, le policier qui m’a vu a fait demi tour, la lumiere était toujours verte, se mettre derriere moi et noter le no de ma plaque pour voir si la noire qui conduisait la toyota flambant neuve était à moi…. 
+ Il faut
+- 
+            Écoutez les pottes, la majorité des proxénètes sont noires au Québec. Ils exploitent les femmes (parfois mineures) blanches. Si les blancs étaient proxénètes des noires, je crois que vous aussi vous demanderez à la police de mettre de la pression sur les hommes blancs. Il ne voulait pas coopérer, c’est ça qui arrive. 
+ Quand les noirs aux États-Unis se sauvent, ils se font tirer.
+ Il faut coopérer et être poli avec la police. Ces gens là, ils sont stressés au maximum, et la population à généralement peur d’eux, et eux ils ont peur aussi.Plus que tu cries à la victime, plus qu’on va te mépriser. 
+ Soit responsable.Se faire arrêter deux fois par année, y’a rien là. 
+ Lui, il est comme une femme (peut-être parce qu’il travaille avec une majorité féminine) et il se met à se lamenter.Soyez forts !! Pis si vous aimez pas ça ici, ben retournez en Haïti. 
+ Bande d’ingras.Pis là, ça va se plaindre de ne pas faire assez d’argent en étant professeur !!! 
+ En se promenant en BMW de luxe.Pousse, mais pousse égal. 
+- 
+            Mes deux enfants sont métisse et j habite a Repentigny et chaque fous que mon fils vient me voir il se fait toujours toujours arrêter il est vraiment écoeuré. Nous avons aussi une cause une dame a traiter mon fils de nègre et cest mon fils qui sest fait arrêter pour menace de mort ce qui a mon avis est très grave, mon fils a jamais eu de dossier ,moi j ai très peur pour la sécurité de mes deux enfants à Repentigny profilage raciste en ta….. 
+- 
+            Moi aussi, je vis la même chose parce que je conduis un Chrysler 300 limited blanc avec des mags de 20 pouces. Je ne peux sortir la nuit au centre-ville de Montréal sans me faire intercepter. Ma voiture et moi sommes en regles sur tous les points de vue. Ils me sortent tout le temps des raisons bidons : vitres teintées, une femme s’est fait enlevée par un char blanc, beaucoup de véhicules se font voler et pour finir le propriétaire ne correspond pas au chauffeur. 
+ Je m’efforce de rester calme parce qu’il s veulent juste trouver une raison pour m’embarquer.
+ Puisqu’on est plusieurs à subir du profilage, on devrait se mettre ensemble pour combattre cette façon de faire et d’enrayer ce fléau.
+ Je vous recommande fortement de faire des enregistrements audio quand ces genres de choses arrivent et très important demandez au policier de vous fournir son nom et son numéro de matricule, il n’a pas le droit de refuser. Moi personnellement j’ai installé une caméra dans mon vehicule.
+- 
+            Mon chum est noir et des histoires comme celle-là, il en a à toutes les semaines… 
+ La dernière, interpellé dans un abri-bus. Ils l’ont laissé tranquille quand il a proposé d’enregistrer la scène. C’est le meilleur conseil que je puisse vous donner:
+ Connaissez vos droits, enregistrez mais faites attention qu’ils ne vous accusent pas d’utiliser votre téléphone en conduisant!Est-ce n’est pas seulement à Montréal, Mont-Tremblant, Laval et Gatineau est probablement le pire endroit, ils s’est fait arrêter presqu’à chaque fois qu’il y est passé. Ne lâchez pas! 
+- 
+            Je travail comme employé civil pour la Police de Montreal 
+ Avant je restais a legardeur
+ a chaque fois que je revenais de travail la nuite a minuit dans ma toyota 2007,
+ qui est en tres bonne état
+ des que je passais le viaduc direction nord pour repentigny
+ et si je croisais une police a la hauteur du marché haitien de repentigny sur brien qui lui allait direction sur vers repentigny
+ sois il me mettait une lumiere blanche intense aveuglante vers ma voiture pour bien voir que j’étais bien un noir
+ ou allumait ses strobes sans la sirene et roulait lentement pour bien me regarder
+ ou meme un a fait un u turn a cet endroit la,
+ ma suivi jusqu’a legardeur dans le derriere de ma voiture
+ lorsqu’il m’a vu allé mettre de l’essence au petro t
+ il a fais un autre u-turn devant le resto la belle province
+ pour venir se garer au petro t pendant que je mettais de l’essence
+ ma regarder tout le temps que je mettais mon essence
+ j’avais le gout d’aller le voir et lui demander s’il y avait un probleme
+ mais j’ai assez vu de truc de police que des que tu les abordes
+ c,est la que cela se degenere
+ donc j’ai mis mon essence et me suis dis, ben s’il y a de quoi, lui il viendra me voir car j’ai rien a me reprocher
+ et une fois que j’avais fini de payer et quitté la station d’essence
+ il a décidé d’aller voir ailleurMaintenant je reste pu a legardeur 
+ mais je suis toujours dans lanaudiere
+ et je n’ai pu ce probleme la pour l’instant
+ car je les croise pu
+ Toute facon des que je passe par repentigny la nuite,
+ j’allume ma camera video sur mon tableau de bord
+ j’ose meme pu aller la nuite a legardeur
+- 
+            Je trouve ça quand même étrange, je suis blanc et plus jeune quand j’avais un véhicule sport je me faisait aussi arrêter pour vérification, contrôle à plusieurs reprise. La plupart de vos expériences avec la police je l’ai vécu du point de vue d’un blanc et de mon côté, plutôt que de considérer ça comme du profilage, je considérais ça comme un abus de pouvoir du corps policier dû au fait de représenter l’autorité. Comme quoi ici tout est question de perception. Aujourd’hui, je demeure à Repentigny et je prends régulièrement le bus mais ma conjointe qui est blanche c’est fait contrôlé à plusieurs reprise par la police de Repentigny pour savoir si le véhicule lui appartenait, pourquoi elle le conduisait, si c’étais pas à son nom, si j’étais au courant qu’elle conduisait mon véhicule, sans compter des vérifications de plaques etc. et pourtant, il n’y avait pas de profilage…Je penses qu’un moment donner faut arrêter de blâmer la communauté blanche de tout les maux du monde parce que mine de rien cela aussi commence à ressembler à du profilage par association. 
+Comments are closed.

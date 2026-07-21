@@ -1,0 +1,23 @@
+---
+title: "Des Haïtiens debout dans la lumière"
+date: 2016-02-08
+date_source: article
+author: "Claude Gilles"
+slug: "des-haitiens-debout-dans-la-lumiere"
+source_url: "https://www.intexto.ca/des-haitiens-debout-dans-la-lumiere/"
+wayback_url: "https://web.archive.org/web/20160530002832/http://intexto.ca/des-haitiens-debout-dans-la-lumiere/"
+---
+
+La Maison d’Haïti et l’Association des enseignants et enseignantes haïtiens du Québec figurent parmi la douzaine d’organisations honorées à l’occasion du 25e Mois de l’histoire des noirs. « Lève-toi et brille », est le mot d’ordre de l’événement qui s’étendra à Montréal du 1er au 28 février 2016. Des Haïtiens se mettent ainsi debout dans la lumière.
+Février, mois de l’histoire des Noirs. Un quart de siècle ça se fête au Québec et dans d’autres villes américaines et canadiennes. Pour la 25e édition, la Table ronde du Mois de l’histoire des noirs a convenu d’honorer douze organismes et autant de chanteuses ou musiciennes qui font une différence dans les communautés noires au Canada. Deux des organisations lauréates de cette année gardent leur l’ancrage culturel haïtien.
+En effet, la Maison d’Haïti et l’Association des enseignants et enseignantes haïtiens du Québec (AEEHQ) gardent toujours l’ancrage à Haïti, la première République des nègres révoltés. Ces organismes ont été honorés lors d’une cérémonie de lancement du Mois de l’histoire des noirs à la Bibliothèque et Archives nationales du Québec (BANQ).
+Les organisations lauréates sont présentées dans le calendrier annuel du Mois de l’histoire des Noirs. La Maison d’Haïti est un organisme communautaire consacré à l’éducation et à l’intégration des individus et des familles immigrantes à Montréal.
+Créée en 1972, elle est une « véritable référence tant pour la communauté haïtienne que pour la société québécoise, a souligné la Table ronde du mois de l’histoire des noirs. L’organisme fonde son approche sur l’accompagnement des gens à qui il vient en aide afin de les faire gagner en autonomie. »
+La deuxième organisation lauréate du Mois de l’histoire des Noirs dont son nom est enlacé à Haïti contribue fortement à l’éducation des élèves au Québec. Fondée en 1983, l’Association des enseignants et enseignantes haïtiens comme son nom l’indique regroupe quelque 200 enseignants originaires d’Haïti.
+L’objectif de l’association est « d’aider les membres de la communauté en général et plus particulièrement ceux de la communauté haïtienne à s’épanouir en éliminant progressivement les difficultés éprouvées dans leurs milieux respectifs, au travail ou à l’école. »
+La Table ronde du Mois de l’histoire des noirs a, par ailleurs, salué la mémoire de Jean Alfred et celle de Joe Trouillot, deux originaires d’Haïti qui brillaient chacun dans sa sphère d’activité. Jean Alfred, né à Ouanaminthe (Haïti) reste dans les annales comme le premier député noir de l’histoire du Québec. Élu en 1976, sous la bannière du Parti Québécois, M. Jean est décédé en juillet 2015 à l’âge de 75 ans. Joe Trouillot fut, pour sa part, un crooner de la chanson haïtienne.
+« Ils ont marqué la société québécoise par leurs accomplissements », a écrit le comité organisateur de la 25e mouture du Mois de l’histoire des noirs sur le site Internet de l’événement.
+À la cérémonie de lancement du 25e Mois de l’histoire des noirs, le grand public est confié à plus de 150 activités culturelles et sociales pour connaître la culture noire sous toutes ses formes imprégnée dans des spectacles, expositions, conférences et expositions.
+Autour du livre, de grands classiques de la littérature haïtienne dont Ainsi par la l’oncle de Jean-Prince Mars, De l’égalité des races humaines d’Anténor Firmin sont proposés par les éditions Mémoire d’encrier. La maison d’édition dirigée par le poète Rodney Saint-Éloi vient de publier « Sur Fanon », un collectif consacré à Frantz Fanon, auteur de Peau noire, masques blancs.
+Le Centre international de documentation et d’information haïtienne caribéenne et afrocanadienne (Cidihca), de son côté, le Mois de l’histoire des noirs à travers des photographies de Gregory Jean-Baptiste exposées autour du thème : « Présence des femmes haïtiennes au Québec » durant tout le mois de février. « Art et vodou » est le titre d’une autre exposition tenue par Cidihca à Montréal.
+Côté musique, Ralph Boncy est commissaire de l’exposition Égéries noires. Cet événement tend à rendre hommage à 12 femmes inspirantes qui ont marqué l’histoire de la musique canadienne. Régine Chassagne, membre du groupe indie-rock Arcade Fire et la chanteuse Stéphane Moraille figurent parmi « celles qui font tomber les préjugés de couleur dans la musique classique canadienne », lit-on dans un communiqué du Mois de l’histoire des noirs.

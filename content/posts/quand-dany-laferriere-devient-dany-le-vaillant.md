@@ -1,0 +1,20 @@
+---
+title: "Quand Dany Laferriere devient Dany le vaillant"
+date: 2015-06-29
+date_source: article
+author: "Pierre Emmanuel"
+slug: "quand-dany-laferriere-devient-dany-le-vaillant"
+source_url: "https://www.intexto.ca/quand-dany-laferriere-devient-dany-le-vaillant/"
+wayback_url: "https://web.archive.org/web/20160703043659/http://intexto.ca/quand-dany-laferriere-devient-dany-le-vaillant/"
+---
+
+Comme le veut la tradition, un mot symbolique a été attribué à Dany Laferrière au moment d’entrer dans l’immortalité : Vaillant. Car les académiciens se penchent justement sur la lettre « V »
+S’il a été élu à l’Académie française le 12 décembre 2013, il a fallu attendre le 28 mai 2015 pour voir Dany Laferrière devenir officiellement membre du cercle extrêmement restreint des immortels. Et je n’exagère pas en utilisant l’adverbe extrêmement, car depuis 1635 que ce haut lieu du savoir a été crée, Laferrière n’en est que le 729e membre aux côtés des célébrités de la littérature tels Hugo, Dumas, Descartes, Pascal, Rousseau, Balzac, Maupassant, Beaudelaire, Zola et j’en passe.
+Si l’enfant de Petit-Goave dans sa dérive douce n’est pas le premier Noir à être admis à l’Académie, vu que le célèbre sculpteur sénégalais Ousmane Sow eut déjà ouvert la voie, il est quand même le premier haïtiano-québécois de ce vaste continent nord américain, anglophone et anglophile dans son écrasante majorité, à avoir cet honneur. A mon humble avis et sans vouloir être pessimiste, il nous faudra attendre encore longtemps avant de voir un pareil phénomène se reproduire dans cette longue et immense quête de la pureté de la langue française.
+Le produit de deux terres…
+Malgré l’accueil plutôt froid et critique de certains intellectuels québécois et haïtiens, le Québec et Haïti ont compris qu’il fallait saisir cette occasion et se l’approprier. En plus de Philippe Couillard, l’actuel chef de gouvernement du Québec, Bernard Landry, Jean Charest et Pauline Marois se trouvaient sous la coupole avec des officiels haïtiens, dont la ministre de la culture en absence du président Michel Martelly retenu par de nouveaux développements dans la crise haïtienne. Pour la petite histoire, le nom de Martelly figure dans le discours de Dany qui a été publié la semaine dernière par l’éditeur québécois Boréal.
+Entre le Québec qui lui reproche de s’être rendu en Haïti au moment de sa nomination et Haïti qui lui reproche d’être présenté presque partout comme un écrivain québécois, l’exercice de l’investiture du 12 juin s’annonçait plutôt périlleux pour Dany. Il a pourtant réussi avec maestria à transformer cette dualité, en gestation, en une simple polarité entre ces deux mondes qui l’habitent. « Je suis né en Haïti, mais je suis né écrivain à Montréal »a déclaré le nouvel immortel. Jouant sur les deux tableaux, il choisira de faire graver son épée, emblème de sa personnalité, en Haïti, alors que son costume brodé de rameaux d’olivier vert et or sera confectionné au Québec.
+« Il fait ce pont extraordinaire entre nos deux nations, entre le Québec et Haïti » a laché l’ancienne première ministre Pauline Marois, comme pour mettre un terme aux polémiques.
+Dany le vaillant …
+Comme le veut la tradition, un mot symbolique a été attribué à Dany Laferrière au moment d’entrer dans l’immortalité : Vaillant. Car les académiciens se penchent justement sur la lettre « V » dans le cadre des travaux de mise à jour du Dictionnaire de la langue française, dont la 9e édition est en cours de préparation. Ce pseudo convient bien à Dany, car déjà tout jeune sa grand-mère « Grann Da » l’appelait « Vieux os », comme une prémonition pour l’immortalité. « Vaillant » est aussi un hommage rendu au parcours du combattant de cet écrivain autodidacte qui n’a jamais limité ces rêves aux quatre murs des manufactures où il a travaillé durant ces premières années à Montréal.
+Comme je le lui avais déjà dit au lendemain de sa nomination à l’Académie : merci Dany de nous rappeler que rêver est encore possible, et que « savoir oser » fait tomber des barrières.

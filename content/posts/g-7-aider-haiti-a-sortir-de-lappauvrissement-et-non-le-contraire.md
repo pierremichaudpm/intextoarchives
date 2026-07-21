@@ -1,0 +1,23 @@
+---
+title: "G-7: aider Haïti à sortir de l’appauvrissement et non le contraire"
+date: 2018-06-13
+date_source: article
+author: "Jean Claude Icart"
+slug: "g-7-aider-haiti-a-sortir-de-lappauvrissement-et-non-le-contraire"
+source_url: "https://www.intexto.ca/g-7-aider-haiti-a-sortir-de-lappauvrissement-et-non-le-contraire/"
+wayback_url: "https://web.archive.org/web/20180714124655/http://intexto.ca:80/g-7-aider-haiti-a-sortir-de-lappauvrissement-et-non-le-contraire/"
+---
+
+Par Denise Gagnon et Jean-Claude Icart _ Haïti a été invitée à participer à cette séance élargie, parce qu’elle assure la présidence de la communauté caribéenne (CARICOM) depuis octobre 2017, mais aussi parce que c’est un des pays au monde les plus vulnérables aux changements climatiques.
+La Concertation pour Haïti (CPH) est un regroupement d’une vingtaine d’organismes québécois qui participent activement au mouvement de solidarité avec le peuple haïtien depuis 1994. La CPH s’inquiète depuis plusieurs années des politiques imposées par les pays riches qui nuisent à la lutte contre la pauvreté et qui aggravent les risques environnementaux dans la région. Il est temps que ça change !
+Contexte
+Au cours de la seconde journée du Sommet du G7, des personnes représentant d’autres pays et des organisations internationales ont été invitées à participer à une séance élargie. Cette année, les changements climatiques, les océans et l’énergie propre ont été à l’ordre du jour, le Canada en ayant fait des thèmes centraux de sa présidence. Étaient donc invités une douzaine de chefs d’État et de gouvernements de différentes régions du monde ayant un intérêt à discuter de ces enjeux.
+Droit à l’alimentation et développement minier ne font pas bon ménage !
+Au cours des dernières années, plusieurs compagnies canadiennes ont prospecté les ressources d’Haïti au point où le gouvernement canadien estimait dans sa stratégie d’engagement en Haïti (2015-2020) que le développement du secteur minier est crucial pour Haïti. Aujourd’hui, les principaux droits d’exploitation appartiennent à des compagnies américaines, mais des compagnies canadiennes en sont devenues actionnaires. Rappelons aussi que la plupart des grandes compagnies minières dans le monde sont généralement inscrites à la Bourse de Toronto. La Chambre de commerce et d’industrie haïtiano-canadienne, qui compte parmi ses membres les plus actifs des compagnies minières, s’intéresse beaucoup à ce dossier.
+L’État haïtien, reconnu comme un État faible (affaibli), a eu l’appui de la Banque mondiale pour la rédaction d’un projet de loi sur les mines, grâce à un fonds largement soutenu par le Canada. Ce projet de loi a été déposé devant le Sénat haïtien en juillet 2017, une deuxième version sera étudiée cette année. Il contient cependant de très grandes faiblesses aux chapitres de la transparence, de l’évaluation et de la protection environnementales, de la gestion de l’eau et de la remise en état des sites.
+Les risques environnementaux qui découleraient de l’exploitation des mines métalliques, qui utilisent beaucoup de produits chimiques, sont extrêmement importants. Par exemple, les principales réserves d’or sont situées sur des bassins versants densément peuplés par des agricultrices et des agriculteurs, le long de la faille septentrionale.
+L’agriculture joue un rôle déterminant dans toute stratégie de lutte contre la faim et la pauvreté : « Il a été démontré que la croissance du PIB générée par l’agriculture est quatre fois plus efficace pour la réduction de la pauvreté que la croissance générée par d’autres secteurs, car elle produit ses effets sur les gens directement sur le terrain », affirme la FAO. Selon elle, il faut en priorité améliorer le rendement des petites exploitations agricoles dans les régions touchées par la pauvreté, pour faire reculer la faim. Cette approche permettrait également de mieux faire face aux énormes défis environnementaux auxquels sont confrontés les petits États insulaires.
+Un appui en ce sens permettrait la mise en place, parallèlement, de programmes administratifs et éducatifs grâce auxquels Haïti pourra reprendre en mains les rênes de sa destinée et développer pleinement ses riches potentialités. C’est un prérequis pour « stimuler une croissance économique durable qui profite à tout le monde et en particulier à ceux et celles qui risquent le plus d’être laissés pour compte ». La coopération canado-haïtienne doit être conséquente à cet égard et ne pas compromettre nos engagements réciproques pour le droit à l’alimentation et le développement durable.
+Concertation pour Haïti (CPH), par : Denise Gagnon et Jean-Claude Icart
+Montréal, le 12 juin 2018. –
+Membres CPH : http://www.aqoci.qc.ca/?-Membres-Concertation-pour-Haiti

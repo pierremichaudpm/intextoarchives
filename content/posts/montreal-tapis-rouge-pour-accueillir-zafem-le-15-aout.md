@@ -1,0 +1,27 @@
+---
+title: "Montréal : tapis rouge pour accueillir ZAFEM le 15 août"
+date: 2025-08-18
+date_source: article
+author: "Admin"
+slug: "montreal-tapis-rouge-pour-accueillir-zafem-le-15-aout"
+source_url: "https://www.intexto.ca/montreal-tapis-rouge-pour-accueillir-zafem-le-15-aout/"
+wayback_url: "https://web.archive.org/web/20250818232854/https://www.intexto.ca/montreal-tapis-rouge-pour-accueillir-zafem-le-15-aout/"
+---
+
+Montréal : tapis rouge pour accueillir ZAFEM le 15 août
+Par Raphaël Bélizaire
+Place La Renaissance, situé au boulevard Henri-Bourassa, une salle d’environ 3000 personnes débordait de monde. Zafem performait. Amateurs venus de partout du Québec et même d’Ottawa y étaient, dans leurs plus beaux habits, pour assister à banquet ou il y en avait pour les oreilles aussi bien que pour les papilles gustatives.
+Comme tout banquet digne de ce nom, la soirée a commencé par les entrées, ces bouchées délicates qui éveillent l’appétit et préparent au festin. À 11h19, Philippe Saint-Louis, dit Pipo, annonce Zafèm au grand complet. Le groupe était composé entre autres, de Jean-Sediam “Yayam” Dorestant, le tambourineur, Peter Marvens Dumerjean, le claviériste, Josué Nazaire Jude le batteur, mais aussi et surtout Dener Céide et Réginald Cangé, ses deux figures de proue.
+Le rideau se lève, les convives s’invitent à la table de Zafèm et déjà les premières notes de “Ankò, ankò”, le titre phare du groupe Zèklè interprété par Jacqueline Denis enveloppent la salle. L’émotion est immédiate, palpable, comme un parfum qu’on respire et qui nous ramène à une époque révolue. Pour ceux de ma génération, celle des années 70–80, c’était un véritable frisson, un retour aux sources, une connexion intergénérationnelle.
+La dégustation se poursuit avec un mélange rythmique servi par la voix et la guitare de Dener Ceïde, relevé comme une épice rare. À 11h53, la saveur nostalgique de “Caramel” de Gikes Floro se glisse dans l’air, nappée des mélodies de Peter au clavier. Le public, en extase, ferme les yeux et savoure l’instant. Puis vient le premier morceau original du menu : “Nikita”, servi chaud, juste avant minuit.
+À 12h08, le chef Réginald Cangé relance la mémoire collective avec des amuse-bouches traditionnels : “Siwo grenadin”, “Alon w bèl ti ròb…, la sirène, la baleine … ! Chaque note est une bouchée salée sucrée, qui nous fait sourire comme devant un plat d’enfance retrouvé. Enfin, à 12h23, Dener Seïde nous livre “Dyaman nan bidonvil ”, une mise en bouche généreuse, suffisamment consistante pour ouvrir l’appétit d’un public déjà conquis.
+Le plat de résistance
+Puis vient le cœur du repas, le moment que tout le monde attend : le plat principal, composé des tubes de l’album LAS. À 12h32, “Sanpousan” est servi comme un ragoût fumant, mijoté longtemps et partagé avec ferveur. La salle entière devient une casserole en ébullition : chaque voix, chaque battement, chaque cri se mélange en une alchimie parfaite.
+À 12h45, “A la De Ka” arrive en seconde assiette, puissant et relevé, maintenant le public en haleine. Mais le chef prend soin de casser le rythme avant de nous proposer, à 1h00, “Savalou”, ce plat du jour riche et consistant, servi avec une élégance presque cérémonielle.
+Une courte pause – le temps que Bernier Sylvain – BS- rappelle que le bal est une initiative de Zafèm Family – puis à 1h30, le service reprend. Les deux DJ de la soirée offrent une sauce “Rabòday” comme un trou normand qui secoue les papilles. À 1h49, Réginald revient avec “Antann pou n antann nou” de Coupé Cloué : un morceau si bien exécuté qu’on aurait juré voir Gesner Henry se relever de son tombeau pour bénir la table.
+n incident mineur à 1h56 – comme une assiette renversée – vient troubler la fête. Mais la sécurité remet de l’ordre, et le banquet continue.
+Les desserts
+Vient enfin le temps des douceurs, ces mets sucrés qu’on attend avec impatience et qui laissent la meilleure des impressions. À 2h02, “M P ap ka Neye” fait office de petit gâteau fruité, suivi à 2h16 de “Ti Pouchon”, servi comme une mousse légère, mais excitante, où la guitare de Dener se fait complice du public, répondant à chaque cri comme à une cuillerée de crème fouettée.
+À 2h28, le clou du dessert : “Dlo Dous”, une pâtisserie délicate arrosée de trompette, dont chaque note fond dans la bouche comme un sirop rare. Je bénissais le fait d’être seul car accompagné, je n’aurais peut-être pas eu le loisir d’en savourer chaque nuance et prendre des notes pour en faire ce récit. Mais je me promets qu’à la prochaine dégustation, je ne viendrai plus seul.
+Enfin, à 2h44, la pièce éponyme de l’album “Lalin ak Solèy” explose comme un soufflé flambé, allumant la salle d’un seul slogan, verres en main, bouteilles levées : « Nap bwè, nap bwè ». Puis, à 2h50, “Le Plein” referme ce buffet musical. Digestif puissant, il nous laisse le cœur comblé et les sens repus.
+Ce vendredi soir là 15 août, Montréal avait roulé le tapis rouge, et Zafèm a dressé la plus somptueuse des tables musicales. On n’a rien perdu, rien regretté : pour les yeux et pour les oreilles, l’expérience fut totale. “Mwen pa regret kòb mwen an” a lâché une jeune dame dont l’élégance rime avec extravagance, et la satisfaction, comme tant d’autres, se lit sur le visage. Mais un conseil demeure : ne venez jamais seul à un banquet Zafèm. Offrez-vous ce festin à deux, et surtout, la prochaine fois, que ce soit dans un amphithéâtre, en concert assis, afin que nous puissions à la fois applaudir, admirer et danser – sans perdre une miette de ce repas magistral.

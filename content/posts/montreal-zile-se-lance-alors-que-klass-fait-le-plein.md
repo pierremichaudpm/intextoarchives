@@ -1,0 +1,23 @@
+---
+title: "Montréal : ZILE se lance alors que Klass fait le plein"
+date: 2025-06-25
+date_source: article
+author: "Pierre-Phaill Goudou"
+slug: "montreal-zile-se-lance-alors-que-klass-fait-le-plein"
+source_url: "https://www.intexto.ca/montreal-zile-se-lance-alors-que-klass-fait-le-plein/"
+wayback_url: "https://web.archive.org/web/20250823185040/https://www.intexto.ca/montreal-zile-se-lance-alors-que-klass-fait-le-plein/"
+---
+
+Montréal : ZILE se lance alors que Klass fait le plein
+Photo: Tidjo Jiha
+Montréal a vibré au rythme de Klass et de Zile, la veille de la Saint Jean Baptiste, fête nationale du Québec, mardi 24 juin. La bande à Richie, à elle seule, a animé trois événements.
+Les musiciens de Klass ont atterri à Montréal dans la soirée du vendredi 20 juin. Le groupe a animé une soirée de Gala pour célébrer les 49 ans de l’organisation valléenne pour le développement le samedi 21 juin. Une soirée réussie qui a réuni 1400 personnes à Le Rizz.
+Dans l’après-midi du dimanche 22 juin, les musiciens se sont réunis avec des supporteurs, des amis proches et des admirateurs triés sur le volet. Moments intimes marqués d’échanges, de prises de photos et de retrouvailles entre les musiciens de Klass et un public select. Chacun avait un mot à dire, une histoire à raconter ou un témoignage à faire au sujet du groupe musical. Cette activité, qui visait le rapprochement du groupe avec ses supporteurs montréalais, s’inscrivait dans le cadre du 13e anniverasaire de Klass.
+Le clou de cette longue fin de semaine a été la soirée grand public de ce lundi 23 juin ou Klass a partagé la scène de Le Rizz avec le groupe ZILE porté par la voix de Anie Alerte, à l’invitation des productions Adrien Montréal, BassMent et JBL (Josil Louis Bédard). Ce nouveau groupe musical a été l’attente de la soirée. Le public avait hâte de vivre la prestation de ces musiciens qui prenaient leur baptême de feu.
+Des musiciens montréalais à la rescousse
+À 23 heures 30, ZILE et la chanteuse Anie Alerte ont investi la scène de Le Rizz et ont entamé leur prestation avec la chanson « Le nap fe lanmou » de Mizik Mizik. Ils ont enchaîné avec plusieurs chansons gravées sur leur tout premier album « Vwayaj » dont Difisil, Trahison, Damou anko, interprétée en duo avec Anthony Drew et Mal. Peu avant 1 heure 30 du matin, ZILE a mis fin à sa prestation avec la chanson « Accident » de Missile 727, ancien groupe à succès de Dieudonné Larose qui était basé à Montréal dans les années 90.
+ZILE s’est présenté au public avec le batteur, Markens Louis, le tambourineur John Sahouard et le gonguiste Wood dans la section rythmique. Le guitariste, Christopher Rémy, le bassiste, Alain Alanos et le keyboardiste Evens Semé (DPM) constituaient la ligne mélodique du groupe. Tous ces musiciens ont été recrutés à Montréal. Le groupe fait déjà face aux difficultés provoquées par les mesures prises par la nouvelle administration américaine au niveau de l’immigration. Seul le keyboardiste, Joséphart Libertin (Keylo), maestro de ZILE a fait le déplacement avec la chanteuse Anie Alerte à Montréal. Cynthia Michel et Adler Chéry ont renforcé l’équipe aux chœurs.
+Toutefois, ZILE se veut être un groupe Compas Direct et entend offrir ce qu’il y a de mieux dans le milieu musical haïtien. Cela explique que même pour remplacer provisoirement un musicien, la direction de ZILE prend en compte plusieurs critères, dont le talent, la discipline et l’esprit d’équipe avant de faire un choix. La qualité et l’excellence sont les deux piliers sur lesquels ZILE construit sa base et ne compte pas transiger sur ces aspects essentiels que le groupe inscrit dans sa vision.
+Les musiciens qui ont accompagné la chanteuse ont fait preuve de beaucoup de professionnalisme et de talent dans l’exécution des notes et leurs improvisations lors de la prestation du groupe.
+Que ce soit par chance ou qu’il s’agit d’un plan stratégique, ZILE s’est bien placé dans le cadre de son lancement. Partager la scène avec Klass devant un public de plus d’un millier de personnes à Montréal, il ne saurait y avoir une meilleure plateforme pour un nouveau groupe dans le milieu compas. Ce samedi 28 juin 2025, le groupe ZILE aura à se produire au Barclay’s Center à Brooklyn, NY dans le cadre de la dixième édition du concert BAYO du DJ international haïtien, Michael Brun. Le compas n’a jamais été aussi présent dans ce concert, notamment en version live, dans ce concert qui est parti de jalousie, Pétion Ville a Barclays Center, Brooklyn, NY
+En moins d’une semaine, Klass et BAYO offrent leur plateforme à ZILE. Si la direction du groupe sait saisir les opportunités, ZILE devrait pouvoir voler de ses propres ailes.

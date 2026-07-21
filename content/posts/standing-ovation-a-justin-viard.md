@@ -1,0 +1,24 @@
+---
+title: "Standing ovation à Justin Viard"
+date: 2015-09-24
+date_source: article
+author: "Claude Gilles"
+slug: "standing-ovation-a-justin-viard"
+source_url: "https://www.intexto.ca/standing-ovation-a-justin-viard/"
+wayback_url: "https://web.archive.org/web/20160702214116/http://intexto.ca/standing-ovation-a-justin-viard/"
+---
+
+Lun des moments forts de cette soirée a été la lecture dune lettre de lécrivain et académicien Dany Laferrière adressée à Justin Viard, qui a fait de la diplomatie daffaires une priorité.
+Photo: Ralph Véus
+Consul général dHaïti depuis trois ans à Montréal, Justin Viard perd son poste mais garde lestime de la diaspora haïtienne qui lui est reconnaissante. La proximité du diplomate avec la communauté haïtienne, son sens de leadership et de créativité expliquent le vibrant hommage à celui qui a été débarqué par Port-au-Prince.
+Des hommes daffaires, chercheurs, leaders dopinion et politiques sagglutinaient, jeudi soir, au 3737, rue Crémazie pour témoigner leur gratitude au banquier et professeur duniversité devenu diplomate. «Montréal te remercie», a lancé Frantz Benjamin, président du Conseil de Ville de Montréal, en sadressant au diplomate. Originaire dHaïti, M. Benjamin a tenu à motiver labsence du maire de Montréal à la cérémonie.
+Denis Coderre s’est fait représenter par son conseiller politique. Sous la baguette de Justin Viard, estime Benjamin, les relations étaient merveilleuses. Montréal et Port-au-Prince, plus particulièrement, a-t-il souligné, ont tissé des liens étroits par le jumelage.
+Pendant de longues années, le consulat na pas été accessible aux Haïtiens établis à Montréal, jusqu’à larrivée de Pierre-Richard Casimir, qui a ouvert lespace à la communauté, se souvient Frantz Benjamin. Les portes de la représentation diplomatique dHaïti à Montréal, dit-il, ont été davantage ouvertes par M. Viard, connu pour sa proximité avec la communauté.
+Une plaque Honneur et Mérite a été décernée au désormais ex-consul général lors de la cérémonie à laquelle ont pris part la mairesse de larrondissement VilleraySaint-MichelParc-Extension, Anie Samson, la directrice de la Maison dHaïti Marjorie Villefranche, lintellectuel haïtien Samuel Pierre, le conseiller politique du maire de Montréal, lactrice Fabienne Colas ainsi que le président du Conseil des arts et des lettres du Québec. «Jai été au service dune grande et belle communauté», a réagi M. Viard après avoir réprimé quelques larmes démotion.
+Lun des moments forts de cette soirée a été la lecture dune lettre de lécrivain et académicien Dany Laferrière adressée à Justin Viard, qui a fait de la diplomatie daffaires une priorité. Il dit avoir mené huit missions daffaires en Haïti comme consul général. Jean Pisani, un homme daffaires québécois qui sapprête à ouvrir une entreprise en Haïti a ainsi témoigné sa gratitude : «Justin Viard est plus quun consul pour Haïti. Il est un père».
+Porteur du projet décole de lhumour
+Directrice générale et pédagogique de lÉcole nationale de lhumour (ENH) de Montréal, Louise Richer a dit, pour sa part, un grand merci à Justin Viard qui facilite depuis 2012 «la circulation des humoristes haïtiens et québécois entre Montréal et Port-au-Prince».
+Louise Richer a profité de son intervention au centre commercial 3737 pour dissiper les doutes quant à louverture prochaine de lÉcole de lhumour dHaïti dont Justin Viard a été linitiateur. «Les projets sont plus grands que moi. Je poursuivrai le projet», a indiqué Mme Richer. Depuis 2012, un spectacle-bénéfice, HahaHaïti, est organisé annuellement pour financer la formation dhumoristes haïtiens à Port-au-Prince.
+Le chargé de poste par intérim du Consulat général dHaïti à Montréal, Kurdy Larèche, a «confirmé la volonté du gouvernement haïtien de mener jusquau bout le protocole dentente qui a été signé entre lÉcole nationale de lhumour de Montréal et le ministère de la Culture dHaïti », avec le soutien de Juste pour rire.
+Le consul Larèche sest engagé, lors dune rencontre avec Mme Richer, à «assurer le suivi des prochaines étapes qui amèneront à linauguration de lÉcole nationale de lhumour à la mi-novembre en Haïti». Lécole émargera au budget du ministère haïtien de la Culture, ont convenu les différentes entités impliquées. Un directeur de lÉcole nationale de lhumour de Montréal prendra pour la première année les rênes de lENHH pour assurer la rigueur et les exigences académiques. Les diplômes seront signés par le ministère haïtien de lÉducation nationale et de la Formation professionnelle.
+Le corps professoral recruté en Haïti sera en formation intensive cet automne à Montréal. Boursier haïtien à lÉcole nationale de lhumour (ENH) du Québec, Jean-Samuel André rejoindra le corps professoral à lissue de son cycle détudes. Une bourse a aussi été octroyée cette année à Garihanna Jean-Louis, un humoriste haïtien qui a performé le 19 juillet dernier sur la grande scène du Théâtre Maisonneuve.

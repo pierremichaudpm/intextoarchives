@@ -1,0 +1,22 @@
+---
+title: "L’immigration ou un bouc émissaire d’une crise politique"
+date: 2024-11-04
+date_source: article
+author: "Woodson Michel"
+slug: "limmigration-ou-un-bouc-emissaire-dune-crise-politique"
+source_url: "https://www.intexto.ca/limmigration-ou-un-bouc-emissaire-dune-crise-politique/"
+wayback_url: "https://web.archive.org/web/20250830142530/https://www.intexto.ca/limmigration-ou-un-bouc-emissaire-dune-crise-politique/"
+---
+
+L’immigration ou un bouc émissaire d’une crise politique
+Formulons cette phrase : le Québec est une machine qui ne peut fonctionner sans l’immigration. Il est démontré que le développement du Québec moderne doit beaucoup à des personnes issues de l’immigration, et qu’il ne faut pas oublier leur apport crucial, notamment celui de la communauté scientifique haïtienne dans les années 60, qui a participé au plus grands chantiers de développement local. Par conséquent, le comportement du premier ministre québécois François Legault au perception, tantôt anti-immigrant, tantôt raciste, témoigne de l’ingratitude envers les immigrants et d’une vision fragmentaire pour l’avenir de la province.
+Décoré pour ses atavismes politiques, François Legault doit se souvenir des évènements historiques.
+Des intellectuels haïtiens ont été en effet engagés directement par l’État québécois dans les années 60 en vue de moderniser le Québec. Bien que certains auteurs québécois parlent plutôt de retard dans son processus de modernisation, il n’en demeure pas moins que le Québec d’alors fut un handicapé parmi les sociétés modernes.
+Par immigration scientifique, j’entends des professeurs chevronnés, dont des Haïtiens, et dont le Québec, quoi que les dirigeants québécois fassent, aura besoin.
+Les politiciens d’origine haïtienne élus sous la bannière de la Coalition avenir Québec manquent de courage pour rappeler à leur premier ministre le soutien inoubliable des professeurs, scientifiques, et chercheurs haïtiens pendant les périodes difficiles qui ont marqué au « fer rouge » l’esprit des Québécois.
+Du point de vue philosophique, le courage est une vertu. Si Aristote fait « grand cas » de la justice; or, le courage caressé par mes actions bonnes est le fil conducteur philosophique de mes réflexions. Comment certains dirigeants politiques peuvent-ils s’écarter de leur nature profonde, qui est intrinsèquement sociale et collective ? L’homme est un être naturellement politique, c’est-à-dire la loi naturelle oblige les uns à cohabiter avec les autres. Le premier ministre Legault est-il plutôt un « ethno nationaliste » ou un « politicien des Québécois blancs » qui a pour seule éthique d’exclure les étrangers ? L’homme politique trouvera un tel comportement, à le juger sur ses conséquences désastreuses, loin d’embrasser l’«éthique de la responsabilité ».
+Devant une telle politique, j’éprouve deux grands malaises :
+1- Communication. Legault fait du français le «talon d’Achille» des immigrants haïtiens, alors qu’il est plus urgent (urgentia ) de penser à une réforme de la langue française au Québec. D’abord, la communication est, contrairement à ce que les gens croient, un contrat, par lequel nous nous engageons à nous comprendre. Or, Legault refuse, par sa manière d’agir, d’écouter les étrangers. Ensuite, il n’en demeure pas moins que, malgré la baisse du niveau de scolarité chez les réfugiés, les immigrants haïtiens maîtrisent encore ou comprennent le français.
+2- Logement. Legault mise sa dernière carte électorale sur la crise migratoire en accusant sans preuve les immigrants de causer la crise de logements au Québec. Toujours la faute des étrangers ! Quelle est la vocation d’un homme politique ? Pour le philosophe Max Weber, un bon homme politique doit posséder trois qualités essentielles pour diriger : la passion, le sentiment de responsabilité et le coup d’œil. Or, Legault ne possède aucune de ces qualités.
+Legault propose, par son éthique d’ethnonationaliste une répartition de masse, qui est vêtue d’humanité, afin de freiner l’afflux de demandeurs d’asile; or, un tel grand dérangement ne revêt d’aucune vertu. Il renforce plutôt au Québec les comportements xénophobes, le racisme systémique, etc. Cette politique est-elle répugnante ?
+Pour terminer, le déplacement « volontaire » proposé par Legault est une antithèse teintée de préjugés, car sa rhétorique politique réduit le Québec à la taille d’une seule classe sociale : les Québécois blancs ! De plus, j’ai vu rarement un premier ministre québécois porter atteinte avec tant de mépris aux droits des personnes racisées.

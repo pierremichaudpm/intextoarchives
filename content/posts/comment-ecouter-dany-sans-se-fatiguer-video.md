@@ -1,0 +1,21 @@
+---
+title: "Comment écouter Dany sans se fatiguer (vidéo)"
+date: 2016-03-02
+date_source: article
+author: "Claude Gilles"
+slug: "comment-ecouter-dany-sans-se-fatiguer-video"
+source_url: "https://www.intexto.ca/comment-ecouter-dany-sans-se-fatiguer-video/"
+wayback_url: "https://web.archive.org/web/20160323062149/http://intexto.ca/comment-ecouter-dany-sans-se-fatiguer-video/"
+---
+
+Autour d’un café avec ses lecteurs Dany Laferrière a enseigné quelques codes à Mongo afin de conquérir le Québec avec le temps. Immigrant lui-même depuis 40 ans, le narrateur explique d’abord au néo-Montréalais comment l’amour est-il différent entre le Nord et le Sud. Pourquoi aussi il y a temps de religieux québécois dans les rues haïtiennes alors qu’ici, à la source, il n’y en a pas.
+«Tout ce qu’on ne te dira pas, Mongo», paru aux Éditions Mémoire d’encrier cet automne poursuit sa longue marche au Québec, et même ailleurs. Lundi, dernier soir du mois de février, Dany Laferrière, son lectorat et passionnés de la littérature ont discuté ensemble autour d’un café à la librairie Raffin de Montréal. Revenant du salon du livre de l’Outaouis, Dany Laferrière surprend son public par une saynète pour plonger ceux qui ne lisent Tout ce qu’on ne te dira pas, Mongo dans l’ambiance du livre.
+Un Sénégalais, fidèle lecteur de l’auteur joue volontiers le rôle de Mongo dans la saynète. Mongo venant d’un pays du Sud avoue son désarroi en relançant à chaque fois le narrateur qui n’est autre que l’immortel Dany Laferrière. Charismatique et plaisant, ce dernier désamorce élégamment les questions sur des sujets controversés comme celui des Autochtones, les premières nations au Canada.
+Fort de ses 40 années d’expériences au Québec, le Port-au-Prince inculque les codes de la société d’accueil au jeune Mongo. Des codes sociaux, politiques, intimes etc. pour s’infiltrer dans une nouvelle culture. Celle du Québec. Dany Laferrière a fait dans sa saynète comme il a procédé dans le livre.
+Tout ce qu’on ne te dira pas, Mongo, en effet, est un mélange de genres littéraires. L’auteur alterne allégrement dialogue – entre un homme qui connait bien le Québec de l’intérieur et un jeune immigrant –, observations et chronique à la radio. Un melting-pot pour aider tout Mongo à conquérir le Québec en une nuit. En une lecture.
+Une Haïtienne d’une voix voluptueuse jouant au jeu questions-réponses de Dany Laferrière demanda à l’auteur si Tout ce qu’on ne te dira pas, Mongo n’est pas un tchala – petit guide connu des amateurs de la loterie en Haïti –. Et comme un démineur le conférencier amènera sa compatriote au pays natal pour une anecdote dans sa carrière journalistique à Port-au-Prince.
+Sous la dictature féroce des Duvalier, il recevait l’historien Roger Gaillard au micro de radio Haïti Inter du feu Jean Dominique quand lui et son auditoire ont entendu parler pour la première de Karl Max. Gaillard, en effet, venait de publier un récit de voyage sur les mouvements de gauche au Mexique, au Guatemala et en Équateur.
+Alors que le directeur de la radio complimentait le journaliste et son invité pour le risque encouru, les tontons macoutes (sbires des Duvalier) n’étaient pas trop loin de la radio et le pays retenait son souffle. Une anecdote balancée sous les regards de J.J. Dominique, la fille du célèbre journaliste haïtien assassiné quinze ans après la chute de la dynastie des Duvalier à l’entrée même de la radio.
+Pas un tchala à proprement parler, mais, Tout ce qu’on ne te dira pas, Mongo est un guide de survie pour les immigrants que Dany Laferrière appelle les conquérants des sous-sols. Une vraie description de la culture québécoise où la demande de pardon est l’une des plus grandes sentences qu’on exigerait à quiconque qui serait en contravention avec la société.
+« Ce n’est pas parce qu’on est né dans un pays qu’on le connaît. On le sent mieux que personne, mais on ne le connaît pas mieux que personne, parce qu’on n’a pas la distance. On ne l’a pas étudié », a indiqué l’auteur.
+Après la saynète, les échanges…tous ceux qui procurent d’un exemplaire de Tout ce qu’on ne te dira pas, Mongo d’arracher une signature de l’Haïtien devenu célèbre dans les années quatre-vingts avec son roman Comment faire l’amour avec un nègre sans se fatiguer. En attendant d’apprendre les codes pour conquérir l’Amérique…en une nuit ou avec le temps.
