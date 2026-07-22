@@ -1,7 +1,7 @@
 # inTexto Archives
 
 Site statique d'archives du journal **inTexto**, journal de la communauté
-haïtienne de Montréal (2014–2026). Ce site est **distinct du site actuel
+haïtienne de Montréal (2014–2025). Ce site est **distinct du site actuel
 intexto.ca** (relancé depuis sous une nouvelle forme) : la base de données
 WordPress originale ayant été perdue, les articles ont été récupérés de la
 [Wayback Machine](https://web.archive.org/) et convertis en fichiers Markdown.

@@ -25,7 +25,7 @@ DIST_DIR = BASE_DIR / "dist"
 SITE_TITLE = "inTexto Archives"
 SITE_TAGLINE = (
     "Archives du journal inTexto (intexto.ca), journal de la communauté "
-    "haïtienne de Montréal, 2014–2026."
+    "haïtienne de Montréal, 2014–2025."
 )
 SITE_ACTUEL_URL = "https://www.intexto.ca/"
 LOGO_SRC = BASE_DIR / "assets" / "intextologo2.png"
@@ -321,7 +321,7 @@ TPL_INDEX = """{% extends "base" %}
 <p class="resultats-vide cache" id="aucun-resultat">Aucun article ne correspond à votre recherche.</p>
 {% for annee, liste in groupes %}
 <section class="groupe-annee" data-annee="{{ annee or 'sans-date' }}">
-  <h2 class="annee"{% if loop.first %} id="annees"{% endif %}>{% if annee %}{{ annee }}{% else %}Date inconnue (articles récents, 2025–2026){% endif %}</h2>
+  <h2 class="annee"{% if loop.first %} id="annees"{% endif %}>{% if annee %}{{ annee }}{% else %}Date inconnue (articles récents, 2025){% endif %}</h2>
   <ul class="articles">
     {% for a in liste %}
     <li data-slug="{{ a.slug }}">
@@ -347,7 +347,7 @@ TPL_ARTICLE = """{% extends "base" %}
   <p class="meta">Publié le {{ a.date_fr }} <span class="approx">(date relevée sur une page d’accueil ou de section archivée)</span></p>
   {% endif %}
   <p class="avis-extrait">Texte intégral non archivé — extrait provenant de
-  l’index du site. Cet article récent (2025–2026) n’a pas été capturé par la
+  l’index du site. Cet article récent (2025) n’a pas été capturé par la
   Wayback Machine avant la disparition du site.</p>
   {% else %}
   <p class="meta">
