@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Révoqué alors qu’il était malade — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Révoqué alors qu’il était malade</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 9 février 2020
+  </p>
+  
+  <div class="corps">
+    <p>« En arrêt complet de travail » entre le 5 septembre et le 5 novembre 2017, Jean-Philippe Lafortune, 55 ans, agents de programmes au Service correctionnel Canada (SCC) depuis 17 ans est mis à pied le 14 septembre de la même année pour « rendement insatisfaisant » selon sa lettre de licenciement.</p>
+    <p>C’est une lettre d’éloge d’une gestionnaire du SCC, qui avait perdu son poste, écrite par M. Lafortune, en 2015, qui serait à la base d’une escalade de “conflits” entre lui et son employeur, qui a mené à sa révocation.</p>
+    <p>« Notre gestionnaire, Myra Pelletier, est une personne qui fonctionne en mode résolution de problèmes… son objectif n’est pas de chercher un coupable, mais de résoudre les problèmes à mesure qu’ils se présentaient », peut-on lire dans la pétition de Jean-Philippe Lafortune, datée de 2015.</p>
+    <p>Huit mois plus tard, Mme Pelletier récupère son poste. Avant de quitter, son prédécesseur rédige un Plan d’action visant à encadrer et à évaluer le travail de l’agent de programmes J.P.Lafortune après 17 ans à faire le même travail sous prétexte qu’il n’avait pas les aptitudes ou les certifications requises du Modèle de programme correctionnel intégré (MPCI).</p>
+    <p>Plan d’action</p>
+    <p>Or, en 2014, le SCC a recommandé M.Lafortune à la suite d’une évaluation des intervenants «pour la prestation du programme, mais avec des conditions particulières » selon les documents obtenus par In Texto.</p>
+    <p>Malgré tout, Jean-Philippe Lafortune, psychosociologue de formation, doublé d’un niveau d’études supérieures en médiation de l’Université de Sherbrooke, accepte de participer au Plan d’action.</p>
+    <p>Résultat des courses, le SCC conclut que l’agent de programmes de 17 ans de carrière « ne possède pas les habilités nécessaires ». En août 2016, un gestionnaire de programme reproche à M. Lafortune sa lenteur dans la production de plusieurs rapports et quelques « anomalies dans les tâches administratives », ce qu’il rejette.</p>
+    <p>Pourtant, dans un courriel daté de mars 2017, adressée à M. Lafortune, une autre gestionnaire du SCC lui reconnait toutefois de belles capacités dans son métier.</p>
+    <p>« Lors de notre rencontre du 30 novembre dernier (soit novembre 2016), comme nous étions conscients de tes habiletés de prestations de programmes, nous t’avons fait une proposition.»</p>
+    <p>Extrait d’un courriel adressé par une gestionnaire à Jean-Philippe Lafortune.</p>
+    <p>Le service correctionnel proposait donc à l’agent de le muter au CFF, un centre pénitencier de Laval à sécurité minimale, ce que l’agent a accepté.</p>
+    <p>Il attendait son transfert. Mais « pour différentes raison personnelles, cette proposition n’a pas été retenue », indique la supérieure de M.Lafortune. Elle lui propose alors d’aller dans un autre centre, soit le CRR, cette fois.</p>
+    <p>L’agent avait une période de réflexion de trois mois avant de se décider, mais entretemps il est tombé en arrêt de travail en raison d’une dépression due au stress qu’il vit au cours de cette période. Un billet de la Clinique médicale de Verdun, quartier où il habite, le confirme.</p>
+    <p>« La police, accompagnée de service ambulancier, était même venue me chercher parce que j’ai été signalé par quelqu’un avec qui je parlais au téléphone et qui trouvait que mes propos étaient suicidaires. J’ai passé deux jours en psychiatrie », se souvient l’agent.</p>
+    <p>En avril 2017, le SCC décide de le rétrograder « pour rendement insatisfaisant » compte tenu du fait que M. Lafortune n’ « atteigne pas les objectifs du poste d’agent de programme WP-04 ».</p>
+    <p>L’employé est toujours en congé maladie à ce moment-là et n’était toujours pas en mesure de fournir une réponse aux différentes propositions.</p>
+    <p>Estimant avoir brûlé toutes les étapes administratives, le SCC renvoie l’agent le 14 septembre 2017, alors qu’il disposait d’un billet de médecin stipulant ses inaptitudes physique et mentale à travailler pour la période du 5 septembre au 5 novembre.</p>
+    <p>« Au début, j’assimilais cela à un règlement de compte. Mais j’ai fini par voir qu’il y avait une exclusion due à mes origines »,</p>
+    <p>conclut Jean-Philippe Lafortune qui n’a plus de revenus depuis son licenciement</p>
+    <p>Représentation syndicale déficiente</p>
+    <p>« Si j’étais toi, je dirais : alléluia! Parce que enfin, tu vas arrêter de te faire harceler », aurait dit une représentante syndicale du District du Québec de SCC à M. Lafortune lorsque ce dernier l’informe de la proposition de mutation.</p>
+    <p>Le syndicat n’a fait aucune représentation quant à la défense des droits de M.Lafortune au cours de ces « harcèlements ». L’agent de programme a été jusqu’à Ottawa au syndicat mère pour finalement l’aider à déposer deux griefs contre l’employeur totalisant 40 000 dollars en dommage et intérêt. Les deux ont été rejetés</p>
+    <p>Nous avons contacté Dominique Widmard, la représentante syndicale de Jean-Philippe Lafortune. Elle a décliné notre demande d’entrevue à ce sujet en se retranchant derrièere le fait qu’elle «travaille encore sur le dossier» et qu’elle ‘ ne veut pas commenter une affaire confidentielle.»</p>
+    <p>L’ombudsman du SCC Alain Tousignant, qui a pris sa retraite entre temps, aurait parlé de conflit dans cette affaire. Il aurait demandé une médiation dans ce dossier, une recommandation non suivie par le Service correctionnel.</p>
+    <p>SCC justifie</p>
+    <p>Contacté par In Texto, le SCC indique que « Tous les employés ont droit à des procédures disciplinaires équitables et professionnelles ce qui comprend l’examen des allégations portées contre eux et la possibilité de débattre de ces allégations par le biais d’une audience disciplinaire ou d’une enquête disciplinaire. »</p>
+    <p>Il rappelle que les employés ont toutefois l’obligation d’ « agir selon des normes juridiques et éthiques et sont assujettis à des règles de conduite professionnelle et à un code de discipline ».</p>
+    <p>Une porte-parole du Service correctionnel laisserait entendre que le licenciement de Jean-Philippe Lafortune serait fait dans les normes lorsque le journal lui a posé la question par courriel.</p>
+    <p>« Si un employé ne respecte pas les normes énoncées dans cette directive, des mesures correctives et parfois disciplinaires peuvent en résulter, allant jusqu’au licenciement. » Patricia Jean Gestionnaire régionale des communications p.i.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20200212163758/http://www.intexto.ca/revoque-alors-quil-etait-malade/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

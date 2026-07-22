@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deux Haïtiens injectent 4 millions dans Saint-Michel (vidéo) — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Deux Haïtiens injectent 4 millions dans Saint-Michel (vidéo)</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 19 janvier 2015
+  </p>
+  
+  <div class="corps">
+    <p>Ils sont nés ou arrivés d’Haïti très jeune dans ce quartier de mauvaise réputation. «Mais ça change aujourd’hui» affirme Frantz Saintelemy et sa femme Vickie Joseph.</p>
+    <p>«Il faut montrer à des jeunes du quartier qu’il n’y a pas juste des modèles de gangs de rue ou d’athlètes mais aussi des modèles de gens d’affaires»,</p>
+    <p>Frantz Saintellemy, l’un des deux plus gros propriétaire de l’édifice.</p>
+    <p>Depuis un peu plus d’un an, la beauté du 3737 Crémazie Est, à Montréal, en bordure de l’autoroute 40 saute aux yeux. Mais rien ne saurait vous dire que la gestion de deux étages de cet immeuble à bureau est entièrement haïtienne. Frantz Saintellemy et sa femme Vickie Joseph, deux Haïtiens qui ont grandi respectivement dans Saint-Michel et Montréal-Nord ont pris, en 2012, le 2e étage de l’édifice complètement désaffecté. «Il y avait rien ici, rien, se souvient Mme Joseph, il n’y avait aucun mur, rien du tout».</p>
+    <p>«Pour moi Saint-Michel a une valeur sentimentale, raconte Frantz Saitellemy à In Texto avec la main droite vissée sur sa poitrine, voilà pourquoi on a investi ici». Lui et sa conjointe ont investi près de 2 millions au 2e étage qui abrite actuellement une dizaine d’entreprises de toute sorte. Des travaux sont en cours actuellement au 3e étage, ce qui portera à près de 4 millions de dollars la valeur de leur investissement.</p>
+    <p>Les Arabes appliquent</p>
+    <p>«Il faut montrer à des jeunes du quartier qu’il n’y a pas juste des modèles de gangs de rue ou d’athlètes mais aussi des modèles de gens d’affaires», affirme Frantz Saintellemy l’un des deux plus gros propriétaire de l’édifice. Grâce à leur initiative, les Saintelemy, plus de 70 personnes de toutes les communautés culturelles ont pu trouver un emploi dans leur quartier. Il déplore que trop souvent, dans la communauté haïtienne d’ici, on soit un peu gêné de montrer qu’on a réussi.</p>
+    <p>La majorité de ces gens sont des immigrants d’origine arabe, car «ce sont eux qui viennent appliquer le plus souvent», note Marie-Guerline Saintelmy, gestionnaire et vice-présidente Finance du Groupe Réno-Métrix une des entreprises ayant pignon sur rue au «3737». «On est ouvert à toutes les communautés, précise Mme Saintelmy, mais on voudrait prioriser la nôtre. On privilégie nos jeunes professionnels».</p>
+    <p>Les entreprises qui siègent au «3737» sont à la recherche de bras dans plusieurs domaines. On parle de représentant sur la route, solliciteurs (par téléphone), gestionnaire de projet ou immobilier, menuisier, technicien comptable, adjoint (e), ingénieurs entre autres.</p>
+    <p>Visite guidée d’une des propriétaires de deux étages du 3737 Crémazie Est à Montréal Vickie Joseph et de la gestionaire Marie-Guerline Saintelmy</p>
+    <p>Belle initiative! Nous avons besoin d’exemple positif de ce genre dans notre communauté afin d’inspirer les jeunes à un avenir meilleur.</p>
+    <p>Quel bel exemple pour la communauté !! Ce genre d’initiative et de projet est à continuer et promouvoir.</p>
+    <p>Toute mes félicitations super projet !!!!! Vraiment beau ey bien penser !!!</p>
+    <p>Felicitations mes compatriotes, je viens juste d’immigrer au Canada et c’est une fierté pour moi…</p>
+    <p>Je ne trouve pas les mots justes pour exprimer mes impressions via votre initiative. L’image positif que vous projetez est comme une goutte d’eau fraîche dans notre soif vers une perspective d’avenir dans le pays pour dire  » wi nou kapab » version créole de « yes we can ». Vous êtes ma référence actuellement en matière de jeunes professionnels créatifs venant de la communauté haïtienne.</p>
+    <p>Bravo à vous deux.</p>
+    <p>Wow!!!!! Chapeau!!!! Beau projet et belle initiative!!!! Vous êtes des modèles pour la communauté, je suis fière!!! C’est rafraîchissant et inspirant. Bon succès!!!!</p>
+    <p>Mes félicitations aux deux jeunes qui changent la vision des autres communautés et ainsi que la nôtre. Longue vie à votre entreprise.</p>
+    <p>Félicitations! Très belle iniative ! Et bonne continuité !</p>
+    <p>Je suis bouche bée et très très très fière de cette belle initiative ! Bonne continuité et surtout bon succès !</p>
+    <p>j’aime voir et d’entendre ce type de chose d’un peu partout, mais surtout et avant tout de la communaute haitienne. Bravo! Et je vais voir dans quelle mesure que je pourrais contribuer. Bonne chance!</p>
+    <p>Je salue le succès de ce couple et l’initiative d’investir dans St-Michel. Cependant, je me questionne sur la discrimination qui est ouvertement prônée. N’est-il pas contre-productif d’offrir des emplois uniquement à une communauté ethnique pour en laisser une autre derrière. À mon avis, il s’agit de reproduire un ancien modèle si souvent décrié. Bien que vous soyez libre d’embaucher qui vous voulez, vous devriez y réfléchir.</p>
+    <p>Bonne journée</p>
+    <p>Bonjour F.Levesque, merci de votre commentaire et merci surtout de choisir In Texto pour vous informer sur la communauté. Je voudrais vous signaler que les responsables haïtiens de ces entreprises auraient bien aimé embaucher des jeunes de la communauté. Mais ces jeunes-là se manifestent moins que les autres. Ils le disent dans l’article: «on voudrait prioriser la nôtre. On privilégie nos jeunes professionnels.» Et pour cela il faudrait qu’ils appliquent pour les postes qui sont demandés ( voir l’article). Il y a un lien également vers le site Internet de Réno-Métrix où l’on peut trouver toutes les informations à ce sujet. Encore une fois merci.</p>
+    <p>Rédaction In Texto</p>
+    <p>Grand plaisir de contampler cette belle er grande entreprise felicitations a ces deux grand Haïtiens que Dieu les garde toujours.</p>
+    <p>Je vous présente toutes mes félicitations ainsi que mes souhaits de réels succès dans votre entreprise.</p>
+    <p>Je suis très fière de vous félicitation,on a besoin de gens comme vous.</p>
+    <p>Que cet investissement fructifie pour le financement de bien d’autres! Kenbe la.</p>
+    <p>Toutes mes félicitations.  Je vous encourage et vous êtes un pilier  dans la communauté. C’est pourquoi je tiens  à vous exprimer toute ma gratitude et mes plus sincères remerciements pour cette exceptionnelle contribution.</p>
+    <p>Je vous dis BRAVO et bonne continuité.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20150124100131/http://intexto.ca:80/deux-haitiens-injectent-4-millions-dans-saint-michel-video/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

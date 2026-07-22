@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Année 2015 — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<h2 class="annee">Articles de 2015</h2>
+<ul class="articles">
+  
+  <li>
+    <a class="titre" href="../posts/un-autre-haitien-investit-27-millions-dans-saint-michel-videos.html">Un autre Haïtien investit 2,7 millions dans Saint-Michel ( vidéos)</a><br>
+    <span class="meta">22 novembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/tourisme-haiti-se-lance-dans-le-forfait-tout-inclus-video.html">Tourisme : Haïti se lance dans le forfait tout-inclus (vidéo)</a><br>
+    <span class="meta">17 novembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-consulat-general-dhaiti-a-montreal-change-dadresse-video.html">Le Consulat général d’Haïti à Montréal change d’adresse (vidéo)</a><br>
+    <span class="meta">16 novembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/linitiative-je-fais-mtl-chez-les-haitiens.html">Linitiative «Je fais Mtl» chez les Haïtiens (vidéos)</a><br>
+    <span class="meta">12 novembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-haitiens-laureats-de-lenap-du-quebec.html">Deux Haïtiens lauréats de l’ÉNAP du Québec</a><br>
+    <span class="meta">3 novembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/natcom-honoree-pour-son-implication-sociale-en-haiti-video.html">Natcom honorée pour son implication sociale en Haïti (vidéo)</a><br>
+    <span class="meta">2 novembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-statut-les-haitiens-sauves-par-lelection-de-trudeau-audio.html">Sans statut: les Haïtiens sauvés par lélection de Trudeau (Audio)</a><br>
+    <span class="meta">22 octobre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-des-adoptions-qui-se-terminent-mal-au-quebec.html">Haïti: des adoptions qui se terminent mal au Québec</a><br>
+    <span class="meta">14 octobre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/gang-de-rue-les-communautes-noires-se-consultent.html">Gang de rue: les communautés noires se consultent</a><br>
+    <span class="meta">7 octobre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-place-en-memoire-de-paul-dejean-video.html">Une Place en mémoire de Paul Dejean (vidéo)</a><br>
+    <span class="meta">4 octobre 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jeanne-aux-gonaives-une-controverse-sur-un-12-million-refait-surface.html">Jeanne aux Gonaïves : une controverse sur un 1/2 million refait surface</a><br>
+    <span class="meta">27 septembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/standing-ovation-a-justin-viard.html">Standing ovation à Justin Viard</a><br>
+    <span class="meta">24 septembre 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-haitien-a-la-tete-de-lescouade-contre-la-criminalite-a-montreal.html">Un Haïtien à la tête de l’Escouade contre la criminalité à Montréal</a><br>
+    <span class="meta">24 septembre 2015 — Par <span class="auteur">Pierre Emmanuel</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-bchm-cherche-15-m-pour-acheter-son-local.html">Le BCHM cherche 1,5 M pour acheter son local</a><br>
+    <span class="meta">21 septembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/federales-une-haitienne-en-forces-et-democratie.html">Fédérales :une Haïtienne en «Forces et Démocratie»</a><br>
+    <span class="meta">18 septembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mme-chancy-ou-la-premiere-maison-dhaiti.html">Mme Chancy ou la première «Maison dHaïti»</a><br>
+    <span class="meta">13 septembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/consulat-general-dhaiti-a-montreal-lareche-se-positionne.html">Consulat général dHaïti à Montréal: Larèche se positionne</a><br>
+    <span class="meta">9 septembre 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/on-ose-enfin-parler-du-caca.html">Santé / On ose enfin parler du caca !</a><br>
+    <span class="meta">30 août 2015 — Par <span class="auteur">Alain Bernard</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-haitiens-se-battent-pour-bourassa.html">Deux Haïtiens se battent pour Bourassa</a><br>
+    <span class="meta">26 août 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/citadelle-immo-ou-lagence-immobiliere-haitienne.html">Citadelle Immo ou l’agence immobilière haïtienne</a><br>
+    <span class="meta">19 août 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-femmes-noires-autorisees-a-donner-du-sang.html">Les femmes noires autorisées à donner du sang</a><br>
+    <span class="meta">11 août 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haitir-dominicaine-une-autre-marche-a-montreal-videos.html">Haïti/R.Dominicaine, une autre marche à Montréal (vidéos)</a><br>
+    <span class="meta">9 août 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-40-candidats-refusent-de-sunir-ou-clarens-renois.html">Haïti: 40 candidats refusent de s’«UNIR» ou Clarens Renois</a><br>
+    <span class="meta">4 août 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haitirepublique-dominicaine-marche-en-blanc-a-montreal-videos.html">Haïti/République Dominicaine: marche en blanc à Montréal (vidéos)</a><br>
+    <span class="meta">2 août 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/vers-une-caisse-populaire-haitienne-a-montreal.html">Vers une caisse populaire haïtienne à Montréal</a><br>
+    <span class="meta">2 août 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/festival-mizik-kreyol-montreal-satisfaisant-malgre-la-pluie.html">Festival mizik kreyol Montréal, satisfaisant malgré la pluie</a><br>
+    <span class="meta">21 juillet 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhumour-pour-exorciser-le-racisme-et-limmigration.html">L’humour pour exorciser le racisme et l’immigration</a><br>
+    <span class="meta">21 juillet 2015 — Par <span class="auteur">Alain Bernard</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/apres-raif-badawi-des-certificats-de-selection-aux-haitiens.html">Après Raïf Badawi, des certificats de sélection aux Haïtiens?</a><br>
+    <span class="meta">9 juillet 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-en-folie-se-lache-defile-rara-immortel-wyclef-jean.html">«Haïti en folie» se lâche: défilé rara, immortel, Wyclef Jean</a><br>
+    <span class="meta">7 juillet 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-tour-haiti-sur-mesure.html">Un « Tour Haïti » sur mesure</a><br>
+    <span class="meta">6 juillet 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-pere-et-sa-fille-en-spectacle.html">Un père et sa fille en spectacle</a><br>
+    <span class="meta">30 juin 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jai-vecu-dabord-limmortel-dany-laferriere-video.html">« Jai vécu dabord », – limmortel Dany Laferrière (vidéo)</a><br>
+    <span class="meta">29 juin 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quand-dany-laferriere-devient-dany-le-vaillant.html">Quand Dany Laferriere devient Dany le vaillant</a><br>
+    <span class="meta">29 juin 2015 — Par <span class="auteur">Pierre Emmanuel</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-meilleure-pharmacienne-chez-jean-coutu-est-haitienne.html">La meilleure pharmacienne chez Jean Coutu est Haïtienne</a><br>
+    <span class="meta">17 juin 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ayiti-makaya-a-la-carifiesta-montreal.html">« Ayiti Makaya » à la Carifiesta Montréal</a><br>
+    <span class="meta">14 juin 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-des-legislateurs-noirs-reflechissent-ensemble.html">Canada : des législateurs noirs réfléchissent ensemble</a><br>
+    <span class="meta">14 juin 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-accueille-haiti-chez-rire.html">Québec accueille «Haïti chez Rire»</a><br>
+    <span class="meta">11 juin 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/peinture-crucifixion-et-corps-feminin-chez-ralph-civil.html">Peinture: Crucifixion et corps féminin chez Ralph Civil</a><br>
+    <span class="meta">9 juin 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-presidentielles-le-pourquoi-pas-moi-haitien.html">Haïti présidentielles: le «Pourquoi pas moi» haïtien</a><br>
+    <span class="meta">26 mai 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-montrealais-promoteur-immobilier-en-haiti.html">Un Montréalais promoteur immobilier en Haïti</a><br>
+    <span class="meta">15 mai 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-troisieme-edition-des-grands-prix-mosaique.html">Une troisième édition des Grands prix de Média Mosaïque</a><br>
+    <span class="meta">13 mai 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fanfare-et-10-bands-pour-le-spectacle-de-lequipe-parole-de-vie.html">Fanfare et 10 bands pour le spectacle de l’Équipe parole de vie</a><br>
+    <span class="meta">5 mai 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/federales-lhaitien-gerard-pierre-soutient-joly-dans-ahuntsic-cartierville.html">Fédérales : l’Haïtien Gérard Pierre soutient Joly dans Ahuntsic-Cartierville</a><br>
+    <span class="meta">5 mai 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cafe-haitien-noula-au-quebec-mais-pas-a-montreal.html">Café haïtien: «nOula» au Québec, mais pas à Montréal</a><br>
+    <span class="meta">27 avril 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-stauts-haitiens-venez-nayez-pas-peur-kathleen-weil.html">Sans stauts haïtiens : «venez, nayez pas peur», Kathleen Weil</a><br>
+    <span class="meta">26 avril 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/christie-desir-couronnera-la-miss-black-beauty-a-montreal-audio.html">Christie Désir couronnera la miss black beauty à Montréal (audio)</a><br>
+    <span class="meta">20 avril 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/hockey-balle-haiti-de-la-rue-a-la-suisse.html">Hockey-balle Haïti : de la rue à la Suisse (vidéo)</a><br>
+    <span class="meta">20 avril 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/consommons-haitien-mais-quid-du-service-a-la-clientele.html">Consommons haïtien, mais quid du service à la clientèle</a><br>
+    <span class="meta">2 avril 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhomme-derriere-sodi-produits-de-beaute.html">Lhomme derrière « Sodi produits de beauté »</a><br>
+    <span class="meta">25 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/madawa-nika-cadet-ou-le-souci-dune-releve-efficace.html">Madawa Nika Cadet ou le souci dune relève efficace</a><br>
+    <span class="meta">25 mars 2015 — Par <span class="auteur">Pierre Emmanuel</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-passeports-des-sans-statuts-en-priorite-a-montreal.html">Les passeports des sans statuts en priorité à Montréal</a><br>
+    <span class="meta">19 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dorothy-alexandre-boycott-des-coiffeuses-dominicaines-pas-sur.html">Dorothy Alexandre: boycott des coiffeuses dominicaines? Pas sûr!!</a><br>
+    <span class="meta">18 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-funerailles-de-la-mere-de-nachena-mathieu-ce-samedi.html">Les funérailles de la mère de Nachena MATHIEU ce samedi</a><br>
+    <span class="meta">12 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-renvoi-un-reve-brise-faute-de-papier-et-dargent.html">Haïti renvoi : un rêve brisé faute de papier et dargent</a><br>
+    <span class="meta">10 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-bebe-de-trois-mois-a-la-morgue-depuis-4-mois-video.html">Un bébé de trois mois à la morgue depuis 4 mois (vidéo)</a><br>
+    <span class="meta">6 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-consulat-dhaiti-soccupe-des-funerailles-de-la-mere-de-nachena-mathieu.html">Le consulat d’Haïti s’occupe des funérailles de la mère de Nachena Mathieu</a><br>
+    <span class="meta">5 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/republique-dominicaine-marche-contre-lapartheid-a-montreal.html">République Dominicaine: marche contre l’apartheid à Montréal</a><br>
+    <span class="meta">5 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/citoyens-de-nulle-part-grande-premiere-a-montreal.html">«Citoyens de nulle part»: grande première à Montréal (vidéos)</a><br>
+    <span class="meta">1 mars 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-chomage-a-t-il-une-couleur-a-laval.html">Le chômage a-t-il une couleur à Laval ?</a><br>
+    <span class="meta">26 février 2015 — Par <span class="auteur">Claude Gilles</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-ancienne-miss-pour-miss-beaute-noire-internationale.html">Une ancienne miss pour Miss beauté noire internationale</a><br>
+    <span class="meta">17 février 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dorothy-vise-rhau.html">Dorothy vise «Rhau» (vidéo)</a><br>
+    <span class="meta">14 février 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/paul-dejean-retrouve-sa-place-a-rivierre-des-prairies-video.html">Paul Déjean retrouve sa «Place» à Rivièrre-des-Prairies (vidéo)</a><br>
+    <span class="meta">13 février 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mois-de-lhistoire-des-noirs-ou-lunion-de-steve-anna-video.html">Mois de l’histoire des Noirs ou lunion de Steve-Anna (vidéo)</a><br>
+    <span class="meta">25 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/miss-beaute-noire-internationale-mbb-revient-a-montreal-video.html">Miss beauté noire internationale (MBB) revient à Montréal (vidéo)</a><br>
+    <span class="meta">22 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-haitiens-injectent-4-millions-dans-saint-michel-video.html">Deux Haïtiens injectent 4 millions dans Saint-Michel (vidéo)</a><br>
+    <span class="meta">19 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-renvoi-laction-de-solidarite-sans-frontieres.html">Haïti renvoi : laction de Solidarité sans frontières</a><br>
+    <span class="meta">19 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-papier-depuis-22-ans.html">Sans papier depuis 22 ans</a><br>
+    <span class="meta">14 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/bel-coq-la-cuisine-haitienne-a-louest-de-montreal.html">Bel coq, la cuisine haïtienne à l’ouest de Montréal</a><br>
+    <span class="meta">12 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/financement-le-fonds-1804-a-double-la-mise.html">Financement : le Fonds 1804 a doublé la mise avec Réno-métrix</a><br>
+    <span class="meta">10 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-montrealais-qui-accroche-djakout1-plus-haut-video.html">Le Montréalais qui accroche Djakout#1 plus haut (vidéo)</a><br>
+    <span class="meta">3 janvier 2015 — Par <span class="auteur">Jean Numa Goudou</span></span>
+  </li>
+  
+</ul>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haïti : assassinat et «coup d’État» en perspective — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Haïti : assassinat et «coup d’État» en perspective</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 9 juillet 2021
+  </p>
+  
+  <div class="corps">
+    <p>Avant d’avoir été sauvagement assassiné, dans la nuit du 6 au 7 juillet dernier, Jovenel Moïse( bien que contesté au cours de la cinquième année) faisait partie, avec 10 sénateurs, des 11 reliquats de la démocratie haïtienne. Le parlement où devrait siéger une trentaine de sénateurs et plus de 120 députés est dysfonctionnel depuis plus d’un an.</p>
+    <p>Le président assassiné n’était pas trop chaud à l’idée d’organiser des élections avant la fin du mandat des parlementaires. Dans un Tweet, il avait lui-même constaté la fin du règne de la 50e législature.</p>
+    <p>Le mandat de tous les maires arrivait à expiration du même souffle. Le président s’est évertué à les remplacer lui-même à coup de décrets pris dans son palais.</p>
+    <p>« Après Dieu »</p>
+    <p>Haïti vit sous l’égide d’un régime bicaméral. Autrement dit, la poire de la démocratie est coupée en deux avec un morceau au parlement et l’autre à l’exécutif (Président et premier ministre).</p>
+    <p>Mais, depuis plus d’un an, Jovenel Moïse s’accordait le plein pouvoir, dirige par décret. « Après Dieu, le pouvoir c’est moi. » disait-il lors dune intervention publique. Ironiquement, « après Dieu » était devenu son surnom à travers le pays.</p>
+    <p>Il y a à peine une semaine, il avait même accordé quitus, par un décret, à des anciens comptables de deniers publiques, notamment des anciens premiers ministres (de 2007 à 2017), ayant eu un rapport favorable.</p>
+    <p>Cette responsabilité partagée incombe à la Cour des comptes (un tribunal administratif) qui réalise ces audits et le parlement qui doit prononcer la décharge, après analyse.</p>
+    <p>Autant vous dire que la démocratie, le pouvoir se résumait à un seul homme fort du pays. Appel à la démission à travers des manifestations violentes, « pays lock », violence des gangs, enlèvements, Jovenel Moïse sous le parapluie de la communauté internationale, était imperméable et imperturbable.</p>
+    <p>Coup de théâtre: Jovenel Moïse a été tué de 12 balles selon le juge de paix ayant fait le constat légal et « a été maltraités » lors de l’assaut : yeux crevés, bras brisés. On a retrouvé le chef de l’État dans un sale état.</p>
+    <p>La lutte pour la primature</p>
+    <p>Depuis l’absence du parlement, M.Moïse a connu au moins quatre premiers ministres : Jean Michel Lapin, Joseph Jouthe, Claude Joseph et le dernier en date le Dr Ariel Henry.</p>
+    <p>Ce dernier nommé lundi dernier devait entrer en fonction le jour même de l’assassinat de celui qui l’a nommé. Et Claude Joseph, la veille avait remis sa démission au chef de l’État en vue de faciliter l’installation de son successeur.</p>
+    <p>C’est ce même Claude Joseph qui se présente comme premier ministre, parle et engage le pays aujourd’hui, sur la base, dit-il, de l’article 149 de la Constitution.</p>
+    <p>« Claude Joseph n’est pas premier ministre. »- Ariel Henry</p>
+    <p>« Selon le vœu du président Jovenel Moïse, il est le ministre des Affaires étrangères de mon gouvernement.», affirme le Dr Henry lors d’une entrevue sur les ondes de Radio Métropole, à Port-au-Prince.</p>
+    <p>Un gouvernement qui est toujours en phase de constitution dans le cadre d’accord politique avec une majorité d’acteurs sur l’échiquier politique, des éléments de la société civile entre autres.</p>
+    <p>Le neurochirurgien dit vouloir éviter de polémiquer avec son subalterne qui rencontre les membres du Corps Group, à titre de premier ministre autour de la situation actuelle.</p>
+    <p>Lorsque les journalistes lui parle de reconnaissance de la communauté internationale de M. Joseph, Ariel s’exclame : «Excusez-moi, ne mêlez pas la communauté internationale dans nos affaires.»</p>
+    <p>« Lorsqu’un ministre des Affaires étrangères invite des ambassadeurs accrédités dans un pays à une rencontre, à quel ambassadeur allez-vous demandé de ne pas l’entendre?»-Ariel Henry</p>
+    <p>Ce qui reste de PHTK et l’opposition</p>
+    <p>D’autres ne sont pas aussi nuancé que le médecin. Certains leaders d’opinion, comme Herold Jean-François de Radio Ibo, à Port-au-Prince, qualifient de « coup d’État » la posture de Claude Joseph.</p>
+    <p>Il estime que M. Joseph, ayant démissionné de ses fonctions un jour avant, ne jouit d’aucune légitimité. Alors que, à contrario, Ariel Henry a en main un arrêté de nomination dûment signé par Jovenel Moïse avant son assassinat.</p>
+    <p>« Nous pensons que Claude Joseph c’est le danger, un grand danger.», nous lance en entrevue Paul Denis, dirigeant du parti INIFOS et opposant farouche à l’ancien président.</p>
+    <p>Il avait vertement critiqué l’arrivée de son « ami », le Dr Henry, comme chef de gouvernement en raison de sa nomination « par un président de facto ». Depuis le 7 février dernier, lui et ses collègues de l’opposition considéraient que le mandat du président assassiné a expiré.</p>
+    <p>Il parle aujourd’hui d’une «situation nouvelle ».</p>
+    <p>Et sur cette base, « on peut envisager d’accepter Ariel Henry bien qu’il ait été nommé de façon irrégulière. Mais cela doit se faire dans le cadre d’un consensus large.»</p>
+    <p>Paul Denis</p>
+    <p>C. Joseph et la communication</p>
+    <p>Dans la foulée d’une journée mouvementée et émaillée d’opérations policières conjointes avec la population à la recherche de mercenaires qui auraient tué M.Moïse, Claude Joseph affirme en mêlée de presse qui discute avec ses « amis et frères de l’opposition ».</p>
+    <p>De quoi? Personne ne sait. Car, depuis ces événements, M.Joseph parait très allergique questions. À chacune de ces rencontres avec la presse, il se contente d’une déclaration succincte avant de tourner le dos aux journalistes.</p>
+    <p>Sur les ondes la radio Magik-9, Claude Joseph a même raccroché au nez au micro du journaliste Robenson Geffrard. Ce dernier tentait de savoir si les agents de l’Unité de sécurité de la garde présidentielle (USGPN) avaient riposté lors de l’assaut contre la résidence de M.Moïse.</p>
+    <p>« Permettez-moi d’avoir cette réaction seulement.», rétorque C. Joseph, un brin irrité.</p>
+    <p>«Je vais faire une adresse à la Nation et demander qu’on se serre les coudes pour que le président Moïse obtienne justice. »</p>
+    <p>À vous entendre, ce qui s’est passé n’a rien à voir avec les opposants? «Ce n’est pas ce que j’ai dit. « Si vous m’appelez, ne me mettez pas les mots à la bouche.», lance M.Joseph avec colère avant de raccrocher la ligne.</p>
+    <p>Il parle d’élections à réaliser à la fin de l’année et même de référendum (un projet de l’ancien président auquel la communauté internationale s’y était opposée.</p>
+    <p>Autant dire qu’on est passé d’une crise à un néant politique dans ce pays.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20210709012105/http://www.intexto.ca/haiti-assassinat-et-coup-detat-en-perspective/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

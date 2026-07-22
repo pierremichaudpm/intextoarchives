@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Damesara lève 1,5 millions de dollars pour accompagner sa croissance — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Damesara lève 1,5 millions de dollars pour accompagner sa croissance</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/admin.html">Admin</a></strong> · Publié le 1 novembre 2024
+  </p>
+  
+  <div class="corps">
+    <p>Damesara lève 1,5 millions de dollars pour accompagner sa croissance - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Damesara lève 1,5 millions de dollars pour accompagner sa croissance</p>
+    <p>Lancée en janvier dernier, la ronde de financement en vue d’accompagner l’entreprise dans sa croissance a connu un succès en moins de 7 mois. L’entreprise, distributeur de produits d’épicerie d’ailleurs, a collecté 1,5 millions de dollars en obligations convertibles (FrontFundr), en actions et en Prêt.</p>
+    <p>« Le succès de cette campagne témoigne de la richesse des communautés afro-descendantes et de leur engagement individuel et collectif à contribuer au dynamisme économique du Québec et du Canada », souligne Isaac Bosquet.</p>
+    <p>En effet, Damesara a pu compter sur la confiance de 75 personnes, majoritairement afro-descendantes, pour engranger 1,5 millions de dollars en moins de 7 mois. Lancée en janvier dernier, lors d’un événement organisé à la Chambre de Commerce haïtienne du Canada, la campagne de levée de fonds a connu un beau succès ! Avec un objectif initial de 250 000$ à 1 500 000$ en obligations convertibles et/ou en Capital action, la campagne propulsée par FrontFundr, a rapporté :</p>
+    <p>Parmi les nouveaux actionnaires, on trouve une grande majorité de professionnels afro descendants (médecins, ingénieurs, infirmières, courtiers en assurance, retraités, entrepreneur.es) dont notamment le chef d’entreprise Kenol Rémy ($50k en actions), Ferlens Jeune ($15k en obligations convertibles) ou encore l’influenceur africain Willy Tchuilen Ngatcha, créateur de la communauté d’investisseurs investir justement, qui a découvert Damesara en faisant des recherches sur des opportunités d’investissement sur FrontFundr.</p>
+    <p>Enfin, avec un investissement de 1 050 000$ en capital action auquel s’ajoute un prêt de $300k, Dr. Gracia Étienne est devenu l’actionnaire majoritaire de Damesara aux cotés d’Isaac Bosquet et Olivier Sassine, le 2e co-fondateurs de l’entreprise.</p>
+    <p>Créée en juin 2020, Damesara fait partie des entreprises qui ont lancé leurs activités au début de la pandémie mondiale de covid-19, en dépit d’un contexte économique tendu (ralentissement, rupture des chaînes d’approvisionnement, nouveaux modes de consommation).</p>
+    <p>Distributeur de produits d’épicerie des Caraïbes, d’Afrique et d’Amérique du Sud pour les professionnels de la restauration, l’entreprise propose également une boutique en ligne pour les particuliers. Forte d’une croissance de 30% par an, Damesara a su trouver son marché et poursuit son développement avec des ambitions intactes.</p>
+    <p>« Nous sommes convaincus du potentiel du projet. Au fil des années, nous avons développé des partenariats d’affaires avec des acteurs locaux majeurs aussi bien au niveau fédéral que provincial. Notre bassin de clientèle s’étoffe, notre catalogue Produits se diversifie. Nous proposons désormais des produits frais, une marque distributeur, ainsi que des cosmétiques. Notre courbe d’apprentissage est sur son X et nous persévérons dans cette voie. Nous avons la conviction que notre place est bien là », mentionne avec enthousiasme Isaac Bosquet, Co-fondateur et Directeur Général de Damesara.</p>
+    <p>Isaac Bosquet et Olivier Sassine sont ravis d’accueillir Dr. Étienne Garcia dans le giron de Direction de l’entreprise.</p>
+    <p>D’origine haïtienne, Dr. Gracia Étienne est un médecin spécialisé en chirurgie orthopédique, résidant aux Etats-Unis, découvre Damesara en juin dernier lors d’une visite à l’entrepôt, situé à Lachine. Séduit par le modèle d’affaires, enthousiasmé par la vision – création de richesse émanant des communautés ethnoculturelles – confiant sur le potentiel de l’entreprise, l’entrepreneur décide de soutenir Damesara en investissant dans la croissance de l’entreprise à hauteur de 1 350 000$ en capital action et prêt.</p>
+    <p>Désormais actionnaire majoritaire de Damesara, ce dernier souhaite travailler aux cotés des deux co-fondateurs. «J’accepte le titre mais sincèrement, je me considère plus comme un membre de la famille, comme le grand frère de Damesara », commente t-il avec humilité.</p>
+    <p>Et Olivier Sassine d’ajouter « On se parle tous les 2-3 jours. L’arrivée du Dr. Garcia Étienne marque un vrai tournant pour Damesara. À trois, nous sommes plus forts pour accomplir notre vision. »</p>
+    <p>« Notre objectif, est de faire un PAPE (IPO) à la bourse de croissance de Toronto (TSXV) dans les 18 à 36 mois, afin de pouvoir financer notre croissance en Amérique du nord, dans les caraïbes et en Afrique francophone. Nous allons réajuster notre structure de dette, investir dans le marketing et la Recherche et Développement afin par exemple de développer des produits alimentaires ethniques pour les militaires et les personnes âgées. Nous pensons que grâce à ce travail acharné, nous allons rendre Damesara éligible aux prêts des institutions comme investissement Québec, BDC … », précise Isaac Bosquet.</p>
+    <p>Et de conclure avec conviction, « Nous croyons que l’ethnicité est l’avenir. Et le souhait des investisseurs c’est de pouvoir positionner cette entreprise comme un modèle de succès collectif. »</p>
+    <p>Lancée en juin 2020, Damesara est un distributeur de produits d’épicerie d’Afrique, des Caraïbes et d’Amérique du Sud pour les professionnels de la restauration et les particuliers. Depuis x, l’entreprise propose également des produits frais grâce à ses partenaires d’affaires locaux (Olymel, Exceldor…).</p>
+    <p>Installé aux États-Unis depuis 1988, Dr. Gracia Étienne est un chirurgien orthopédique chevronné, partenaire associé de la clinique OSS Health, depuis près de 20 ans. Expert reconnu (American Board of Orthopaedic Surgeons – American Academy of Orthopaedic Surgeons), Dr. Gracia Étienne a participé et mené de nombreux travaux de Recherche dont certains ont été publiés. Enfin, très engagé au niveau communautaire, Dr Gracia Étienne est notamment le Fondateur et CEO de la Fondation MIVO et le Directeur Médical du Centre orthopédique MIVO en Haïti.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20241107044814/https://www.intexto.ca/damesara-leve-15-millions-de-dollars-pour-accompagner-sa-croissance/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

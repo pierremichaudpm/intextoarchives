@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terrebonne: il réclame $ 205 000 à la Ville et 18 policiers — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Terrebonne: il réclame $ 205 000 à la Ville et 18 policiers</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/alain-bernard.html">Alain Bernard</a></strong> · Publié le 4 janvier 2023
+  </p>
+  
+  <div class="corps">
+    <p>Terrebonne: il réclame $ 205 000 à la Ville et 18 policiers - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Terrebonne: il réclame $ 205 000 à la Ville et 18 policiers</p>
+    <p>La Commission des droits de la personne et des droits de la jeunesse (CDPDJ) réclame $ 205 000 à la Ville de Terrebonne et 18 de ses policiers dans le cadre d’un recours civil pour discrimination, harcèlement basé sur le genre et profilage racial à l’endroit de Pierre-Marcel Mosanto, un homme noir d’origine haïtienne.</p>
+    <p>M. Mossanto conduisait souvent une voiture immatriculée au nom de sa femme et les policiers l’interrogeaient régulièrement sur ce fait. La requête a été introduite le mois dernier devant la Cour supérieure du Québec et concerne au total 15 dossiers de plaintes pour des événements survenus entre les mois de septembre 2018 et avril 2021.</p>
+    <p>14 de ces interceptions ont eu lieu entre les mois de septembre 2018 et août 2019. La quinzième a eu lieu au mois d’avril 2021, selon ce que révèle la preuve présentée par la CDPDJ. Les véhicules conduits par M. Mossanto auraient également fait l’objet de 83 vérifications dans les bases de données policières durant cette même période (septembre 2018 à avril 2021).</p>
+    <p>«J’ai peur de conduire et de vivre à Terrebonne», affirme la victime en conférence de presse mercredi au local du Centre de recherche action sur les relations raciales (CRARR) qui le soutient dès le début dans les dossiers de plaintes.</p>
+    <p>Pierre Marcel Mossanto lance un appel pressant au maire de Terrebonne,. Mathieu Traversy. «Je vous demande de prendre au sérieux la question de profilage au sein de votre ville», dit-il en s’adressant directement au maire.</p>
+    <p>1000 dollars en caméras</p>
+    <p>Pour réunir sa preuve vidéo, le résident de Terrebonne a équipé la voiture qu’il conduit de caméras (en avant et en arrière), s’est muni de plusieurs lunettes et stylos à caméra, afin de prendre les policiers au fait.</p>
+    <p>«Tout cela m’a coûté au bas mot $ 1000», révèle le plaignant qui a déménagé de l’Alberta au Québec vers 2018 afin de retrouver sa femme et ses enfants. Jusqu’en 2019, M. Mossanto détenait un permis albertain. Or, depuis mars 2019, il a obtenu un permis de conduire du Québec. L’adresse indiquée sur ce permis est la même que celle de sa conjointe sur la rue de Redon à Terrebonne.</p>
+    <p>La police de Terrebonne le questionnait souvent sur ce fait également. Selon Pierre-marcel Mossanto, son cas n’en est un d’isolé. La plupart des Noirs de cette ville connaissent le même sort, mais ils n’osent pas dénoncer comme lui.</p>
+    <p>Le CRARR a déposé également des plaintes par devant le Commissaire à la déontologie policière. Mais l’article 636 de la Loi sur les interpellations policières demeure très flou sur la question.</p>
+    <p>«Dans le Code de la sécurité routière il n’y a aucune balise sur le sexe du conducteur, note le directeur général du CRARR, Fo Niémi, on souhaite que la Cour du Québec apporte des précisions, balise davantage.»</p>
+    <p>Selon lui, il existe beaucoup de cas de discrimination de ce type-là au Québec: un homme conduit la voiture de sa conjointe et vice versa et qui deviennent des motifs d’interpellation.</p>
+    <p>Dans le collimateur de la déontologie</p>
+    <p>En mars 2022, le Commissaire à la déontologie policière a validé 8 des 12 plaintes déposées par monsieur Monsanto concernant les incidents entre septembre 2018 et août 2019. Des citations ont été déposées contre 8 policiers devant le Comité de déontologie policière pour avoir posé « des actes discriminatoires fondés sur la race ».</p>
+    <p>Le Commissaire a aussi émis un Avis à l’intention du directeur du service de police de Terrebonne, concernant « la fréquence inhabituelle des interceptions (…) alors que le plaignant n’a commis aucune infraction » et « la fréquence encore plus élevée, et inexpliquée, des nombreuses vérifications faites au CRPQ visant le plaignant sur une période de temps relativement courte ».</p>
+    <p>« La pratique policière courante d’interpeller un conducteur noir puisqu’il conduit une voiture enregistrée au nom d’une femme, doit être déclarée illégale », dit le directeur général du CRARR, Fo Niemi.</p>
+    <p>Le service de police de Terrebonne est déjà visé par un autre recours déposé par la CDPDJ au nom d’un conducteur noir qui a été interpelllé en août 2019 sous prétexte que la voiture qu’il conduisait était enregistrée au nom d’une femme (qui est nulle autre que sa conjointe). La CDPDJ réclame 13 000 $ contre la Ville et les deux policiers impliqués dans cet autre dossier.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20240212193443/https://www.intexto.ca/terrebonne-il-reclame-205-000-a-la-ville-et-18-policiers/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

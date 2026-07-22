@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conflit Montréal-Nord et Mener autrement: des enfants manifestent — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Conflit Montréal-Nord et Mener autrement: des enfants manifestent</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/lucmane-vieux.html">Lucmane Vieux</a></strong> · Publié le 13 septembre 2020
+  </p>
+  
+  <div class="corps">
+    <p>Conflit Montréal-Nord et Mener autrement: des enfants manifestent - Intexto, Journal Nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Remous communautaires</p>
+    <p>- /</p>
+    <p>- Conflit Montréal-Nord et Mener autrement: des enfants manifestent</p>
+    <p>Photo: Lucmane Vieux</p>
+    <p>Une trentaine d’enfants régulièrement inscrits à l’organisme « Mener autrement Inc » à Montréal Nord, ont gagné les rues samedi pour revendiquer un espace public où ils puissent continuer à mener leurs activités sportives en fin de semaine, notamment le soccer.</p>
+    <p>Depuis plusieurs mois, ces enfants de 6 à 12 ans n’ont plus accès au gymnase public, en raison d’un conflit entre l’arrondissement et leur organisme.</p>
+    <p>« Injustice! », ont scandé les jeunes protestataires, accompagnés de leurs parents, pancartes à la main, sur tout le parcours de la marche qui s’est déroulée sous une haute surveillance policière.</p>
+    <p>De la Maison culturelle et communautaire, boulevard Rolland, jusqu’à l’Hôtel de ville, rue Charleroi, ils avaient un message clair et précis à adresser à la mairesse de l’arrondissement de Montréal-Nord, Christine Black : « Rendez-nous notre gymnase, Madame la Mairesse! »</p>
+    <p>Lisez plus sur ce désaccord ICI</p>
+    <p>Leoder Quiroz-Guerrero, fillette de 11 ans, et son frère Ernesto, 9 ans, d’origine nicaraguayenne, déclarent vivre avec une grande tristesse cette interdiction de pratiquer le soccer dans le gymnase de l’arrondissement.</p>
+    <p>« Ils n’ont pas le droit de nous enlever ce qui est important pour nous, ce qu’on aime. Depuis environ 6 mois on n’a plus accès à cette salle sportive, alors que nos parents font des sacrifices pour payer afin qu’on puisse jouer, qu’on puisse s’épanouir », proteste Leoder, critiquant l’insouciance des autorités de Montréal-Nord.</p>
+    <p>Ernesto abonde dans le même sens. « Madame Black nous a virés; elle nous a enlevé notre espace de jeu. C’est une très grande injustice. Beaucoup d’enfants voudraient faire partie de cet organisme. Nous, on en a la chance, mais on nous enlève notre droit de jouer », laisse entendre, avec amertume, le jeune de 9 ans.</p>
+    <p>« S’il-vous-plaît, Mme Black, redonnez nous notre ancienne salle ou un nouvel espace. Comme ça, les autres enfants pourront pratiquer avec nous le soccer ».</p>
+    <p>Ernesto</p>
+    <p>Des rêves brisés</p>
+    <p>Yvann Allou, 10 ans, et Henock Mabo, 11 ans, d’origine ivoirienne, assimilent, de leur côté, cette situation à la destruction de leur rêve, des objectifs qu’ils se fixent en apprenant à jouer au soccer.</p>
+    <p>« Le soccer c’est ce que j’aime faire dans la vie. Je rêve de devenir une star internationale du football comme Messi et Ronaldo. On m’a piqué cette occasion avec cette interdiction d’accéder au gymnase. Rendez-moi le soccer : mon rêve », lance Yvann.</p>
+    <p>C’est le même cri de la part de Henock : « Je participe à cette marche pour qu’on nous redonne notre gymnase dans lequel on jouait avant. Avec notre coach Mbaku Bernard, on apprend à jouer collectivement, à faire des passes », révèle le jeune homme d’origine ivoirienne, ajoutant que son rêve c’est de devenir un joueur professionnel de football.</p>
+    <p>« Je demande qu’on nous redonne notre gymnase pour continuer à pratiquer, afin qu’on ne reste pas chaque jour devant notre petit écran », fustige-t-il.</p>
+    <p>Cris des parents</p>
+    <p>Samah Aggoun dont les quatre enfants fréquentent l’organisme « Mener autrement Inc » depuis deux ans, qualifie d’injuste la décision d’interdire aux enfants l’accès au gymnase où ils pratiquaient le soccer et l’athlétisme.</p>
+    <p>« On habite dans un endroit défavorisé et mouvementé. On a besoin de telles activités en été comme en hiver », souligne-telle.</p>
+    <p>El Yassami Wafae dont les deux garçons cheminent avec l’organisme depuis un an et demi, déclare attendre avec impatience le retour au gymnase.</p>
+    <p>« Là-bas on organisait des matchs entre parents et enfants. C’était vraiment agréable », se souvient-elle, soulignant que cette interdiction fait souffrir tant les enfants que les parents.</p>
+    <p>Djigbou Bero, père de deux enfants inscrits à l’organisme, interpelle les autorités de Montréal-Nord, en les invitant à penser à l’avenir des enfants.</p>
+    <p>« Imaginez tous ces enfants dans la rue dans dix, vingt ans comme des dealers de drogue…Imaginez ce que ça donne…Tout ce que les enfants demandent, c’est un espace de jeu. Pris par les soucis de la vie, les parents sont indisponibles. Avec l’organisme, c’est la rigueur, des jeux éducatifs, ce qui rend les enfants plus responsables », soutient-il.</p>
+    <p>Guerre contre les enfants</p>
+    <p>Pour sa part, le président de « Mener autrement Inc », Oscar Elimby, dénonce une fois de plus, la décision de la mairesse de l’arrondissement de Montréal-Nord, Christine Black, qui n’épargne même pas les enfants.</p>
+    <p>« Puisque nous n’avons pas accès au gymnase, nous allons marcher chaque samedi, en adoptant un itinéraire différent à chaque fois, jusqu’à ce que la mairesse retourne sur sa décision. On ne s’attaque pas aux enfants. Même si vous avez des problèmes avec des adultes, les enfants il faut les laisser tranquilles », tranche M. Elimby.</p>
+    <p>Oscar Elimby continue d’assimiler la décision de l’arrondissement de Montréal-Nord d’exclure son organisme, au fait qu’il avait revendiqué l’été 2019, la gratuité des camps de jour à travers la signature d’une pétition.</p>
+    <p>« L’administration de Montréal-Nord a chassé les enfants du gymnase en excluant notre organisme. Comment peut-on mettre des enfants dehors, alors qu’ils devraient être à l’intérieur pour jouer », s’interroge-t-il, soulignant que depuis juin dernier, ces gamins n’ont ni d’activités sportives qui se faisaient toutes les fins de semaine, ni d’aide aux devoirs.</p>
+    <p>« Comment peut-on parler de décrochage scolaire à Montréal-Nord, quand on met les enfants dehors? »,</p>
+    <p>demande Oscar Elimby qui attribue la situation à une guerre menée contre les enfants</p>
+    <p>« On n’a pas besoin d’avoir des enfants pour aimer les enfants. On les met dehors, ils se baladent entre les coups de feu qui se font à la rue Lapierre, et ça ne dérange personne. Si on doit jeter ces enfants dans la rue, au moins que cela se fasse au vu et au su de tout le monde », s’indigne M. Elimby.</p>
+    <p>Une situation inacceptable</p>
+    <p>Présente en la circonstance, la conseillère d’arrondissement indépendante, Renée -Chantal Belinga, la seule à voter contre la résolution prise en conseil d’arrondissement de révoquer à l’organisme « Mener autrement Inc » ses accès aux locaux publics de Montréal-Nord, estime inacceptable que les enfants puissent être victimes d’une situation où ils n’ont pas accès au gymnase, à des activités sportives.</p>
+    <p>« C’est notre devoir comme citoyens, élus et parents, de leur donner un espace sécuritaire où ils peuvent s’épanouir », encourage Mme Belinga.</p>
+    <p>La marche a pris fin devant les locaux de la Mairie de Montréal-Nord, à la rue Charleroi, où les enfants ont tenu symboliquement une partie de soccer. Un espace qu’ils entendent transformer en terrain de jeu, jusqu’à ce que l’administration dirigée par la mairesse Christine Black leur redonne l’accès au gymnase dont ils ont la nostalgie depuis plusieurs mois.</p>
+    <p>What to say in front of such perfect work? For us it is just A PERFECT PROFESIONALISM JOB from Sir Lucmane Vieux and his team.</p>
+    <p>Comments are closed.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20250815015955/https://www.intexto.ca/conflit-montreal-nord-et-mener-autrement-des-enfants-manifestent/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

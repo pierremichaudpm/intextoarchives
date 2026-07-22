@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crise migratoire aux USA : une opportunité? — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Crise migratoire aux USA : une opportunité?</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/geraldine-delia.html">Géraldine Délia</a></strong> · Publié le 25 septembre 2021
+  </p>
+  
+  <div class="corps">
+    <p>Crise migratoire aux USA : une opportunité?</p>
+    <p>Haïtiens et Haïtiennes, le temps de la révolution est enfin à votre porte. Le 21 ième siècle est arrivé avec une force de frappe et vous a donné le gifle de la réalité. Il est temps de mettre en pratique la devise de notre pays qui est “L’union fait la force“.</p>
+    <p>Si un pays comme le Rwanda a pu se relever après une des plus grands génocides de l’Histoire, la colonisation et leur maigre ressources économiques, alors YES WE CAN !</p>
+    <p>Ce qui se passe à la frontière américaine actuellement avec les migrants haïtiens qui sont déportés dans leur pays de façon inhumaine, est la plus belle chance que le pays pouvait espérer depuis le départ de Jean-Claude Duvalier.</p>
+    <p>Certes, c’était une période de dictature mais c’était aussi la plus belle période post indépendance de la première République noire du monde.</p>
+    <p>Je vois et lis sur les réseaux sociaux votre détresse, votre colère et votre souffrance face à cette incompréhension. Malheureusement, je ne peux être emphatique avec mon peuple car leur décision était tout simplement irréaliste et tout à fait mal calculé.</p>
+    <p>10 milles Haïtiens installés au bord d’une frontière!? Mais pourquoi!!?? Comment avez vous fait pour vivre dans un environnement aussi difficile et incohérent ?</p>
+    <p>Vous avez vendu vos biens au Chili, au Brésil et en Colombie, Vous avez mis vos enfants en situation de danger (viol, famine), et par dessus tout, vous leur avez empêché d’avoir accès à une bonne éducation et une vie socialement stable par égoïsme.</p>
+    <p>Selon le ministère de l’économie en Haïti, la diaspora haïtienne vivant aux États-Unis a envoyé plus de 2 milliards de dollars l’année 2020 à leur famille et amis. Cette même diaspora se sacrifie jour et nuit, a de la misère à avoir une vie stable et malgré tout, elle a toujours répondu à votre détresse.</p>
+    <p>Ce n’est pas une question de passeport, ce n’est pas une question d’argent, Haïti à littéralement besoin d’une Renaissance et je dirais même d’une nouvelle Indépendance .</p>
+    <p>Partout sur les réseaux sociaux, depuis plusieurs mois, on voit des Haïtiens se faire maltraiter en Chili, à coup de bâton, matraque etc, donc comprenez que quelque coup de fouets de plus à la frontière américaine n’est tout simplement pas considérer comme acte inhumaine malheureusement.</p>
+    <p>Ceci dit, que ce soit en République Dominicaine, Mexique , Texas ou la Colombie, le peuple haïtien a toujours été à la mauvaise place. C’est triste à dire et même avouer, on est jamais mieux que chez soi. Selon moi cette déportation est la meilleure Renaissance que ce pays pouvait espérer.</p>
+    <p>En créole il y a un dicton qui dit “ kaka zyé pa linet “ . Cela veut dire en français, “les crottes dans les yeux ne sont pas des lunettes “. En raison de faute de connaissance, vous vous êtes embarqué sur une mauvaise destinée.</p>
+    <p>Depuis des années, le kidnapping en Haïti est devenu une entreprise. Une façon pour les gangs, les personnes de mauvaises âmes et les jeunes cupides d’avoir de l’argent de la part du peuple haïtien vivant à l’étranger peu importe le pays.</p>
+    <p>Nous avons des personnes recherchées par les autorités qui détiennent des comptes sur les réseaux sociaux et sans aucune audace, se permettent de faire des “lives” , répondre à des entrevues la télévision et de donner des ultimatums, comme demander 80 milles dollars aux autorités pour récupérer un char militaire. C’est une situation tout à fait surréaliste !</p>
+    <p>Ce n’est pas le gouvernement qui bâtit un pays mais bien le peuple. Vous avez demandé un changement dans le pays alors le voici enfin arrivé!</p>
+    <p>35 milles Haïtiens de retour au pays pour le bien de cette nation et de ce patrimoine.</p>
+    <p>Nous parlons de jeunes entrepreneurs ayant appris diverses métiers, des personnes qui ont une connaissance de plus de 4 langues, des enfants qui ont auront enfin la chance de réaliser un rêve et surtout une fin à cette soit</p>
+    <p>disant commerce des plus malveillants. Imaginez vous que ces personnes ont dépensé un montant de plus 15 milles dollars US sur une période de 2-4 mois, et si cette argent avait été investi dans l’économie haïtienne ?</p>
+    <p>Enfin Haïti, notre perle des Antilles aura la chance de renaître de ces cendres.</p>
+    <p>Nous fonçons droit vers une évolution qui permettra aux plus pauvres de connaître une stabilité. Nous marchons sur la route de délivrance. Je parle d’accès à l’électricité 24heures sur 24, la construction de plusieurs cliniques dans le domaine de la santé, des établissements scolaires, des maisons construites selon les normes de l’urbanisme, des champs d’agriculture ayant comme but de créer des emplois et éliminer la famine, des gratte-ciel qui attireront les touristes et des investisseurs, des routes sécuritaires pour et par dessus tout, un oasis de paix et des héritages pour nos futurs descendants.</p>
+    <p>C’est bien d’avoir reçu quelques poissons des autres nations, mais apprendre à pêcher a toujours été la meilleure forme d’avancement .</p>
+    <p>Chers Haïtiens et Haïtiennes, il est temps de donner une chance à nos larmes de pleuvoir sur une terre fertile !</p>
+    <p>Paix à tous ces âmes perdus sur votre chemin, espoir à tous les malheureux de cette événement, force à tous nos nouveaux entrepreneurs et bienvenue à tous les rêveurs! Car ensemble, main dans la main, nous allons enfin bâtir un pays où ça fait rire les oiseaux et les aigles volent plus haut que les pigeons.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20210930001434/https://www.intexto.ca/crise-migratoire-aux-usa-une-opportunite/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

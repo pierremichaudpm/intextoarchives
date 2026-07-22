@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Natcom honorée pour son implication sociale en Haïti (vidéo) — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Natcom honorée pour son implication sociale en Haïti (vidéo)</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 2 novembre 2015
+  </p>
+  
+  <div class="corps">
+    <p>Michel Présumé membre du Conseil dadministration (CA) de la Natcom et ancien directeur général de la Téléco avant sa privatisation défend, avec vigueur, cette décision</p>
+    <p>Le ministre des Haïtiens vivant à létranger Robert Labrousse, Michel Présumé, membre du CA, le président du CA de la Natcom Ngoc Van Hoang et le trésorier Denis Content lors de leur passage au 3737 Crémazie Est à Montréal</p>
+    <p>La Natcom (ancienne Téléco en Haïti) vient de recevoir le deuxième prix (prix d’Argent) dans la catégorie « Programme de responsabilité sociétale des entreprises de l’année » de lInternational Business Awards 2015 (IBA) – les Stevie® Awards.</p>
+    <p>Lentreprise, dont lÉtat haïtien détient encore 40% des actions et 60% aux intérêts vietnamiens, a dépensé pas moins de 30 millions de dollars US dans plus de 20 projets à caractère social en Haïti, ce qui lui a valu ce prix.</p>
+    <p>Parmi ces projets on peut citer les dons de laboratoires informatiques à de nombreuses écoles publiques dont les Lycées Pétion, Toussaint Louverture entre autres, la mise sur pied de 30 systèmes de vidéoconférence pour des ministères et organismes de lÉtat dans le but de faciliter la gestion et la planification des politiques et fonctionnaires.</p>
+    <p>Dans le cadre des efforts permanents du groupe visant à transformer le panorama du marché des télécoms, Viettel, qui chapeaute Natcom, a aussi considérablement investi dans un certain nombre d’initiatives et de programmes à caractère social en Haïti, dans les domaines de la santé, de l’éducation et de l’administration électronique. À ce jour, la société a apporté une infrastructure Internet à plus de 1 300 écoles dans tout le pays, dont profitent des milliers d’élèves et d’éducateurs.</p>
+    <p>Privatisation de la Téléco</p>
+    <p>«La Natcom est un exemple patent que le pays peut souvrir sur linvestissement international», affirme Michel Présumé membre du Conseil dadministration (CA) de la Natcom et ancien directeur général de la Téléco avant sa privatisation.</p>
+    <p>« Cela a été un total succès, ajoute-il, et je mets quiconque au défi de dire le contraire». Pour étayer ses propos, M.Présumé souligne que lÉtat haïtien possède aujourdhui 40 millions dollars des 150 millions que vaut la compagnie actuellement. «Avant la privatisation, lÉtat navait rien du tout, déplore Michel Présumé, au contraire nous croulions sous des dettes»</p>
+    <p>Le ministre des Haïtiens vivant à létranger Robert Labrousse qui assistait à la cérémonie de remise de prix à Toronto a rappelé, à linstar de Stevie Awards, que «cest la première fois que Haïti reçoit un tel prix». M.Labrousse a même du mal à parler de Natcom. «Cest la Téléco avec une gestion plus saine», considère le ministre.</p>
+    <p>Choc culturel</p>
+    <p>Le président du CA de la Natcom Ngoc Van Hoang ne cache pas que, pour lui, investir en Haïti a été « une grange et difficile décision». En entrevue au journal lors de son passage à Montréal M. Hoang a égrené une foultitude de problèmes liés aux infrastructures inexistantes comme «lélectricité de qualité». Le Vietnamien confie avoir eu tout un choc culturel également.</p>
+    <p>Mais aujourdhui, 5 ans après, M.Hoang est fier davoir réalisé plus de 7 000 km de fibres optiques en Haïti, ce qui permet de services technologiques fiables et de haute qualité dans les coins les plus reculés du pays.</p>
+    <p>« Chez Viettel, nous considérons la connectivité comme un besoin essentiel pour tout le monde et nous appliquons les dernières technologies de pointe pour obtenir une solution sophistiquée, bien que simple et pratique, pour un réseau solide de télécommunications qui relie jusqu’aux endroits les plus reculés sur chaque marché. Notre croissance rapide sur ces marchés peut être attribuée à nos services de grande qualité et à la contribution que nous avons apportée à la population.»</p>
+    <p>En utilisant la force du réseau robuste, la société a connecté 85 % de la population d’Haïti, ce qui a changé la vie des Haïtiens après le tremblement de terre de 2010, grâce à la connectivité des télécommunications.</p>
+    <p>Le programme exemplaire de RSE (responsabilité sociétale des entreprises) qui aide Haïti à devenir le premier pays des Caraïbes en termes d’infrastructure de câble à fibre optique a valu à Viettel une récompense de catégorie Argent lors des IBA 2015.</p>
+    <p>À propos de Viettel</p>
+    <p>Viettel Group est actuellement l’un des plus grands groupes de télécommunications et de technologie au Vietnam, qui réalise un chiffre d’affaires de 10 milliards de dollars US et emploie plus de 75 000 employés. L’année dernière, les activités internationales ont généré un chiffre d’affaires de 1,2 milliard de dollars US pour le groupe.</p>
+    <p>Viettel est l’un des opérateurs de télécommunications qui croît le plus rapidement au monde, avec plus de 90 000 employés qui travaillent avec passion dans 12 pays. Pionnière, la société a marqué le début d’une révolution des télécommunications, mettant les services de télécoms à la portée de toutes les classes sociales, et de toutes les zones rurales et reculées en l’espace de quelques années.</p>
+    <p>Viettel est classée parmi les 15 meilleures compagnies de téléphone en termes de connexion cellulaire selon le « Wireless Intelligence » de l’Association GSMA. À la fin de l’année 2014, Viettel a généré un chiffre d’affaires total de 9,8 milliards de dollars US et un bénéfice de 2 milliards de dollars US, se classant ainsi parmi les plus grandes entreprises du Vietnam, tandis que les activités internationales ont contribué à hauteur de 1,2 milliard de dollars US au chiffre d’affaires du groupe.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20160414053546/http://intexto.ca:80/natcom-honoree-pour-son-implication-sociale-en-haiti-video/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

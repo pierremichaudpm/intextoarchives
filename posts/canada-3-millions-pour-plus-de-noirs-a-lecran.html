@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canada: 3 millions pour plus de Noirs à l’écran — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Canada: 3 millions pour plus de Noirs à l’écran</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 10 février 2022
+  </p>
+  
+  <div class="corps">
+    <p>Canada: 3 millions pour plus de Noirs à l’écran</p>
+    <p>Grâce au soutien du Fonds pour l’écosystème du gouvernement du Canada, la Fondation Fabienne Colas a annoncé le lancement de l’Institut Festwave, dont l’objectif est d’appuyer les entrepreneurs noirs mal desservis dans l’industrie du cinéma et de la télévision à travers une formation en entrepreneuriat et du renforcement des compétences.</p>
+    <p>Il s’agit d’une plateforme de formation plus grande de la prochaine génération de professionnels sous-représentés du cinéma et de la télévision pour cette Fondation qui, depuis 17 ans, impacte socialement, culturellement et économiquement, plus de 2 millions de festivaliers et 5 000 artistes.</p>
+    <p>« Nous voulons tous voir un Canada où tout le monde travaille côte à côte, où chacun a une chance équitable d’être encadré et formé, d’être vu, entendu, promu et soutenu comme il le mérite », indique Mme Colas, fondatrice de l’Institut Festwave.</p>
+    <p>- . À l’heure actuelle, au Canada, seuls 13 % des artistes sont racialisés, contre 21 % de l’ensemble des travailleurs</p>
+    <p>- L’industrie canadienne du film et de la télévision contribue au PIB canadien à hauteur de 12,8 milliards de dollars par an et emploie à temps plein plus de 170 000 personnes dans tout le pays.</p>
+    <p>- 52 % des artistes canadiens et des travailleurs de l’industrie créative sont des travailleurs indépendants, contre seulement 12 % de l’ensemble des travailleurs canadiens.</p>
+    <p>La Fondation Fabienne Colas s’est imposée comme une force motrice dans le paysage cinématographique canadien grâce à son mouvement à grand succès de Festivals de Films Black à Montréal, Toronto, Halifax, Calgary, Ottawa et Vancouver.</p>
+    <p>De plus, son programme d’incubation « Être Noir.e au Canada »– gagnant de prestigieux prix et présenté par Netflix en collaboration avec la Banque Nationale – a aidé des cinéastes noirs émergents à travers le pays à créer leurs premiers films, à participer à des festivals de films et à lancer leur carrière dans l’industrie du cinéma et de la télévision.</p>
+    <p>Les créateurs canadiens noirs ne manquent pas de talent. Ils manquent d’opportunités et de soutien. Le soutien nécessaire pour acquérir les compétences essentielles au lancement d’une entreprise prospère dans l’industrie du cinéma et de la télévision.</p>
+    <p>« L’Institut est un rêve de longue date qui permettra de rassembler tout le monde pour refléter la réalité de notre culture canadienne diversifiée à l’écran et derrière la caméra. Il n’aurait pas été possible sans l’engagement et le soutien de Développement économique Canada pour les régions du Québec (DEC). », selon Fabienne Colas.</p>
+    <p>« Le cinéma est un moyen de représenter la réalité, d’amplifier les voix et le secteur contribue grandement à notre économie. La Fondation Fabienne Colas a rapidement compris ce besoin d’offrir des occasions concrètes aux entrepreneurs, réalisateurs et créateurs issus de la communauté noire, particulièrement les femmes et les membres de la communauté LGBTQ2. L’inclusion et la représentation sont importantes dans notre société et ça passe, entre autres, par le secteur culturel. C’est pourquoi nous sommes ravis d’appuyer la Fondation dans le cadre du Fonds pour l’écosystème. Grâce au programme, ils pourront partager leurs visions artistiques avec le monde entier », a déclaré l’honorable Pascale St-Onge, ministre des Sports et ministre responsable de DEC.</p>
+    <p>« Des organisations comme la Fondation Fabienne Colas sont des piliers de leur communauté, qui font la promotion de la diversité et de l’inclusion à travers le pays. Je suis ravie qu’elle fasse partie du Fonds pour l’écosystème du Programme pour l’entrepreneuriat des communautés noires, et qu’elle travaillera avec d’autres organisations canadiennes formidables afin de soutenir les entrepreneur.e.s noir.e.s et les aspirant.e.s propriétaires noir.e.s d’entreprise », a déclaré l’honorable Mary Ng, ministre du Commerce international, de la Promotion des exportations, de la Petite Entreprise et du Développement économique. « Ils pourront ainsi raconter leur histoire et développer leur entreprise à travers le Canada et le monde. »</p>
+    <p>« J’aimerais féliciter la Fondation Fabienne Colas pour son travail acharné au nom des membres de notre communauté et les entrepreneurs de Montréal. Je suis très fier de nos créateurs et réalisateurs de films issus des communautés noires qui percent à travers le milieu culturel au Canada » a déclaré l’honorable Marc Miller, député de Ville-Marie‒Le Sud-Ouest‒Île-des-Sœurs, ministre des Relations Couronne‒Autochtones.</p>
+    <p>Pour plus d’information et pour être au courant des programmes à venir : www.InstitutFestwave.com</p>
+    <p>A propos de la Fondation Fabienne Colas (FFC):</p>
+    <p>La Fondation Fabienne Colas (FFC) est un organisme culturel à but non lucratif qui se consacre à bâtir des ponts et à l’avancement de l’éducation par les arts ainsi qu’au soutien de la création, de la production, de la promotion et de la diffusion du cinéma, des arts et de la culture au Canada et ailleurs. Pour remplir sa mission, la Fondation a mis sur pied 12 festivals et programmes visant à briser les barrières, à célébrer la diversité, à favoriser la convivialité, la compréhension et l’inclusion. Depuis sa création en 2005, ses initiatives/festivals ont permis de présenter et de soutenir plus de 5 000 artistes et d’attirer des millions de festivaliers au Canada, aux États-Unis, en Haïti et au Brésil. La Fondation promeut principalement la culture noire à Montréal, Toronto, Halifax, Ottawa, Calgary, Vancouver, New York City et Salvador de Bahia (Brésil) ; et la culture québécoise à Port-au-Prince. La Fondation est également à l’origine du programme Être Noir.e au Canada de la FFC, le plus grand incubateur canadien dédié aux cinéastes noirs.</p>
+    <p>A propos de l’Institut Festwave:</p>
+    <p>L’Institut Festwave, créé par la Fondation Fabienne Colas, a pour mission d’éliminer les obstacles auxquels se heurtent les professionnels du cinéma et de la télévision et de les aider à construire des carrières réussies et durables. L’Institut y parviendra en donnant aux entrepreneurs noirs du cinéma et aux autres créateurs sous-représentés les outils, les compétences et les ressources nécessaires pour réussir et être indépendants dans un secteur majoritairement dirigé par des Blancs : ateliers sur mesure, tables rondes, cours magistraux, apprentissage pratique, mentorat, opportunités de mise en réseau, opportunités de présentation, accès aux équipements, compétences commerciales, programmes de jumelage – tout ce dont le professionnel noir a besoin pour apprendre, se développer, se connecter et faire avancer sa carrière dans le cinéma et la télévision, à la fois en ligne et sur le terrain.</p>
+    <p>À propos du Fonds pour l’écosystème du Programme pour l’entrepreneuriat des communautés noires:</p>
+    <p>L’objectif du Fonds pour l’écosystème est de renforcer l’écosystème de l’entrepreneuriat pour les entrepreneurs et les propriétaires d’entreprises noirs au Canada. Il permet aux organisations à but non lucratif dirigées par des Noirs de développer de nouveaux services ou d’étendre ceux qu’elles offrent déjà, comme le mentorat, le réseautage, la planification financière et la formation commerciale pour les entrepreneurs noirs. Pour plus d’informations, https://bit.ly/3rA0dOz</p>
+    <p>À propos de DEC</p>
+    <p>Développement économique Canada pour les régions du Québec (DEC) a pour mission de promouvoir le développement économique à long terme des régions du Québec en accordant une attention particulière aux régions à faible croissance économique ou à celles qui n’ont pas suffisamment de possibilités d’emplois productifs.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20240224235111/https://www.intexto.ca/canada-3-millions-pour-plus-de-noirs-a-lecran/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

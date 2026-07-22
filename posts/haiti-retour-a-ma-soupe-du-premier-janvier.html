@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haïti : Retour à ma soupe du premier janvier — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Haïti : Retour à ma soupe du premier janvier</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-claude-icart.html">Jean Claude Icart</a></strong> · Publié le 6 janvier 2025
+  </p>
+  
+  <div class="corps">
+    <p>Haïti : Retour à ma soupe du premier janvier</p>
+    <p>D’aussi loin que remontent mes souvenirs, probablement au début des années 50, la soup joumou était toujours servie à la maison le premier janvier. Et il en était de même chez tous les voisins et dans toute ma parenté, tant du côté maternel que du côté paternel. C’était la tradition, le rituel qui rappelait que ce n’était pas que le jour de l’an, mais aussi un rappel de l’épopée de 1804. On pouvait en consommer durant l’année mais le 1er janvier, elle était de rigueur. Et pour moi, nos parents avaient eux-mêmes hérité de cette tradition de leurs parents.</p>
+    <p>Durant les années 80-90, m’est parvenue une autre explication que j’ai instinctivement repoussée : cette soupe aurait été empruntée aux colons qui l’auraient interdite aux esclaves. Ces derniers auraient alors décidé d’en consommer le 1er janvier 1804, pour bien marquer la liberté si chèrement acquise. Vu l’importance des places à vivres dans l’alimentation des esclaves, je ne voyais pas comment il aurait été possible de faire respecter un tel interdit. L’esclave pouvait travailler un lopin pour subvenir aux besoins de sa famille et aux siens, ce qui mettait presqu’à zéro le coût de reproduction de sa force de travail. Le maître lui fournissait seulement le hareng saur et la morue salée comme protéines animales, mets dont les Haïtiens (et les Jamaïcains), ont gardé le goût jusqu’à ce jour.</p>
+    <p>De plus, je n’avais jamais vu de trace de soupe au giraumon, ni dans la littérature, ni dans mes rencontres avec la cuisine française, en Haïti, en Afrique ou en France et ce, ni comme soupe d’entrée, ni comme soupe-repas.</p>
+    <p>Max Manigat [2] s’est penché sur cette question et je partage largement son approche. Retenons particulièrement les points suivants : a) il y a en Haïti une tradition de consommer de la soup joumou le Jour de l’an ; b) cette soup joumou ne nous vient pas de la France ; c) « les mois de décembre et de janvier sont les mois où les giraumons (joumou) se trouvent en quantité en Haïti. (…) Imaginons : des morceaux de jarret de bœuf, quelques herbes fines, du giraumon, du sel, du piment fort et voilà notre plat ». d) il ajoute : « …après onze ans de guerre (…) il ne devait pas rester grand-chose à mettre dans cette soupe. Carottes, chou, pommes de terre, si disponibles, auraient pu être ajoutés. ». e) la recette a par la suite évolué et on y a ajouté d’autres ingrédients : donbrèy, vermicelle,… etc. Ce n’est pas la première, ni la dernière tradition à évoluer avec le temps.</p>
+    <p>Pour Manigat, la soupe de l’indépendance ne vient pas de la France. Ce serait une création locale, qui peut avoir été inspirée par des recettes africaines (ou de recettes émanant des places-à-vivres). L’hypothèse est donc une création de la soup joumou aux Gonaïves le 1er janvier 1804, à l’occasion du grand rassemblement pour célébrer l’indépendance acquise sur le champ de bataille, à Vertières, le 18 novembre 1803, et proclamée le 26 novembre 1803, à Fort-Liberté.</p>
+    <p>Patrimoine de l’humanité</p>
+    <p>On peut aussi faire l’hypothèse que la tâche d’organiser le ravitaillement de la foule revint à Félicité Claire Heureuse, l’épouse du Général en chef Jean-Jacques Dessalines, connue pour son sens de l’organisation et son esprit pratique. Elle sut improviser avec les moyens disponibles et offrit une solution, pas seulement acceptable mais brillante. On comprend alors pourquoi on n’a aucune trace de cette soupe dans les documents d’avant l’indépendance. Ce qui souligne la puissance explicative de cette hypothèse.</p>
+    <p>La Soup joumou a été admise dans le Patrimoine immatériel de l’humanité à l’UNESCO en décembre 2021. Elle est présentée ainsi : « Réservée à l’origine aux propriétaires d’esclaves, les Haïtiens se sont approprié la soupe lorsqu’ils ont obtenu leur indépendance de la France, faisant de ce plat un symbole de leur liberté nouvellement acquise et une expression de leur dignité et de leur résilience ». (voir https://ich.unesco.org/fr/RL/soupe-au-giraumon-01853).</p>
+    <p>Le formulaire de candidature [3] accessible à la même adresse montre bien que le Comité haïtien a repris sans discernement l’affabulation de la soupe interdite aux esclaves. Peut-on penser qu’encore une fois, la vérité politique aura eu raison de la vérité historique ? Puis, il y eut bien sûr la volonté de récupération de cette inscription par un pouvoir politique en déliquescence.</p>
+    <p>Il faut souligner la démarche de l’UNESCO dans cette inscription. D’une part, il y avait la ferme intention d’accepter davantage de contributions des pays du sud dans le Patrimoine immatériel de l’humanité et d’autre part, Haïti est très présente depuis quelque temps dans cette institution via le dossier de la Route de l’esclave. Rappelons que : « C’est sur proposition d’Haïti et des pays africains, initiateurs de ce projet, que la Conférence générale de l’UNESCO a approuvé, lors de sa vingt-septième session en 1993, la mise en oeuvre du projet « la Route de l’esclave », lancé à Ouidah au Bénin en 1994. ». Dans le cadre de ce projet, un « Musée de l’esclave » sera bientôt érigé sur le site de Bois-Caïman, un lieu qui incarne la résistance contre le colonialisme et l’esclavage.</p>
+    <p>Le 3 novembre 2024, la cassave a également été inscrite au Patrimoine culturel immatériel de l’humanité suite à une démarche menée par cinq pays, Haïti, Cuba, le Honduras, la République dominicaine, le Venezuela. La cassave met en lumière l’héritage des Taïnos dans le bassin caraïbe. On peut souhaiter qu’en 2025, ce sera le tour du Compas direct, le rythme haïtien qui tient le haut du pavé depuis la fin des années 50, d’accéder à cette prestigieuse liste.</p>
+    <p>Il y a cependant une mise en garde à faire. On peut critiquer le travail de la Commission haïtienne chargée de préparer ces dossiers, si on juge à partir du formulaire d’inscription de la soup joumou. On peut dénoncer avec vigueur les grossières tentatives de récupération par le pouvoir politique. On peut souligner les manipulations idéologiques. Il faut cependant se garder de ne pas se laisser emporter par son élan, de dépasser les bornes et enlever à cette soupe sa dimension symbolique.</p>
+    <p>Une « indépendance de façade »</p>
+    <p>Je pense ici particulièrement au témoignage d’une amie, grande militante devant l’éternel qui, en 1986, après le départ de Jean-Claude Duvalier, a participé au déchoukage de quelques duvaliéristes qui étaient membres de l’Institut pédagogique national (IPN). Elle m’a confié n’avoir pas réalisé sur le coup que leur façon de s’y prendre avait entraîné la fermeture de cette institution qui était pourtant un élément important de la réforme Bernard sur l’éducation en Haïti.</p>
+    <p>Autre incident dans cette veine. Après plusieurs déchoukages sauvages dans l’administration publique, Me Gérard Gourgue, le seul civil à être membre du Conseil national de gouvernement, prononce un discours dans lequel il demande que le CNG écarte de la fonction publique ceux-là que « la clameur publique aurait désigné comme tortionnaires ou prévaricateurs » (je cite de mémoire). Dès le lendemain, un feuillet avec une liste impressionnante de noms d’employés de la fonction publique réputés tortionnaires ou prévaricateurs était mis en circulation. Le nom du groupe qui faisait circuler cette liste : « La clameur publique ». Certains ont trouvé que c’était brillant….</p>
+    <p>La soupe du 1er janvier / soupe de l’indépendance / soupe de la liberté est plus que jamais d’actualité. Elle nous rappelle que nous avons déjà été indépendants. « C’est dans les ténèbres qu’il fait bon de croire à la lumière. ». Aujourd’hui, cette indépendance n’est que de façade et nous sommes sous tutelle. Cette situation semble vouloir bloquer toute tentative de solution haïtienne à la crise. Elle fait le lit d’une insécurité qui a fait plus de 5000 victimes au cours de l’année 2024, et des centaines de milliers de déplacés internes. Les trois quarts de la capitale, qui est complètement isolée du reste du pays, sont aux mains des gangs armés. Des écoles, les principaux hôpitaux et centres de santé ont été incendiés. Il n’y a même pas eu de trêve durant le temps des fêtes de fin d’année. L’économie du pays est en régression depuis six ans. En conséquence, l’insécurité alimentaire frappe plus de 60% de la population. Il faut reconnaître également que l’agriculture haïtienne subit des assauts constants depuis un demi-siècle !</p>
+    <p>Que peut nous enseigner la création de la soup joumou dans cette conjoncture ? Partir de ce que l’on a, s’appuyer sur les acquis. Demander à chacun d’apporter sa quote-part selon ses possibilités. S’inspirer d’autres réalisations mais ne pas craindre d’innover, de trouver sa propre voie, sa propre formule, ne pas traîner de vieux complexes face à d’autres en leur accordant la paternité de nos créations. Rester attentifs à tous les bourgeons d’espoir, à tous les actes de solidarité, de partage et d’auto-défense qui maintiennent la promesse de jours meilleurs.</p>
+    <p>Au niveau d’une relance de l’agriculture, plusieurs de nos penseurs ont proposé des éléments intéressants, comme par exemple, Jacques Roumain, Pierre Cauvin, Odette Roy-Fombrun, Philippe Rouzier, Carl Prézeau, Georges Anglade, Alain Philoctète, sans oublier les recherches actuelles sur le terrain et les pratiques émergentes. Vivement une synthèse de ces propositions.</p>
+    <p>Pour ma part, je n’oublierai jamais une marchande, une « pratik » de ma mère, qui était passer nous saluer un premier janvier. Je devais avoir 9 ou 10 ans. Quand ma grand-mère m’appela, cette marchande me dit :</p>
+    <p>« Fok w al bwè soup la wi. Se yon soup jòn, yon soup dore, yon soup koulè lò. Lè ou bwè li premye janvye, sa vle di ou mande pour lan ane a, mizè fini lan peyi a, ou mande pou tout moun jwenn ! [4] ».</p>
+    <p>C’est à elle que j’ai pensé en prenant ma soupe du 1er janvier.</p>
+    <p>* Sociologue</p>
+    <p>Montréal, Canada</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20250830135528/https://www.intexto.ca/haiti-retour-a-ma-soupe-du-premier-janvier/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

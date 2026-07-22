@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haïti 17 octobre: comme dit Gaëlle Bien-Aimé «Kèskonfè» ? — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Haïti 17 octobre: comme dit Gaëlle Bien-Aimé «Kèskonfè» ?</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/admin.html">Admin</a></strong> · Publié le 17 octobre 2022
+  </p>
+  
+  <div class="corps">
+    <p>Haïti 17 octobre: comme dit Gaëlle Bien-Aimé «Kèskonfè» ?</p>
+    <p>Par Katia Jean Pierre</p>
+    <p>Au cours de ma marche samedi, je suis tombée sur un tronc d’arbre qui m’a rappelé une magnifique toile de Toussaint Louverture du grand artiste Philippe Dodard intitulé » Les racines de la liberté » 54×71″.</p>
+    <p>Le parallèle des photos montre une certaine ressemblance, mais ma photo serait » La suite » de l’histoire, l’arbre coupé, même si Toussaint n’a pas été décapité. Une image, un symbole. J’ai pensé à notre actuelle Haïti.</p>
+    <p>Il m’est alors venue à l’idée sa citation:</p>
+    <p>« En me renversant, on n’a abattu à Saint-Domingue que le tronc de l’arbre de la liberté, mais il repoussera car ses racines sont profondes et nombreuses ». Cette citation semble être aussi l’inspiration du tableau.</p>
+    <p>Je regarde cependant, dans ma photo, ce tronc mort. Sans vie. Les racines y sont et l’arbre est encore debout, mais aucune feuille ni branche n’y poussent, juste quelques feuilles.</p>
+    <p>» d’autres » arbres qui lui donnent un » semblant » de vie.</p>
+    <p>Le rêve de Toussaint était de voir son peuple « repousser ». Il a eu un aperçu de la réalisation de ce rêve… mais la suite? Qu’en avons nous fait? Notre arbre est-il vraiment mort et son rêve avec?</p>
+    <p>En cherchant sa citation, je suis tombée sur d’autres de ses citations que je partage avec vous. Réfléchissez un peu, méditons un peu. Son rêve est il mort? Sommes nous morts?</p>
+    <p>Aujourd’hui, en ce 17 Octobre, nous « célébrons » l’assassinat PAR SES FRÈRES HAITIENS, du premier dirigeant de notre Haiti libre et indépendante! (Tableau « le General Dessalines » de Ulrich Jean Pierre).</p>
+    <p>Qu’est ce qui a changé aujourd’hui? Des frères haïtiens tuent encore des frères haïtiens. L’Haïtien détruit son propre habitat, ses acquis. La haine, la peur, la vengeance, les guerres intestines . Les Haïtiens tuent encore les Haïtiens. Haiti est déjà « envahie » par des Haïtiens, et peut être bientôt par » l’étranger ». Ils viennent » mettre de l’ordre » car les » enfants » se battent.</p>
+    <p>Qui voudrait au fond de son coeur haïtien être envahi? Cependant devant une telle impasse, certains ne voient pas d’autres solutions, car l’Haitien continuent à tuer l’haitien. En fait, Haïtien n’a jamais arrêté de tuer haïtien que ce soit physiquement, mentalement, où dans sa dignité.</p>
+    <p>Nous sommes » indépendants » avec des mots, mais toujours esclaves dans notre âme, car nous n’avons jamais fait la paix avec nous même et avec nos frères haïtiens. Nous nous retrouvons dans une situation de non retour.</p>
+    <p>Suis je pour où contre une invasion? Je vous l’ai dit plus haut, Haiti est déjà envahie par les Haïtiens officiellement, et officieusement par » d »autres ».</p>
+    <p>Moi, je suis pour la paix enfin entre nous frères et soeurs haïtiens, et la prospérité de mon pays . Notre mantra, l’union fait la force n’a pas encore été compris, car il n’est pas juste lors de conflits, mais aussi pour construire, créer, s’aimer, vibrer vers une même manifestation de ce que l’on transpire. Actuellement, notre mantra et ceci depuis un bout de temps est détruire, moralement, physiquement.</p>
+    <p>Je ne veux jamais terminer mes partages par des notes négatives . Il est encore possible de tout changer et nous en sommes capables si nous pensons juste Haiti . Celui qui creuse un trou dans sa barque en pleine tempête ne peut que mourir. Redirigeons la, et voguons vers la VIE.</p>
+    <p>Comme dit notre belle Gaelle Bien-Aimé</p>
+    <p>» KÈSKONFE? «</p>
+    <p>Que dirais Dessalines aujourd’hui? Je les laissent lui, et Toussaint Louverture vous parler.</p>
+    <p>Katia Jean Pierre</p>
+    <p>CITATIONS DE DESSALINES ( en premier) ET DE TOUSSAINT LOUVERTURE ( plus bas ) .</p>
+    <p>« Effrayons tous ceux qui seraient tentés de ravir notre liberté. »</p>
+    <p>2. « Jurons de combattre jusqu’au dernier soupir pour l’indépendance de notre pays. »</p>
+    <p>3. « Je ne veux garder avec moi que des braves. Que ceux qui veulent redevenir des esclaves français sortent du fort. Que ceux, au contraire, qui veulent mourir en hommes libres se rangent autour de moi. »</p>
+    <p>4. « Je vous fais tous sauter si les français pénètrent dans ce fort. »</p>
+    <p>5. « Après ce que je viens de faire dans le Sud, si les citoyens ne se soulèvent pas, c’est qu’ils ne sont pas des hommes. »</p>
+    <p>6. « Les noirs dont les pères sont en Afrique, n’auront-ils rien ? »</p>
+    <p>7. « Nous avons osé être libres, osons l’être par nous-mêmes et pour nous- mêmes. »</p>
+    <p>8. « Que m’importe le jugement de la postérité, pourvu que je sauve mon pays. »</p>
+    <p>9. « Prenez garde à vous, nègres et mulâtres, vous avez tous combattu contre les blancs; les biens que nous avons tous acquis en versant notre sang appartiennent à nous ; j’entends qu’ils soient partagés avec équité »</p>
+    <p>10. « Il n’y a qu’un seul noble, c’est moi ! »</p>
+    <p>CITATIONS DE TOUSSAINT LOUVERTURE</p>
+    <p>« Au nom des Noirs et des hommes de couleur, l’indépendance de Saint-Domingue(Haïti) est proclamée. Rendus à notre dignité primitive, nous avons assuré nos droits; nous jurons de ne jamais céder à aucune puissance de la terre »</p>
+    <p>« Je suis Toussaint Louverture ; mon nom s’est peut-être fait connaître jusqu’à vous. J’ai entrepris la vengeance de ma race. je veux que la liberté et l’égalité règnent à Saint-Domingue. Je travaille à les faire exister ».</p>
+    <p>« En me renversant, on n’a abattu à Saint-Domingue que le tronc de l’arbre de la liberté, mais il repoussera car ses racines sont profondes et nombreuses »</p>
+    <p>.« Je suis soldat. Je n’ai pas peur des hommes. Je ne crains que Dieu. S’il faut mourir, je mourrai comme un soldat qui n’a rien à se reprocher ».</p>
+    <p>« Je place ma considération dans le respect de mes concitoyens, mes honneurs dans leur attachement, ma fortune dans leur fidélité désintéressée »</p>
+    <p>.« Les scélérats se démasquent et leur audace s’accroît journellement… Je suis assez fort pour [leur] tenir tête et les réduire, soyez-en bien persuadé »</p>
+    <p>.« Le poste élevé que je remplis n’est pas de mon choix; il m’a été imposé par des circonstances impérieuses ».</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20240216032237/https://www.intexto.ca/haiti-17-octobre-comme-dit-gaelle-bien-aime-keskonfe/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

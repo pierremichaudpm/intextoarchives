@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adoption: ils seront 11 avec deux enfants haïtiens bientôt — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Adoption: ils seront 11 avec deux enfants haïtiens bientôt</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 5 décembre 2020
+  </p>
+  
+  <div class="corps">
+    <p>« J’ai développé de l’empathie pour des enfants qui n’ont pas de parents.», répond, sans pourtour, Julie Joseph Lapierre lorsque In Texto lui demande : mais pourquoi vous faites cela alors que vous avez déjà 9 enfants à la maison dont quatre filles biologiques?</p>
+    <p>Cette mère de Trois-Rivières (Québec) vient de recevoir la confirmation de l’adoption de deux enfants haïtiens de 10 et 6 ans, frère et sœur, après environ quatre ans d’attente, ce qui porte à 11 le nombre d’enfants de cette famille dont quatre nés en Ukraine et un au Québec.</p>
+    <p>« On appelle cela une famille arc-en-ciel », nous lance aux éclats de rire Mme Lapierre qui connait d’ailleurs bien Haïti pour avoir réalisé pas moins de deux voyages humanitaires au pays. Deux de ses filles en ont fait également.</p>
+    <p>Mme Lapierre s’estime « chanceuse » malgré le délai particulièrement long. Car le nombre d’enfants disponibles à l’adoption internationale baisse d’année en année en Haïti.</p>
+    <p>- Entre 2016 et 2018, le Québec a réalisé en moyenne 24 adoptions par année.</p>
+    <p>- 2016 – 31</p>
+    <p>- 2017 – 22</p>
+    <p>- 2018 – 20</p>
+    <p>- Les statistiques 2019 ne sont pas encore publiées.</p>
+    <p>« Sur le plan politique, cela fonctionne plus ou moins bien en Haïti. », explique Josée-Anne Goupil, directrice générale du Secrétariat d’adoption internationale (SAI) au Québec.</p>
+    <p>La signature, après le séisme de 2010, par Haïti de la Convention de la Haye sur la protection de l’enfance, les nouvelles dispositions de l’Institut du bien-être social (IBES) sur la prise de consentement ou l’apparentement, l’implication de l’UNICEF dans le processus, entre autres, ont joué un rôle dans la diminution du nombre de dossier.</p>
+    <p>De plus, en raison des troubles politiques ou du séisme de 2010, l’IBES avait fermé ses portes pendant quelques temps.</p>
+    <p>Difficile retour aux sources</p>
+    <p>Haïti fait partie des premiers pays où les parents adoptants du Québec se sont tournés pour agrandir leurs familles. La plupart de ces nouveaux nés adoptés vers la fin des années 70 et début 80 sont devenus adultes aujourd’hui.</p>
+    <p>Maude Touchette, née en 1983 à l’hôpital Isaïe Jeanty (Chancerelle, un quartier de Port-au-Prince) arrive à Drummondville (Québec) en 1984, à l’âge de 9 mois. Elle y vit une enfance heureuse et même très heureuse selon ses propos.</p>
+    <p>Vers l’adolescence, elle commence à se poser des questions sur son origine.</p>
+    <p>«Je ne voulais pas parler de cela à mes parents, de peur de les blesser. Mais je me suis rendue compte qu’ils étaient plutôt très ouverts à cela.»-Maude Touchette.</p>
+    <p>C’est sa participation à «La couleur de l’adoption», un livre de 38 témoignages de personnes adoptées dans différents pays qui l’a propulsée vers ce voyage au pays d’origine. Avant de s’envoler, elle tente, sans succès, de se ressourcer au sein de la communauté haïtienne à Montréal, ” mais je ne blâme pas la communauté, car il y avait des problèmes de communications”.</p>
+    <p>Mme Touchette se doutait bien que cela n’allait pas être simple comme bonjour. Car, tous ses papiers d’adoption précisent, à l’encre noire, qu’on ne connait pas le nom de sa mère qui l’a abandonnée trois jours après son accouchement pour ne jamais regarder en arrière.</p>
+    <p>Avec l’aide d’Aly Acacia, un Haïtiano-Québécois, elle arrive à la maternité Isaïe Jeanty en mars 2018 pour se faire dire aux Archives du centre hospitalier que : «c’est trop compliqué sans au moins le nom de sa mère ».</p>
+    <p>« Elle m’a dit que: vu que je n’avais pas le nom de ma mère biologique qu’elle ne voulait pas regardé même quand je lui avait fourni la date et d’autres détails entourant ma naissance.»</p>
+    <p>Le SAI ne cache pas que les retrouvailles en Haïti ne sont pas simples, à cause de pertes énormes de documents après le séisme et qu’il faut parfois recourir à des méthodes non conventionnelles.</p>
+    <p>« Nous sommes en train de voir parfois à l’utilisation de la radio pour tenter de rejoindre les parents biologiques.» souligne Mme Goupil, la responsable du SAI au Québec.</p>
+    <p>Maude Touchette consacre aujourd’hui une bonne partie de son temps à intervenir auprès des adoptés qui souhaitent faire le périple aux sources.</p>
+    <p>Racisme et adoption</p>
+    <p>De tous les pays où les Québécois adoptent, les enfants nés en Haïti représentent plus de la moitié des demandes de retrouvailles. C’est ce qui ressort des statistiques de RAIS, un organisme de ressources pour les parents adoptants et les adoptés.</p>
+    <p>Selon le SAI, cette forte demande de retrouvailles serait dû au fait que Haïti fut parmi les premiers endroits monde qui s’est ouvert à l’adoption au Québec.</p>
+    <p>Il a été lui-même adopté de la République Dominicaine (RD) dans les années 80 par une famille blanche de Sherbrooke. Il y avait à l’époque un autre enfant d’origine haïtienne qui a été adopté également et qui faisait équipe avec lui dans leurs difficultés.</p>
+    <p>« Je sentais que je n’étais pas comme les autres et je faisais beaucoup pour que tout le monde m’aime.», raconte celui qui travaille à aider les adoptés à recoller les morceaux depuis 12 ans.</p>
+    <p>Mais le plus gros problème est la gestion du racisme au quotidien à la fois pour ces enfants mais aussi pour les parents selon M. Orlando-Fleurant.</p>
+    <p>Le responsable du RAIS croit que le racisme touche davantage les enfants adoptés et non blancs qui doivent passer à travers beaucoup d’émotions à mesure qu’ils grandissent.</p>
+    <p>« Avant d’aller à l’école cet enfant racisé était dans un cocon familial, dit-il, il va l’affronter pour la première fois avec ses camarades. Car, les préjugés des parents sont recrachés de la bouche de ces enfants-là. »</p>
+    <p>Appel au gouvernement</p>
+    <p>Un sondage comandité par le Comité de concertation adoption Québec, le COCON, démontre que les Québécois·es ont très peu de connaissances de l’adoption et des services existants pour la triade adoptive.</p>
+    <p>Ce coup de sonde réalisé par la firme L’Observateur, révèle que les organismes qui offrent des services en adoption sont malheureusement méconnus.</p>
+    <p>- Le sondage révèle également que plus de 80% des Québécois·es reconnait qu’être adopté·e impose des défis particuliers au plan psychologique et affectif</p>
+    <p>- Près de sept Québécois·es sur 10 (68%) considèrent qu’adopter est plus difficile que de devenir parent biologique.</p>
+    <p>Malheureusement, les services psychosociaux destinés à la triade adoptive, en particulier aux adolescent·e·s et aux adultes, sont rares et peu connus : seulement une personne concernée de près par l’adoption sur 5 (19%) les connaît.</p>
+    <p>« La méconnaissance des services fait en sorte que des gens souffrent en silence et attendent longtemps avant de trouver du soutien adéquat », note Catherine Desrosiers, directrice générale de l’Association Emmanuel.</p>
+    <p>Pour pallier cette situation, le Portail Adoption Québec (www.adoptionquebec.ca), un répertoire permettant d’accéder à une diversité d’organismes qui œuvrent en adoption a été créé.</p>
+    <p>« Nous souhaitons que le gouvernement s’investisse sans plus tarder dans la réalisation d’un plan d’action interministériel pour que les gens aient accès facilement aux services dont ils ont besoin », déclare Marie Simard, directrice générale de la Confédération des organismes familiaux du Québec (COFAQ).</p>
+    <p>À propos du COCON Adoption Québec</p>
+    <p>Chapeauté par la Confédération des organismes familiaux du Québec (COFAQ) et soutenu par la Fondation Lucie et André Chagnon, le COCON Adoption Québec réunit chercheurs et organismes ayant pour mission commune le mieux-être de la triade adoptive. En novembre 2020, les organisations membres du COCON Adoption Québec sont : Association Emmanuel, Fédération des parents adoptants du Québec, L’Hybridé, Mouvement Retrouvailles, RAIS</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20201206004317/https://www.intexto.ca/adoption-ils-seront-11-avec-deux-enfants-haitiens-bientot/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recrutement de 1000 infirmières: Haïti, pas assez francophone pour Québec — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Recrutement de 1000 infirmières: Haïti, pas assez francophone pour Québec</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 4 mars 2022
+  </p>
+  
+  <div class="corps">
+    <p>Recrutement de 1000 infirmières: Haïti, pas assez francophone pour Québec - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Recrutement de 1000 infirmières: Haïti, pas assez francophone pour Québec</p>
+    <p>Le premier ministre du Québec François Legault reçoit son vaccin contre la COVID de Régine Laurent, une infirmière d&#39;origine haïtienne.</p>
+    <p>Invoquant la faible proportion de personnes qui parlent français et la formation non compatible en soins en Haïti, le gouvernement de François Legault a exclu ce pays de son programme de recrutement international d’un millier d’infirmières dans des pays francophones (dont le Cameroun en Afrique), alors que l’Ordre des infirmières et infirmiers du Québec continue de délivrer des permis à des professionnelles ayant été formées dans des écoles haïtiennes.</p>
+    <p>Les pays francophones ciblés pour la première phase du projet sont l’Algérie, le Cameroun, le Maroc, la Tunisie et l’île Maurice annonce le ministère québécois de l’Immigration dans un communiqué. Et Haïti? demande In Texto au ministre de l’Immigration. La réponse de son attachée de presse fait sursauter plus d’un Haïtiens.</p>
+    <p>« L’objectif de la sélection de ces territoires est l’intégration la plus rapide possible des candidats sur le marché du travail. Les pays ciblés en priorité sont des pays francophones ou des pays dont une proportion importante de personnes parle français, mais également des pays dont les formations offertes sont comparables à celles offertes au Québec. », soutient Maude Méthot-Faniel, attachée de presse du ministre du Travail, de l’Emploi mais aussi ministre de l’Immigration, Jean Boulet, lorsque In Texto a voulu connaître les raisons de l’exclusion d’Haïti du programme.</p>
+    <p>Haïti est bilingue (créole) et le français, hérité de la colonisation française jusqu’en 1804. Et, l’école se fait en français depuis.</p>
+    <p>François Legault, le premier ministre du Québec rappelle souvent la proximité linguistique (français) mais aussi culturelle entre les Québécois et les Haïtiens. « On est de tout cœur avec nos cousins haïtiens », disait-il en août 2021 à la suite du séisme qui a ravagé la péninsule sud d’Haïti.</p>
+    <p>D’un autre coin de la bouche, son gouvernement considère, par cette décision, qu’en Haïti on n’est pas si francophone que cela.</p>
+    <p>« Je ne sais pas pourquoi le gouvernement a dit ça, mais ça ne tient pas la route. », réagit Maude Pierre-Pierre du Ralliement des infirmières et infirmière-auxiliaires d’origine haïtienne du Québec.</p>
+    <p>Mme Pierre-Pierre rappelle qu’il appartient à l’Ordre des infirmières et infirmiers du Québec (OIIQ) d’évaluer les formations offertes ici ou à l’étranger et non au gouvernement. La langue invoquée par les autorités serait pour camoufler la vraie raison de cette exclusion,</p>
+    <p>« Le français, ça s’apprend, dit Maude Pierre-Pierre. Et de plus, ils (les Haïtiens) entendent le français autour d’eux. Pour moi, ce n’est pas une raison valable. Ce qui se cache en dessus je ne le sais pas. »</p>
+    <p>Les données de l’Ordre contredisent le gouvernement sur Haïti</p>
+    <p>Alors que le gouvernement de M. Legault remet en question la qualité du français des Haïtiens mais aussi de leur niveau de formation, l’OIIQ rappelle que « qu’après la France, Haïti est le pays d’où provient le plus grand nombre d’infirmières et infirmiers diplômés hors Québec inscrits au Tableau des membres. » (au 31 mars 2021), soit 563.</p>
+    <p>Les Philippines arrivent au 3e rang avec 358 infirmières et infirmiers inscrits au 31 mars 2021.</p>
+    <p>Hausse du recrutement à l’étranger</p>
+    <p>« Pour nous, du moment où la Planification de main-d’œuvre est faite, On est pour le fait d’aller recruter ces professionnelles partout, que ce soit en Haïti ou ailleurs. Ce n’est pas du tout un enjeu à ce niveau là pour nous. », estime Julie Bouchard, présidente de la Fédération des infirmières du Québec (FIQ).</p>
+    <p>Pour elle les enjeux de l’annonce du ministre de l’immigration ne se situe pas à ce niveau. Mme Bouchard s’inquiète plutôt de l’accueil qui leur sera réservé ou qu’elles «fassent face à du racisme systémique» dans leur milieu.</p>
+    <p>La FIQ soulève également les problèmes de délais trop longs avec Immigration Canada pour les papiers, l’allocation de subsistance de 500 dollars par semaine, trop faible à comparer aux coûts de la vie exacerbée par la pandémie entre autres.</p>
+    <p>La disponibilité de logement, la place en garderie pour les enfants, « cela fait partie des inquiétudes que l’on a comme tout comme l’intégration des conjoints.»</p>
+    <p>Outre ces soucis administratifs, la FIQ estime que la formation de mise à niveau d’une durée d’un an maximal est trop et pourrait ajouter à la charge de pression à laquelle ces infirmières auront à faire face.</p>
+    <p>Les personnes sélectionnées pour participer à ce projet pourront travailler comme préposées aux bénéficiaires pour un maximum de 20 h par semaine durant la formation d’appoint et à temps plein pendant les congés scolaires selon Immigration Québec</p>
+    <p>« On trouve que c’est quand même assez exigeant. Alors qu’on aurait pu faire autrement y aller au cas par cas selon les compétences de chacune. Certaines personnes auraient pu déjà travailler comme infirmière auxiliaire. »</p>
+    <p>Julie Bouchard propose un « service de mentorat » qui serait plus efficace et plus intéressant, car elle craint des désistements en cascade de la part des personnes sélectionnées.</p>
+    <p>« Certaines personnes pourraient baisser les bras, et aller vers d’autres secteurs d’activités moins exigeant. »</p>
+    <p>« Une fois les infirmières et infirmiers accueillis au Québec, il faut veiller à proposer les conditions nécessaires pour que ces professionnels restent dans le réseau de la santé et des services sociaux. », suggère pour sa part Luc Mathieu président de l’OIIQ dans un communiqué.</p>
+    <p>Régionalisation de l’immigration</p>
+    <p>Je veux servir la communauté canadienne</p>
+    <p>Je veux servir servir le canada</p>
+    <p>Slt,je veux postuler</p>
+    <p>Hello, BONJOUR je suis une infirmière j aimerais inscrit pour aller travailler à canada</p>
+    <p>Hello, BONJOUR je suis une infirmière j aimerais inscrit pour aller travailler au canada,je suis licencié par l’état haitien.j ai 8ans d expérience dans le domaine spécialement au niveau du bloc operatoire.</p>
+    <p>Bonjour  !</p>
+    <p>Je suis Infirmière diplômée et licenciée. Je suis  intéressée au programme. Merci</p>
+    <p>Bonjour !</p>
+    <p>Je suis Infirmière diplômée et licenciée. Je suis intéressée au  programme. Merci.</p>
+    <p>Je veux avoir etre selectionnée pour avoir un emploi au Canada</p>
+    <p>Comments are closed.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20220414211652/https://www.intexto.ca/recrutement-de-1000-infirmieres-haiti-pas-assez-francophone-pour-quebec/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

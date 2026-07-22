@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mois de l’histoire des Noirs: «Aucunement envie de célébrer» — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Mois de l’histoire des Noirs: «Aucunement envie de célébrer»</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 11 février 2021
+  </p>
+  
+  <div class="corps">
+    <p>Au sixième jour du Mois de l’histoire des Noirs, soit le samedi 6 février dernier marquant le 30e anniversaire, plus de 200 personnes de cette race et leurs amis Blancs se rassemblent devant le quartier général du Service de police de la Ville de Montréal (SPVM) pour « répéter les mêmes choses aux mêmes personnes», d’il y a huit mois : « la vie des Noirs compte.»</p>
+    <p>Stéphanie Germain, une activiste de Hoodstock, un organisme de Montréal-Nord qui lutte contre les inégalités systémiques, dit trouver cela « épuisant, fatiguant » de devoir se mobiliser de nouveau huit mois après l’affaire Georges Floyd aux États-Unis. Mais cette fois pour Mamadi Camara.</p>
+    <p>« Je ne sais pas pour vous, mais moi, je n’ai aucunement envie de célébrer aujourd’hui. », lance-t-elle à la foule qui grelotait devant le QG de la police à Montréal.</p>
+    <p>À la suite de l’agression d’un policier, M.Camara, un étudiant au doctorat et responsable de laboratoire à l’École Polytechnique, a été arrêté puis accusé injustement dans cette affaire dans une espèce «d’aveuglement volontaire.», souligne Marie-Livia Beaugé, avocate et activiste.</p>
+    <p>La peau</p>
+    <p>Car, en plus d’avoir clamé son innocence, d’autres témoins mentionnaient aux policiers que ce n’était pas lui. Le scientifique a passé six jours en prison avant d’être relaxé par un juge au Palais de justice de Montréal sur la base de nouveaux éléments de preuve, notamment une vidéo, le disculpant.</p>
+    <p>« Je pense personnellement que si c’était un Blanc, ils l’auraient amené au poste. Mais, ils auraient analysé la vidéo et ne pas porter des accusations.»-</p>
+    <p>M-L Beaugé, avocate et activiste</p>
+    <p>La couleur de la peau est au cœur de l’affaire Camara. Elle réveille brutalement de vieux cochons et démons sur le racisme systémique, le profilage racial, qui somnolaient depuis quelques temps dans la société québécoise.</p>
+    <p>Indépendante mais pas publique</p>
+    <p>Devant l’ampleur et les proportions qui prennent les controverses, le gouvernement déclenche une enquête indépendante sur le dossier, en ce sens que la police n’enquêtera pas sur la police.</p>
+    <p>L’investigation qui sera menée par le Juge Louis Dionne fait l’objet déjà de vives critiques. Certains déplorent le fait qu’elle ne sera pas publique.</p>
+    <p>D’ailleurs, « les résultats pourront ne pas être divulgués en partie s’il y a vraiment de bonne raison de le faire.», note la ministre de la Sécurité publique Geneviève Guilbault qui fait office de vice-première ministre également.</p>
+    <p>Cette recherche de la vérité intéresse de très prêt aussi le conseiller stratégique indépendant du SPVM. Le sociologue d’origine haïtienne Frédéric Boisrond, révèle clairement ses attentes.</p>
+    <p>« Ce qu’il faut rechercher dans cette enquête, c’est de savoir si c’était un Blanc, est-ce que cela se serait produit de la même manière?»</p>
+    <p>Frédéric Boisrond, conseiller stratégique indépendant du SPVM</p>
+    <p>L’affaire Camara vient hanter le SPVM quelques deux mois après que le conseiller stratégique indépendant ait remis un rapport, en novembre 2020, à son directeur Sylvain Caron, sur les questions de profilage racial et de racisme systémique, lesquels « existent » au sein de l’institution.</p>
+    <p>Interrogé sur le contenu, le sociologue soutient qu’il appartient à son « client d’en révéler la teneur »</p>
+    <p>« Trop vite »</p>
+    <p>Frédéric Boisrond appelle tout le monde à la prudence mais surtout à la patience afin de pouvoir mettre le doigt sur les vrais faits dans le cadre de cette affaire.</p>
+    <p>À Jean-François Lisée, ancien chef du Parti québécois (PQ), qui disait sur les ondes de Radio-Canada qu’il ne saurait s’agir de profilage racial puisque le policier Sanjay Vig, à l’origine de son arrestation, vient du Pakistan (Asie), il répond que : « c’est ne rien comprendre du profilage. »</p>
+    <p>« Le racisme systémique n’est pas un racisme individuel. », rappelle le sociologue.</p>
+    <p>Au chef de la police, qui, lors de sa conférence de presse sur le sujet, avait écarté la thèse de profilage, il dit que Sylvain Caron « va trop vite » en besogne.</p>
+    <p>« On ne peut pas dire qu’il y a du racisme systémique à l’intérieur d’une organisation et quand il se produit un événement, la réponse qu’on donne c’est: ce n’est pas du racisme systémique. Non! Parce que le racisme systémique, ce n’est pas quelque chose de visible.»-F. Boisrond.</p>
+    <p>À contrario, il prend le contrepied des propos de la mairesse Valérie Plante qui s’est empressée de dire que c’en est un. « Je pense qu’elle va trop vite également.”</p>
+    <p>Pour l’historien Frantz Voltaire qui préside la Semaine d’action contre le racisme ( qui a lieu au mois de mars tous les ans), il existe depuis fort longtemps une hiérarchie raciale, définie en fonction du taux de mélamine dans le sang.</p>
+    <p>Zéro confiance en la police</p>
+    <p>Les histoires de profilage et de discrimination raciale provoquent à la longue une grave crise de confiance dans les forces policières mais aussi face aux politiciens au sein des communautés racisées.</p>
+    <p>Certains vont jusqu’à croire que la police n’est pas là pour les protéger et leur servir en cas de besoin.</p>
+    <p>« Moi, si j’ai un problème avec mon voisin blanc, je ne vais pas appeler la police. Car, c’est sûrement moi qui vais écoper.»,</p>
+    <p>confie Marie-Livia Beaugé qui est avocate pourtant au Barreau de Montréal.</p>
+    <p>Marian Lopez, une des organisatrices de la manifestation du 6 février dernier n’a non plus aucune foi dans les forces de l’ordre. Pour elle, « historiquement la police n’est pas là pour nous (les Noirs) protéger.»</p>
+    <p>Will Prosper, activiste au sein de Hoodstock, observe une érosion de la confiance des communautés racisées dans les forces de l’ordre en général.</p>
+    <p>« Il y a un sentiment de méfiance et cela s’amplifie. Ça prend des proportions qu’on voit rarement. Il y a de plus de Blancs qui prennent part au mouvement.», dit-il.</p>
+    <p>« En tant que Blancs, on a une position privilégiée dans la société, d’être là, c’est un des trucs qu’on peut faire faire qui est assez simple pour appuyer les revendications.», dit Melissa, dans la vingtaine, qui manifestait devant le QG du SPVM.</p>
+    <p>Pour le militants des droits civiques, W. Prosper, les politiciens te les responsables des corps policiers sont en décalage avec la réalité.</p>
+    <p>« Comment se fait-il qu’il n’y ait toujours pas de décisions politiques qui poussent à un règlement du problème, que l’état-major du SPVM n’adresse pas ces enjeux-là?»</p>
+    <p>Au Québec, depuis déjà 30 ans, cette année, une célébration a lieu tous les mois de février autour de l’histoire des Noirs. Au Canada, elle a lieu depuis 25 ans.</p>
+    <p>Plusieurs activités sont affichés notamment à la Bibliothèque et archives nationales du Québec (BAnQ). Un Gala Dynastie, qui présente un millier de visages modèles des communautés noires, en est à sa 5e édition.</p>
+    <p>L’organisation du Gala dit vouloir prendre en compte les mouvements sociaux et les revendications des communautés noires pour une société plus juste et équitable.</p>
+    <p>La mort de George Floyd, de Breonna Taylor, de Ahmaud Arbery a eu des échos à travers le monde et jusqu’ici au Québec. L’équipe du gala a donc pris la décision de troquer les catégories habituelles pour mettre l’accent sur l’implication sociale et l’empowerment des communautés noires en ces temps de changements profonds.</p>
+    <p>En 2020, nous avons vécu beaucoup d’adversité et observé l’impact de cette dernière dans nos vies. Plusieurs personnes se sont battues pour un changement. À travers ce gala, nous voulons les faire connaître et les honorer.</p>
+    <p>Pour en savoir plus sur l’histoire des Noirs au Québec MHN – Histoire Communauté (moishistoiredesnoirs.com)</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20210212022754/http://www.intexto.ca/mois-de-lhistoire-des-noirs-aucunement-envie-de-celebrer/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

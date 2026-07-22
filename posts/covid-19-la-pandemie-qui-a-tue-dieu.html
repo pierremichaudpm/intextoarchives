@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COVID-19:la pandémie qui a tué Dieu — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">COVID-19:la pandémie qui a tué Dieu</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/dr-jean-fils-aime.html">Dr Jean Fils-Aimé</a></strong> · Publié le 2 avril 2020
+  </p>
+  
+  <div class="corps">
+    <p>COVID-19:la pandémie qui a tué Dieu</p>
+    <p>Cette crise sanitaire mondiale aura eu pour effets, entre autres, de faire tomber certains masques et de nous faire revisiter certains discours dont les religions nous rabattent les oreilles depuis notre plus tendre enfance, et dont l’actuelle pandémie nous aura fait réaliser le sophisme, sinon l’inanité, c’est-à-dire, la vanité.</p>
+    <p>En théologie, notamment, la charpente des trois religions dites monothéistes, le judaïsme, le christianisme et l’islam reposent sur deux postulats fondamentaux que la Covid-19 a réussi à saper en quelques jours. Je ne ferai que les esquisser pour faire court.</p>
+    <p>1-Le Dieu Tout-puissant</p>
+    <p>Les Judéo-chrétiens et les Musulmans croient en un Dieu Tout- puissant ( Pantocrator) et tout- miséricordieux. Ils confessent du même souffle, c’est-à-dire, du même mouvement, ces deux attributs divins ( tel un binôme) pour une question de logique évidente.</p>
+    <p>Car, si Dieu peut tout et qu’il ne compatisse pas à la souffrance de ses enfants, il serait sadique. Tandis que s’il compatit sans qu’il ne puisse agir, Il serait faible.</p>
+    <p>Le discours Islamo-judéo-chrétien est révulsé par l’idée d’un Dieu faible  »Allah Akbar! », clament en effet les Musulmans!</p>
+    <p>Pourtant, au moment où j’écris ces lignes, c’est l’Occident chrétien qui est le plus touché par la Covid-19.</p>
+    <p>Songez que Rome elle-même, qui accueille le Saint-Siège, c’est-à-dire, le Siège officiel de l’Église sur Terre, enterre ses milliers de victimes. Je compatis sincèrement!</p>
+    <p>De plus, depuis quelques jours, ce sont les États-Unis d’Amérique, dont la devise est ironiquement « In God We Trust » qui sont devenus l’épicentre de la pandémie. Dieu est-il Tout-Puissant ou en confinement lui aussi ?</p>
+    <p>En temps normal, nos églises (autrefois catholiques et aujourd’hui de plus en plus évangéliques) sont truffées de guérisseurs, de thaumaturges, qui n’ont qu’à souffler sur des malades pour qu’ils soient guéris.</p>
+    <p>Pensez au pasteur protestant Benny Hinn, qui prétend (qui prétendait, devrais-je dire) pouvoir guérir toutes les maladies au nom de Jésus-Christ.</p>
+    <p>Dramatiquement, lui et son église, comme tous les autres pasteurs et toutes leurs églises, sont fermées. En quarantaine. En isolement. Que fait-on des versets de la Bible ou des sourates du Coran qui promettent l’immunité ou la guérison aux croyants! Tous partis en fumée. De la fumisterie!</p>
+    <p>Il en résulte que si le discours islamo-judéo-chrétien d’un Dieu Tout-Puissant était vrai, les synagogues, les mosquées et les églises se transformeraient, au son de la pandémie, en de formidables méga hôpitaux.</p>
+    <p>Or, il n’en est rien. Niet.</p>
+    <p>La covid-19 aura servi à faire tomber le masque creux de la notion islamo-judéo-chrétienne du Dieu Tout-Puissant. Foutaise que tout cela!</p>
+    <p>2-Le Dieu Souverain et en contrôle de tout ( El Shaddai)</p>
+    <p>Un autre attribut que les Islamo-judéo-chrétiens aiment ressasser ad nauseam, c’est le concept d’un Dieu Souverain et en contrôle de tout. Pour illustrer cette idée, les judéo-chrétiens aiment rappeler l’image du psaume 29 d’un « Dieu qui est assis sur son trône lors des catastrophes ».</p>
+    <p>Sarcastiquement, si « Dieu reste assis sur son trône », tandis que ses enfants meurent ou enterrent leurs morts, il n’est pas sans me faire penser à l’ancien président Algérien Abdelazis Bouteflika, qui, durant les dernières années de son règne, restait « sur son trône », assis sur une chaise roulante, incapable de parler, de marcher ou de lever le petit doigt pour son peuple.</p>
+    <p>Devant son inaction ou sa présence qui ne valait pas mieux qu’une absence, les Algériens ont dit : Bouteflika, dégage!</p>
+    <p>Oui, ayons l’intégrité intellectuelle de le reconnaître : la covid-19 a tué Dieu, le Dieu tout-Puissant, le Dieu Souverain et en contrôle des Islamo-judéo-chrétiens. Pour paraphraser Friedrich Nietzsche, « Dieu est mort, c’est la covid-19 qui l’a tué ». Pis : la covid-19 choisit d’inhumer Dieu le dimanche de Pâques. La triste réalité, c’est que les religieux n’assisteront même pas à ses funérailles, puisque les églises resteront fermées à Pâques prochain. Quelle tragédie !</p>
+    <p>3- La covid-19 fait de l’Homme le vrai Dieu</p>
+    <p>Décidément, j’ai planté ma plume jusqu’au coude dans la philosophie de Nietzsche, me direz-vous. Et pour cause ! Le seul vrai Dieu pour l’Homme, c’est l’Homme lui-même.</p>
+    <p>J’en veux pour preuve que dès la première irruption de la covid-19 en Chine, c’est l’homme qui a soigné l’homme. Je vois cette cohorte de médecins, d’infirmières, d’auxiliaires, de pharmaciens, de chercheurs, qui se dévouent, jusqu’à donner leur propre vie, au chevet des malades.</p>
+    <p>Oui, s’il y a un Dieu, c’est l’Homme, car c’est lui qui trouvera le vaccin efficace contre la covid-19.</p>
+    <p>Il en a toujours été ainsi. Devant chaque adversité, l’Homme s’est toujours relevé seul : Il est Homo erectus. Quand il est démuni, il se crée des outils : il est Homo Faber. Quand il est malade, il se soigne, il devient Homo curator.</p>
+    <p>Or, s’il a cru en un Dieu autre que lui, c’était par peur, par infantilisme, c’était parce qu’il n’avait pas encore réalisé que toutes les vertus divines sont en lui, et qu’en fin de compte, même si l’idée en elle-même donne le vertige, le seul vrai Dieu, c’est l’homme. Homo Deus est ! Ça va bien aller !</p>
+    <p>Vous pourriez aussi aimer!</p>
+    <p>4 Comments on “COVID-19:la pandémie qui a tué Dieu”</p>
+    <p>-</p>
+    <p>Encore le docteur Jean fils-aimé. Combien j’aime ce texte!</p>
+    <p>-</p>
+    <p>Vous avez peut-être raison, Dr. Jean Fils-Aimé. Dieu semble être absent, il a été tué et c’est l’homme le seul vrai Dieu, c’est ainsi qu’il a été de tout temps, selon vous.</p>
+    <p>D’accord!</p>
+    <p>Mais, pourquoi le Covid -19? il y a eu pourtant des catastrophes sanitaires bien plus graves dans le passé…, sans compter les tsunamis, les tremblements de terre, et les famines.</p>
+    <p>Pourquoi ce virus ou plutôt cette pandémie réussirait là où beaucoup d’autres catastrophes naturelles ou provoquées ont échoué?</p>
+    <p>Je veux dire, pourquoi la Seconde Guerre n’a pas tué Dieu? Pourquoi les guerres civiles, voir celles des Religions n’ont pas réussi à le faire…?</p>
+    <p>Mise à part toutes ces questions ou ces considérations, la question essentielle est: pourquoi publier un texte pareil dans un tel contexte? S’agit-il d’une provocation ou tout simplement un manque d’empathie…?</p>
+    <p>Dans la communication, l’intention est souvent plus importante que le discours. Quelle est la vôtre, Dr. Jean Fils-Aimé?</p>
+    <p>Bonjour !</p>
+    <p>-</p>
+    <p>Dans un essai de 833 mots, le docteur Fils-Aime a tenté de faire tomber des masques et d’appeler les lecteurs à mettre en question toutes les instructions reçues en présentant un autre dieu, l’homme selon son argument est dieu pour lui-même et pour son prochain. A-t-il réussi à sa tache?</p>
+    <p>Ce qui suit est une réfutation de l’argument de Dr Fils-Aime et une réaffirmation no seulement de l’existence de Dieu mais aussi d’un Dieu bon et souverain. Tout en voulant que ma réponse soit polémique, je ferai l’effort de ne pas attaquer la personne mais la position que je dois censurer avec toute sévérité et je prie qu’à la fin Dr. Fils-Aime arrive à une vraie foi en Dieu s’il en sera digne.</p>
+    <p>Il faut dire que Dr. Fils-Aime n’a fait que réveiller et répéter les anciens arguments qui ont déjà été réfutés et en fait n’a rien ajouter pour faire avancer ces fallacieuses, je dois dire qu’il les a connecte avec COVID-19, compliments pour cela.</p>
+    <p>Dr Fils-Aime a commencé son argument sous une fausse assertion, à savoir qu’il y a un discours Islamo-Judéo-Chrétien, cela est faux. En fait, les Chrétiens n’ont jamais accepté Allah en tant qu’équivalent du Dieu de la Bible. Quoique les chrétiens n’ont jamais accepté cette équivalence, certains, et ceci avec l’agenda de faciliter l’harmonie religieuse dans le future entre les religions du monde (Volf, 2011). Dr. Fils-Aime en faisant référence à la miséricorde, (Les Judéo-chrétiens et les Musulmans croient en un Dieu Tout- puissant (Pantocrator) et tout- miséricordieux), doit comprendre que le Dieu des Chrétiens n’est pas seulement miséricordieux mais Il est AMOUR, ce que l’Islam considère comme une faiblesse et ne considère pas l’amour comme un attribut divin. Pour l’Islam, l’amour indique un besoin et pour cela ne peut pas etre un attribute divin a l’oppose de la miséricorde (Volf 153-158). A dire à un Musulman que Dieu est amour est une aberration mais la Bible dit que Dieu est amour. Dr. Fils-Aime semble opposer son propre argument, car les Chrétiens croient que le Dieu de la Bible agit toujours et n’acceptera jamais l’idée d’un Dieu qui soit faible. Ce que les Musulmans n’accepteront pas non plus en disant « Allahu Akbar ».Le Dieu tout puissant. Les deux premières sections de l’essai représentent un argument, je ne sais pas si c’était voulu ou si c’était preuve de lacune dans l’usage de l’Hébreu. Comme nous le savons, שָׁדַד (Shaddai), non seulement veut dire Dieu tout puissant, l’idée de souveraineté y est aussi inclue. Dr. Fils-Aime aurait mettre les deux ensemble. Passons.</p>
+    <p>Il semble que Dr. Fils-Aime veut faire passer l’église catholique pour l’église en général, encore une erreur de part s’il veut critiquer les églises évangéliques il devait s’informer mieux pour savoir que les églises évangéliques s’opposent à l’église catholique et qu’elles n’ont pas de siège central sur terre, encore moins à Vatican. Et si Dr. Fils-Aime était mieux renseigne, il n’utiliserait jamais Benny-Hinn pour argumenter son cas puisque ce dernier n’est pas considéré comme faisant parti de l’église évangélique.</p>
+    <p>Aussi, Dr Fils-Aime doit comprendre que Dieu n’a pas besoin d’avocat a sa défense, à utiliser Psaume 29 de façon ironique prouve encore qu’il a une idée erronée du Dieu des Chrétiens, en fait, puisque Dieu est souverain, Il n’est pas seulement assis sur son trône comme quelqu’un qui n’agit pas, au contraire, et je considère sa démarche comme une attaque vile a la personne de Dieu même en le comparant a Abdelazis Bouteflika pour insinuer que Dieu soit incapable d’agir. Et si c’est COVID-19 qui l’amène a cette conclusion, semble qu’il n’a jamais vue de catastrophe de proportion biblique.</p>
+    <p>Sans vouloir mettre Dieu responsable de COVID-19 et puisque Dr. Fils-Aime veut utiliser la Bible, Je recommande la lecture de Psaume 18:8, ou Psaume 82 et encore mieux Psaume 46 :9-10, ou il pourra voir Dieu a l’œuvre. Dieu n’est pas ignorant de ce qui se passe et puisse qu’il est souverain, Il n’a pas besoin de ma défense.</p>
+    <p>C’est intéressant de voir Dr. Fils-Aime répéter les paroles que Frederick Nietzsche prouve qu’il ne comprend pas l’argument de Nietzsche quoiqu’étant un athée. Quand Nietzsche disait Dieu est mort son argument était : si Dieu est mort cela veut dire une complète and pénible transformation doit se faire. Si Dieu est mort, dans le sens que nous n’avons pas besoin de lui, alors nous avons un monde en péril et la vie notre manière ne fait plus sens et nous devons souffrir les effets perturbateurs. En fait, le dieu que connaissent Dr. Fils-Aime et ses alliés, inclus quelque « chrétiens » est mort, il doit mourir afin qu’ils parviennent à la connaissance du vrai Dieu. Comme C.S Lewis (1996) dit: My idea of God is not a divine idea. It has to be shattered time after time. He shatters it himself. He is the great iconoclast. Could we not almost say that this shattering is one of the marks of his presence? The incarnation is the supreme example; it leaves all previous ideas of the Messiah in ruins. And most are ‘offended’ by the iconoclasm; and blessed are those who are not.(2)</p>
+    <p>Maintenant, si Dr. Fils-Aime a fait de l’homme son dieu, cela garant que non seulement ce dieu est mort mais aussi il doit mourir car ce dieu n’est pas souverain ni tout puissant.</p>
+    <p>Deniere pensee, en ecrivant un article comme celui-ci, Dr. Fils-Aime a montre son incomprehension au sujet du probleme fondamentale qui confronte le monde, le probleme de l’existence du bien et du mal.(1) Friedrich Nietzsche, The Gay Science (New York: Vintage, 1974), 181-182.</p>
+    <p>(2) C.S. Lewis, A Grief Observed (New York: HarperCollins, 1996), 66.</p>
+    <p>-</p>
+    <p>Pour le docteur Fils-Aime Dieu est mort.Je pense que le souffle divin qui flotte sur le monde ouvert au moindre vent ne s’arrête plus sur l’âme du Dr. Fils-Aime et ne peut la faire frissonner comme le cygne s’abat en un cercle mouvant. Le Dr. Fils-Aime se croit trop puissant et important pour continuer à croire en Dieu. La science est sa seule boussole et il se considère comme un dieu.Pourtant…</p>
+    <p>Moun ki kwè nan sèlman la sians</p>
+    <p>Pa kab bay la vi yon vrè</p>
+    <p>sans.</p>
+    <p>Menm si yo gen je yo pa wè</p>
+    <p>Logèy fè yo refize kwè</p>
+    <p>Konesans ,fos lom limite</p>
+    <p>BonDye sèl gen letènite</p>
+    <p>Tout moun ta dwe kwè</p>
+    <p>Nan BonDye sa ki sèl Seyè.</p>
+    <p>Dr. Fils-Aime : un « Super Humain »sans Dieu sans espoir . Hélas!</p>
+    <p>Comments are closed.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20250408061841/https://www.intexto.ca/covid-19-la-pandemie-qui-a-tue-dieu/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Longueuil organise en grand son 1er Mois de l’histoires des Noirs — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Longueuil organise en grand son 1er Mois de l’histoires des Noirs</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/alain-bernard.html">Alain Bernard</a></strong> · Publié le 31 janvier 2023
+  </p>
+  
+  <div class="corps">
+    <p>Longueuil organise en grand son 1er Mois de l’histoires des Noirs - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Longueuil organise en grand son 1er Mois de l’histoires des Noirs</p>
+    <p>Plus de trente ans après Montréal, la Ville de Longueuil commence, à compter de cette année 2023, à célébrer le Mois de l’histoire des Noirs. C’est notamment grâce à la vision de la nouvelle mairesse, Catherine Fournier et à l’élection, pour la première fois, de trois élues noires dans l’agglomération, Affine LWALALIKA, Rolande BALMA et Reine BOMBO-ALLARA qui, cette dernière, est présidente du Conseil municipal.</p>
+    <p>In Texto les a rencontrées ainsi que Lysa BÉLAÏCHA, une autre élue de la diversité d’origine algérienne, en marge du 6e Sommet socioéconomique des jeunes noirs (SdesJ) qui s’est tenu dans la ville de Québec la fin de semaine dernière. Au moins 50% des élus municipaux de l’agglomération sont de la diversité et selon Statistiques Canadam 18,6% de la population de Longueuil sont des Noirs.</p>
+    <p>«Cela permet à la population de se sentir mieux représenter de pouvoir contacter plus facilement les conseillers et une meilleure représentativité», croit Mme Balma, originaire du Burkina Fasso (Afrique) élue dans le District Antoinette-Robidoux de l’arrondissement du Vieux-Longueuil.</p>
+    <p>Le 15 février 2022, trois mois après leur entrée en fonction, les membres du conseil de ville de Longueuil ont adopté une résolution proclamant le mois de février, le Mois de l’histoire des Noirs, en plus d’avoir confié à la Direction de la culture, du loisir et du développement social, le mandat de dresser les grands axes de cet événement phare.</p>
+    <p>«Pour notre équipe, se joindre au mouvement du Mois de l’histoire des Noirs est une façon d’afficher notre fierté par rapport à la diversité qui compose la population longueuilloise. Nous souhaitons ainsi mettre en valeur leur histoire, leur culture et leur apport à la société québécoise », a affirmé dans un communiqué, mardi, la mairesse de Longueuil, Catherine Fournier.</p>
+    <p>Et pour la conseillère municipale du district du Parc-de-la-Cité et responsable des relations interculturelles au sein du comité exécutif de la Ville, Affine Lwalalika, l’apport des Noirs être souligné tous les jours. «Je nous souhaite de continuer d’élargir nos connaissances collectives pour ainsi mieux vivre-ensemble. Chaque histoire est importante et contribue à enrichir notre communauté », a-t-elle dit dans un communiqué.</p>
+    <p>«Les gens nous regardent beaucoup aller»</p>
+    <p>Les trois élues noires mais aussi ceux de la diversité croit pertinemment que le fait qu’ils se soient présentés aux dernière élections a permis à beaucoup qui ne s’intéressaient pas à la politique de s’y mettre. Mais les élues rencontrées par le journal accordent tout le mérite à Catherine Fournier, la mairesse et chef du parti Coalition Longueuil.</p>
+    <p>«Je pense que les citoyens étaient prêts, j’ai la conviction qu’on a été élues pas parce qu’on est Noires Mais parce qu’on a travaillé très fort et parce qu’on a une mairesse Catherine Fournier, qui avait cette vision là» - Reine BOMBO-ALLARA</p>
+    <p>Toutefois, elle dit sentir le besoin de travailler plus fort face à cette «lourde responsabilité». «Dans l’ensemble de toutes les cultures sont très heureux de voir qu’on est passé à une étape dans le grand Montréal. Il y a plus d’ouverture que de fermeture» observe la conseillère Lysa BÉLAÏCHA, élue dans le District Boisé-Du Tremblay.</p>
+    <p>On retrouver la programmation du Mois de l’histoire des Noirs, à Longueuil ICI. Plus d’une dizaine d’organismes noirs en majorité, ont élaboré ce calendrier d’activités.: l’Entente pour la solidarité, l’entraide et l’amitié Rive-Sud, Espace Mimosa, le Bureau consultation jeunesse, l’Association de la communauté noire de la Rive-Sud, Vision Inter-Cultures, Comité Longueuil Villes sans Racisme ni Discrimination, le Carrefour le Moutier, la Maison internationale de la Rive-Sud Inc., le Regroupement des Femmes d’origine Haïtienne de la Montérégie et le Conseil Interculturel de la Ville de Longueuil.</p>
+    <p>À propos de Longueuil</p>
+    <p>Moderne et tournée vers l’avenir, Longueuil est la ville-centre de l’agglomération de Longueuil qui regroupe plus de 438 000 personnes. Longueuil se distingue par la qualité des services essentiels qu’elle offre à sa population, par sa programmation culturelle riche et variée, de même que par son fort potentiel de développement économique. Forte de ses 360 ans d’histoire, Longueuil propose aussi un milieu de vie stimulant et accueillant propice à l’épanouissement des familles, dans lequel se côtoient de grands espaces verts, des quartiers résidentiels et urbains paisibles ainsi qu’un milieu d’affaires prospère.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20230308135533/https://www.intexto.ca/longueuil-organise-en-grand-son-1er-mois-de-lhistoires-des-noirs/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

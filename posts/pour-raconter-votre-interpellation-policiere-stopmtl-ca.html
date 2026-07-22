@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pour raconter votre interpellation policière :STOPMTL.ca — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Pour raconter votre interpellation policière :STOPMTL.ca</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 14 juillet 2021
+  </p>
+  
+  <div class="corps">
+    <p>Les Montréalaises et Montréalais pourront dorénavant rapporter leurs expériences d’interpellation par la police en se rendant sur le site Web STOPMTL.ca, une initiative lancée par une équipe de recherche multidisciplinaire de l’Institut national de la recherche scientifique (INRS), de l’Université McGill, de l’Université Concordia et de la University College London.</p>
+    <p>Les données détaillées recueillies visent à dresser un portrait plus précis des interpellations policières du point de vue citoyen.</p>
+    <p>« Une ressource importante pour les citoyens, les collectivités et les chercheurs, puisque seulement 5 à 20% des interpellations policières effectuées sont enregistrées par le Service de police de la Ville de Montréal (SPVM). », rapportent les chercheurs dans un communiqué.</p>
+    <p>«Ce projet de recherche et de science citoyenne mise donc à 100 % sur l’ouverture des données », souligne pour sa part la chercheuse principale du projet, Carolyn Côté-Lussier, professeure en études urbaines à l’INRS et chercheuse au Centre international de criminologie comparée.</p>
+    <p>Les personnes âgées de 15 ans et plus seront en mesure de rapporter une expérience d’interpellation policière qui a eu lieu le jour même ou des mois, voire 20 ans plus tôt, et ce, par l’entremise d’un formulaire anonyme.</p>
+    <p>Chaque usagère ou usager pourra indiquer comment et où s’est passée l’interpellation, décrire le contexte, préciser son âge, son genre, son groupe ethnique ou racial ainsi que le moyen de transport utilisé au moment de l’interpellation.</p>
+    <p>Des données accessibles</p>
+    <p>Au moment d’écrire ces lignes plus de 30 personnes avaient déjà rapporté leurs expériences d’interpellation avec la police en une heure.</p>
+    <p>Le projet sera en accès libre dans son intégralité et les données du site Web seront accessibles et téléchargeables par les personnes qui souhaitent y avoir accès.</p>
+    <p>« En téléchargeant les données, vous acceptez que STOPMTL.ca ne garantit pas l’exactitude, l’exhaustivité, ni la validité des données. », avertit le site aux utilisateurs.</p>
+    <p>Rappelons qu’en 2019, un rapport indépendant commandité par la Ville de Montréal démontrait un profilage racial et social par le SPVM visant les Noirs, les Arabes et les Autochtones, particulièrement les jeunes adultes. De manière générale, les personnes autochtones et noires auraient entre quatre et cinq fois plus de risque d’être interpellées, par rapport aux personnes blanches.</p>
+    <p>« Les organismes communautaires n’ont pas accès aux données du SPVM, et leurs revendications ne sont souvent pas prises au sérieux, car ils n’ont pas de chiffres pour les appuyer », souligne la professeure Côté-Lussier.</p>
+    <p>« C’est un besoin qui a été exprimé à maintes reprises par les organismes communautaires depuis les années 1980. », dit-elle.</p>
+    <p>Cibler « les points chauds »</p>
+    <p>Actuellement, le Centre de justice des Premiers Peuples de Montréal, le Centre de recherche-action sur les relations raciales (CRARR), la Maison d’Haïti, le Conseil interculturel de Montréal, le Conseil jeunesse de Montréal ainsi que l’arrondissement de Côte-des-Neiges-Notre-Dame-de-Grâce soutiennent le projet STOPMTL.ca.</p>
+    <p>« Ce projet permettra à la population et à la police d’obtenir des informations dont ils ont grandement besoin, puisqu’il fournira une représentation visuelle de ce qu’on appelle les points chauds, où se produisent la plupart des interpellations policières, et pourra donner lieu à des conversations importantes entre ces deux groupes, fondées sur des données probantes plutôt que sur des ouï-dire », estime Myrna Lashley, professeure adjointe au Département de psychiatrie de l’Université McGill.</p>
+    <p>L’équipe scientifique derrière ce projet produira un rapport sur la validité des données. De plus, les données issues de STOPMTL.ca alimenteront des recherches en cours sur les effets du crime au sens large (victimisation, présence policière, sentiment de sécurité) sur la santé mentale et les indicateurs de qualité de vie, tels que la mobilité dans les quartiers.</p>
+    <p>« Notre environnement a une incidence importante sur notre santé et notre bien-être physique et émotionnel, mais si les données existantes ne représentent qu’une petite partie de l’histoire, notre compréhension actuelle est limitée et de portée restreinte. Ce projet est le premier pas vers l’élargissement de notre vision du monde et le comblement de certaines de ces lacunes », explique Lisa Kakinami, professeure agrégée au Département de mathématiques et de statistique en collaboration avec le Centre PERFORM, et professeure affiliée au Département de santé, de kinésiologie et de physiologie appliquée de l’Université Concordia.</p>
+    <p>La professeure Côté-Lussier rappelle que la participation des Montréalaises et des Montréalais est cruciale pour le succès de ce projet et souligne que les données bénéficieront à la fois « à la recherche et à la communauté au sens large ».</p>
+    <p>Ce projet est le fruit du travail d’une équipe interdisciplinaire de chercheuses et chercheurs : Carolyn Côté-Lussier (chercheuse principale, Institut national de la recherche scientifique), Myrna Lashley (Université McGill), Jason Carmichael (Université McGill), Ben Bradford (University College London, R.-U.), Lisa Kakinami (Université Concordia) et Marie-Soleil Cloutier (Institut national de la recherche scientifique).</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20210714141047/http://www.intexto.ca/pour-raconter-votre-interpellation-policiere-stopmtl-ca/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

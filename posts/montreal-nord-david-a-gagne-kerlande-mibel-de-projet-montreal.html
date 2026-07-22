@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montréal-Nord: «David a gagné»-Kerlande Mibel de Projet Montréal — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Montréal-Nord: «David a gagné»-Kerlande Mibel de Projet Montréal</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 17 mars 2016
+  </p>
+  
+  <div class="corps">
+    <p>Au-delà des couleurs, une Noire (K.Mibel) et une Blanche (C.Black), deux femmes se disputent la mairie de Montréal-Nord lors des partielles du 24 avril prochain. La campagne électorale qui s’est ouverte vendredi dernier ne laisse pas présager un crêpage de chignon entre les deux Nord-Montréalaises</p>
+    <p>Fille de chauffeur de taxi à Montréal, cette native du Cap-Haïtien (Nord d’Haïti) arrive à Montréal-Nord à l’âge de 8 ans avec ses parents voilà «32 ans et demi». Cette diplômée de 2e cycle (DESS) en gestion des organisations de l’Université Laval passe une dizaine d’années dans ce qu’on considère aujourd’hui dans les clichés comme «Montréal-Noir».</p>
+    <p>«Cette ville nous a fait du bien», dit-elle dans une allusion aux Haïtiens et les immigrants en général. C’est dans cette optique que Mme Mibel, à la démission surprise du maire Gilles Deguire, participe activement au rassemblement du Ralliement pour le renouveau, «un mouvement citoyen, dit-elle, pour faire en sorte que les gens sortent de leur indifférence par rapport à Montréal-Nord».</p>
+    <p>«Il n’y a pas d’offres structurées à Montréal-Nord : si tu arrives comme immigrant, tu débarques chez ton cousin, ton frère. Sinon il n’y a nulle part où tu peux aller»</p>
+    <p>Ce mouvement citoyen, dans un premier temps, revendiquait publiquement un maire noir pour cette ville où les Noirs sont majoritaires sur une soixantaine d’ethnies. Les chefs de file sollicitent, par lettre, les trois partis municipaux en présence. Mais le parti de l’actuel maire de Montréal Denis Coderre ignore la demande de rencontre du groupe et jette son dévolu sur Christine Black « une fille de la Rive-Sud» et qui évolue à Montréal-Nord depuis 14 ans.</p>
+    <p>«Je n’ai pas compris, fustige Kerlande Mibel, Denis Coderre l’ami des Haïtiens, lui qui disait renmen moun ki renmenw?», s’interroge tout de suite après la candidate. Ce que Mme Mibel ne comprend c’est que le maire n’a pas daigné rencontrer les Haïtiens. Certains médias présentaient la démarche du Ralliement comme d’une volonté d’«imposer» un candidat noir à M.Coderre, ce qui aurait fait braquer la maire.</p>
+    <p>«Si on avait un allié parmi les élus il s’appelait Denis Coderre et quand tu vas vers un allié tu n’es pas dans une logique de confrontation ou d’imposition», fait remarquer la protégée de Projet Montréal.</p>
+    <p>Kerlande Mibel faisait partie de la calebasse de candidats que le Ralliement voulait proposer aux trois partis politiques. À la suite de cette tempête sur les relations entre le parti Équipe Coderre et une frange des Haïtiens, le mouvement libère les prétendants.</p>
+    <p>Projet Montréal tire alors de la grosse courge séchée une femme, une Haïtienne pour faire face à «la machine à Coderre». «David a gagné», rappelle la candidate du parti de Luc Fernandez dans une allusion au combat de David contre Goliath.</p>
+    <p>«Regardez-nous faire», ajoute la candidate lorsqu’on lui demande comment elle compte s’y prendre. «Je suis une femme qui travaille. S’il faudra faire 200 000 appels, du porte-à-porte on va faire tout ce qu’il faut faire pour gagner»</p>
+    <p>Enjeux</p>
+    <p>L’enjeu principal mis de l’avant par la candidate de Projet Montréal tourne autour du développement économique, ce qui implique pour Kerlande Mibel «une lutte contre la pauvreté et l’exclusion sociale». Le plan de développement économique de la candidate englobe aussi les problématiques de persévérance scolaire, de chômage, l’intégration en emploi, l’accès au logement, la revitalisation des artères entre autres.</p>
+    <p>Bravo Mme Mibel !!!</p>
+    <p>C’est bien exprimer ce que nous ressentons en tant qu’amis (es) fidèles de Monsieur le maire. Nous devons lui exprimer notre mécontentement. Renmen moun ki renmen ou ! Nous sommes fidèle jusqu’à présent. Bon courage, David avait l’expérience divine… Goliath avait l’expérience terrestre. Le combat est déjà gagné, soyons unis chacun peut faire une différence sur sa rue à Montréal-Nord.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20170902140316/http://intexto.ca/montreal-nord-david-a-gagne-kerlande-mibel-de-projet-montreal/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’Haïtien qui veut acheter Re/Max Québec — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">L’Haïtien qui veut acheter Re/Max Québec</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 19 avril 2017
+  </p>
+  
+  <div class="corps">
+    <p>Il est trop Noir pour les Blancs et trop Blanc pour les Noirs et «de nos jours trop Arabe». Thierry Lindor né dans le quartier Hochelaga-Maisonneuve, d’un père haïtien et d’une mère parisienne, et élevé dans Saint-Michel, à Montréal, vit toutes les facettes de la discrimination.</p>
+    <p>«Mais cela ne m’arrête pas», lance fièrement le jeune Haïtien de 35 ans qui dirige Remax Griffintown, une agence de courtage en immobilier qui est passé rapidement de deux agents à 30 sous sa responsabilité aujourd’hui. Seulement en 2016, son agence, qui rejoint la plupart des quartiers de Montréal grâce aux réseaux sociaux, a réalisé plus de 250 transactions totalisant 15 millions de dollars.</p>
+    <p>Les ambitions du jeune Haïtien vont plus loin qu’une agence associée à une marque. M. Lindor songe à acheter Remax-Québec d’ici 5 à 10 ans. Il en a fait l’annonce en primeur à Montréal pluriel, une émission dominicale animée par Neil Armand sur les ondes de radio Centre-Ville. «Il faut oser, dit-il, et je vous promets qu’on serait capable de le faire».</p>
+    <p>S’il ambitionne gros, c’est pour pouvoir redonner autant. Et Thierry Lindor, qui s’est déjà fait traiter de «voleur», se moque du qu’en-dira-t-on, notamment au sein même de sa communauté.</p>
+    <p>Activiste social</p>
+    <p>Malgré sa taille moyenne, Thierry Lindor est un fin basketteur. Il faisait partie du programme Basket-Pagé de l’école secondaire Lucien Pagé, dans Villeray/Parc Ex, où il a évolué. Il évoque à tout bout de champ les Gagnon, les Oriental, les Jobin, toutes des familles ou personnes qui l’ont aidé à passer par le basket pour devenir ce qu’il appelle «un citoyen performant».</p>
+    <p>«J’ai été aidé. J’aurais pu vendre de la drogue mais je vends des maisons, parce que j’ai été aidé dans mon jeune âge», affirme l’homme d’affaires.</p>
+    <p>Samuel Dalembert qui a joué pendant 13 ans au sein de la National basketball association (NBA) en faisait partie aussi. Et les deux hommes sont devenus des complices d’une initiative qui porte beaucoup de fruits parmi les jeunes de Saint-Michel.</p>
+    <p>Depuis trois ans, ils redonnent à leur ancienne école majoritairement haïtienne en permettant à des jeunes de rêver. Chaque année une vingtaine d’entre eux effectuent un voyage à N.Y ou à Toronto pour assister à des matchs de la NBA tout frais payés. «Maillots, pompe, casquette, je vous le dis… on les gatte»-T.Lindor.</p>
+    <p>Toutefois, des conditions strictes de comportement sont associées à leur participation. Les obstacles à surmonter consistent à respecter leurs collègues, leurs professeurs, leur coach, à tout prendre, à avoir un comportement exemplaire.</p>
+    <p>«Je peux vous dire qu’ils se tenaient à carreau. Lorsqu’ils rentraient à la maison et qu’ils voyaient un proxénète ou un dealer au coin de la rue qui leur disait : hey! Viens-t-en. Ils répondaient non, moi j’ai un voyage. J’aimerais cela y aller moi»</p>
+    <p>Thierry Lindor affirme n’avoir aucun intérêt socio-économique de faire tout cela. Pour lui, c’est un «devoir absolu» de voler au secours des jeunes de sa communauté. L’homme d’affaires déplore par ailleurs qu’il n’y ait pas plus de mécènes haïtiens à venir en aide à des ados afin d’éviter qu’ils dérapent.</p>
+    <p>«Dès fois on voit des Arabes, des Blancs qui grandissent avec la communauté haïtienne et qui ont plus à cœur la communauté que certains Haïtiens», peste-t-il.</p>
+    <p>Il a dit</p>
+    <p>-«C’est facile de dire : à Saint-Michel, Parc-Ex, Montréal-Nord, la violence çi, la violence ça. Oui, mais c’est de comprendre dans quel connotation socio-économique ils sont».</p>
+    <p>-«Depuis l’arrivée de Donald Trump, j’ai été questionné une ou deux fois en me rendant aux USA. Moi les gens qui me prennent pour un Arabe c’est propre à eux. Mon nom c’est Thierry Lindor d’origine haïtienne. J’ai jamais entendu qu’un Arabe porte ce nom»</p>
+    <p>-«Un médecin haïtien à Montréal a déjà dit à mon père : maintenant là… il faut que tu arrêtes. Car le gouvernement pourrait penser que tu abuses du système».</p>
+    <p>Thierry Lindor est né d’une famille de 10 enfants dont le dernier vient d’avoir 12 ans.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20170502100446/http://intexto.ca:80/lhaitien-qui-veut-acheter-remax-quebec/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

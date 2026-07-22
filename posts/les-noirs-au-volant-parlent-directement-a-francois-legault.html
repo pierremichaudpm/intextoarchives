@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les «Noirs au volant » parlent directement à François Legault — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Les «Noirs au volant » parlent directement à François Legault</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/lucmane-vieux.html">Lucmane Vieux</a></strong> · Publié le 31 août 2020
+  </p>
+  
+  <div class="corps">
+    <p>Les «Noirs au volant » parlent directement à François Legault</p>
+    <p>Les membres des communautés noires de Montréal et de la région de Lanaudière se sont réunis en grand nombre dimanche devant les locaux du bureau de comté du Premier ministre du Québec, François Lagault, à l’Assomption, à l’initiative de plusieurs organismes qui militent contre le profilage racial et le racisme au Québec.</p>
+    <p>Les initiateurs en ont profité pour soumettre au bureau un document de 10 recommandations visant à mettre fin au profilage racial, et à garantir aux Noirs le droit de conduire librement sans être traqués par la police.</p>
+    <p>- L’adoption d’une loi, des règlements contre le profilage racial, qui définissent et interdissent cette pratique dans tous les services de police au Québec;</p>
+    <p>- L’intégration dans la description des responsabilités de chaque policier, y compris le directeur du service de police, du devoir de dénoncer toute pratique de profilage racial dans les interventions et les pratiques policières;</p>
+    <p>- Doter les policiers de cameras portatives;</p>
+    <p>Ces recommandations seront abordées lors de la consultation publique, mardi 1er septembre, de la Commission de la sécurité publique de Montréal sur la politique sur les interpellations de rue, rendue publique le mois dernier par le SPVM.</p>
+    <p>« Aujourd’hui nous posons une action concrète en transmettant ce document de recommandations au Premier ministre », a dit Alberto Syllion de Hilarious Riders, un club de motards multiculturels.</p>
+    <p>Selon lui, il est important que les citoyens mettent la pression sur les dirigeants qu’ils ont élus, afin qu’ils trouvent le changement espéré.</p>
+    <p>« Ce n’est pas une faveur. Les Noirs ont le droit de conduire la voiture de leur choix, sans se faire arrêter à tout bout de champ par un policier pour des contrôles de routine, qui ont de graves répercussions sur leur vie personnelle », a-t-il protesté.</p>
+    <p>Des oranges pourries dans le panier</p>
+    <p>Tous les policiers ne sont pas mauvais, a pour sa part, reconnu Carline Agnès Joseph Guillaume de Miss Haïti Canada, soulignant que la majorité d’entre eux font leur travail avec cœur.</p>
+    <p>Cependant, a-t-elle déploré, il y a une minorité qui exerce le profilage racial. « Ce sont des oranges pourries qui risquent de contaminer le panier », a prévenu Mme Guillaume, appelant ces policiers à se ressaisir, tout en félicitant ceux-là qui, selon elle, travaillent avec professionnalisme.</p>
+    <p>« Notre première manifestation a eu lieu à Montréal. Aujourd’hui nous nous sommes déplacés à l’Assomption en passant par Repentigny. Si rien n’est fait, nous nous rendrons bientôt à l’Assemblée nationale », a-t-elle lancé sous les applaudissements de l’assistance.</p>
+    <p>Une lutte quotidienne</p>
+    <p>Présent à la manifestation, le conseiller municipale de Saint-Michel, Josué Corvil, a félicité les communautés noires qui se battent contre le profilage racial et le racisme.</p>
+    <p>« Ce n’est pas possible qu’en 2020 on ne peut pas conduire aisément, qu’on se voit interdire certains emplois qu’on mérite », a-t-il déploré, invitant les manifestants à ne pas lâcher.</p>
+    <p>« C’est une lutte de tous les jours », a rappelé M. Corvil.</p>
+    <p>Plus de civils dans la police</p>
+    <p>Pour sa part, la conseillère d’arrondissement Rivière-des-Prairies-Pointe-aux-trembles, Nathalie Pierre Antoine, a exprimé son indignation face au récent acte de racisme perpétré aux États-Unis par un policier blanc.</p>
+    <p>« Les élus ont besoin du soutien et de la collaboration des citoyens pour faire leur travail », a indiqué Mme Pierre-Antoine, soulignant que tout un travail d’éducation et de sensibilisation doit se faire auprès de certains collègues élus en ce qui a trait au profilage racial et au racisme.</p>
+    <p>Elle en a profité pour inviter les citoyens à participer à la commission sur la sécurité publique de Montréal qui se déroule cette semaine.</p>
+    <p>« Il n’est pas possible que les corps de police ne soient pas redevables envers nous. Il faut plus de civils dans la police », a suggéré la conseillère.</p>
+    <p>Le convoi de la manifestation a laissé la station de métro Namur, à Montréal, vers les 13 heures 30, pour se diriger vers la ville de l’Assomption, en passant par Repentigny, où l’attendait un autre groupe assez important devant l’hôtel de ville. Sous une forte escorte policière, les Noirs au volant ont passé une quinzaine de minutes à vrombir leurs moteurs à Repentigny sur un fonds de concert de klaxons.</p>
+    <p>La fusion des deux groupes s’est effectuée dans une ambiance vive, pacifique et élégante, sous les regards curieux de certains passants qui, pour la plupart, ont témoigné de la solidarité aux manifestants par des gestes de la main ou en klaxonnant eux aussi. Le cortège, fusionné et renforcé, a enfin pris la direction du comté de François Legault comme député, toujours dans une atmosphère bruyante,</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20230104000853/https://www.intexto.ca/les-noirs-au-volant-parlent-directement-a-francois-legault/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

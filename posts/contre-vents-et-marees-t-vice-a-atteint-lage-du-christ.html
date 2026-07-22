@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contre vents et marées, T-Vice a atteint l’âge du Christ — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Contre vents et marées, T-Vice a atteint l’âge du Christ</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/pierre-phaill-goudou.html">Pierre-Phaill Goudou</a></strong> · Publié le 2 septembre 2025
+  </p>
+  
+  <div class="corps">
+    <p>Contre vents et marées, T-Vice a atteint l’âge du Christ</p>
+    <p>Photo: Philippe Saint-Louis</p>
+    <p>Le groupe T-Vice a célébré ses 33 ans d’existence le 27 août 2025 au Blue Martini à Fort Lauderdale. Lors d’un bal en blanc, la bande à Roberto et Reynaldo Martino a rempli l’espace d’admirateurs et de personnalités du monde de la musique et du showbiz haïtien. Le duo, Bedjine et Kadilak et Dj Bullet étaient leurs invités à cette soirée réussie tant par la participation que par l’ambiance qui a régné au Blue Martini.</p>
+    <p>Nostalgique des grands évènements réalisés chaque année, à pareille époque, pour marquer son anniversaire, le groupe a dû s’accommoder cette année, vu la situation d’insécurité rendant le terrain impraticable en Haïti.</p>
+    <p>Néanmoins, les princes vices avaient bravé le danger en se rendant en Haïti cette année, après 3 ans d’absence. T-Vice s’était produit à Cap-Haïtien, Ouanaminthe et Port-au-Prince au Karibe. En 2022, le groupe avait fêté ses 30 ans en Haïti, en compagnie du groupe Kai. Cependant, la fête ne s’était pas déroulée sans incident.</p>
+    <p>Roberto et Reynaldo, deux coqs de race.</p>
+    <p>T-Vice représente aujourd’hui l’un des symboles de consistance, de constance, de persévérance et de résistance dans le milieu musical haïtien. L’histoire des frères Roberto et Reynaldo Martino remonte à août 1992, avec le bassiste Éric Émile. Ils étaient adolescents. À 16 et 13 ans, les deux fils de Robert Martino ont décidé de suivre les traces de leur père.</p>
+    <p>Roberto et Reynaldo sont nés et ont grandi dans le bassin de la musique haïtienne, principalement le compas direct. Leur père, célèbre guitariste, a fait école dans le domaine. Après des expériences dans des groupes musicaux de quartier, Robert Martino a fait les beaux jours des Gypsies de Pétion Ville. Il est le principal fondateur du groupe Scorpio dont le beau-frère, Pierrot Alkhal était le manager. Il est aussi l’un des membres fondateurs du Top Vice dont les deux coqs de race ont copié le nom de leur propre groupe, T-Vice.</p>
+    <p>L’histoire des deux frères Martino présageaient déjà à qui on avait affaire et à quoi l’on devait s’attendre. Cependant, ils ne sont pas les seuls à avoir bénéficié de cet héritage musical. Bon nombre de fils de musiciens haïtiens ont tenté de suivre les traces de leur père ou mère. Mais combien d’entre eux ont réussi une carrière aussi longue, constante et résistante que Reynaldo et Roberto? Les deux frères ont donc réussi là où beaucoup d’autres ont échoué. Maintenir un groupe musical compas avec persévérance, consistance et constance n’est pas donner à Mr tout le monde.</p>
+    <p>T-Vice a perdu des batailles, mais jamais la guerre</p>
+    <p>Témoins privilégiés de la polémique Dipi/Scorpio, Roberto et Reynaldo ont l’adversité dans le sang dans le domaine musical en Haïti. D’où ils ont peut-être puisé la force, l’énergie et le courage de mener, d’engager ou d’entrer dans les polémiques musicales les plus salées de l’histoire de la musique haïtienne. Face à Djakout Mizik aujourd`hui Djakout #1 dès le milieu des années 90 et Sweet Micky en 2000, les fils de Robert avaient à se battre sur tous les fronts et répondre à diverses attaques venues de toute part.</p>
+    <p>Une déclaration qui leur a été attribuée, « Gen trop mouch nan let la », lors d’un bal à Miami a tenu T-Vice quasiment en exil pendant plusieurs années. Cette campagne a été renforcée par la chanson « Dénye okazyon » de Sweet Micky sur laquelle participe Black Alex.</p>
+    <p>Il avait fallu le soutien et la présence physique de Wiclef Jean pour faciliter le retour du groupe en Haïti. Une tournée d’actions sociales a été organisée à Cité Soleil dans le but d’améliorer l’image du groupe sur le sol national.</p>
+    <p>T-Vice a connu, en 2013, l’une des plus brutales dislocations de l’histoire du compas avec le départ de plusieurs musiciens clés, dont le chanteur Olivier Duret dont la porte des succès comme « Ma chérie je t’aime ».</p>
+    <p>Roberto et Reynaldo ont trouvé les moyens de remonter la pente et se replacer aujourd’hui parmi les groupes les mieux cotés sur le marché.</p>
+    <p>Leurs origines</p>
+    <p>À tort ou à raison, plusieurs associent le succès du groupe T-Vice aux origines des deux frères. La réalité de la nouvelle génération du Compas à laquelle ils appartiennent était teintée de colorisme. La couleur de peau du chanteur comptait parmi les critères de sélection des chanteurs compas de l’époque. Tu devais être doué des talents de Gary Didier Perez ou d’Erick Charles, pour pouvoir t’imposer comme chanteur principal d’un groupe compas à cette époque, en ayant la peau foncée. À côté de T-Vice, beaucoup d’autres jeunes de la même origine avaient fondé leur groupe musical. Parmi eux, des fils, des neveux ou des jeunes ayant des liens de parenté avec d’éminents musiciens et qui ont grandi dans le même bassin musical que Roberto et Reynaldo.</p>
+    <p>Après 33 ans, ces groupes ne répondent pas à l’appel pendant que T-Vice garde encore une place sur le marché musical en tournant à travers le monde.</p>
+    <p>En conclusion, les deux frères n’ont pas compté sur leurs origines, leurs couleurs ou leur appartenance pour monter leur projet. En plus de leur talent de musicien, ils ont accordé, au cours de leur carrière, une place à la discipline, le respect, le travail et la persévérance pour réussir.</p>
+    <p>Tout le public doit à T-Vice du respect et de la reconnaissance pour le travail accompli, mais aussi pour avoir hissé notre drapeau à travers le monde. La discipline, le respect, le sens du travail bien fait et le professionnalisme de T-Vice sont une source d’inspiration pour les groupes contemporains et les générations futures.</p>
+    <p>À Roberto et Reynaldo Martino, aux musiciens, à Jessie et Pierrot Alkhal, aux admirateurs et à toute la famille Vice, Bonne fête. Que T-Vice continue d’exister et d’être inspirant.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20250902153118/https://www.intexto.ca/contre-vents-et-marees-t-vice-a-atteint-lage-du-christ/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sans-papiers : les mesures libérales qualifiées d’«écran de fumée» — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Sans-papiers : les mesures libérales qualifiées d’«écran de fumée»</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 14 juin 2016
+  </p>
+  
+  <div class="corps">
+    <p>Le Comité d’action des personnes sans statut présente les nouvelles dispositions annoncées par le ministre John McCallum comme un bouillon des conservateurs «réchauffé et assaisonné d’une sauce libérale». In Texto publie leur analyse</p>
+    <p>Le samedi 21 mai 2016, s’est tenu à Montréal-Nord, un rassemblement libéral sous le label de Conférence de Presse. M. Emmanuel DUBOURG, député libéral de Bourassa officiait, à titre de maitre de cérémonie. À tout Seigneur tout honneur. Il s’agit tout de même de sa circonscription, et les membres de la communauté haïtienne sont très nombreux sur ce territoire, considéré comme un fief des Libéraux tant au fédéral qu’au provincial.</p>
+    <p>Tout le gratin du Parti dans la région nord de Montréal était présent à cette grande messe libérale. Mais, ni Radio-Canada, ni TVA, ni RDI, ni LCN, ni la Presse canadienne n’a répondu à « l’Avis aux Médias » envoyé par les organisateurs. Malgré donc l’absence des médias de masse, la salle était bondée de partisans libéraux, d’officiels et de fonctionnaires. Les plus grands absents, évidemment, furent les Sans-papiers en faveur desquels était organisée cette audacieuse opération de relations publiques des Libéraux, dont la cible principale n’était autre que la communauté haïtienne.</p>
+    <p>L’adoption des moratoires : conséquence d’une situation désastreuse en Haïti</p>
+    <p>Avec le Coup d’État-Kidnapping contre le président Jean-Bertrand ARISTIDE en 2004, la répression féroce qui s’ensuivit contre ses partisans, et la chasse aux sorcières mise en marche par le pouvoir de facto, soutenu par Ottawa, ont créé une situation macabre et intenable, qui obligea un grand nombre d’Haïtiens et d’Haïtiennes à fuir leur pays et à chercher refuge au Canada ou ailleurs. Ottawa adopta alors un premier moratoire sur Haïti.</p>
+    <p>Six ans plus tard, le 12 Janvier 2010, un séisme dévastateur faisant plus de 300 mille morts, de très nombreux estropiés et des milliers de sans-abris, a porté le gouvernement québécois à accueillir sur son sol 6 mille réfugiés haïtiens. De son côté, le gouvernement conservateur de l’époque resta insensible et froid. Il reconduisit simplement le moratoire sur Haïti. Bon an mal an, un certain nombre, parmi ces deux groupes de réfugiés entrés au Canada, ont pu obtenir la résidence permanente, surtout, grâce au parrainage de leurs parents déjà établis ici. Tous n’ont pas eu cette chance. C’est ainsi qu’au lendemain du 1er Décembre 2014, date à laquelle Ottawa a décidé de lever le moratoire qui permettait, selon les chiffres officiels du gouvernement, à 3200 ressortissants haïtiens et 300 Zimbabwéens de rester temporairement au Canada sans être renvoyés dans leur pays d’origine, l’émoi fut grand et la panique encore plus, chez les Sans-statuts.</p>
+    <p>Mesure spéciale adoptée par le Gouvernement Conservateur</p>
+    <p>Un programme d’accompagnement mis sur pied par le gouvernement conservateur en place, accorda néanmoins, un délai de six mois finissant le 1er juin 2015, pour présenter une demande d’ordre humanitaire. Cette mesure s’adressait uniquement aux personnes concernées par la levée du moratoire pour leur permettre d’accéder à la résidence permanente.</p>
+    <p>À cet égard, le COMITÉ D’ACTION DES PERSONNES SANS STATUT (CAPSS), créé pour accompagner ces dernières, a dénoncé et rejeté, dès le départ, l’approche du cas par cas – pilier central de ce programme-.</p>
+    <p>C’est pour cela qu’une lettre ouverte datée du 12 mars 2015 fut adressée par le Comité au Premier ministre Harper. Il faut noter que le système du cas par cas permet de renvoyer ces personnes dans leur pays d’origine si elles ne répondent pas à certains critères fastidieux et contraignants, établis par le gouvernement. Sans relâche, jusqu’à maintenant, le Comité continue encore de demander l’adoption d’une mesure globale, collective et inclusive en faveur des personnes concernées par la levée de cette suspension temporaire des renvois, adoptée le 1er Décembre 2014.</p>
+    <p>À l’expiration du délai imparti, selon les chiffres officiels fournis par le Sous-ministre adjoint par intérim du Ministère de l’immigration du Canada, Monsieur Michel DUPUIS, qui répondait aux questions posées par les Parlementaire du Comité permanent de la Citoyenneté et de l’Immigration du Canada :</p>
+    <p>« Au 3 février, le gouvernement avait reçu environ 1700 demandes de résidence permanente dans le cadre des mesures spéciales antérieures. Ces demandes représentaient 2200 personnes. Jusqu’à maintenant, 742 demandes de résidence permanente -qui représentent 1038 personnes- ont été approuvées en principe pour des motifs d’ordre humanitaire. Seulement 67 demandes ont été refusées.» « Environ 900 ressortissants d’Haïti et environ 125 du Zimbabwe visés ou affectés par ces mesures n’ont pas présenté de demande. »</p>
+    <p>Et, pour signaler le taux de réussite du programme, il ajoute : « Cela représente un taux d’acceptation de plus de 93% pour ce groupe. Ce taux est nettement plus élevé que le taux d’acceptation moyen de 40% habituel pour les demandes sur des motifs d’ordre humanitaire.». (Extraits du rapport remis le 25 février 2016 par le Comité permanent de la citoyenneté et de l’immigration du Canada.)</p>
+    <p>Effectivement, si on prend en considération le nombre de demandes traitées, le taux d’acceptation est de 92% et non 93%,voire plus de 93%.</p>
+    <p>En prenant pour acquis l’exactitude de ces chiffres, il resterait, sur les 3500 personnes concernées, 2187 ressortissants haïtiens et zimbabwéens; soit 1025 (900 Haïtiens et 125 Zimbabwéens) qui n’ont pas fait de demande et 1162 qui attendent encore une réponse.</p>
+    <p>Le programme devant se terminer le 1er Juin 2015, la veille, une grande manifestation a eu lieu dans les rues de Montréal pour demander, avec plus de force encore, l’adoption de la mesure globale et collective, afin d’en finir une fois pour toutes avec les tracasseries administratives, les attentes, les déboursés et le stress que connaissent ces personnes.</p>
+    <p>Par ailleurs, en dépit des demandes répétées de plusieurs organismes, dont le Ministère de l’Immigration du Québec, le Premier Ministre Stephen HARPER n’a point voulu prolonger le délai déjà accordé de trois mois de plus. Ce qui aurait pu, sans doute, permettre aux retardataires de se conformer aux mesures spéciales mises en place par son gouvernement.</p>
+    <p>Pendant ce temps-là et durant toute la période de 2004 à nos jours, la situation en Haïti n’a fait qu’empirer et se dégrader. Tous les rapports sur les Droits Humains en font foi ainsi que de nombreux articles de journaux (Violences sexuelles, Viols, Braquages, Kidnappings, Assassinats de civils et de policiers, Massacres, Arrestations arbitraires, Disparitions forcées, Choléra, Zika, etc.). Tout cela, sous le regard indifférent, complice ou coupable de la MINUSTAH (Mission des Nations Unies pour la Stabilisation en Haïti) – une force militaire multinationale d’occupation d’Haïti, comprenant un contingent canadien-.</p>
+    <p>Mais cela n’a pas empêché à un grand nombre de demandeurs d’être déportés ou tout simplement de partir, intimidés par des agents qui leur ont fait peur ou qui leur ont fait miroiter la possibilité d’avoir une meilleure chance en soumettant une nouvelle demande dans leur pays d’origine.</p>
+    <p>Du reste, on ne connaitra jamais le nombre exact de renvois et de départs volontaires d’origine haïtienne, avant la date du sursis annoncé le 10 décembre 2015 par le gouvernement libéral; car, durant la période</p>
+    <p>exceptionnellement longue des élections fédérales de 2015, de nombreux Haïtiens ont dû quitter le Canada.</p>
+    <p>Évolution de la situation des Sans-papiers sous le Gouvernement libéral du Premier Ministre Justin TRUDEAU</p>
+    <p>Dès son arrivée au pouvoir le 19 octobre 2015, le gouvernement de Monsieur Justin TRUDEAU s’est évertué à aligner la politique de son gouvernement sur le concept de deux-poids-deux-mesures, tout en maintenant mordicus le système du cas par cas décrié, utilisé par son prédécesseur.</p>
+    <p>D’un côté, Ottawa accueille 25000 réfugiés syriens et bientôt, compte recevoir 25000 autres. Il déploie le tapis rouge pour les établir à grands frais. De l’autre côté, entre 200 à 500 mille Sans-papiers demeurant au Canada depuis des décennies, sont ignorés. À cet effet, une lettre ouverte datée du 11 novembre 2015, restée sans réponse, fut envoyée par le Comité au Premier ministre Justin TRUDEAU.</p>
+    <p>Quant aux Haïtiens et aux Zimbabwéens, dont certains sont à leur quatrième demande, plus d’un pensent aujourd’hui, qu’ils sont en train d’enrichir et le Gouvernement fédéral et les Avocats ou Consultants en immigration avec leurs maigres salaires, sans avoir aucune certitude d’être acceptés au bout du compte. Ce qui est quand même paradoxal. Un certain nombre de personnes sans statut, pour toutes sortes de raisons, ont une préférence moins grande à aller vers les 5 organismes subventionnés, chargés de les aider à remplir leur formulaire de demande. Ce sont sans doute ces personnes-là qui se demandent si elles sont devenues la poule aux oeufs d’or du système d’immigration au Canada?</p>
+    <p>Montréal-Nord, bastion des Libéraux et plate-forme de lancement d’un écran de fumée</p>
+    <p>Nous l’avons déjà dit, Montréal-Nord – la municipalité la plus pauvre à travers tout le Canada – est un bastion des Libéraux. Ces derniers n’ont jamais eu de soucis à se faire pour l’élection de leurs candidats au fédéral et au provincial, sauf à de très rares occasions.</p>
+    <p>Or, l’actuel Député libéral de cette circonscription, étant d’origine haïtienne et, ayant bénéficié de l’Opération «Mon pays», initié par le gouvernement du Premier Ministre, feu Pierre Eliott TRUDEAU dans les années 70, avait fait des promesses pompeuses à son électorat, au nom du Parti libéral. Les Sans-statuts n’ont pas la mémoire courte, heureusement! N’était-ce l’annonce faite par le Ministre John Mc CALLUM, le 4 Février 2016, accordant le droit aux non-demandeurs et aux demandeurs refusés, de faire une nouvelle demande, une Vigile décidée par le Comité, mais annulée à cause de cette annonce, aurait eu lieu devant les Bureaux du Député DUBOURG à Montréal-Nord.</p>
+    <p>Qui sait? Peut-être qu’avertis, les Libéraux ont pris les devants pour apaiser la situation et éviter du même coup une déconvenue à leur Député.</p>
+    <p>Entre temps, la pression étant redevenue assez forte sur cet Élu, il fallait faire quelque chose. Sans cela, le Député de Bourassa aurait pu servir de bouc émissaire aux yeux de la communauté, ou pire encore, pourrait être considéré comme un traitre aux yeux des Sans-papiers déboutés et déçus. N’importe quoi, en autant que cela «ait de l’allure» pour calmer les ardeurs, diminuer la tension et le stress qui, de plus en plus mine la santé des personnes concernées par la levée du moratoire.</p>
+    <p>À ce sujet, depuis le 25 avril 2016, un des membres actifs du Comité, sans famille au Canada, ravagé par l’angoisse et le stress, est actuellement hospitalisé à Sacré-Coeur, à la suite d’une ACV grave.</p>
+    <p>L’éléphant a accouché d’une souris</p>
+    <p>Puisqu’il fallait faire quelque chose, alors, on imagina une grande messe libérale avec la participation de plusieurs élus et un nombre suffisant de partisans d’origine haïtienne pour annoncer quoi? L’éléphant a accouché d’une souris. Devinez quoi? Deux mesures supplémentaires dont la première est la modification du formulaire de demande pour motifs humanitaires qui, semble-t-il, serait plus facile à remplir, selon les dires du Ministre de l’Immigration du Canada. Sauf, au lieu d’un, il faut en remplir trois maintenant. La seconde mesure est un prêt remboursable à .76% d’intérêt l’an pour 12 à 72 mois. Le Ministère s’engage à accorder aux demandeurs dans le besoin ce prêt afin de faire face aux frais d’immigration.</p>
+    <p>Quelle belle trouvaille des Libéraux! Quelle sollicitude! Quelle compassion envers ces Sans-statuts! Ces Souffre-douleurs qui bossent nuit et jour pour payer tous les frais exigés (Immigration, Avocat ou Consultant, Renouvellement de Permis de travail, La Poste, Transport). De plus, dans la plupart des cas, ces Laissés pour compte doivent subvenir aux besoins de leur famille en Haïti.</p>
+    <p>Réchauffé et assaisonné d’une sauce libérale, le programme des Conservateurs demeure encore la règle</p>
+    <p>Au final, les dernières mesures supplémentaires annoncées le 21 mai 2016 à Montréal-Nord nous montrent sans l’ombre d’un doute qu’il s’agit bien d’un écran de fumée projeté sur la communauté haïtienne, afin de l’endormir et de masquer la politique de deux-poids-deux-mesures en matière d’immigration, adoptée par le nouveau gouvernement fédéral, dès son arrivée au pouvoir. Comment peut-on expliquer que les Libéraux ont attendu tout ce temps-là avant d’annoncer à deux mois et demi de l’échéance du programme, ces deux dernières mesures qui, disons-le tout haut, ne changeront pas grand-chose pour les Sans-statuts. Pourquoi les Libéraux n’avaient-ils pas ajouté ces mesures au programme, dès le 4 février 2016? Pourquoi avoir décidé de modifier le programme conçu par le gouvernement conservateur en trois temps?</p>
+    <p>D’abord, un sursis le 10 décembre 2015; ensuite, deux premières mesures spéciales le 4 février 2016; et, deux autres mesures supplémentaires le 21 mai 2016. Le Député DUBOURG en est si fier et si satisfait qu’il a fait une comparaison, malheureusement boiteuse. Dans sa prestation le 21 mai 2016, il a comparé « l’Opération mon pays » de l’illustre feu Pierre Eliott TRUDEAU avec les deux dernières mesures mises de l’avant par le fils, Justin TRUDEAU. Quelle honte! Dans le même journal : « In Texto, Journal Nou » édition électronique du 21 Mai 2016 où cela a été reporté, il est fait mention aussi de 640 familles à qui le Canada tend la main. Un autre chiffre sorti de la boite à surprises. De là à affirmer que 640 familles n’ont qu’à longer la main à celle du Canada qui leur est tendue, il y a tout un chemin à faire, Monsieur le Député DUBOURG.</p>
+    <p>Doit-on s’attendre à d’autres mesures avant la date butoir du 4 août 2016? Il ne faut pas y compter. Si l’on en croit le porte-parole du ministre Mc CALLUM, M. Félix CORRIVEAU qui déclara ce jour-là : «Le taux d’acception des demandes des Haïtiens est de 88% dans le reste du Canada et de 90% au</p>
+    <p>Québec… », pourquoi ajouter quoi que ce soit? À une telle allure, tout le monde va finir par obtenir sa résidence permanente, voyons!</p>
+    <p>À bien y penser, il est évident que les Libéraux n’avaient aucun plan ou projet précis pour les Haïtiens et les Zimbabwéens. Ils ont tout simplement improvisé. Les faits le démontrent clairement même s’ils diront n’importe quoi pour prouver le contraire et tenter d’amadouer les membres crédules de la communauté haïtienne, avec leurs dernières mesures supplémentaires.</p>
+    <p>Enfin, à aucun moment de la conférence de presse, ni le Ministre de l’immigration John Mc CALLUM , (à qui le Comité a envoyé une lettre le 14 Décembre 2015 et la réponse est arrivée, à la date du 22 Mars 2016) ni le Député Emanuel DUBOURG a eu le courage de prendre l’engagement formel et d’annoncer publiquement aux ressortissants haïtiens et zimbabwéens que cette fois ci, ces derniers allaient tous obtenir enfin, la résidence permanente au Canada, à part les exceptions pour crimes graves ou les cas de sécurité nationale.</p>
+    <p>Puisqu’ils n’ont pas été capables de faire une telle annonce, nous pouvons déduire que parmi les Sans-statuts qui vont devoir présenter une troisième ou une quatrième demande pour l’obtention de la résidence permanente, toujours au même coût exorbitant, il y aura un certain nombre qui sera refusé et obligé de partir du Canada. Hélas! Les Personnes sans-statut ne sont pas encore sorties de l’auberge «conservatrice-libérale». Au cours des mois d’Août, de Septembre, d’Octobre, de Novembre et Décembre 2016, on devrait avoir le coeur net. Alea Jacta est!</p>
+    <p>Serge BOUCHEREAU , Porte-parole du COMITÉ D’ACTION DES PERSONNES SANS STATUT (CAPSS)</p>
+    <p>En collaboration avec Frantz ANDRÉ, membre de la Coordination du CAPSS.</p>
+    <p>Montréal le 1er Juin 2016</p>
+    <p>N/B : Pour les lettres citées dans ce texte, veuillez consulter le compte « facebook du comité d’action des personnes sans statut»</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20170713145811/http://intexto.ca/sans-papiers-les-mesures-liberales-qualifiees-decran-de-fumee/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

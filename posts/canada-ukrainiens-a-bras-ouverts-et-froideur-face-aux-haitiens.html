@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canada: Ukrainiens «à bras ouverts» et froideur face aux Haïtiens — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Canada: Ukrainiens «à bras ouverts» et froideur face aux Haïtiens</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 10 mars 2022
+  </p>
+  
+  <div class="corps">
+    <p>Canada: Ukrainiens «à bras ouverts» et froideur face aux Haïtiens - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Canada: Ukrainiens «à bras ouverts» et froideur face aux Haïtiens</p>
+    <p>Photo: Radio-Canada</p>
+    <p>Rose (nom fictif) arrive des États-Unis au point d’entrée de Saint-Bernard-de-Lacolle (au Québec) le 31 décembre 2021 et demande l’asile au Canada. Elle reçoit des mains de l’agent qui s’occupe d’elle une série de formulaires, dont certains sont déjà remplis, et d’autres non.</p>
+    <p>La demandeuse d’asile avait comme consigne de remplir les autres et de se présenter, en juin prochain, par devant la Commission du statut de réfugiés pour son audience de recevabilité.</p>
+    <p>« Mais, dit-elle en entrevue à In Texto, j’ai reçu un mail, vers la fin février, qui m’informe que je dois envoyer ces documents par courriel dans un délai de quatre semaines. »</p>
+    <p>« Je ne suis pas à l’aise avec ça. Je ne m’y attendais pas non plus. », ajoute Rose qui confie son dossier à Vision max services, une firme de consultants en immigration basée à Montréal depuis près de 18 ans.</p>
+    <p>Idem pour Sonson Pierre-Louis, arrivé avec sa famille d’un périple qui a commencé au Chili en passant par de nombreux pays d’Amérique latine et les USA pour aboutir à Lacolle, début février.</p>
+    <p>L’Agence des services frontaliers du Canada (ASFC) lui a automatiquement demander de se créer un compte sur le site d’Immigration Canada et d’envoyer les formulaires dûment remplis, par courriel.</p>
+    <p>Depuis novembre 2021, une nouvelle vague de demandeurs d’asile arrive au Québec et très peu en Colombie-Britannique alors que dans les autres provinces canadiennes, le nombre est carrément nul.</p>
+    <p>« Il y en a pour qui on a dû créer des adresses courriel, étant donné qu’ils n’en avaient pas. », constate Marjorie Villefranche, directrice générale de la Maison d’Haïti qui reçoit, par bande, ces nouveaux arrivés complètement perdus dans le système et qui cherchent de l’aide.</p>
+    <p>« Il y en a qui sont à l’aise avec Internet et d’autres qui le sont moins. Mais, même ceux qui le sont, on a dû les guider. Car, les documents d’Immigration Canada ne sont pas simple. » -Marjorie Villefranche.</p>
+    <p>Numérisation : « bon pour eux, pas pour nous »</p>
+    <p>Depuis le 6 octobre 2021, Immigration réfugiés et Citoyenneté Canada (IRCC) a lancé le Portail canadien de la protection des réfugiés (PCPR), une initiative qui vise à « renforcer l’intégrité du système d’asile par un échange accru et amélioré des données et pour améliorer le service aux clients.» selon les autorités.</p>
+    <p>En d’autres termes, les clients de IRCC doivent se créer un compte sur le site d’Immigration Canada et sont invités à envoyer leurs documents par courriel dorénavant.</p>
+    <p>« Depuis le 16 février 2022, les demandeurs d’asile qui sont ajournés à une date ultérieure par l’ASFC, pourrait recevoir l’instruction d’un agent des services frontaliers d’utiliser le PCPR avant leur rendez-vous. », indique, à In Texto, Judith Gadbois-St-Cyr porte-parole principale p.i. de l’ASFC.</p>
+    <p>Elle note que « le PCPR réduira le fardeau administratif et réduira les délais de traitement des demandes et en diminuant le traitement manuel des formulaires…»</p>
+    <p>L’ASFC précise toutefois que les demandes d’asile soumises en personne, par courriel ou par le service Connexion de Postes Canada reçues avant le 17 mars 2020 seront traitées conformément aux procédures en vigueur au moment de la présentation. Ces demandeurs n’ont pas besoin de soumettre de nouveau leur demande au moyen du PCPR.</p>
+    <p>Deux couleurs de réfugiés, deux mesures</p>
+    <p>Les mesures pour faciliter l’arrivée et l’accueil des Ukrainiennes et des Ukrainiens au Canada et notamment au Québec pleuvent depuis le déclenchement de la guerre entre l’Ukraine et la Russie.</p>
+    <p>Le 3 mars dernier, le ministre québécois de l’Immigration Jean Boulet a annoncé des dispositions qui visent la « réunification des familles ukrainiennes » à travers un programme humanitaire.</p>
+    <p>« Le programme permettra aux personnes ressortissantes ukrainiennes résidant au Québec de parrainer leur famille élargie. », a-t-il dit dans un communiqué.</p>
+    <p>De passage à Montréal la semaine dernière, M.Boulet a ajouté : «On n’a pas de limite. (…) On va respecter notre capacité d’accueil, mais pour l’instant, quand j’étais dans des organismes, même à Montréal la semaine passée, ils sont prêts. On les attend. »</p>
+    <p>Les autorités ajoutent que les demandes des personnes ressortissantes de l’Ukraine seront traitées en accéléré et bénéficieront de ces services personnalisés</p>
+    <p>Pourtant, depuis le tremblement de terre du 14 août 2021 dans la péninsule sud d’Haïti, de nombreux groupes politiques et organismes communautaires appellent à la mise en place d’un programme spécial de parrainage de membres de la famille élargi, comme cela avait été le cas en 2010. Rien.</p>
+    <p>Les autorités canadiennes et québécoises avaient mis ce dossier sous la glace lorsque nous les avions interrogées à ce sujet.</p>
+    <p>« Étant donné les efforts pour assurer le traitement le plus rapidement possible de nos programmes réguliers d’immigration temporaire et permanente qui demeurent accessibles, nous considérons qu’il n’est pas nécessaire pour l’instant de mettre en place de mesures additionnelles.», nous a indiqué par courriel, Peter Liang, porte-parole de Immigration Canada.</p>
+    <p>De son côté Québec avec le gouvernement de la Coalition avenir Québec (CAQ), refuse catégoriquement de bâtir un tel programme contrairement à 2010 sous le gouvernement libéral. Le gouvernement caquiste renvoie la balle au fédéral.</p>
+    <p>« Le parrainage et les programmes spéciaux humanitaires sont de responsabilité du gouvernement fédéral. » nous avait indiqué, en août 2021, Flore Bouchon, porte-parole du ministère québécois de l’Immigration.</p>
+    <p>Un Comité de crise, créé à la faveur du séisme du 14 août 2021 en Haïti, avait adressé, en octobre 2021, une lettre en ce sens au premier ministre Justin Trudeau et à son ministre de l’immigration, Sean Fraser.</p>
+    <p>Or, face à la situation en Ukraine, le gouvernement du Québec a mobilisé tout un arsenal de services d’accueil et d’intégration aux personnes ressortissantes étrangères ukrainiennes. On parle de 95 organismes en intégration qui pourront leur offrir un accompagnement personnalisé.</p>
+    <p>« On va les accueillir dans leur langue. On va leur donner les outils pour leur permettre de s’intégrer dans les meilleurs délais et on va surtout les recevoir en entrevue pour établir leurs besoins. » -Jean Boulet, ministre québécois de l’Immigration.</p>
+    <p>« Les bras des Québécois sont grands ouverts, on a les ressources, on est capable de les accueillir demain matin. », a-t-il assuré.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20220313062126/https://www.intexto.ca/canada-ukrainiens-a-bras-ouverts-et-froideur-face-aux-haitiens/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

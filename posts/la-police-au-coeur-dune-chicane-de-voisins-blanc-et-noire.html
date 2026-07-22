@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La police au cœur d’une chicane de voisins (Blanc et Noire) — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">La police au cœur d’une chicane de voisins (Blanc et Noire)</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 7 mai 2022
+  </p>
+  
+  <div class="corps">
+    <p>La police au cœur d’une chicane de voisins (Blanc et Noire) - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- La police au cœur d’une chicane de voisins (Blanc et Noire)</p>
+    <p>Une chicane de voisins (un Blanc et une Noire) pour une place de stationnement d’un immeuble à logement à Longueuil, le 25 février dernier, pourrait finir devant les tribunaux au cours de ce mois de mai.</p>
+    <p>Cendy Jeannis, une Longueuilloise d’origine haïtienne, n’arrivait pas, dit-elle, à remiser son auto en raison de la neige mais aussi du mauvais positionnement de la voiture de son voisin. Elle demande à ce dernier s’il avait l’amabilité de lui faciliter la tâche en rangeant mieux son auto.</p>
+    <p>« Le voisin, à ma grande surprise, a ouvert sa vitre et a commencé à me traiter de négresse et menacé de me casser la gueule. », rapporte Mme Jeannis en conférence de presse avec l’aide du CRARR (Centre de recherche action sur les relations raciales) pour dénoncer la situation.</p>
+    <p>Devant l’agressivité de son voisin blanc raciste, Cendy Jeannis loge un appel à l’aide à la police. Mais, elle affirme aujourd’hui que « les policiers n’étaient pas pour m’aider. »</p>
+    <p>Le Service de police de l’agglomération de Longueuil (SPAL) confirme que deux de ses policiers ont effectivement été appelés sur les lieux de cet évènement.</p>
+    <p>« Les agents sur place ont recueilli les versions des citoyens impliqués dans l’événement. », note Francis Charrette, relationniste du SPAL.</p>
+    <p>Sauf que, Mme Jeannis jure qu’elle n’a jamais donné sa version et que ce sont les agents eux-mêmes qui ont formulé sa plainte avec leurs propres mots.</p>
+    <p>« Je voulais aller au poste de police pour porter ma plainte, dit-elle, mais au cours de route, les agents m’ont intercepté et m’ont dit que j’étais en état d’arrestation. »</p>
+    <p>Elle ajoute que ce sont les policiers lui ont mentionné qu’elle n’avait pas besoin de se rendre au poste, puisque sa plainte a déjà été formulée.</p>
+    <p>« On prend tout cela au sérieux, ces accusations. », assure Annie Gougeon, porte-parole du SPAL qui n’est toutefois pas en mesure d’infirmer ou de confirmer la version de Mme Jeannis. Une enquête devrait déterminer comment cela s’est passé, selon Mme Gougeon.</p>
+    <p>« Plaintes croisées »</p>
+    <p>Ces citoyens ont chacun de leur côté exprimés leur volonté de déposer une plainte contre l’autre personne. Les événements ont donc été traités comme un dossier de plainte croisée. »</p>
+    <p>Dans de pareil cas, les policiers ont l’obligation d’informer les parties du risque qu’elles encourent, comme se faire arrêter, explique Annie Gougeon, porte-parole de la police de Longueuil, en entrevue à In Texto.</p>
+    <p>« Si chacun des parties fait une déclaration écrite, il doit le faire avec ses droits puisqu’il pourrait s’incriminer. »-Annie Gougeon</p>
+    <p>Le SPAL, contrairement à ce qu’affirme Mme Jeannis, soutient « qu’en aucun temps, les policiers n’ont empêché l’une au l’autre des parties de porter plainte. »</p>
+    <p>La police fait remarquer que les deux individus ont été arrêtés dans le cadre de ce dossier qui a été soumis au Directeur des poursuites criminelles et pénales le 3 mars 2022 pour les suites légales et d’analyse.</p>
+    <p>« Les policiers ne sont pas là pour décider s’il y a des accusations ou non. », rappelle la porte-parole.</p>
+    <p>Mme Jeannis confirme avoir reçu une convocation au tribunal pour le 20 mai dans le cadre de cette affaire. Et, la veille, soit le 19 mai, elle doit faire relever ses empreintes digitales, par la police, aux fins du dossier.</p>
+    <p>Mme Gougeon confirme que son voisin a les mêmes conditions qu’elle.</p>
+    <p>Plainte en déontologie</p>
+    <p>Quelques jours après son arrestation suivie de libération sous condition, Cendy Jeannis se rend au poste de police de son quartier afin d’assurer un suivi de sa plainte et de donner sa version des faits.</p>
+    <p>Selon son témoignage, les agents rencontrés ne l’auraient pas prise au sérieux et se sont montrés très peu professionnel à son égard.</p>
+    <p>Avec l’aide du CRARR, Cendy Jeannis prépare actuellement une plainte contre les agents qui sont intervenus dans ce dossier. Une plainte en droit de la personne est en préparation également selon Fo Niémi, directeur général du CRARR.</p>
+    <p>« C’est sûr qu’on collabore avec la déontologie ou tout autre organisme externe comme la Commission des droits de la personne. », indique Mme Gougeon</p>
+    <p>Ils ont dit</p>
+    <p>« La manière que les policiers traitaient ma mère c’était vraiment discriminatoire. À 15 ans je sais ce que c’est le racisme surtout celui de la part de la police. » – Lee-Roy, fils de Cendy Jeannis</p>
+    <p>« Les policiers m’ont dit que je n’avais pas besoin d’aller au poste. Car, nous avons formulé la plainte à votre place. » -Cendy Jeannis</p>
+    <p>« Ce qui ce qui se passe dans le dossier de M. Je ne peux pas vous dire. ùsauf que les deux ont été libérés avec des conditions au même titre. » -Annie Gougeon</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20220508033518/https://www.intexto.ca/la-police-au-coeur-dune-chicane-de-voisins-blanc-et-noire/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Racisme médical : les plaintes contre des médecins en hausse — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Racisme médical : les plaintes contre des médecins en hausse</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 23 mai 2024
+  </p>
+  
+  <div class="corps">
+    <p>Racisme médical : les plaintes contre des médecins en hausse - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Racisme médical : les plaintes contre des médecins en hausse</p>
+    <p>Les plaintes pour « discrimination fondée sur l’âge, la race et autres » explosent au Collège des médecins du Québec (CMQ) au cours des 5 dernières années. Si au cours de la pandémie entre 2019 et 2022, le nombre de reproches faits aux médecins est minime, soit de 0 à 6, c’est à partir de 2023 que les patients commencent à s’adresser à la Syndique du CMQ pour cause de discrimination.</p>
+    <p>Le nombre de plaintes enregistrées en 2023 (20) est déjà sensiblement égal à cette année. Alors que nous sommes à la moitié de 2024, 18 griefs contre des médecins pour les mêmes motifs de race, entre autres, sont déjà déposés, révèle à In Texto la Dre Marie-Josée Dupuis, syndique et responsable de la Direction des enquêtes au Collège des médecins.</p>
+    <p>« À noter que les enquêtes du bureau du syndic d’un ordre professionnel sont confidentielles. Seules les plaintes déposées devant le Conseil de discipline de l’ordre ont un caractère public », nous écrit la Dre Dupuis dans une lettre de réponse à une demande d’accès à l’information. Il s’agit donc de la pointe de l’Iceberg, puisque le nombre de dossiers qui font l’objet d’enquête actuellement n’est pas connu.</p>
+    <p>Interpellée par le décès de Joyce Echaquan, le 28 septembre 2020, à Joliette, la Clinique juridique de Saint-Michel (CJSM) a lancé un projet d’accompagnement, de référencement et de sensibilisation sur le « Racisme médical ».</p>
+    <p>Le cas du Dr Wolf Thyma, médecin et psychiatre en résidence, qui a été victime, lui aussi, du racisme médical, est typique. Il est actuellement consultant dans le cadre de ce projet de recherche.</p>
+    <p>Wolf Bob Emerso Thyma venait de réaliser un bac en droit et étudiait en 2e année de médecine lorsque son père est admis à l’urgence d’un hôpital montréalais pour une fièvre qui durait depuis plus de quatre jours et avec altération de conscience. L’infirmière de garde prend sa température buccale et le renvoie à la salle d’attente. «L’infirmière était prête de le laisser partir, avec une altération de conscience, elle m’a dit que je ne pense pas que c’est quelque chose de sérieux», se souvient-il.</p>
+    <p>Il demande alors à l’infirmière de prendre la température rectale afin de s’assurer de la fiabilité du test. Avec beaucoup d’énervement, l’infirmière le fait et à ce moment-là, son père a une température de 39,5. Une équipe le prend en charge tout de suite et l’infirmière sort de la salle.</p>
+    <p>Dans le couloir, elle tombe sur un ambulancier -blanc aux yeux bleus, cheveux châtains – et elle lui dit: ces gens-là, c’est toujours la fin du monde avec eux. Le gars, il a juste une petite grippe et ils capotent.</p>
+    <p>Mais, il se trouve que l’ambulancier en question est le beau-frère du Dr Thyma, ce que l’infirmière ne savait pas. «Mon beau-frère lui dit : c’est de ma famille dont vous parlez comme ça en ce moment. Ce que vous venez de faire là c’est du racisme.»</p>
+    <p>Alors qu’il commençait à aller mieux, la santé du patient se dégrade rapidement et perd connaissance. L’hôpital appelle, en pleine nuit, la famille pour l’en informer. Lorsque Wolf Thyma arrive, accompagné de sa mère, une équipe tentait une réanimation. L’étudiant en médecine, qu’il était à ce moment-là, comprend tout de suite que c’est fini, mais sa mère est complètement à terre. «Sous l’effet de la surprise de voir mourir son mari, elle tombe sur ses genoux en poussant un cri de douleur.</p>
+    <p>«Et l’infirmière de lui répondre, et j’étais là : « ça suffit, je ne veux plus entendre un mot. Vous autres, et je dis bien vous autres, vous pensez que vous pouvez faire ce que vous voulez. Moi aussi j’ai perdu ma mère il y a quelques mois je n’ai pas réagi de cette façon-là, je ne veux plus entendre un mot ».-Dr W Thyma</p>
+    <p>On est trois jours après son admission à l’hôpital et le patient meurt officiellement d’une méningite bactérienne (une bactérie dans son cerveau). La question du racisme médical intéresse de près également le Centre de recherche action sur les relations raciales (CRARR) qui a organisé le mois dernier un séminaire en ligne sur le sujet avec des invités du CMQ autour des thèmes suivants :</p>
+    <p>– Les politiques et recours du Collège des médecins du Québec et de l’Ordre des infirmières et infirmiers du Québec en matière de racisme systémique dans le système de santé</p>
+    <p>– Le Principe de Joyce (Obligation de garantir aux Autochtones un accès équitable aux services sociaux et aux soins de santé)</p>
+    <p>– La sécurisation culturelle dans les soins de la santé</p>
+    <p>– Les manifestations du racisme systémique dans les soins de la santé</p>
+    <p>«Le Collège n’est pas là pour protéger les médecins, mais le public» a précisé d’entrée de jeu la Dre Nathalie Duchesne, de la direction du Collège avant de parler d’un certain nombre de virages pris en 2023.</p>
+    <p>Rapprochement avec le peuple autochtone depuis plusieurs années, la responsabilité sociale ou faire preuve d’humilité culturelle, la reconnaissance du racisme systémique, le principe de Joyce, entre autres, font partie des nouvelles politiques du Collège.</p>
+    <p>«Malheureusement, ces reconnaissances sont arrivées après des événements tragiques», déplore la Dre Duchesne qui a critiqué le projet de Loi 32 du gouvernement du Québec sur la sécurisation culturelle en santé. « Ce projet de Loi n’est pas sécurisant culturellement, tance-t-elle, nous avons reconnu le principe de Joyce. C’était un des éléments importants du projet de Loi 32 qui ne reconnaissait pas le principe. C’était donc à peu près impossible d’enrayer le racisme systémique s’il n’est pas reconnu.»</p>
+    <p>Kim Picard-Binet, une infirmière dans le milieu autochtone, a aussi pris part au séminaire. Elle a longuement parlé de la question du racisme médical en lien avec les Premières Nations</p>
+    <p>Peur du déracinement de la communauté, de l’inconnu, accessibilité des communautés à des soins, barrière de la langue, sont autant de problématiques observées par la professionnelle de santé.</p>
+    <p>«J’ai déjà vu une femme autochtone prendre des médicaments vaginaux par la bouche parce qu’elle n’avait pas compris les instructions dans sa langue», a témoigné Mme Binet. Pour elle, l’affaire Echaquan (Joyce), une Autochtone en crise admise à l’hôpital de Joliette que le personnel de santé associait faussement à un trouble lié à la consommation de drogue n’est que l’arbre qui cache la forêt du racisme.</p>
+    <p>Autre histoire de racisme médical</p>
+    <p>Consultante en ressources humaines, Candice Fuego a consulté au moins huit médecins pour une douleur insupportable au cou. Cinq lui ont établi un diagnostic mettant en cause ses volumes mammaires, alors trois autres disaient déceler des problèmes de sciatique, au niveau des lombaires.</p>
+    <p>Mais en réalité et en fin de compte, le cas de Mme Fuego serait d’ordre ostéopathique et pourrait être réglé par de l’acuponcture, ce qu’elle fait actuellement. Avant cela, Candice Fuego a dû se soumettre aux recommandations des médecins et subir une opération de la poitrine.</p>
+    <p>«Pourtant, mes seins n’étaient pas super gros comparés à d’autres personnes», note la jeune femme lors d’une activité de la Clinique juridique de Saint-Michel (CJSM) sur le «Racisme médical» dans le système québécois de la santé. L’opération qui s’est mal déroulée. Mme Fuego s’est retrouvée avec une ouverture béante à la poitrine à la suite de l’intervention. Et en consultant son dossier médical, Candice Fuego affirme que le personnel médical de cet hôpital montréalais a fait usage de faux, et qu’elle n’a pas été bien traitée. Fiche médicale falsifiée?</p>
+    <p>Ne pourrait-il pas s’agir d’erreurs médicales ou bien d’incompétence dans son cas? «Non», répond la jeune femme sans broncher. «Je connais et j’ai rencontré d’autres personnes blanches ayant subi la même opération que moi. On leur a donné une feuille de préparation deux semaines avant. Moi on ne m’a rien donné, on ne m’a pas dit quoi manger avant et après», répond la plaignante. Elle précise que sa fiche médicale mentionne qu’elle a effectué un test sanguin avant l’intervention, ce que Mme Fuego nie avoir subi.</p>
+    <p>«C’est faux!, s’exclame-t-elle. Ils ont falsifié les informations de ma fiche médicale.»</p>
+    <p>La consultante dit avoir été à l’hôpital afin de demander pourquoi elle n’a pas fait de test sanguin et obtenu une feuille de préparation.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20240526080331/https://www.intexto.ca/racisme-medical-les-plaintes-contre-des-medecins-en-hausse/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

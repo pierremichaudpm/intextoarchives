@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Affaire Bony : Montréal-Nord sous la loupe après des accusations — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Affaire Bony : Montréal-Nord sous la loupe après des accusations</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 25 mai 2017
+  </p>
+  
+  <div class="corps">
+    <p>Le mouvement Montréal-Nord républik et l’organisme Évolu-Jeunes se disent satisfaits d’apprendre que des accusations sont portées contre le policier qui a tiré une balle en plastique causant la mort Jean-Pierre Bony lors d’une opération antidrogue réalisée le 31 mars 2016 dans un appartement à Montréal-Nord.</p>
+    <p>Jean-Pierre Bony est décédé des suites de ses blessures le 4 avril, ce qui a déclenché de violentes émeutes dans le quartier. Le Directeur des poursuites criminelles et pénales (DPCP) a déposé mercredi des accusations pour homicide involontaire contre le policier Christian Gilbert qui est présentement suspendu avec salaire.</p>
+    <p>«On est content de voir qu’il y ait des accusations», confie Will Prosper de Montréal-Nord républik. «On est satisfait, renchérit Frantz Jean-Jacques de Évolu-Jeunes, même si accusation ne signifie pas culpabilité», ajoute-t-il.</p>
+    <p>Avancées?</p>
+    <p>Si les deux intervenants jubilent devant la nouvelle concernant les accusations, ils redoutent du même souffle que ce procès enlaidisse le quartier encore plus. «Il reste le procès judiciaire, souligne Will Prosper, ce ne sera pas facile, car on va sortir des histoires qui ne vont pas être favorables pour le quartier, les témoignages, etc..»</p>
+    <p>«Les jeunes sont soulagés, mais expriment des craintes que le policier soit acquitté à la fin du procès», souligne pour sa part Frantz Jean-Jacques. Interrogé à savoir si c’est aussi son avis, le responsable d’Évolu-Jeunes indique que non. « Pas du tout, moi je crois en la justice, dit-il, il y a de bonnes chances qu’il soit déclaré coupable».</p>
+    <p>Les accusations contre le policier Christian Gilbert surviennent une semaine après que le poste de quartier (PDQ-39) ait organisé une journée porte-ouverte dans le cadre de ses efforts de rapprochement avec la population. Environ 3 000 personnes y ont pris part, selon la police.</p>
+    <p>Toutefois, Will Prosper hésite à parler d’avancées sur ce plan. « Avancées?, s’interroge le dirigeant de Montréal-Nord républik, demandez à la police, ils ne peuvent même pas quantifier le profilage racial, alors que les jeunes disent tous qu’il y a encore ».</p>
+    <p>19 ans après Lizotte</p>
+    <p>L’affaire Bony est survenue 8 ans après celle de Villanueva mort lors d’une décente policière qui a mal tourné dans un parc, en 2008, et pour laquelle il n’y a pas eu d’accusations.</p>
+    <p>Avant les accusations dans le cas de Bony, il faudra remonter à 19 ans en arrière, soit dans l’affaire Lizotte pour retrouver un agent de la police de Montréal par devant la justice.</p>
+    <p>Seize ans après les faits reprochés, la cour venait à confirmer la suspension de 25 jours imposée à deux agents qui avaient procédé à l’arrestation du sans-abri Jean-Pierre Lizotte, sur le boulevard Saint-Laurent, dans la nuit du 5 septembre 1999.</p>
+    <p>Les agents Giovanni Stante et Sylvain Fouquette répondaient à un appel pour une bagarre éclatée sur la terrasse d’un café dans la nuit de septembre 1999.</p>
+    <p>Mais Lizotte, un des deux bagarreurs, intoxiqué, devient agressif, bousculant clients et cassant tout ce qu’il trouve sur son passage. L’homme est maîtrisé de force et placé sur la banquette arrière avec des vertèbres cervicales fracturées et est conduit à l’hôpital.</p>
+    <p>Il meurt cinq semaines plus tard de complications pulmonaires dues à son immobilisation vigoureuse L’agent Stante a été accusé d’homicide involontaire et de voies de fait graves et a été acquitté en 2002.</p>
+    <p>Mais en 2008, le comité de déontologie a conclu que les deux agents Stante et Fouquette avaient « démontré de la négligence ou de l’insouciance lors de l’intervention auprès de Lizotte et leur impose une suspension de 25 jours ouvrables.</p>
+    <p>Les deux agents en ont appelé de la décision, ce que la Cour d’appel a rejeté en 2013. La Cour suprême a refusé à sont tour d’entendre leur demande d’autorisation d’appel en 2014.</p>
+    <p>Le dossier est donc retourné devant la Cour du Québec, qui a confirmé les 25 jours ouvrables de suspension.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20170705075610/http://intexto.ca/affaire-bony-montreal-nord-sous-la-loupe-apres-des-accusations/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

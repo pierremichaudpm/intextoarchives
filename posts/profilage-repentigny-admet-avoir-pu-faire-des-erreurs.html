@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profilage: Repentigny admet « avoir pu faire des erreurs » — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Profilage: Repentigny admet « avoir pu faire des erreurs »</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 1 août 2021
+  </p>
+  
+  <div class="corps">
+    <p>Alors qu’un Rapport (à sortir bientôt) sur la politique d’interpellation au sein du Service de police de la Ville de Repentigny démontrerait que les Noirs ont quatre fois plus de chance de se faire intercepter que les Blancs, la Ville admet « avoir pu faire des erreurs » dans le traitement de la population racisée.</p>
+    <p>C’est Pierre-Richard Thomas de Lakay média, organisme qui accompagne les victimes de profilage racial, qui évoque ces chiffres avec le journal à la suite d’une rencontre de présentation qu’il a eue avec les autorités municipales et policières.</p>
+    <p>« C’est à peu près les mêmes résultats qu’à Montréal. Nous, on n’est pas surpris de ces chiffres là.», dit-il en entrevue à In Texto.</p>
+    <p>En assemblée du Conseil municipal, au mois de juin dernier, la mairesse Chantal Deschamps avoue que les autorités ont raté le bateau de changement et de transformation de la ville.</p>
+    <p>Selon le Recensement de 2016, près de 10% de la population repentignoise est d’origine immigrante.</p>
+    <p>« Mais aujourd’hui, force est de constater que nous n’avons pas réalisé à temps les réalités changeantes de notre communauté.»</p>
+    <p>Chantal Deschamps, mairesse de Repentigny</p>
+    <p>Comme dans un mea culpa, Mme Deschamps reconnait que Repentigny « aurait pu être plus inclusive » afin de refléter l’ensemble de sa population, peu importe l’origine, l’âge, la culture religieuse, l’identité sexuelle ou le genre, le statut social ou économique, les différences physiques et mentales ; bref, tout ce qui incarne la diversité.</p>
+    <p>« Reconnaître nos limites, c’est un pas important vers le changement.», consent la première citoyenne de la municipalité.</p>
+    <p>Ces dernières années, plusieurs incidents, à caractère raciste, ont été signalés dans les médias, ce qui « interpelle » Chantal Deschamps qui dit avoir mis sur pied un Cadre de référence de la gestion de la diversité.</p>
+    <p>« Nous constatons aujourd’hui que réagir n’est pas suffisant, nous devons être proactifs dans notre approche.», cède la mairesse.</p>
+    <p>Une démarche proactive qui projette un service emprunt et soucieux des réalités d’aujourd’hui face à des « biais inconscients individuels et organisationnels » qui ont pu contribuer à «fausser nos perceptions de la situation.»</p>
+    <p>«Et, à partir de maintenant, c’est dans une démarche d’évolution que nous tenons d’abord à reconnaître que nous avons pu faire des erreurs dans certaines de nos façons de faire. »-C. Deschamps</p>
+    <p>« C’est un premier pas de les reconnaitre. », réagit Pierre-Richard Thomas de Lakay média. Mais pour lui il faudrait au moins trois choses pour que cette démarche de réconciliation soit complète.</p>
+    <p>-Reconnaitre l’existence de profilage racial comme d’autres municipalités l’ont fait</p>
+    <p>– S’excuser auprès des populations noires</p>
+    <p>– Mettre des mesures en place afin d’éviter la répétition de ces erreurs</p>
+    <p>En dépit de la reconnaissance de ces erreurs dont la nature n’a pas été mentionné dans la Déclaration de la mairesse, la Ville conteste devant les tribunaux au moins quatre recommandations de la Commission des droits de la personne et des droits de la jeunesse (CDPDJ) à payer à des victimes de profilages des dommages et intérêts.</p>
+    <p>Selon Mme Deschamps, depuis 8 mois, le SPVR a entamé une démarche unique « pour un service mobilisé pour sa population » visant à instaurer, en son sein, un service de police inclusif et exempt de toutes formes de racisme et discriminations.</p>
+    <p>Au-delà des bonnes intentions</p>
+    <p>C’est pourquoi la Ville de Repentigny entreprend une démarche en profondeur vers l’équité et l’inclusion dans tous ses services et toutes ses pratiques. Ce sont les principes directeurs que nous annonçons aujourd’hui qui seront le socle de cette démarche :</p>
+    <p>- Reconnaître les barrières</p>
+    <p>- La vigilance est de mise.</p>
+    <p>- Des personnes et organismes rencontrent des barrières lorsqu’ils transigent avec la Ville.</p>
+    <p>- Plus souvent qu’autrement, ces barrières sont invisibles à l’œil, si on n’y porte pas attention.</p>
+    <p>- Pour les lever, une par une, il faudra d’abord apprendre à les reconnaître et surtout accepter qu’elles existent.</p>
+    <p>- Écouter et impliquer toutes les voix</p>
+    <p>Pour appliquer les bonnes solutions, il est impératif de tendre l’oreille et surtout le micro à différentes voix pour qu’elles puissent se faire entendre.</p>
+    <p>Pour bâtir un lien de confiance de part et d’autre, il faut que celles et ceux qui ont vécu des injustices sachent que leur participation aux décisions qui les concernent est non seulement souhaitée, mais essentielle.</p>
+    <p>Agir en profondeur et sur tous les fronts</p>
+    <p>Nous ne pourrons atteindre les objectifs fixés en faisant les choses à moitié.</p>
+    <p>Toutes les composantes de la Ville et ses employés devront contribuer à ce que l’inclusion se concrétise de façon proactive, transversale et systémique dans toute l’organisation.</p>
+    <p>Stratégies</p>
+    <p>- Pour y arriver, la Ville s’engage à se donner les moyens de ses ambitions. Concrètement, cela se traduit, entre autres, par :</p>
+    <p>- La réalisation d’une grande politique cadre qui saura encadrer chacune de nos actions, dans chacune des directions de la Ville;</p>
+    <p>- L’embauche d’une ressource stratégique en innovation sociale pour assurer la mise en place et le suivi des actions concrètes visant l’équité, la diversité et l’inclusion, dans l’ensemble de notre organisation.</p>
+    <p>Chantal Deschamps a dit</p>
+    <p>« Comme Ville, nous devons adhérer à cette nouvelle vision, et elle doit se projeter à toute la population. C’est dans cet esprit que nous tendons aujourd’hui la main à la communauté repentignoise toute entière. »</p>
+    <p>« Au moment de cette déclaration, il reste du travail à faire, ainsi que de nouvelles actions organisationnelles à entreprendre pour arriver à réaliser cette nouvelle vision, basée sur une approche transversale d’équité et d’inclusion, ainsi que sur la mise en valeur de la diversité. »</p>
+    <p>« Ensemble, nous ferons évoluer notre ville, pour qu’elle soit le reflet de chaque personne qui la compose, que chacune et chacun s’y sente en sécurité, que tous aient les mêmes chances de réussir et le potentiel de faire rayonner notre ville, d’en devenir la fierté. C’est toute notre communauté qui en sortira gagnante. »</p>
+    <p>(3) Déclaration de Chantal Deschamps lors de la séance du conseil municipal du 8 juin 2021 – YouTube</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20210807095917/https://www.intexto.ca/profilage-repentigny-admet-avoir-pu-faire-des-erreurs/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

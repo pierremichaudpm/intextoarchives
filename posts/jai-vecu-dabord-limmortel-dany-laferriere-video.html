@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>« Jai vécu dabord », – limmortel Dany Laferrière (vidéo) — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">« Jai vécu dabord », – limmortel Dany Laferrière (vidéo)</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 29 juin 2015
+  </p>
+  
+  <div class="corps">
+    <p>Il est exposé aux côtés de Barack Obama, de Nelson Mandela et du Général de Gaulle au Musée Grévin de Montréal.</p>
+    <p>Limmortel Dany Laferrière a un souvenir très vivant de son passé comme préposé à lentretien ménager lors de ses débuts comme immigrant haïtien à Montréal. Il se souvient de lépoque où il était ballotté dune succursale des caisses Desjardins à une autre entre 12h et 8h du matin à curer les toilettes, épousseter des bureaux, passer la serpillère.</p>
+    <p>Dany a aussi fait les manufactures. Cette vie de journalier au salaire minimum a duré 8 ans avant que limmortel la tue au profit de sa plume. « À lusine, confie limmortel à In Texto, jidéalisais ça. Je me disais que jétais un écrivain qui aura la mémoire pour pouvoir décrire et peindre cette réalité ».</p>
+    <p>En effet, lécrivain peint toujours une réalité quelconque à travers sa vingtaine de livres quil a écrits jusquici au cours de sa carrière. Il invite aujourdhui les Haïtiens de Montréal à ne pas avoir peur didéaliser et à saccrocher à un rêve ou une passion.</p>
+    <p>« Que chacun fasse ce quil aime faire : trouve une chose, aussi petite soit-elle, et la mette en uvre de la manière la plus passionnée possible ». Tout au long de sa carrière, la présence de Dany parmi la communauté haïtienne a été discrète. Limmortel « na jamais été un communautaire, mais plutôt un solitaire ». Dany, le déterminé, aime se retirer de la foule pour se mettre à la poursuite de son idéal.</p>
+    <p>À ceux qui lui reprochent sa faible présence au sein de la communauté, lécrivain rétorque qu’au contraire il était toujours là. « Je suis plus dans la communauté haïtienne quand je travaille tout seul. Car, quand elle me voit à lAcadémie, elle en est fière. Leurs enfants rentrent de lécole en étant fiers et en disant : mon prof a parlé de Dany à lAcadémie ». « Donc, pendant que je nétais pas avec eux, jétais en fait plus parmi eux ».</p>
+    <p>Il est exposé aux côtés de Barack Obama, de Nelson Mandela et du Général de Gaulle au Musée Grévin de Montréal, avec comme univers une bibliothèque virtuelle en trompe-lil.</p>
+    <p>Dany, « ce fils de Petit-Goâve qui démontre que la culture haïtienne est encore debout », comme le souligne à lencre forte le consul général dHaïti à Montréal Justin Viard, fait son entrée en « gran jan » à ce pendant de lAcadémie Française.</p>
+    <p>Il est représenté par une statue de cire qui lui « ressemble au point de ne savoir lequel des deux est le plus vivant ». Cest Dany lui-même qui a choisi cette pose avec ce petit sourire figé quil décrit si bien dans lun de ses livres, « Lart perdu de rien faire », comme une espèce de « mauvaise propagande ».</p>
+    <p>« On nous demande toujours de sourire pour la photo, ce qui fait quun extraterrestre pourrait penser que nous sommes tous heureux sur cette terre », commente limmortel à propos de sa propre statue.</p>
+    <p>La statue tient en main un livre qui rappelle à lAcadémicien limage de sa grand-mère qui tient de la même façon une tasse de café chaud. En intronisant lécrivain haïtien à son tour, le directeur du Musée Grévin à Montréal Marc Lorendeau ne manque pas de souligner le caractère universel du français de Dany, livré dans un « rythme rock et anglo-saxon ». Évidemment, il y ajoute quelques épices québécoises comme « tataouiner, enfirouaper », etc.</p>
+    <p>Documentation critique classée par uvre</p>
+    <p>– Comment faire l’amour avec un nègre sans se fatiguer (1985)</p>
+    <p>– Éroshima (1987)</p>
+    <p>– L’odeur du café (1991)</p>
+    <p>– Le goût des jeunes filles (1992)</p>
+    <p>– Cette grenade dans la main du jeune Nègre est-elle une arme ou un fruit ? (1993)</p>
+    <p>– Chronique de la dérive douce (1994)</p>
+    <p>– Pays sans chapeau (1996)</p>
+    <p>– La chair du maître (1997)</p>
+    <p>– Le cri des oiseaux fous (2002)</p>
+    <p>Bibliographie complète</p>
+    <p>– Le charme des après-midi sans fin (1997)</p>
+    <p>– Je suis fatigué (2000)</p>
+    <p>– Les Années 1980 dans ma vieille Ford (2005)</p>
+    <p>– Je suis fou de Vava (2006) Album jeunesse inspiré de Lodeur du café</p>
+    <p>– Vers le Sud (2006) Réécriture de La chair du maître</p>
+    <p>– Je suis un écrivain japonais (2008)</p>
+    <p>– LÉnigme du retour (2009)</p>
+    <p>– La Fête des morts (2009) Album jeunesse</p>
+    <p>– Tout bouge autour de moi (2010)</p>
+    <p>– LArt presque perdu de ne rien faire (2011)</p>
+    <p>– Journal dun écrivain en pyjama (2013)</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20171002085756/http://intexto.ca:80/jai-vecu-dabord-limmortel-dany-laferriere-video/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montréal-Nord: «la Ville est anti-Noir, anti-Haïtien» — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Montréal-Nord: «la Ville est anti-Noir, anti-Haïtien»</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 1 novembre 2021
+  </p>
+  
+  <div class="corps">
+    <p>Montréal-Nord: «la Ville est anti-Noir, anti-Haïtien» - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Montréal-Nord: «la Ville est anti-Noir, anti-Haïtien»</p>
+    <p>« Si on était des Juifs, des femmes, ce serait déjà réglé.» lance, Francklin Brismar, parmi plus d’une quinzaine de ses collègues cols bleus lors d’une conférence de presse pour dénoncer le laxisme de l’arrondissement à réparer ses fautes graves de dotation des employés racisés, lesquelles sont colligées dans pas moins de deux rapports (Saba et Soares), voilà six mois.</p>
+    <p>Ils sont en fait près d’une cinquantaine avec des griefs longs comme le bras contre la ville. Mais, ils n’arrivent pas à les déposer en raison d’une absence de représentation syndicale dans le dossier.</p>
+    <p>« Nous nous apprêtons à déposer une plainte pour non-représentation contre notre syndicat. », annonce Patrick Roy, un des délégués qui travaille comme col bleu à Montréal-Nord.</p>
+    <p>M. Roy (un Blanc) qui a été muselé ( mesures disciplinaires allant jusqu’à sa suspension) par la Ville de Montréal-Nord lorsqu’il avait dénoncé, via une page Facebook et dans In Texto par la suite, la situation de discrimination envers ses collègues à la peau noire, que les rapports Soares et Saba ont confirmé, reprend depuis peu son bâton de militant.</p>
+    <p>Lors de cette rencontre avec les médias, les cols bleus ont dénoncé le fait que “peu de choses, selon eux, aient été faites” dans le dossier. L’arrondissement a fait un examen de ses pratiques de dotation par une firme d’experts, mis sur un Forum d’échanges sur le climat de travail, formé ses gestionnaires «en développement de compétences interculturelles». Montréal-Nord s’est doté aussi d’un directeur des ressources humaines de race noire.</p>
+    <p>« La préoccupation c’est que, on peut parler d’équité, de diversité et d’inclusion, mais, est-ce qu’on parle de discrimination raciale d’abord et est-ce qu’on parle de réparation et ce mot là n’est pas présent dans les discussions. C’est cela qui fait peur.», nuance Fo Niémi, directeur du Centre de recherche action sur les relations raciales (CRARR) qui accompagne les cols-bleus victimes dans leur démarche de justice et de réparation.</p>
+    <p>Négocier sans les délégués</p>
+    <p>L’arrondissement de Montréal-Nord et le Syndicat des cols bleus regroupés de Montréal, section locale 301 confirment, dans un communiqué, qu’ils « travaillent présentement à régler les griefs dans le dossier de discrimination systémique envers les employé.es cols-bleus ». Les deux parties sont accompagnées par la Ville de Montréal.</p>
+    <p>« Des rencontres productives ont déjà eu lieu et se poursuivront dans les prochains jours afin de parvenir à une entente satisfaisante pour l’ensemble des parties. Le Syndicat et l’arrondissement sont confiants d’en arriver à une solution par la négociation, en dehors des tribunaux.», poursuit le communiqué conjoint.</p>
+    <p>Mais le problème est que le syndicat qui n’a rencontré aucun employé n’a aucune idée de ce que veulent ces cols-bleus. « Il faut les empêcher de négocier tout croche avant qu’il soit trop tard.», lance M.Roy.</p>
+    <p>«Le syndicat n’est jamais venu depuis six mois pour monter le dossier de griefs, il n’a pas fait d’enquête et ils vont négocier sans les délégués locaux.», fustige Patrick Roy</p>
+    <p>«Le syndicat qui devrait être là pour nous défendre nous a laissés tomber. Ils (nos représentants) nous ont même sacrifiés sur la place public.», renchérit Newton Saintiné, un autre délégué syndical.</p>
+    <p>Et pour Fo Niémi, du CRARR, «ces travailleurs racisés craignent que leurs revendications soient noyés lors de ces négociations.»</p>
+    <p>Par ailleurs, M.Roy dénonce le fait que la Ville ait pour pratique de ne pas rendre accessible aux employés la liste d’ancienneté, « ce qui fait que l’employeur fait ce qu’il veut de ce coté. »</p>
+    <p>La liste d’admissibilité à la formation ne l’est pas non plus. « On soupçonne qu’il y a du favoritisme», dit Patrick Roy. Ce dernier déplore également la stratégie de l’arrondissement de régler les griefs individuellement, ce qui ne favorise pas en bout de ligne un recours collectif.</p>
+    <p>« De plus, l’employeur fait des ententes à l’amiable avec des clauses de confidentialité.» souligne le syndicaliste.</p>
+    <p>Les candidats interpellés</p>
+    <p>Les cols-bleus réclament à une semaine des élections municipales des « engagements fermes » de la part des candidats afin de s’assurer que « le principe de réparation soit reconnu et qu’il y ait un processus d’évaluation des préjudices subis. »</p>
+    <p>À coup de slogan « non à la discrimination, oui à la réparation» les cols-bleus appellent les autorités à un dédommagement. Toutefois, en raison de l’absence de représentation syndicale, il est difficile actuellement de faire une évaluation des dommages moraux et punitifs qui pourraient être réclamés à la Ville.</p>
+    <p>« Je ne pense pas qu’il y a un chèque qui peut nous redonner ce qu’on perdu. Nous, ce qu’on veut c’est que la Ville reconnaisse qu’elle a fait du tort à des gens.», soutient le col-bleu Francklin Brismar</p>
+    <p>Toutefois Fo Niémi croit que les plaignants peuvent utiliser l’affaire Tanisma contre Montréal afin de fixer un barème.</p>
+    <p>En juin 2013, la Cour supérieure du Québec, 11 ans après es procédures, a jugé la Ville « coupable de discrimination raciale » à l’endroit de Jean-Olthène Tanisma et avait ordonné à l’administration municipale à payer à ce dernier 30 000 dollars à titre de dommages.</p>
+    <p>« Ceux à qui des promotions ont été refusées à cause d’un processus discriminatoire au fil des ans ont subi ce qu’on appelle une perte de chance. Il faut les dédommager.», insiste le responsable du CRARR.</p>
+    <p>« Si on était des Juifs, si on était des femmes, ce serait déjà réglé. Pourquoi cela prend autant de temps pour réparer des erreurs?», s’interroge le col-bleu Brismar.</p>
+    <p>« La Ville tout simplement est anti-Noir, est anti-Haïtien. C’est pour cela qu’on est là ce matin. »-Francklin Brismar, debout, sans masque.</p>
+    <p>« La Ville tout simplement est anti-Noir, est anti-Haïtien. C’est pour cela qu’on est là ce matin. »</p>
+    <p>Par ailleurs, les employés de l’arrondissement de Montréal-Nord regrettent que le contrôleur général Alain Bond ait failli à sa mission de s’assurer que le code du travail soit respecté sur toute l’étendue du territoire.</p>
+    <p>Ils ont dit</p>
+    <p>« C’est le mandat du syndicat de monter le dossier, si ce n’est pas fait comment le syndicat peut aller négocier avec l’employeur.»</p>
+    <p>« Il faut les empêcher de négocier tout croche avant qu’il soit trop tard. »</p>
+    <p>« La ville emploie des formateurs avec pour mission de faire couler les formations à des cols-bleus, sinon l’entreprise formatrice n’aura plus de contrat.»-P Roy.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20211101153652/https://www.intexto.ca/montreal-nord-la-ville-est-anti-noir-anti-haitien/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

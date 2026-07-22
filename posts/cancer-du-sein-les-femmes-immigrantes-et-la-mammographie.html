@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cancer du sein : les femmes immigrantes et la mammographie — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Cancer du sein : les femmes immigrantes et la mammographie</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 18 octobre 2022
+  </p>
+  
+  <div class="corps">
+    <p>Cancer du sein : les femmes immigrantes et la mammographie</p>
+    <p>Dans le cadre du Mois de la sensibilisation au cancer du sein, la Société canadienne du cancer (SCC) lance l’édition 2022 de sa campagne Mémo-mamo. Après une pause de deux ans due à la pandémie de la COVID-19, Mémo-Mamo est finalement de retour afin de sensibiliser les Québécoises âgées de 50 à 69 ans à l’importance du dépistage du cancer du sein notamment les femmes cdes communautés culturelles.</p>
+    <p>Tous les deux ans les femmes doivent réaliser cette mammographie afin de déterminer à temps des masses cancéreuses potentielles et en vue d’une prise en charge rapide,</p>
+    <p>« Parce qu’on vous aime en santé, j’invite toutes les femmes entre 50 et 69 ans à passer à l’action en prenant un rendez-vous pour leur mammographie préventive dès la réception de la lettre du Programme québécois de dépistage du cancer du sein. Rappelez-le à vos mères, vos filles, vos partenaires de vie parce que la mammographie préventive peut faire toute la différence! »-Marie-Claude Barrette, porte-parole</p>
+    <p>Dépistage et prévention</p>
+    <p>En fait, une Canadienne sur huit recevra un diagnostic de cancer du sein. Le cancer du sein représente, à lui seul, le quart (25 %) de tous les nouveaux cas de cancer chez les femmes.</p>
+    <p>« À ce jour, la mammographie demeure le moyen le plus efficace de détecter de façon précoce le cancer du sein, souligne Mihaela Givulescu, Vice-présidente directrice, Stratégie digitale et Technologie à la Société canadienne du cancer.</p>
+    <p>Lorsque ce cancer est diagnostiqué et traité dès le début, le choix des traitements est plus grand, ces derniers sont moins agressifs et les chances de réussite du traitement sont meilleures. », ajoute-elle. Une mammographie peut déceler un cancer aussi petit qu’un pois (4 mm), tandis que la détection visuelle ne permet de le découvrir qu’une fois qu’il est de la taille d’une tomate cerise (2,5 cm).</p>
+    <p>Grâce à la détection précoce, à la recherche, à l’évolution ainsi qu’à l’amélioration des traitements, le taux de survie au cancer du sein augmente à 89 % après cinq ans.</p>
+    <p>Par ailleurs, en adoptant de saines habitudes de vie, il est également possible de prévenir environ 28 % des cas de cancer du sein.</p>
+    <p>Pandémie et cancer du sein : Moins de 100 000 mammographies</p>
+    <p>Comme bien d’autres, le dépistage du cancer du sein n’a pas été épargné par la pandémie de la COVID-19. Au début de la crise sanitaire, au Québec comme ailleurs au Canada, les activités de dépistage du cancer du sein ont été suspendues.</p>
+    <p>À partir du 17 mars 2020, et ce, pour une durée d’environ 12 semaines, les mammographies de dépistage ainsi que l’envoi des lettres d’invitation du PQDCS ont été mis à l’arrêt. Ceci a eu comme conséquence une importante diminution des mammographies réalisées durant la pandémie.</p>
+    <p>En effet, seulement 249 531 mammographies préventives ont été effectuées dans le cadre du PQDCS, soit une baisse d’environ 29 % (100 000 mammographies approximativement) pour l’année 2020 comparée à l’année 2019.</p>
+    <p>Ce sont les mammographies initiales, celles qui sont pratiquées pour la première fois dans le cadre du programme, qui ont subi la diminution la plus marquée (44 % c. 26 % pour les mammographies subséquentes).</p>
+    <p>Entre mars et juillet 2020, la baisse des diagnostics est évaluée à 20 % pour le Québec. Devant ces régressions, il ne serait malheureusement pas surprenant de constater une importante diminution du nombre de cancers détectés dans le cadre du PQDCS.</p>
+    <p>Bien sûr, d’autres facteurs peuvent expliquer cette réduction du nombre de mammographies réalisées ainsi que la baisse des diagnostics durant ces dernières années, notamment l’affaiblissement de l’achalandage dans les centres de dépistage causé par la crainte de la COVID-19.1</p>
+    <p>Pour cette 12e édition, trois nouvelles ambassadrices issues de diverses communautés ethniques se joignent à Marie-Claude Barrette, porte-parole de la campagne, afin de sensibiliser toutes les femmes à l’importance de la mammographie préventive.</p>
+    <p>La Société canadienne du cancer souhaite que la campagne Mémo-mamo soit des plus inclusives et qu’elle interpelle toutes les femmes, peu importe leurs origines. C’est notamment pour cette raison que le site web de la campagne est maintenant offert en six langues (anglais, français, arabe, créole, espagnol et mandarin).</p>
+    <p>L’objectif est de proposer aux femmes issues des communautés ethnoculturelles des outils appropriés à leurs besoins, à leurs cultures et à leurs valeurs dans l’espoir, notamment, d’augmenter leur participation à la mammographie de dépistage.</p>
+    <p>Malheureusement, ces femmes sont, pour l’instant, sous-représentées dans la participation au programme de détection précoce, notamment parmi celles nouvellement arrivées (depuis moins de 10 ans) admissibles au PQDCS.</p>
+    <p>Parmi ces dernières, 57 % n’avaient pas participé au programme contre seulement 26 % des femmes non immigrantes, ce qui entraîne un écart par rapport à la survie au cancer du sein et représente un important enjeu de santé publique.</p>
+    <p>Mémo-mamo de la Société canadienne du cancer</p>
+    <p>Cancer du sein en bref</p>
+    <p>• On prévoit que 1 Canadienne sur 8 recevra un diagnostic de cancer du sein au cours de sa vie.</p>
+    <p>• Une femme sur huit risque d’être atteinte d’un cancer du sein au cours de sa vie. C’est le cancer le plus fréquent (25 % des nouveaux cas de cancer chez les femmes, soit 1 sur 4) et le deuxième plus meurtrier, après le cancer du poumon, chez les femmes.</p>
+    <p>• Chaque année, au Québec, on estime qu’environ 6600 femmes (près de 27 000 Canadiennes) recevront un diagnostic de cancer du sein et qu’environ 1300 mourront de cette maladie (5000 au pays).</p>
+    <p>• La survie relative à cinq ans du cancer du sein se situe à 89 %. Ce taux grimpe à presque 100 % quand la tumeur est détectée au début de la maladie (stade 1).</p>
+    <p>L’importance du Programme québécois de dépistage du cancer du sein (PQDCS)</p>
+    <p>● Au Québec, toutes les femmes âgées de 50 à 69 ans reçoivent une lettre leur offrant la possibilité de participer au PQDCS. Dans le cadre de ce programme, elles sont invitées à passer gratuitement une mammographie de dépistage (radiographie des seins) une fois tous les deux ans entre 50 et 69 ans. Une lettre est envoyée chaque fois qu’il est temps de passer une nouvelle mammographie.</p>
+    <p>● Le PQDCS s’adresse aux femmes à risque dit moyen, c’est-à-dire qui ne présentent pas de symptômes, ni de facteurs de risque autres que leur âge.</p>
+    <p>● Toutes les femmes qui passent une mammographie dans le cadre du PQDCS reçoivent à la maison une copie du rapport des résultats. Un centre de coordination veille à ce que le médecin de chacune des femmes reçoive les résultats de la mammographie et que les examens complémentaires soient prescrits si le radiologiste le juge nécessaire.</p>
+    <p>● Les femmes qui n’ont pas de médecin de famille peuvent passer une mammographie en se servant de la lettre comme prescription et elles sont automatiquement dirigées vers un médecin si un suivi est requis.</p>
+    <p>● Dans 10 % des cas, des examens complémentaires (autres radiographies, échographie ou biopsie) sont nécessaires pour vérifier s’il y a vraiment anomalie. Toutefois, une mammographie anormale ne veut pas nécessairement dire qu’il y a présence d’un cancer. Dans 95 % des cas, le résultat des examens complémentaires est normal.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20240216031800/https://www.intexto.ca/cancer-du-sein-les-femmes-immigrantes-et-la-mammographie/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

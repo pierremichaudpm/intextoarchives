@@ -1,0 +1,3300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jean Numa Goudou — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../auteurs.html">&larr; Retour aux auteurs</a>
+<h2 class="annee">Articles de Jean Numa Goudou</h2>
+<ul class="articles">
+  
+  <li>
+    <a class="titre" href="../posts/municipales-les-questions-de-la-communaute-haitienne.html">Municipales: les questions de la communauté haïtienne</a><br>
+    <span class="meta">28 octobre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/municipales-2025-plus-de-80-noirs-sur-les-poteaux.html">Municipales 2025: plus de 80 Noirs sur les poteaux</a><br>
+    <span class="meta">23 octobre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/entrepreneuriat-noir-189-millions-investis-par-le-federal.html">Entrepreneuriat noir : 189 millions investis par le fédéral</a><br>
+    <span class="meta">20 octobre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/futur-montreal-et-les-candidates-dorigine-haitienne.html">Futur Montréal et les candidates d’origine haïtienne</a><br>
+    <span class="meta">8 octobre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/campagne-municipale-luc-rabouin-chez-les-noirs.html">Campagne municipale: Luc Rabouin chez les Noirs</a><br>
+    <span class="meta">5 octobre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-roger-petit-frere-se-lance-a-la-mairie.html">Montréal-Nord : Roger Petit-Frère se lance à la mairie</a><br>
+    <span class="meta">8 septembre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-a-encore-trop-danalphabetes-en-2025.html">Québec a encore trop d’analphabètes en 2025</a><br>
+    <span class="meta">5 septembre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/reniee-par-futur-montreal-anastasia-marcelin-reste-en-election.html">Reniée par Futur Montréal, Anastasia Marcelin reste en élection</a><br>
+    <span class="meta">3 septembre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-futur-montreal-presente-anastasia-marcelin-a-la-mairie.html">Montréal-Nord : Futur Montréal présente Anastasia Marcelin à la mairie</a><br>
+    <span class="meta">2 septembre 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pres-de-30-experts-reflechissent-sur-la-crise-haitienne.html">Près de 30 experts réfléchissent sur la crise haïtienne</a><br>
+    <span class="meta">27 août 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-noir-chef-et-candidat-a-la-mairie-de-futur-montreal.html">Un Noir chef et candidat à la mairie de Futur Montréal</a><br>
+    <span class="meta">25 août 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/carla-beauvais-une-candidate-vedette-pour-luc-rabouin.html">Carla Beauvais: « une candidate vedette » pour Luc Rabouin</a><br>
+    <span class="meta">14 août 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-racisme-en-ligne-objet-dune-recherche.html">La racisme en ligne objet d’une recherche</a><br>
+    <span class="meta">17 juillet 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/kompa-et-musique-vaudou-dans-haiti-en-folie.html">Kompa et musique vaudou dans « Haïti en folie »</a><br>
+    <span class="meta">16 juillet 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/asile-la-fin-du-tps-hausse-les-demandes-au-canada.html">Asile: la fin du TPS hausse les demandes au Canada</a><br>
+    <span class="meta">8 juillet 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/spvm-une-politique-dinterpellation-qui-divise.html">SPVM: une politique d’interpellation qui divise</a><br>
+    <span class="meta">29 juin 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mort-dans-une-famille-daccueil-de-la-dpj.html">Mort dans une famille d’accueil de la DPJ</a><br>
+    <span class="meta">7 juin 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/audio-lhaitienne-gagne-terrebonne-par-une-voix.html">(Audio) l’Haïtienne gagne Terrebonne par une voix</a><br>
+    <span class="meta">10 mai 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-crave-fete-7-ans-aux-cotes-des-communautes-noires-de-montreal.html">Le CRAVE fête 7 ans aux côtés des communautés noires de Montréal</a><br>
+    <span class="meta">9 mai 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dpj-quebec-veut-nationaliser-lapproche-du-bchm.html">DPJ : Québec veut nationaliser l’approche du BCHM</a><br>
+    <span class="meta">8 mai 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-releve-percutante-pour-la-maison-dhaiti.html">Une relève percutante pour la Maison d’Haïti</a><br>
+    <span class="meta">24 avril 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-pas-de-programme-pour-les-demandeurs-dasile.html">Québec: pas de programme pour les demandeurs d’asile</a><br>
+    <span class="meta">15 avril 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-le-candidat-liberal-reste-positif-face-aux-attaques-du-bloc.html">Repentigny: le candidat libéral reste «positif » face aux attaques du Bloc</a><br>
+    <span class="meta">14 avril 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/103-millions-pour-un-centre-sportif-pour-montreal-nord.html">103 millions pour un centre sportif pour Montréal-Nord</a><br>
+    <span class="meta">19 mars 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-sauf-exceptions-les-demandeurs-dasile-sont-barres.html">Canada : sauf exceptions, les demandeurs d’asile sont barrés</a><br>
+    <span class="meta">10 mars 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/victimes-de-discrimination-a-mtl-nord-une-entente-de-principe-est-trouvee.html">Victimes de discrimination à Mtl-Nord: une entente de principe est trouvée</a><br>
+    <span class="meta">8 mars 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-mois-de-lhistoire-des-noirs-sans-histoire.html">Un «Mois de l’histoire des Noirs» sans histoire</a><br>
+    <span class="meta">28 février 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jeunes-noirs-au-quebec-des-donnees-qui-choquent.html">Jeunes noirs au Québec: des données qui «choquent»</a><br>
+    <span class="meta">28 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/8e-sommet-afro-le-racisme-au-coeur-des-discussions.html">8e Sommet afro: le racisme au cœur des discussions</a><br>
+    <span class="meta">27 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/apres-ndg-elle-vise-la-ville-de-montreal.html">Après NDG, elle vise la Ville de Montréal</a><br>
+    <span class="meta">23 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-8e-sommet-afro-dans-lere-de-la-donnee.html">Un 8e Sommet Afro dans l’ère de la donnée</a><br>
+    <span class="meta">19 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mois-de-lhistoire-des-noirs-sous-une-ambiguite-constante-au-quebec.html">Mois de l’Histoire des Noirs sous une «ambiguïté constante» au Québec</a><br>
+    <span class="meta">18 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/apres-une-blanche-une-noire-a-la-mairie-de-montreal.html">Après une Blanche, une Noire à la mairie de Montréal?</a><br>
+    <span class="meta">17 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-maire-noir-a-montreal.html">Un maire noir à Montréal?</a><br>
+    <span class="meta">13 janvier 2025</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/racisme-des-jeunes-montrealais-sexpriment-dans-un-forum.html">Racisme: des jeunes Montréalais s’expriment dans un Forum</a><br>
+    <span class="meta">3 décembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-femmes-afroentrepreneures-a-la-recherche-de-donnees.html">Les femmes afroentrepreneures à la recherche de données</a><br>
+    <span class="meta">26 novembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-migrants-refusent-de-porter-le-chapeau-des-crises.html">Des migrants refusent de porter le «chapeau» des crises</a><br>
+    <span class="meta">14 novembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-diversite-a-son-theatre-colas-aujourdhui-audio.html">La diversité a son «Théâtre Colas» aujourd’hui (Audio)</a><br>
+    <span class="meta">5 novembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/patrice-vilceus-la-retraite-sans-battre-en-retraite.html">Patrice Vilcéus: « La retraite sans battre en retraite »</a><br>
+    <span class="meta">25 septembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/kidnappee-en-tournant-kidnapping-inc-en-haiti.html">Kidnappée en tournant «Kidnapping Inc.» en Haïti</a><br>
+    <span class="meta">19 septembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/academie-de-leadership-louverture-mandela-une-autre-ecole-pour-les-jeunes.html">Académie de leadership Louverture-Mandela: une autre école pour les jeunes</a><br>
+    <span class="meta">3 septembre 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-demandeurs-dasile-loges-a-leglise-sainte-gertrude-seraient-a-la-rue.html">Des demandeurs d’asile logés à l’Église Sainte-Gertrude seraient à la rue</a><br>
+    <span class="meta">27 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-une-cinquantaine-dinfirmiers-recrutes-a-letranger-aux-abois.html">Québec: une cinquantaine d’infirmiers recrutés à l’étranger aux abois</a><br>
+    <span class="meta">22 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-temporaire-quebec-impose-un-moratoire-a-montreal.html">Immigration temporaire: Québec impose un moratoire à Montréal</a><br>
+    <span class="meta">20 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-50-equipes-a-la-30e-edition-de-basket-de-rue.html">Montréal-Nord : 50 équipes à la 30e édition de Basket de rue</a><br>
+    <span class="meta">20 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-des-policiers-du-pdq-39-sempetrent-dans-un-profilage.html">Montréal-Nord: des policiers du PDQ-39 s’empêtrent dans un profilage</a><br>
+    <span class="meta">18 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-otentiks-cheveux-afros.html">Des « Otentiks » cheveux afros</a><br>
+    <span class="meta">9 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/40-jeunes-de-la-diversite-sur-les-traces-de-louverture-et-mandela.html">40 jeunes de la diversité sur les traces de Louverture et Mandela</a><br>
+    <span class="meta">7 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-quand-des-policiers-sexpriment-sur-le-phenomene.html">Profilage racial: quand des policiers s’expriment sur le phénomène</a><br>
+    <span class="meta">2 août 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-livres-haitiens-de-plus-en-plus-populaires.html">Les livres haïtiens de plus en plus populaires</a><br>
+    <span class="meta">31 juillet 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-fonds-afro-qui-renforce-les-entrepreneurs-noirs.html">Un Fonds Afro qui renforce les entrepreneurs noirs</a><br>
+    <span class="meta">22 juillet 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/nourrir-400-000-ecoliers-defavorises-au-canada-en-5-ans.html">Nourrir 400 000 écoliers défavorisés au Canada en 5 ans</a><br>
+    <span class="meta">25 juin 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-dizaine-de-blindes-canadiens-incendies-par-des-gangs-en-haiti.html">Une dizaine de blindés canadiens incendiés par des gangs en Haïti</a><br>
+    <span class="meta">25 juin 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/spvm-developpement-des-minorites-cela-va-brasser-selon-le-chef.html">SPVM/ Développement des minorités : «Cela va brasser», selon le chef</a><br>
+    <span class="meta">14 juin 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/airtransat-pourrait-reprendre-ses-vols-vers-p-au-p-bientot.html">AirTransat pourrait reprendre ses vols vers P-au-P bientôt</a><br>
+    <span class="meta">5 juin 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fonds-1804-dune-vingtaine-a-plus-de-150-bourses-pour-le-10e-gala.html">Fonds 1804: d’une vingtaine à plus de 150 bourses pour le 10e Gala</a><br>
+    <span class="meta">5 juin 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/accuse-de-fraude-wilgens-exacte-est-acquitte.html">Accusé de fraude, Wilguens Exacte est acquitté</a><br>
+    <span class="meta">28 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/assurance-dentaire-federale-les-nord-montrealais-se-bousculent-dans-les-cliniques.html">Assurance dentaire fédérale: les Nord-Montréalais se bousculent dans les cliniques</a><br>
+    <span class="meta">28 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/racisme-medical-les-plaintes-contre-des-medecins-en-hausse.html">Racisme médical : les plaintes contre des médecins en hausse</a><br>
+    <span class="meta">23 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-nouveau-lieu-moderne-pour-le-centre-culturel-afro-canadien-de-montreal.html">Un nouveau lieu moderne pour le Centre culturel afro-canadien de Montréal</a><br>
+    <span class="meta">17 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/hausse-des-cas-de-vih-chez-les-demandeurs-dasile-au-canada.html">Hausse des cas de VIH chez les demandeurs d’asile au Canada</a><br>
+    <span class="meta">16 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/benita-jacques-sur-les-traces-de-cheik-anta-diop-dans-lafrique-berceau-de-lhumanite.html">Bénita Jacques sur les traces de Cheik Anta Diop dans «L’Afrique : berceau de l’humanité… »</a><br>
+    <span class="meta">13 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-keskonfe-ou-la-tristesse-dune-comedienne.html">Haïti : « Keskonfè ? » ou la tristesse d’une comédienne</a><br>
+    <span class="meta">9 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/luniversite-concordia-decerne-un-doctorat-honorifique-a-fabienne-colas.html">L’Université Concordia décerne un doctorat honorifique à Fabienne Colas</a><br>
+    <span class="meta">8 mai 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/son-reve-de-devenir-policier-mine-par-le-profilage-racial.html">Son rêve de devenir policier miné par le profilage racial</a><br>
+    <span class="meta">16 avril 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lakay-nou-chez-nous-la-serie-qui-noircit-lecran-de-radio-canada.html">«Lakay Nou» (Chez nous) la série qui noircit l’écran de Radio-Canada</a><br>
+    <span class="meta">18 janvier 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/delle-a-lui-la-transformation-de-rozagnes-en-isayah.html">D’elle à lui, la transformation de RozAgnès en Isayah</a><br>
+    <span class="meta">17 janvier 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/damesara-cherche-2-millions-en-investissement-dans-la-communaute.html">DameSara cherche 2 millions en investissement dans la communauté</a><br>
+    <span class="meta">11 janvier 2024</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/terrebonne-attaquees-a-la-hache-par-leur-voisin-blanc.html">Terrebonne: attaquées à la hache par leur voisin blanc</a><br>
+    <span class="meta">29 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/alaso-premier-cafe-haitien-en-nespresso-au-monde.html">Alaso: premier café haïtien en Nespresso au monde</a><br>
+    <span class="meta">28 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/racisme-lenfer-dun-col-bleu-noir-a-riviere-des-prairies.html">Racisme: l’enfer d’un col bleu noir à Rivière-des-Prairies</a><br>
+    <span class="meta">20 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-spectacle-nostalgique-de-noel-en-haiti-a-montreal.html">Un spectacle nostalgique de Noël en Haïti à Montréal</a><br>
+    <span class="meta">10 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-le-bureau-de-lutte-au-racisme-le-favoriserait-au-contraire.html">Montréal: le Bureau de lutte au racisme le favoriserait au contraire</a><br>
+    <span class="meta">3 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/40-ans-dans-lesprit-de-louverture-pour-la-maison-de-jeunes.html">40 ans dans l’esprit de L’Ouverture pour la Maison de jeunes</a><br>
+    <span class="meta">1 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/programme-humanitaire-la-deputee-cadet-parraine-une-petition-a-quebec.html">Programme humanitaire: la députée Cadet parraine une pétition à Québec</a><br>
+    <span class="meta">1 décembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/francois-legault-ferme-la-porte-a-un-programme-humanitaire-pour-des-haitiens.html">François Legault ferme la porte à un programme humanitaire pour des Haïtiens</a><br>
+    <span class="meta">20 novembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-les-demandes-de-residence-des-haitiens-traitees-au-second-plan.html">Canada : les demandes de résidence des Haïtiens traitées au second plan</a><br>
+    <span class="meta">21 octobre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-ne-participera-pas-au-programme-humanitaire-du-canada.html">Québec ne participera pas au programme humanitaire du Canada</a><br>
+    <span class="meta">17 octobre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-annonce-un-programme-humanitaire-pour-haiti-colombie-et-venezuela.html">Canada annonce un programme humanitaire pour Haïti, Colombie et Venezuela</a><br>
+    <span class="meta">10 octobre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-19e-fifbm-est-reellement-black-avec-75-films-de-20-pays.html">Le 19e FIFBM est réellement black avec 75 films de 20 pays</a><br>
+    <span class="meta">27 septembre 2023</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-groupe-3737-de-saint-michel-qui-rayonne-dans-tout-le-canada.html">Un « Groupe 3737 » de Saint-Michel qui rayonne dans tout le Canada</a><br>
+    <span class="meta">17 novembre 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-une-entree-express-au-canada-pour-16-professions.html">Immigration : une « Entrée express » au Canada pour 16 professions</a><br>
+    <span class="meta">16 novembre 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-canada-pourrait-diriger-une-force-armee-internationale-en-haiti.html">Le Canada pourrait diriger une force armée internationale en Haïti</a><br>
+    <span class="meta">27 octobre 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cancer-du-sein-les-femmes-immigrantes-et-la-mammographie.html">Cancer du sein : les femmes immigrantes et la mammographie</a><br>
+    <span class="meta">18 octobre 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-15-000-parents-et-grands-parents-attendus-cette-annee.html">Canada: 15 000 parents et grands-parents attendus cette année</a><br>
+    <span class="meta">13 octobre 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-recrutement-dinfirmieres-en-haiti-lien-dincription.html">Québec/Recrutement d’infirmières en Haïti: lien d’incription</a><br>
+    <span class="meta">3 octobre 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-un-basket-de-rue-incubateur-des-joueurs-de-la-nba.html">Montréal-Nord: un « basket de rue » incubateur des joueurs de la NBA</a><br>
+    <span class="meta">1 août 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-autre-candidate-dorigine-haitienne-a-montreal-nord.html">Une autre candidate d’origine haïtienne à Montréal-Nord?</a><br>
+    <span class="meta">30 juillet 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-candidate-dorigine-haitienne-dans-montreal-nord.html">Une candidate d’origine haïtienne dans Montréal-Nord?</a><br>
+    <span class="meta">29 juillet 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-profilage-javais-juste-besoin-des-excuses-f-ducas.html">Repentigny/Profilage: « J’avais juste besoin des excuses.»-F. Ducas</a><br>
+    <span class="meta">28 juillet 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-festival-international-de-mizik-kreyol-de-montreal-est-gratuit.html">Le Festival international de mizik kreyol de Montréal est gratuit</a><br>
+    <span class="meta">19 juillet 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ricardo-lamour-negre-il-nest-pas-question-pour-moi-de-bannir-le-mot.html">Ricardo Lamour/nègre: «il n’est pas question pour moi de bannir le mot.»</a><br>
+    <span class="meta">13 juillet 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-la-minorite-noire-a-son-centre-de-recherche.html">Québec: la minorité noire a son centre de recherche</a><br>
+    <span class="meta">6 juillet 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-statue-de-j-jacques-dessalines-erigee-a-grande-riviere-du-nord.html">Une statue de J. Jacques Dessalines érigée à Grande-Rivière-du-Nord</a><br>
+    <span class="meta">24 juin 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lorsque-les-dechets-deviennent-energie-en-haiti.html">Lorsque les déchets deviennent Énergie en Haïti</a><br>
+    <span class="meta">6 juin 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-ces-noirs-qui-ne-votent-pas.html">Canada: ces Noirs qui ne votent pas</a><br>
+    <span class="meta">20 mai 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-police-au-coeur-dune-chicane-de-voisins-blanc-et-noire.html">La police au cœur d’une chicane de voisins (Blanc et Noire)</a><br>
+    <span class="meta">7 mai 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-recrutera-50-infirmieres-en-haiti-en-phase-1.html">Québec recrutera 50 infirmières en Haïti, en phase 1</a><br>
+    <span class="meta">28 avril 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-griot-a-la-kanasuk-canne-a-sucre.html">Un griot à la « Kanasuk » (canne à sucre)</a><br>
+    <span class="meta">26 avril 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/crash-davion-en-haiti-le-corps-dun-canadien-devrait-etre-rapatrie.html">Crash d’avion en Haïti: le corps d’un Canadien devrait être rapatrié</a><br>
+    <span class="meta">25 avril 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-reseau-daide-a-lentreprenariat-des-jeunes-noirs-est-ne.html">Un Réseau d’aide à l’entreprenariat des jeunes noirs est né</a><br>
+    <span class="meta">19 avril 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/travailler-au-quebec-un-processus-plus-simple-maintenant.html">Travailler au Québec: un processus plus simple maintenant</a><br>
+    <span class="meta">5 avril 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-ukrainiens-a-bras-ouverts-et-froideur-face-aux-haitiens.html">Canada: Ukrainiens «à bras ouverts» et froideur face aux Haïtiens</a><br>
+    <span class="meta">10 mars 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dramatik-avec-un-cas-de-perseverance-scolaire.html">«Dramatik avec un cas» de persévérance scolaire</a><br>
+    <span class="meta">5 mars 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/recrutement-de-1000-infirmieres-haiti-pas-assez-francophone-pour-quebec.html">Recrutement de 1000 infirmières: Haïti, pas assez francophone pour Québec</a><br>
+    <span class="meta">4 mars 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mort-de-jean-rene-olivier-sa-mere-denonce-le-silence-des-autorites.html">Mort de Jean René Olivier: sa mère dénonce le silence des autorités</a><br>
+    <span class="meta">22 février 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-3-millions-pour-plus-de-noirs-a-lecran.html">Canada: 3 millions pour plus de Noirs à l’écran</a><br>
+    <span class="meta">10 février 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pa-tmentir-m-pap-baw-manti-sur-ici-tou-tv.html">«Pa t’mentir» (M pap baw manti) sur Ici Tou.tv</a><br>
+    <span class="meta">28 janvier 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/tance-par-le-canada-ariel-henry-boude-la-reunion-sur-haiti.html">Canada: le discours d’ouverture d’Ariel Henry n’a pu être diffusé</a><br>
+    <span class="meta">21 janvier 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/noirs-au-volant-il-gagne-devant-la-deontologie-policiere.html">Noirs au volant: il gagne devant la déontologie policière</a><br>
+    <span class="meta">17 janvier 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/audio-sa-vie-et-sa-mort-continuent-de-rassembler.html">(Audio) Sa vie et sa mort continuent de rassembler</a><br>
+    <span class="meta">12 janvier 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/assassinat-j-moise-lenquete-haitienne-bute-sur-le-silence-des-mercenaires.html">Assassinat J.Moise: l’enquête haïtienne bute sur le silence des mercenaires</a><br>
+    <span class="meta">8 janvier 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deces-du-dr-e-dorsainville-ancien-epoux-de-la-senatrice-m-f-megie.html">Décès du Dr E. Dorsainville, ancien époux de la sénatrice M-F Mégie</a><br>
+    <span class="meta">4 janvier 2022</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/moleste-pour-avoir-demande-a-un-policier-de-mettre-son-masque.html">Molesté pour avoir demandé à un policier de «mettre son masque»</a><br>
+    <span class="meta">6 décembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pacifique-a-subi-une-commotion-cerebrale.html">Pacifique a subi une commotion cérébrale</a><br>
+    <span class="meta">1 décembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-un-marathon-pour-denoncer-et-financer-les-victimes.html">Profilage racial: un marathon pour dénoncer et financer les victimes</a><br>
+    <span class="meta">17 novembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigrand-pour-aider-les-nouveaux-arrivants-a-grandir.html">ImmiGrand, pour aider les nouveaux arrivants à grandir</a><br>
+    <span class="meta">14 novembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/celeste-miantoko-la-discrimination-a-augmente-a-montreal-nord.html">Céleste Miantoko: « La discrimination a augmenté à Montréal-Nord »</a><br>
+    <span class="meta">5 novembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-la-ville-est-anti-noir-anti-haitien.html">Montréal-Nord: «la Ville est anti-Noir, anti-Haïtien»</a><br>
+    <span class="meta">1 novembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-mort-de-j-r-j-olivier-deux-plaintes-deposees-par-la-famille.html">Repentigny/mort de J.R.J Olivier: deux plaintes déposées par la famille</a><br>
+    <span class="meta">27 septembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dame-sara-le-marche-haitien-prend-du-poids.html">Dame Sara, le marché haïtien, prend du poids</a><br>
+    <span class="meta">22 septembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/affaires-et-diversite-laval-signe-une-alliance-strategique-avec-le-groupe-3737.html">Affaires et diversité: Laval signe une alliance stratégique avec le Groupe 3737</a><br>
+    <span class="meta">18 septembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-lecole-jean-nicolet-remporte-la-bourse-best-buy.html">Montréal-Nord :l’école Jean Nicolet remporte la bourse Best Buy</a><br>
+    <span class="meta">18 septembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elle-pourrait-devenir-le-numero-2-de-la-ville-de-montreal.html">Elle pourrait devenir le numéro 2 de la Ville de Montréal</a><br>
+    <span class="meta">14 septembre 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mort-de-j-r-jr-olivier-la-procedure-et-les-policiers-de-repentigny.html">Mort de J.R Jr Olivier: la procédure et les policiers de Repentigny</a><br>
+    <span class="meta">12 août 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/crise-haitienne-le-canada-prend-le-pouls-des-haitiens-dici.html">Crise haïtienne: le Canada prend le pouls des Haïtiens d’ici</a><br>
+    <span class="meta">8 août 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-repentigny-admet-avoir-pu-faire-des-erreurs.html">Profilage: Repentigny admet « avoir pu faire des erreurs »</a><br>
+    <span class="meta">1 août 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-je-ne-les-ai-pas-appeles-pour-tuer-mon-fils.html">Repentigny: «Je ne les ai pas appelés pour tuer mon fils»</a><br>
+    <span class="meta">1 août 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-observatoire-des-jeunes-noirs-soutenu-par-des-blancs.html">Un «Observatoire» des jeunes noirs soutenu par des Blancs</a><br>
+    <span class="meta">1 août 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-violence-le-canada-aide-les-deplaces.html">Haïti/ violence: le Canada aide les déplacés</a><br>
+    <span class="meta">30 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-15-ans-d-haiti-en-folie.html">Les 15 ans d’« Haïti en folie »</a><br>
+    <span class="meta">28 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-les-dirigeants-sont-des-migrants-comme-nous.html">Canada: « les dirigeants sont des migrants comme nous.»</a><br>
+    <span class="meta">25 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/faites-vous-vacciner-par-des-gens-de-votre-communaute.html">Faites-vous vacciner par des gens de votre communauté</a><br>
+    <span class="meta">20 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/assassinat-de-j-moise-controle-et-manipulation-de-linformation.html">Assassinat de J.Moïse: contrôle et manipulation de l’information</a><br>
+    <span class="meta">16 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pour-raconter-votre-interpellation-policiere-stopmtl-ca.html">Pour raconter votre interpellation policière :STOPMTL.ca</a><br>
+    <span class="meta">14 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/assassinat-de-j-moise-les-haitiens-de-montreal-sexpriment-peu.html">Assassinat de J Moïse: les Haïtiens de Montréal s’expriment peu</a><br>
+    <span class="meta">12 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-canada-appelle-a-un-accord-politique-en-haiti.html">Le Canada appelle à un accord politique en Haïti</a><br>
+    <span class="meta">12 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-assassinat-et-coup-detat-en-perspective.html">Haïti : assassinat et «coup d’État» en perspective</a><br>
+    <span class="meta">9 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-maison-des-jeunes-louverture-cherche-200-000.html">La Maison des jeunes L’ouverture cherche $ 200 000</a><br>
+    <span class="meta">2 juillet 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ce-quebecois-venu-dhaiti-obtient-la-medaille-dor-dingenieurs-canada.html">Ce Québécois venu d’Haïti obtient la Médaille d’or d’Ingénieurs Canada</a><br>
+    <span class="meta">29 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/avec-courage-il-se-lance-en-politique-municipale.html">Avec «Courage» il se lance en politique municipale</a><br>
+    <span class="meta">23 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-le-milieu-des-affaires-et-la-caq-se-heurtent.html">Immigration: le milieu des affaires et la CAQ se heurtent</a><br>
+    <span class="meta">16 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/zanmi-ht-un-facebook-haitien.html">Zanmi.ht : un « Facebook haïtien »</a><br>
+    <span class="meta">16 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-maison-des-jeunes-louverture-acquiert-sa-propre-batisse.html">La Maison des jeunes L’Ouverture acquiert sa propre bâtisse</a><br>
+    <span class="meta">14 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/j-c-martineau-ne-avec-la-musique-dans-la-tete.html">J.C Martineau, né avec la «musique dans la tête»</a><br>
+    <span class="meta">4 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/laveugle-qui-voit-a-travers-la-musique.html">L’aveugle qui voit à travers la musique</a><br>
+    <span class="meta">4 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lecran-de-la-cinematheque-noir-tout-le-mois-de-juin.html">L’écran de la Cinémathèque: noir tout le mois de juin</a><br>
+    <span class="meta">4 juin 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-discrimination-la-mairesse-black-va-t-elle-demissionner.html">Montréal-Nord/discrimination: «la mairesse Black va-t-elle démissionner?»</a><br>
+    <span class="meta">29 mai 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ca-me-surprend-que-je-sois-le-premier-batonnier.html">«Ça me surprend que je sois le premier» bâtonnier</a><br>
+    <span class="meta">19 mai 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/plus-de-250-passeports-haitiens-egares-par-fedex.html">Plus de 250 passeports haïtiens égarés par FedEx</a><br>
+    <span class="meta">5 mai 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/victime-de-racisme-des-partisans-de-la-caq.html">Victime de «racisme» des partisans de la CAQ</a><br>
+    <span class="meta">3 mai 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lappui-federal-aux-noirs-du-canada-se-concretise.html">L’appui fédéral aux Noirs du Canada se concrétise dans Bourassa</a><br>
+    <span class="meta">27 avril 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/regularisation-ottawa-autorise-les-immigrants-du-quebec-a-appliquer.html">Régularisation: Ottawa autorise les immigrants du Québec à appliquer</a><br>
+    <span class="meta">24 avril 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-le-titre-de-w-arthus-mis-en-question-par-des-haitiens.html">Canada: le titre de W. Arthus mis en question par des Haïtiens</a><br>
+    <span class="meta">3 avril 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/massimadi-ou-la-resistance-des-noirs-lgbtq.html">Massimadi ou la « résistance » des Noirs LGBTQ+</a><br>
+    <span class="meta">10 mars 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-les-barrieres-a-devenir-policier-pour-les-noirs.html">Québec: les barrières à devenir policier pour les Noirs</a><br>
+    <span class="meta">28 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ils-nont-pas-parle-des-deportations-vers-haiti.html">Ils n’ont pas parlé des déportations vers Haïti</a><br>
+    <span class="meta">27 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/spvm-une-autre-arrestation-par-erreur.html">SPVM: une autre arrestation par erreur</a><br>
+    <span class="meta">25 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/noir-au-volant-la-police-remorque-sa-cadillac.html">Noir au volant: la police remorque sa Cadillac</a><br>
+    <span class="meta">17 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/regularisation-travailleurs-essentiels-nadine-girault-esquive-la-question.html">Régularisation/travailleurs essentiels: Nadine Girault esquive la question</a><br>
+    <span class="meta">15 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-compagnie-de-theatre-creole-primee-au-quebec.html">La Compagnie de théâtre créole primée au Québec</a><br>
+    <span class="meta">12 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mois-de-lhistoire-des-noirs-aucunement-envie-de-celebrer.html">Mois de l’histoire des Noirs: «Aucunement envie de célébrer»</a><br>
+    <span class="meta">11 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-racisme-une-lutte-trop-lente-selon-deux-ministres.html">Québec/racisme: une lutte trop lente selon deux ministres</a><br>
+    <span class="meta">6 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-autiste-expulse-de-lecole-parce-quil-est-noir.html">Un autiste expulsé de l’école parce qu’il est Noir ?</a><br>
+    <span class="meta">5 février 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-avocat-noir-profile-par-la-police-de-montreal.html">Un avocat noir profilé par la police de Montréal</a><br>
+    <span class="meta">30 janvier 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-amende-de-18-000-pour-gatineau.html">Profilage racial: amende de $18 000 pour Gatineau</a><br>
+    <span class="meta">25 janvier 2021</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/abandon-du-recours-collectifla-ligue-des-noirs-dement.html">Abandon du Recours collectif:la Ligue des Noirs dément</a><br>
+    <span class="meta">24 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/blesse-de-5-balles-un-montrealais-echappe-a-un-rapt-en-haiti.html">Blessé de 5 balles, un Montréalais échappe à un rapt en Haïti</a><br>
+    <span class="meta">24 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/noel-covid-19-et-voyage-ce-quil-faut-savoir.html">Noël, COVID-19 et voyage, ce qu’il faut savoir</a><br>
+    <span class="meta">24 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-le-racisme-dans-le-systeme-scolaire-et-les-enfants.html">Québec: le racisme dans le système scolaire et les enfants</a><br>
+    <span class="meta">23 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-le-cocktail-racisme-systemique-et-sante-mentale.html">Québec: le cocktail «racisme systémique» et santé mentale</a><br>
+    <span class="meta">13 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/adoption-ils-seront-11-avec-deux-enfants-haitiens-bientot.html">Adoption: ils seront 11 avec deux enfants haïtiens bientôt</a><br>
+    <span class="meta">5 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-il-traine-laval-au-tribunal-pour-37-000.html">Profilage racial: il traine Laval au tribunal pour $37 000</a><br>
+    <span class="meta">3 décembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-appelle-a-une-greve-des-demandeurs-dasile.html">Il appelle à une grève des demandeurs d’asile</a><br>
+    <span class="meta">28 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-au-tribunal-pour-deux-cas-de-profilage-racial.html">Repentigny au tribunal pour deux cas de profilage racial</a><br>
+    <span class="meta">21 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-quebec-selectionne-avec-un-biais-defavorable.html">Immigration: Québec sélectionne avec un «biais défavorable»</a><br>
+    <span class="meta">20 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/1ere-maison-jusqua-10-de-financement-federal-2.html">1ère maison? Jusqu’à 10% de financement fédéral</a><br>
+    <span class="meta">17 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/racisme-systemique-comprendre-le-deni-de-quebec.html">Racisme systémique: comprendre le déni de Québec</a><br>
+    <span class="meta">17 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-2021-candidats-de-la-diversite-recherches.html">Montréal 2021: candidats de la diversité recherchés</a><br>
+    <span class="meta">12 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-quebec-ouvre-arima-aux-employeurs-2-ans-plus-tard.html">Immigration: Québec ouvre Arima aux employeurs 2 ans plus tard</a><br>
+    <span class="meta">6 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-une-police-deux-poids-deux-mesures.html">Québec: une police «deux poids deux mesures»?</a><br>
+    <span class="meta">4 novembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ils-gerent-22-millions-pour-les-noirs-au-quebec.html">Ils gèrent 2,2 millions pour les Noirs au Québec</a><br>
+    <span class="meta">31 octobre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-la-caq-veut-en-prendre-plus-en-2021.html">Immigration: la CAQ veut en prendre plus en 2021</a><br>
+    <span class="meta">31 octobre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-consonne-n-pour-negre-noir-ou-noyer-le-poisson.html">La consonne «N» pour Nègre, Noir ou noyer le poisson?</a><br>
+    <span class="meta">31 octobre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-la-police-de-laval-condamnee.html">Profilage racial: la police de Laval condamnée</a><br>
+    <span class="meta">31 octobre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-des-haitiens-refoules-du-canada-en-difficulte-a-la-frontiere.html">COVID: des Haïtiens refoulés du Canada en difficulté à la frontière</a><br>
+    <span class="meta">20 octobre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/en-avant-mise-sur-la-diaspora-pour-gagner.html">«En avant» mise sur la diaspora pour gagner</a><br>
+    <span class="meta">12 octobre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cartographier-la-covid-a-montreal-nord.html">Cartographier la COVID à Montréal-Nord</a><br>
+    <span class="meta">30 septembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-veut-mettre-fin-au-racisme-a-montreal.html">Il veut mettre fin au racisme à Montréal</a><br>
+    <span class="meta">20 septembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentignyla-police-traiterait-les-jeunes-noirs-differemment.html">Repentigny:la police traiterait les jeunes noirs différemment</a><br>
+    <span class="meta">15 septembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/expulse-de-repentigny-pour-une-chicane-avec-son-voisin-blanc.html">Expulsé de Repentigny pour une chicane avec son voisin Blanc</a><br>
+    <span class="meta">14 septembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-drapeau-le-message-de-e-dubourg.html">Haïti/drapeau: le message de E. Dubourg</a><br>
+    <span class="meta">11 septembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jean-ernest-pierre-ferme-le-micro-de-sa-2e-station.html">Jean Ernest Pierre ferme le micro de sa 2e station</a><br>
+    <span class="meta">10 septembre 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-profilageles-noirs-exigent-une-reconnaissance-ecrite.html">Repentigny/profilage:les Noirs exigent une «reconnaissance écrite»</a><br>
+    <span class="meta">10 août 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/discrimination-et-omerta-communautaire-a-montreal-nord.html">«Discrimination» et «omerta» communautaire à Montréal-Nord</a><br>
+    <span class="meta">1 août 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-anges-gardiens-sont-ils-tombes-dans-loubli.html">Les «anges gardiens sont-ils tombés dans l’oubli?»</a><br>
+    <span class="meta">26 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-politique-du-spvm-est-un-coup-depee-dans-leau.html">La «Politique» du SPVM est un «coup d’épée dans l’eau»</a><br>
+    <span class="meta">22 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/hostilites-face-a-la-fresque-sur-la-vie-des-noirs.html">Hostilités face à la fresque sur la vie des Noirs</a><br>
+    <span class="meta">16 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-montreal-nord-veut-relancer-les-commerces.html">COVID: Montréal-Nord veut relancer les commerces</a><br>
+    <span class="meta">15 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-covid-et-demandeur-dasile-la-patate-chaude.html">Canada/COVID et demandeur d’asile: la patate chaude</a><br>
+    <span class="meta">11 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-visages-du-profilage-racial-defilent-a-montreal.html">Les visages du profilage racial défilent à Montréal</a><br>
+    <span class="meta">11 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-asile-plus-de-liste-des-pays-dorigine-designes.html">Canada/Asile: plus de liste des pays d’origine désignés</a><br>
+    <span class="meta">2 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19les-noirs-reclament-des-donnees-ethniques.html">COVID-19:les Noirs réclament des données ethniques</a><br>
+    <span class="meta">2 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-noirs-a-moto-et-en-voitures-de-luxe-contre-le-racisme.html">Des Noirs à moto et en voitures de luxe contre le racisme</a><br>
+    <span class="meta">2 juillet 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19-testla-double-peur-des-sans-papiers.html">COVID-19/test:la double peur des sans-papiers</a><br>
+    <span class="meta">16 juin 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-souverainiste-amie-des-demandeurs-dasile.html">La souverainiste amie des demandeurs d’asile</a><br>
+    <span class="meta">9 juin 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-une-haitienne-aux-droits-de-la-personne-a-la-cdpdj.html">Québec: une Haïtienne aux Droits de la personne à la CDPDJ</a><br>
+    <span class="meta">9 juin 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ils-chanteront-haiti-en-folie.html">Ils chanteront «Haïti en folie»</a><br>
+    <span class="meta">28 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covidla-caq-rejette-une-motion-en-faveur-des-demandeurs-dasile.html">COVID:la CAQ rejette une motion en faveur des demandeurs d’asile</a><br>
+    <span class="meta">18 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-f-legault-et-les-demandeurs-dasileepreuve-des-faits.html">COVID/ F.Legault et les demandeurs d’asile:épreuve des faits</a><br>
+    <span class="meta">16 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19le-gouvernement-passe-mal-a-montreal-nord.html">COVID-19:le gouvernement passe mal à Montréal-Nord</a><br>
+    <span class="meta">10 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covidle-dr-dorigine-haitienne-en-premiere-ligne.html">COVID:le Dr d’origine haïtienne en première ligne</a><br>
+    <span class="meta">2 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covidquand-un-depute-anime-votre-confinement.html">COVID:quand un député anime votre confinement</a><br>
+    <span class="meta">2 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quand-la-covid-19-vire-au-racisme.html">Quand la COVID-19 vire au racisme</a><br>
+    <span class="meta">2 mai 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-cheque-de-45-pour-son-permis-de-taxi.html">Un chèque de $45 pour son permis de taxi</a><br>
+    <span class="meta">28 avril 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19un-36e-vues-dafrique-virtuel.html">COVID-19:un 36e «Vues d’Afrique» virtuel</a><br>
+    <span class="meta">3 avril 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19-comment-prendre-soin-dun-malade-a-la-maison.html">COVID-19: Comment prendre soin d’un malade à la maison</a><br>
+    <span class="meta">22 mars 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19-sauf-les-epiceries-pharmacies-et-saq.html">COVID-19: sauf les épiceries, pharmacies et SAQ</a><br>
+    <span class="meta">22 mars 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/covid-19quebec-modifie-les-conditions-de-travail-en-sante.html">COVID-19:Québec modifie les conditions de travail en santé</a><br>
+    <span class="meta">22 mars 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pousse-vers-la-sortie-de-son-local-au-cdc-rdp.html">«Poussé» vers la sortie de son local au CDC-RDP</a><br>
+    <span class="meta">19 mars 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-canada-veut-lutter-contre-la-fraude.html">Immigration Canada veut lutter contre la fraude</a><br>
+    <span class="meta">3 mars 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-taximans-haitiens-investissent-dun-million-sur-pie-ix.html">Des taximans haïtiens investissent + d’un million sur Pie-IX</a><br>
+    <span class="meta">2 mars 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-immigration-canada-larnaque-du-2025-rosemont.html">Haïti/Immigration Canada: l’«arnaque» du 2025 Rosemont</a><br>
+    <span class="meta">29 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/au-micro-tant-et-aussi-longtemps.html">Au micro « tant et aussi longtemps… »</a><br>
+    <span class="meta">24 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-police-et-lethique-des-interventions-a-montreal-nord.html">La police et l’«éthique» des interventions à Montréal-Nord</a><br>
+    <span class="meta">24 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fredy-apres-la-place-de-lespoir-une-murale.html">Fredy: après la Place de l’espoir, une murale?</a><br>
+    <span class="meta">23 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/air-transat-coince-en-haiti-apres-larrestation-dun-canadien.html">Air Transat coincé en Haïti après l’arrestation d’un Canadien</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canadien-refoule-dhaiti-ni-enquete-ni-accusation.html">Canadien refoulé d’Haïti : ni enquête, ni accusation</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elle-veut-amener-saint-michel-a-la-table-decisionnelle.html">Elle veut amener Saint-Michel à la table décisionnelle</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elles-sont-doublement-discriminees.html">Elles sont doublement discriminées</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/huit-cremes-pour-peau-noire-saisies-par-sante-canada.html">Huit crèmes pour peau noire saisies par Santé Canada</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-quebec-en-prendra-moins-en-2019.html">Immigration: Québec «en prendra moins» en 2019</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigrer-au-quebec-six-mois-pour-une-reponse.html">Immigrer au Québec : six mois pour une réponse</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mort-en-resistant-a-sa-deportation-du-canada.html">Mort en résistant à sa déportation du Canada</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/plus-de-noirs-a-des-postes-politiques-au-canada.html">Plus de Noirs à des postes politiques au Canada</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-des-delais-bloquent-lacces-a-la-justice.html">Profilage racial: des délais bloquent l’accès à la justice</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/revoque-alors-quil-etait-malade.html">Révoqué alors qu’il était malade</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-acces-universel-aux-bourses-du-fonds1804.html">Un accès universel aux bourses du Fonds1804</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-3e-journee-de-la-cuisine-haitienne-a-montreal.html">Une 3e Journée de la cuisine haïtienne à Montréal</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/villanuevaon-se-fait-censurer-depuis-10-ans-w-prosper.html">Villanueva:«on se fait censurer depuis 10 ans »-W.Prosper</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/visa-canadien-refuse-a-boukman-eksperyans-pour-le-festival.html">Visa canadien refusé à Boukman eksperyans pour le festival</a><br>
+    <span class="meta">9 février 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/yogourt-fromage-haitien-en-vente-a-montreal.html">Yogourt, fromage haïtien en vente à Montréal</a><br>
+    <span class="meta">26 janvier 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/12-janvier-10-ans-pis-en-haiti.html">12 janvier, 10 ans: « Pis en Haïti? »</a><br>
+    <span class="meta">20 janvier 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-la-soupe-de-giraumon-qui-rapproche.html">Repentigny: la soupe de giraumon qui rapproche</a><br>
+    <span class="meta">20 janvier 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-visages-de-la-discrimination-a-montreal-nord.html">Les visages de la discrimination à Montréal-Nord</a><br>
+    <span class="meta">12 janvier 2020</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/170-192-pour-la-pediatrie-sociale-a-montreal-nord.html">170 192 $ pour la pédiatrie sociale à Montréal-Nord</a><br>
+    <span class="meta">27 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/directement-dhaiti-a-votre-assiette-a-repentigny.html">Directement d’Haïti à votre assiette à Repentigny</a><br>
+    <span class="meta">27 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/recruter-dans-un-contexte-de-penurie.html">Recruter dans un contexte de pénurie</a><br>
+    <span class="meta">27 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/eprise-dhaiti-elle-appelle-ottawa-a-soutenir-ce-peuple.html">Éprise d’Haïti, elle appelle Ottawa à soutenir ce peuple</a><br>
+    <span class="meta">20 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-lutte-dun-commissaire-scolaire-contre-le-pl-40.html">La lutte d’un commissaire scolaire contre le PL-40</a><br>
+    <span class="meta">20 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racialet-le-leadership-politique-de-valerie-plante.html">Profilage racial: et le «leadership politique» de Valérie Plante?</a><br>
+    <span class="meta">20 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-dissidents-de-radio-centre-ville-abandonnent.html">Les dissidents de Radio centre-ville «abandonnent»</a><br>
+    <span class="meta">18 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-des-elus-haitiens-denoncent-le-racisme-contre-une-haitienne.html">Québec: des élus haïtiens dénoncent le racisme contre une Haïtienne</a><br>
+    <span class="meta">18 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-les-ethnies-sorganisent-contre-le-profilage.html">Repentigny: les ethnies s’organisent contre le profilage</a><br>
+    <span class="meta">15 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-politiciens-en-herbe-a-montreal-nord.html">Des politiciens en herbe à Montréal-Nord</a><br>
+    <span class="meta">12 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racial-ce-serait-systemique-a-repentigny.html">Profilage racial: ce serait « systémique » à Repentigny</a><br>
+    <span class="meta">6 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-un-observatoire-des-communautes-noires.html">Québec: un Observatoire des communautés noires</a><br>
+    <span class="meta">4 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-des-eleves-sequestres-a-jbm.html">Repentigny: des élèves «séquestrés» à JBM</a><br>
+    <span class="meta">2 décembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-policier-debarque-a-son-travail-apres-avoir-eu-un-ticket.html">Le policier débarque à son travail après avoir eu un ticket</a><br>
+    <span class="meta">20 novembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-programme-de-non-judiciarisation-accessible-aux-immigrants.html">Le programme de non judiciarisation accessible aux immigrants</a><br>
+    <span class="meta">16 novembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebecun-metis-victime-de-racisme-au-travail.html">Québec:un Métis victime de racisme au travail</a><br>
+    <span class="meta">13 novembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-et-ses-radios-mille-collines.html">Haïti et ses radios «mille collines»</a><br>
+    <span class="meta">4 novembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-quebec-change-les-regles.html">Immigration : Québec change les règles</a><br>
+    <span class="meta">3 novembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-maison-ils-financent-a-199-votre-mise-de-fonds.html">Une maison? Ils financent à 1,99% votre mise de fonds</a><br>
+    <span class="meta">29 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elections-canada-les-haitiens-votent-mal-et-moins.html">Élections Canada: les Haïtiens votent mal et moins</a><br>
+    <span class="meta">18 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/50-ans-de-lutte-des-noirs-du-quebec-mais.html">50 ans de lutte des Noirs du Québec, mais…</a><br>
+    <span class="meta">17 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elle-veille-a-lelection-de-78-candidats-liberaux-au-quebec.html">Elle veille à l’élection de 78 candidats libéraux au Québec</a><br>
+    <span class="meta">17 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-repentigny-verifie-ses-interpellations.html">Profilage: Repentigny «vérifie» ses interpellations</a><br>
+    <span class="meta">17 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-plus-dactes-haineux-mais-moins-de-plaintes.html">Québec: plus d’actes haineux, mais moins de plaintes</a><br>
+    <span class="meta">17 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-la-maison-de-jeunes-veut-retracer-les-ados.html">Repentigny: la Maison de jeunes veut retracer les ados</a><br>
+    <span class="meta">17 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-independant-aux-valeurs-liberales.html">Un indépendant aux « valeurs libérales »</a><br>
+    <span class="meta">17 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-la-police-de-repentigny-documente-le-sujet.html">Profilage: la police de Repentigny documente le sujet</a><br>
+    <span class="meta">7 octobre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/comment-vas-tu-mon-negre.html">« Comment vas-tu mon nègre? »</a><br>
+    <span class="meta">21 septembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-a-mis-des-noirs-a-lecran-au-quebec-voila-30-ans.html">Il a mis des Noirs à l’écran au Québec, voilà 30 ans</a><br>
+    <span class="meta">17 septembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/2e-sommet-economique-des-noirs-a-montreal.html">2e Sommet économique des Noirs à Montréal</a><br>
+    <span class="meta">3 septembre 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/consultez-un-medecin-gratis-ce-samedi.html">Consultez un médecin gratis ce samedi</a><br>
+    <span class="meta">8 août 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/basket-des-rues-de-montreal-nord-au-nba.html">Basket : des rues de Montréal-Nord à la NBA</a><br>
+    <span class="meta">1 août 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-des-noirs-exigent-denqueter-sur-la-police.html">Repentigny: des Noirs exigent d’enquêter sur la police</a><br>
+    <span class="meta">11 juillet 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-des-centaines-denfants-sans-papiers-et-sans-ecole.html">Québec: des centaines d’enfants sans-papiers et sans école</a><br>
+    <span class="meta">6 juillet 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-une-haitienne-cheffe-de-cabinet-du-ministre-de-la-famille.html">Canada: une Haïtienne cheffe de cabinet du ministre de la Famille</a><br>
+    <span class="meta">3 juillet 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-persecution-religieuse-a-croix-des-bouquets.html">Haïti: «Persécution religieuse» à Croix-des-Bouquets</a><br>
+    <span class="meta">20 juin 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-le-passeport-de-ronaldinho-force-un-report-du-match.html">Montréal: le passeport de Ronaldinho force un report du match</a><br>
+    <span class="meta">20 juin 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ginette-reno-en-flammes-a-montreal.html">Ginette Reno en «Flammes» à Montréal</a><br>
+    <span class="meta">26 mai 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-plus-de-consultants-frauduleux-en-immigration.html">Canada: plus de consultants frauduleux en immigration</a><br>
+    <span class="meta">16 avril 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/e-dubourg-12-ans-a-vos-cotes-au-canada.html">E. Dubourg: 12 ans «à vos côtés» au Canada</a><br>
+    <span class="meta">16 avril 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-1ere-juge-noire-au-quebec-discriminee.html">La 1ère juge noire au Québec discriminée</a><br>
+    <span class="meta">2 avril 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/spectacle-de-martelly-72-h-pour-se-faire-rembourser.html">Spectacle de Martelly: 72 h pour se faire rembourser</a><br>
+    <span class="meta">25 mars 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/de-grandes-opportunites-demploi-en-une-journee.html">De grandes opportunités d’emploi en une journée</a><br>
+    <span class="meta">13 mars 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-il-reclame-200-000-dollars-a-repentigny.html">Profilage: il réclame $ 200 000 à Repentigny</a><br>
+    <span class="meta">13 mars 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-immigration-moins-de-delais-moins-darrieres.html">Canada/Immigration: moins de délais, moins d’arriérés</a><br>
+    <span class="meta">1 mars 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-un-chef-de-parti-pour-premier-ministre.html">Haïti: un chef de parti pour premier ministre?</a><br>
+    <span class="meta">12 février 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jusqua-25-000-pour-des-entrepreneurs-de-la-diversite.html">Jusqu’à $25 000 pour des entrepreneurs de la diversité</a><br>
+    <span class="meta">12 février 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-une-immigration-aux-besoins-de-regions.html">Québec :une immigration aux besoins de régions</a><br>
+    <span class="meta">12 février 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-parrainage-des-parents-repris-le-28-janvier-2019.html">Le parrainage des parents repris le 28 janvier 2019</a><br>
+    <span class="meta">30 janvier 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/villanueva-r-chantal-belinga-se-dit-intimidee.html">Villanueva: R-Chantal Belinga se dit «intimidée»</a><br>
+    <span class="meta">22 janvier 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/agression-sexuelle-elle-attend-lenquete-de-la-ville-de-montreal.html">Agression sexuelle: elle attend l’enquête de la Ville de Montréal</a><br>
+    <span class="meta">17 janvier 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-la-police-cree-des-liens-avec-les-haitiens.html">Repentigny: la police crée des liens avec les Haïtiens</a><br>
+    <span class="meta">2 janvier 2019</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilage-racialle-spvm-critique-par-les-droits-de-la-personne.html">Profilage racial:le SPVM critiqué par les Droits de la personne</a><br>
+    <span class="meta">14 décembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sur-les-traces-de-frantz-benjamin.html">Sur les traces de Frantz Benjamin</a><br>
+    <span class="meta">14 décembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-veut-remplacer-frantz-benjamin-dans-saint-michel.html">Il veut remplacer Frantz Benjamin dans Saint-Michel</a><br>
+    <span class="meta">13 décembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-prend-parti-pour-les-interets-des-michelois.html">Il prend parti pour les «intérêts» des Michelois</a><br>
+    <span class="meta">10 décembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ces-jeunes-dhaiti-qui-creent-le-buzz-dans-le-hmi.html">Ces jeunes d’Haïti qui créent le «Buzz» dans le HMI</a><br>
+    <span class="meta">9 décembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/integration-des-immigrants-montreal-a-la-traine.html">Intégration des immigrants: Montréal à la traine</a><br>
+    <span class="meta">6 décembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-la-police-veut-sapprocher-des-communautes.html">Repentigny: la police veut s’approcher des communautés</a><br>
+    <span class="meta">8 novembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/petro-caribe-des-grands-commis-de-letat-indexes.html">Petro-caribe: des grands commis de l’État indexés</a><br>
+    <span class="meta">18 octobre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/entre-chanson-activisme-politique-et-leglise.html">Entre chanson, activisme politique et l’église</a><br>
+    <span class="meta">16 octobre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-jeunes-noirs-du-quebec-parlent-demploi-avec-ottawa.html">Les jeunes noirs du Québec parlent d’emploi avec Ottawa</a><br>
+    <span class="meta">16 octobre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/taxiles-cheques-dune-trentaine-dhaitiens-bloques.html">Taxi:les chèques d’une trentaine d’Haïtiens bloqués</a><br>
+    <span class="meta">14 octobre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-longue-file-pour-une-declaration-dinteret.html">Québec: longue file pour une «Déclaration d’intérêt»</a><br>
+    <span class="meta">11 octobre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/profilagelenseignant-qui-en-a-assez-detre-arrete.html">Profilage:l’enseignant qui en a assez d’être arrêté</a><br>
+    <span class="meta">8 octobre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/14-ans-de-cinema-noir-a-montreal.html">14 ans de cinéma noir à Montréal</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/acces-a-lemploi-la-caq-voterait-une-nouvelle-loi.html">Accès à l’emploi: la CAQ voterait une nouvelle loi</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elections-quebec-plus-de-femmes-et-dindependants.html">Élections Québec : plus de femmes et d’indépendants</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ils-assurent-votre-securite-financiere.html">Ils assurent votre sécurité financière</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigration-le-debat-na-pas-eu-lieu.html">Immigration: «le débat n’a pas eu lieu»</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-journaliste-a-lesprit-vagabond.html">Le journaliste à l’esprit vagabond</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhaitienne-qui-a-choisi-la-caq.html">L’Haïtienne qui a «choisi» la CAQ</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/petrocaribe-la-question-qui-depasse-gilbert-mirambeau.html">Petrocaribe: la question qui dépasse Gilbert Mirambeau</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/repentigny-un-candidat-victime-de-profilage-racial.html">Repentigny: un candidat victime de profilage racial?</a><br>
+    <span class="meta">25 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/on-na-pas-fait-justice-a-fredy-villanueva-alain-arseneault.html">« On n’a pas fait justice à Fredy Villanueva »-Alain Arseneault</a><br>
+    <span class="meta">5 septembre 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fier-de-porter-les-couleurs-liberales-a-temps-plein.html">«Fier» de porter les couleurs libérales «à temps plein»</a><br>
+    <span class="meta">29 août 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/viauelle-veut-briser-la-tradition-liberale.html">Viau:elle veut briser la tradition libérale</a><br>
+    <span class="meta">27 août 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-haitienne-chef-de-programmation-dune-tele-quebecoise.html">Une Haïtienne chef de programmation d’une télé québécoise</a><br>
+    <span class="meta">26 août 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-presse-de-fermer-des-eglises.html">Montréal-Nord « pressé » de fermer des églises</a><br>
+    <span class="meta">23 août 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/nes-au-quebec-prives-de-la-gratuite-des-soins.html">Nés au Québec, privés de la gratuité des soins</a><br>
+    <span class="meta">21 juillet 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-et-la-guerre-economique-de-d-trump.html">Haïti et la guerre économique de D.Trump</a><br>
+    <span class="meta">19 juillet 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/plc-pas-de-course-a-linvestiture-dans-hochelaga.html">PLC : «pas de course à l’investiture » dans Hochelaga</a><br>
+    <span class="meta">18 juillet 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-600-hotels-embaucheront-des-immigrants.html">Canada: 600 hôtels embaucheront des immigrants</a><br>
+    <span class="meta">20 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-vivra-5-jours-de-folie-a-montreal.html">Haïti vivra 5 jours de « folie » à Montréal</a><br>
+    <span class="meta">20 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigrants-lhospitalite-de-montreal-nord-fait-ecole.html">Immigrants: l’hospitalité de Montréal-Nord fait école</a><br>
+    <span class="meta">19 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-une-centaine-de-demandeurs-dasile-seront-renvoyes.html">Canada: une centaine de demandeurs d’asile seront renvoyés</a><br>
+    <span class="meta">18 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/elle-gere-tous-les-deplacements-en-bus-a-montreal.html">Elle gère tous les déplacements en bus à Montréal</a><br>
+    <span class="meta">5 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-haitienne-dexception-selon-les-chambres-de-commerce-du-quebec.html">Une Haïtienne d’«exception» selon les chambres de commerce du Québec</a><br>
+    <span class="meta">4 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/plus-de-200-000-pour-integrer-les-demandeurs-dasile-a-montreal-nord.html">Plus de $ 200 000 pour intégrer les demandeurs d’asile à Montréal-Nord</a><br>
+    <span class="meta">3 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-50-m-pour-lhebergement-temporaire-des-demandeurs-dasile.html">Canada : 50 M pour l’hébergement temporaire des demandeurs d’asile</a><br>
+    <span class="meta">1 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/frantz-benjamin-lhomme-fort-de-saint-michel.html">Frantz Benjamin : l’homme fort de Saint-Michel</a><br>
+    <span class="meta">1 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-vise-18-dimmigrants-dans-la-fonction-publique.html">Québec vise 18% d’immigrants dans la fonction publique</a><br>
+    <span class="meta">1 juin 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/apres-le-canada-une-entreprise-de-montreal-nord-vise-le-monde.html">Après le Canada, une entreprise de Montréal-Nord vise le monde</a><br>
+    <span class="meta">20 mai 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/invitee-a-feter-le-drapeau-haitien-valerie-plante-a-decline.html">Invitée à fêter le drapeau haïtien, Valérie Plante a décliné</a><br>
+    <span class="meta">20 mai 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pme-mtl-est-de-lile-injecte-13-million-a-montreal-nord.html">PME MTL est de l’île injecte 1,3 million à Montréal-Nord</a><br>
+    <span class="meta">15 mai 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nordun-tour-de-bateau-a-10-dollars.html">Montréal-Nord:un tour de bateau à 10 dollars</a><br>
+    <span class="meta">6 mai 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-haitiens-ont-investi-15-millions-dans-saint-michel.html">Des Haïtiens ont investi 15 millions dans Saint-Michel</a><br>
+    <span class="meta">2 mai 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-noirs-qui-voyaient-clair-en-affaires.html">Des Noirs qui voyaient clair en affaires</a><br>
+    <span class="meta">20 février 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/devenir-citoyen-canadien-pour-100-dollars-seulement.html">Devenir citoyen canadien pour 100 dollars seulement</a><br>
+    <span class="meta">20 février 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/catastrophes-naturellesle-canada-offre-15-millions-a-haitivideo.html">Catastrophes naturelles:le Canada offre 15 millions à Haïti(vidéo)</a><br>
+    <span class="meta">19 février 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-noirs-manquent-de-sang-audio.html">Les Noirs manquent de sang (Audio)</a><br>
+    <span class="meta">16 février 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-filles-avec-des-couilles-video.html">Des filles avec des couilles (Vidéo)</a><br>
+    <span class="meta">14 février 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/agences-de-placementquebec-deposera-une-loi-ce-printemps.html">Agences de placement:Québec déposera une loi ce printemps</a><br>
+    <span class="meta">31 janvier 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/demandeurs-dasile-comment-demander-un-emploi.html">Demandeurs d’asile: comment demander un emploi?</a><br>
+    <span class="meta">30 janvier 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/infirmieres-haitiennes-sous-haute-securite-a-saint-jerome.html">Infirmières haïtiennes sous haute sécurité à Saint-Jérôme</a><br>
+    <span class="meta">24 janvier 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/6145-2.html">Infirmières haïtiennes menacées de mort à Saint-Jérôme</a><br>
+    <span class="meta">18 janvier 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-papiers-et-invalide-au-canada.html">Sans-papiers et invalide au Canada</a><br>
+    <span class="meta">13 janvier 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/soutien-aux-clubs-de-lage-dor-dans-bourassa.html">Soutien aux clubs de l’âge d’or dans Bourassa</a><br>
+    <span class="meta">13 janvier 2018</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-avoir-ses-parents-ici-reste-une-chance-en-2018.html">Canada: avoir ses parents ici reste une chance en 2018</a><br>
+    <span class="meta">26 décembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-et-haiti-discuteront-du-qg-des-pompiers-de-p-au-p.html">Canada et Haïti discuteront du QG des pompiers de P-au-P</a><br>
+    <span class="meta">26 décembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-noel-des-demandeurs-dasile.html">La Noel des demandeurs d’asile</a><br>
+    <span class="meta">17 décembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-canada-craint-une-autre-vague-de-demandes-dasile.html">Le Canada craint une autre vague de demandes d’asile</a><br>
+    <span class="meta">8 novembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-noirs-en-action-terrebonne.html">Deux Noirs en Action Terrebonne</a><br>
+    <span class="meta">1 novembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/a-moins-de-22-ans-votre-enfant-peut-venir-au-canada.html">À moins de 22 ans votre enfant peut venir au Canada</a><br>
+    <span class="meta">31 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/colas-fawcett-un-proces-pour-un-proces.html">Colas, Fawcett : un procès pour un procès</a><br>
+    <span class="meta">30 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lallocation-canadienne-pour-enfants-bonifiee-lan-prochain.html">L’Allocation canadienne pour enfants, bonifiée l’an prochain</a><br>
+    <span class="meta">27 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-passerelle-sous-ma-peau-a-montreal-audio.html">Une PasserElle « Sous ma peau » à Montréal (Audio)</a><br>
+    <span class="meta">26 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-candidats-nous-remplissent-greg-excellent.html">« Les candidats nous remplissent »-Greg Excellent</a><br>
+    <span class="meta">20 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pas-peur-de-travailler-davantage.html">Pas peur de travailler “davantage”</a><br>
+    <span class="meta">20 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/croire-en-rdp-pat.html">Croire en RDP-PAT</a><br>
+    <span class="meta">17 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-je-me-sens-a-ma-place.html">Montréal-Nord : « Je me sens à ma place »</a><br>
+    <span class="meta">17 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-le-choix-de-stephanie-casimir.html">Montréal-Nord : le choix de Stéphanie Casimir</a><br>
+    <span class="meta">13 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/municipales-il-veut-faire-le-pont-entre-jeunes-et-aines.html">Municipales: Il veut faire le pont entre jeunes et aînés</a><br>
+    <span class="meta">5 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/plus-facile-de-devenir-canadien-avec-la-loi-c-6.html">Plus facile de devenir Canadien avec la Loi C-6</a><br>
+    <span class="meta">5 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/demandeurs-dasile-ottawa-evoque-un-reseau-de-faussaires.html">Demandeurs d’asile: Ottawa évoque un réseau de faussaires</a><br>
+    <span class="meta">4 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immigrants-itinerants-et-sans-statuts.html">Immigrants itinérants et sans-statuts</a><br>
+    <span class="meta">3 octobre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-1410-fete-ses-15-ans-le-14e-jour-du-10e-mois.html">Le 1410 fête ses 15 ans le 14e jour du 10e mois</a><br>
+    <span class="meta">28 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/besoin-de-cellules-souches-pour-vivre.html">Besoin de cellules souches pour vivre</a><br>
+    <span class="meta">25 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/municipales-jean-david-prophete-change-de-camp.html">Municipales : Jean David Prophète change de camp</a><br>
+    <span class="meta">24 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/braque-par-deux-clients-a-bord-de-son-taxi.html">Braqué par deux clients à bord de son taxi</a><br>
+    <span class="meta">21 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-dizaines-de-demandes-dasile-baclees.html">Des dizaines de demandes d’asile bâclées</a><br>
+    <span class="meta">11 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-aimerait-avoir-aussi-son-groupe-3737.html">Montréal-Nord aimerait avoir aussi son Groupe 3737</a><br>
+    <span class="meta">8 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-un-grand-ecran-noir.html">Québec: un grand écran noir</a><br>
+    <span class="meta">7 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/trois-haitiens-et-un-jamaicain-a-la-mairie-de-montreal-nord.html">Trois Haïtiens et un Jamaïcain à la mairie de Montréal-Nord</a><br>
+    <span class="meta">5 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-enfants-des-demandeurs-dasile-entreront-a-lecole.html">Les enfants des demandeurs d’asile entreront à l’école</a><br>
+    <span class="meta">3 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/demandeurs-dasile-acceleration-des-traitements.html">Demandeurs d’asile: accélération des traitements</a><br>
+    <span class="meta">1 septembre 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/demandeurs-dasile-ottawa-lance-une-campagne-en-creole.html">Demandeurs d’asile : Ottawa lance une campagne en créole</a><br>
+    <span class="meta">29 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/tps-les-haitiens-de-miami-appellent-trudeau-a-contacter-trump.html">TPS : les Haïtiens de Miami appellent Trudeau à contacter Trump</a><br>
+    <span class="meta">26 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/375e-le-cadeau-des-haitiens-a-montreal.html">375e : le cadeau des Haïtiens à Montréal</a><br>
+    <span class="meta">24 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/5864-2.html">Demandeurs d’asile: Ottawa prône les voix régulières(Audio)</a><br>
+    <span class="meta">23 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/migrants-preparez-vous-a-quitter.html">Migrants : « préparez-vous à quitter »</a><br>
+    <span class="meta">9 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/migrants-les-haitiens-de-montreal-accueillent-les-leurs.html">Migrants : les Haïtiens de Montréal accueillent les leurs</a><br>
+    <span class="meta">8 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-maison-qui-a-change-les-jeunes-par-le-basket.html">La Maison qui a changé les jeunes par le basket</a><br>
+    <span class="meta">4 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/migrants-haitiens-il-faut-se-calmer-m-villefranche.html">Migrants haïtiens: « il faut se calmer…»-M.Villefranche</a><br>
+    <span class="meta">4 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/question-davenir-de-vie-ou-de.html">Migrants haïtiens: question d’avenir, de vie ou de…</a><br>
+    <span class="meta">3 août 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-le-basket-se-joue-dans-la-rue-depuis-25-ans.html">Montréal-Nord : le basket se joue dans la rue depuis 25 ans</a><br>
+    <span class="meta">31 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/municipalesdes-changements-majeurs-a-montreal-nord.html">Municipales:des changements majeurs à Montréal-Nord</a><br>
+    <span class="meta">27 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/5794-2.html">Nova Stella ou célébration de la différence à Montréal</a><br>
+    <span class="meta">26 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/municipale-une-nathalie-pierre-antoine-toujours-engagee.html">Municipale: une Nathalie Pierre-Antoine toujours «engagée»</a><br>
+    <span class="meta">20 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/aubainerie-fait-une-aubaine-aux-victimes-de-matthew.html">Aubainerie fait une aubaine aux victimes de Matthew</a><br>
+    <span class="meta">18 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/caserne-des-pompiers-de-p-au-p-le-projet-toujours-a-letude.html">Caserne des pompiers de P-au-P: le projet toujours à l’étude</a><br>
+    <span class="meta">17 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/laurent-lamothe-transpire-la-campagne-presidentielle.html">Laurent Lamothe transpire la campagne présidentielle</a><br>
+    <span class="meta">1 juillet 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/traverser-12-pays-pour-atteindre-le-canada.html">Traverser 12 pays pour atteindre le Canada</a><br>
+    <span class="meta">16 juin 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/idealtel-ideal-pour-parler-et-pour-les-commissions.html">Idealtel : idéal pour parler et pour les commissions</a><br>
+    <span class="meta">12 juin 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/manger-son-griot-sur-une-terrasse-a-montreal.html">Manger son griot sur une terrasse à Montréal</a><br>
+    <span class="meta">11 juin 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ecrire-pour-denoncer-et-soutenir-des-causes.html">Écrire pour dénoncer et soutenir des causes</a><br>
+    <span class="meta">6 juin 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-beaute-des-femmes-entre-les-mains-dun-homme-2.html">La beauté des femmes entre les mains d’un homme</a><br>
+    <span class="meta">6 juin 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/trente30-pour-les-15-ans-de-cpam1410.html">Trente30 pour les 15 ans de CPAM1410</a><br>
+    <span class="meta">30 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-nuit-des-etoiles-a-montreal.html">Une nuit des étoiles à Montréal</a><br>
+    <span class="meta">30 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebecinondations-les-haitiens-veulent-aider.html">Québec/Inondations: les Haïtiens veulent aider</a><br>
+    <span class="meta">26 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/affaire-bony-montreal-nord-sous-la-loupe-apres-des-accusations.html">Affaire Bony : Montréal-Nord sous la loupe après des accusations</a><br>
+    <span class="meta">25 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/heg-canada-lecole-de-gouvernants-2-0-en-haiti.html">HEG Canada, l’école de gouvernants 2.0 en Haïti</a><br>
+    <span class="meta">25 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/home-depot-betonel-gdi-au-salon-de-lemploi-deducomax.html">Home Dépôt, Bétonel, GDI au salon de l’emploi d’Éducomax</a><br>
+    <span class="meta">25 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-beaute-des-femmes-entre-les-mains-dun-homme.html">La beauté des femmes entre les mains d’un homme</a><br>
+    <span class="meta">24 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-charter-rate-son-envol.html">Haïti charter rate son envol</a><br>
+    <span class="meta">18 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/black-parents-bbq-a-montreal-nord-pour-le-drapeau-haitien.html">Black parents, BBQ à Montréal-Nord pour le drapeau haïtien</a><br>
+    <span class="meta">16 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhaitienne-qui-change-la-perception-de-la-police-a-montreal-nord.html">L’Haïtienne qui change la perception de la police à Montréal-Nord</a><br>
+    <span class="meta">11 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/22m-pour-des-ecoles-en-piteux-etat-dans-viau-saint-michel.html">22M$ pour des écoles en piteux état dans Viau-Saint-Michel</a><br>
+    <span class="meta">8 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canadaimmigration-vos-enfants-plus-ages-peuvent-vous-rejoindre.html">Canada/immigration: vos enfants plus âgés peuvent vous rejoindre</a><br>
+    <span class="meta">8 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-machiniste-montrealais-devenu-maitre-dhotel-en-haiti.html">Le machiniste montréalais devenu maître d’hôtel en Haïti</a><br>
+    <span class="meta">6 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-prix-du-benevolat-pour-un-jeune-haitien.html">Le prix du bénévolat pour un jeune Haïtien</a><br>
+    <span class="meta">2 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhaitien-de-36-ans-qui-vous-pilote-depuis-18-ans.html">L’Haïtien de 36 ans qui vous pilote depuis 18 ans</a><br>
+    <span class="meta">2 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/radio-centre-ville-courtise-des-jeunes-de-montreal-nord.html">Radio Centre-Ville courtise des jeunes de Montréal-Nord</a><br>
+    <span class="meta">2 mai 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-charter-la-ligne-aerienne-des-haitiens-de-montreal.html">Haïti charter, la ligne aérienne des Haïtiens de Montréal</a><br>
+    <span class="meta">21 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-veut-former-les-haitiens-pour-une-meilleure-gouvernance.html">Il veut former les Haïtiens pour une meilleure gouvernance</a><br>
+    <span class="meta">21 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-haitiens-veulent-offrir-un-cadeau-a-montreal-pour-sa-fete.html">Les Haïtiens veulent offrir un cadeau à Montréal pour sa fête</a><br>
+    <span class="meta">20 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhaitien-qui-veut-acheter-remax-quebec.html">L’Haïtien qui veut acheter Re/Max Québec</a><br>
+    <span class="meta">19 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fete-des-meres-28-prix-le-28-mai-dont-une-voiture-avec-unitransfer.html">Fête des mères: 28 prix le 28 mai dont une voiture avec Unitransfer</a><br>
+    <span class="meta">9 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ils-denoncent-un-projet-de-privatisation-de-radio-centre-ville.html">Ils dénoncent un projet de privatisation de radio Centre-Ville</a><br>
+    <span class="meta">5 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jusqua-1000-a-gagner-avec-cam-pour-la-fete-des-meres.html">Jusqu’à $1000 à gagner avec CAM pour la Fête des mères</a><br>
+    <span class="meta">5 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/votre-carriere-artistique-pour-60-avec-aarten.html">Votre carrière artistique pour 60$ avec AARTEN</a><br>
+    <span class="meta">3 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/depuis-5-ans-il-tente-de-connecter-sa-diaspora.html">Depuis 5 ans, il tente de connecter sa diaspora</a><br>
+    <span class="meta">2 avril 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-priorise-sa-jeunesse-dans-un-plan-daction.html">Montréal-Nord priorise sa jeunesse dans un Plan d’action</a><br>
+    <span class="meta">31 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-a-perdu-30-de-son-salaire-pour-la-politique.html">Il a perdu 30% de son salaire pour la politique</a><br>
+    <span class="meta">30 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-ecole-de-formation-de-gouvernants-bientot-en-haiti.html">Une école de formation de gouvernants bientôt en Haïti</a><br>
+    <span class="meta">11 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/carriere-de-saint-michel-et-si-la-neige-faisait-place-a-une-vie-de-quartier.html">Carrière de Saint-Michel : et si la neige faisait place à une vie de quartier?</a><br>
+    <span class="meta">10 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-barbu-haitien-sest-rase-de-la-vie.html">Un barbu haïtien s’est rasé de la vie</a><br>
+    <span class="meta">10 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/camps-de-jour-dete-montreal-nord-se-retire-enfin.html">Camps de jour d’été: Montréal-Nord se retire enfin</a><br>
+    <span class="meta">3 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/denfant-terrible-a-avocat-en-droit-criminel-et-penal.html">D’enfant terrible à avocat en droit criminel et pénal</a><br>
+    <span class="meta">3 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-jeunes-noirs-et-lecole-au-quebec.html">Les jeunes noirs et l’école au Québec</a><br>
+    <span class="meta">3 mars 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhaitienne-qui-prevoit-tout-chez-betonel-au-quebec.html">L’Haïtienne qui prévoit tout chez Betonel au Québec</a><br>
+    <span class="meta">24 février 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/rdp-pat-un-spectacle-mush-pour-les-victimes-de-matthew-en-haiti.html">RDP-PAT : un spectacle MUSH pour les victimes de Matthew en Haïti</a><br>
+    <span class="meta">11 février 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/il-dirige-la-3e-plus-grosse-commission-scolaire-au-quebec.html">Il dirige la 3e plus grosse Commission scolaire au Québec</a><br>
+    <span class="meta">4 février 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/noirs-un-mois-pour-raconter-leur-histoire.html">Noirs : un «Mois» pour raconter leur histoire</a><br>
+    <span class="meta">3 février 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-un-premier-gala-dynastie-des-noirs.html">Québec: un premier «Gala dynastie» des Noirs</a><br>
+    <span class="meta">2 février 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-les-noirs-annoncent-cinq-projets-de-7-millions-pour-leurs-jeunes.html">Montréal : les Noirs annoncent cinq projets de 7 millions pour leurs jeunes</a><br>
+    <span class="meta">29 janvier 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ke-vanyan-74-minutes-pour-immortaliser-le-seisme-en-haiti.html">«Kè vanyan» : 74 minutes pour immortaliser le séisme en Haïti</a><br>
+    <span class="meta">17 janvier 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ces-quebecois-qui-simpliquent-a-temps-en-haiti-video.html">Ces Québécois qui s’impliquent à temps en Haïti (vidéo)</a><br>
+    <span class="meta">14 janvier 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-ou-guy-philippe-dans-la-boue-americaine.html">Haïti ou Guy Philippe, dans la boue américaine?</a><br>
+    <span class="meta">12 janvier 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/a-17-ans-il-debloque-des-telephones-intelligents-en-51-secondes.html">À 17 ans, il débloque des téléphones intelligents en 51 secondes</a><br>
+    <span class="meta">8 janvier 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/de-trucs-pas-tres-saints-au-rap-pour-evangeliser.html">De Trucs «pas très saints» au rap pour évangéliser</a><br>
+    <span class="meta">5 janvier 2017</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-parti-des-minorites-visibles-ne-sera-pas.html">Le parti des minorités visibles ne sera pas</a><br>
+    <span class="meta">28 décembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/litige-cpam-radio-centre-ville-une-affaire-close-dit-le-crtc.html">Litige CPAM/ Radio Centre-ville: une affaire «close» dit le CRTC</a><br>
+    <span class="meta">21 décembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-heureux-digicel-chaque-semaine-a-montreal.html">Des heureux Digicel chaque semaine à Montréal</a><br>
+    <span class="meta">17 décembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/duvalier-et-ses-tontons-macoutes-toile-de-fond-dun-film-quebecois.html">Duvalier et ses tontons macoutes, toile de fond d’un film québécois</a><br>
+    <span class="meta">5 décembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cpam-et-radio-centre-ville-se-disputent-la-communaute-haitienne.html">CPAM et radio Centre-Ville se disputent la communauté haïtienne</a><br>
+    <span class="meta">24 novembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/des-lampadaires-de-toute-beaute-a-montreal-nord.html">Des lampadaires de toute beauté à Montréal-Nord</a><br>
+    <span class="meta">3 novembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/zenglen-wid-a-ses-papiers-confirme-brutus.html">Zenglen : «Wid a ses papiers», confirme Brutus</a><br>
+    <span class="meta">3 novembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-maire-de-p-au-p-rencontre-les-hommes-daffaires-haitiens-de-montreal.html">Le maire de P-au-P rencontre les hommes d’affaires haïtiens de Montréal</a><br>
+    <span class="meta">31 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-trop-stresses-plus-dhaitiens-developpent-le-diabete.html">Montréal : trop stressés, plus d’Haïtiens développent le diabète</a><br>
+    <span class="meta">24 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/matthew-le-npd-presse-ottawa-daccelerer-le-regroupement-familial-pour-les-haitiens.html">Matthew : le NPD presse Ottawa d’accélérer le regroupement familial pour les Haïtiens</a><br>
+    <span class="meta">20 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-canada-donne-deux-millions-de-plus-a-haiti.html">Le Canada donne deux millions de plus à Haïti</a><br>
+    <span class="meta">14 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ouragan-matthew-quebec-appuie-six-projets-durgence-en-haiti.html">Ouragan Matthew – Québec appuie six projets d’urgence en Haïti</a><br>
+    <span class="meta">13 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mathew-les-haitiens-de-montreal-soutiennent-la-croix-rouge.html">Mathew: les Haïtiens de Montréal soutiennent la Croix-Rouge</a><br>
+    <span class="meta">7 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mathew-le-canada-reserve-3-millions-de-dollars.html">Mathew: le Canada réserve 3 millions de dollars</a><br>
+    <span class="meta">6 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/plusieurs-heureux-au-concours-mangez-frais-avec-digicel.html">Plusieurs heureux au concours «Mangez frais avec Digicel»</a><br>
+    <span class="meta">6 octobre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/enfants-sans-papiers-combien-ne-prennent-pas-le-bus-le-matin.html">Enfants sans-papiers: combien ne prennent pas le bus le matin?</a><br>
+    <span class="meta">29 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/comment-frantz-saintellemy-a-lance-le-groupe3737.html">Comment Frantz Saintellemy a lancé le Groupe3737</a><br>
+    <span class="meta">23 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-des-questions-plus-tot-et-pendant-plus-de-temps.html">Montréal-Nord : des questions plus tôt et pendant plus de temps</a><br>
+    <span class="meta">21 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/video-incendie-a-cpam-laffaire-uber-evoquee-par-j-e-pierre.html">(Vidéo) Incendie à CPAM: l’affaire Uber évoquée par J.E.Pierre</a><br>
+    <span class="meta">18 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-et-uber-sentendent-sur-la-tps-et-la-tvq.html">Québec et Uber s’entendent sur la TPS et la TVQ</a><br>
+    <span class="meta">15 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/avez-vous-la-formation-requise-pour-votre-entreprise.html">(Vidéo) Avez-vous la formation requise pour votre entreprise?</a><br>
+    <span class="meta">13 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/audio14-mns-avec-j-e-pierre-pour-les-14-ans-du-1410am.html">(Audio):14 mns avec J.E.Pierre pour les 14 ans du 1410AM</a><br>
+    <span class="meta">12 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-la-sante-des-migrants-laisse-a-desirer.html">Montréal : la santé des migrants laisse à désirer</a><br>
+    <span class="meta">9 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/refus-dembarquer-un-haitien-plainte-contre-air-transat.html">Refus d’embarquer un Haïtien : plainte contre Air Transat?</a><br>
+    <span class="meta">9 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/desiree-par-le-mari-de-sa-tante-battue-par-cette-derniere.html">Désirée par le mari de sa tante, battue par cette dernière</a><br>
+    <span class="meta">1 septembre 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/emploi-pour-nouveaux-arrivants-2e-salon-deducomax-le-22-octobre.html">Emploi pour nouveaux arrivants : 2e salon d’Éducomax le 22 octobre</a><br>
+    <span class="meta">26 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/griots-a-gogo-lalo-bottin-haitien-offre-25-gouts-differents-ce-samedi.html">Griots à gogo, lalo, Bottin haïtien offre 25 goûts différents ce vendredi 26 août</a><br>
+    <span class="meta">24 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/hema-quebec-recoit-plus-de-sangs-de-noirs.html">Héma-Québec recoit plus de sangs de Noirs</a><br>
+    <span class="meta">22 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/racisme-systemique-la-petition-tire-a-sa-fin-audio.html">Racisme systémique: la pétition tire à sa fin (Audio)</a><br>
+    <span class="meta">18 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-fete-du-livre-haitien-a-montreal.html">Une fête du livre haïtien à Montréal</a><br>
+    <span class="meta">17 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-en-mode-gospel-les-13-et-14-aout-video.html">Montréal en mode Gospel les 13 et 14 août (vidéo)</a><br>
+    <span class="meta">11 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fredy-villanueva-sera-t-il-sur-la-murale.html">Fredy Villanueva : sera-t-il sur la murale?</a><br>
+    <span class="meta">10 août 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fantasia-celebre-lamour-ce-3-juillet-a-montreal.html">Fantasia célèbre l’amour ce 3 juillet à Montréal</a><br>
+    <span class="meta">21 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-formation-en-lancement-dentreprises-signee-3737.html">Une formation en lancement d’entreprises signée 3737</a><br>
+    <span class="meta">15 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cest-payant-denvoyer-de-largent-en-haiti-par-unitransfer.html">C’est payant d’envoyer de l’argent en Haïti par Unitransfer</a><br>
+    <span class="meta">14 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-papiers-les-mesures-liberales-qualifiees-decran-de-fumee.html">Sans-papiers : les mesures libérales qualifiées d’«écran de fumée»</a><br>
+    <span class="meta">14 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-richesse-noire-sur-le-petit-ecran-a-matv.html">La richesse noire sur le petit écran à MAtv</a><br>
+    <span class="meta">8 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-communaute-haitienne-rend-hommage-a-cicilia-videos.html">La communauté haïtienne rend hommage à Cicilia (vidéos)</a><br>
+    <span class="meta">6 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/guerre-de-territoireles-noirs-sen-parlent-a-montreal.html">«Guerre de territoire»:les Noirs s’en parlent à Montréal</a><br>
+    <span class="meta">3 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/apres-ontario-vmedia-lance-sa-tele-au-quebec.html">Après Ontario, VMedia lance sa télé au Québec</a><br>
+    <span class="meta">1 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cicilia-laurent-funerailles-le-11-juin-a-laval.html">Cicilia Laurent: funérailles le 11 juin à Laval</a><br>
+    <span class="meta">1 juin 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/racisme-systemique-david-heurtel-pour-une-table.html">«Racisme systémique»: David Heurtel pour une «Table»</a><br>
+    <span class="meta">30 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/consulat-dhaiti-a-montreal-viard-de-retour.html">Consulat d’Haïti à Montréal: Viard de retour</a><br>
+    <span class="meta">26 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pedaler-au-dela-des-cliches-dans-saint-michel.html">Pédaler au-delà des clichés dans Saint-Michel</a><br>
+    <span class="meta">21 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-papiers-haitiens-le-canada-tend-la-main-a-640-familles.html">Sans-papiers haïtiens: le Canada tend la main à 640 familles</a><br>
+    <span class="meta">21 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-maison-dhaiti-cherche-encore-150-mille-parmi-les-haitiens.html">La Maison d’Haïti cherche encore 150 mille parmi les Haïtiens</a><br>
+    <span class="meta">18 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-18-mai-en-grande-pompe-a-la-perle-retrouvee-videos.html">Un 18 mai en grande pompe à La Perle retrouvée ( vidéos)</a><br>
+    <span class="meta">18 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/festival-mizik-kreyol-montreal-une-3e-edition-30-groupes-pour-350-mille.html">Festival mizik kreyol Montréal: une 3e édition, 30 groupes pour 350 mille</a><br>
+    <span class="meta">16 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-evolu-jeunes-denonce-des-policiers-bourreaux.html">Montréal-Nord: Évolu-Jeunes dénonce des «policiers bourreaux»</a><br>
+    <span class="meta">12 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-femmes-en-construction-et-renovation.html">Deux femmes en construction et rénovation</a><br>
+    <span class="meta">8 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/koleg-ou-les-evenements-haitiens-a-montreal-en-un-clic.html">Kolèg ou les évènements haïtiens à Montréal en un clic</a><br>
+    <span class="meta">8 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-carte-dassurance-maladie-pour-haiti.html">Une carte d’assurance maladie pour Haïti</a><br>
+    <span class="meta">8 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/tournoi-benefice-de-soccer-pour-la-maison-dhaiti-video.html">Tournoi-bénéfice de soccer pour la Maison d’Haïti (vidéo)</a><br>
+    <span class="meta">5 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-invite-a-monter-une-commission-sur-le-racisme-systemique.html">Québec invité à monter une commission sur le racisme systémique (Audio)</a><br>
+    <span class="meta">4 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-perle-retrouvee-change-de-nom-et-de-mains.html">La perle retrouvée change de nom et de mains</a><br>
+    <span class="meta">3 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/cholera-en-haiti-canada-invite-a-se-positionner-face-a-lonu.html">Choléra en Haïti : Canada invité à se positionner face à l’ONU</a><br>
+    <span class="meta">1 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-ambassadeur-americain-enleve-en-haiti.html">Un ambassadeur américain enlevé en Haïti?</a><br>
+    <span class="meta">1 mai 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/noemie-lorzema-honoree-par-le-consulat-dhaiti-a-montreal.html">Noémie Lorzema honorée par le Consulat d’Haïti à Montréal</a><br>
+    <span class="meta">27 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-sport-la-selection-de-74-se-retrouve-a-montreal-videos.html">Haïti-Sport/ La sélection de 74 se retrouve à Montréal (vidéos)</a><br>
+    <span class="meta">25 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/menace-el-gringo-dement-et-defend-sa-position.html">Menace: El Gringo dément et défend sa position (audio)</a><br>
+    <span class="meta">24 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/bottinhaitien-com-notre-kijiji-a-nous.html">Bottinhaitien.com, «notre Kijiji à nous»</a><br>
+    <span class="meta">22 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/heyseller-pour-acheter-en-un-clic-en-haiti.html">Heyseller pour acheter en un clic en Haïti</a><br>
+    <span class="meta">18 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-voix-de-la-releve-les-auditions-ont-eu-lieu.html">Les voix de la relève: les auditions ont eu lieu</a><br>
+    <span class="meta">11 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/emmanuel-dubourg-decortique-le-budget-federal-pour-bourrassa.html">Emmanuel Dubourg décortique le budget fédéral pour Bourrassa</a><br>
+    <span class="meta">10 avril 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/frantz-benjamin-en-spectacle-a-fantasia-videos.html">Frantz Benjamin en spectacle à Fantasia ( vidéos)</a><br>
+    <span class="meta">31 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sejoe-a-montreal-le16-avril-au-theatre-rialto.html">SeJoe à Montréal le 16 avril au Théatre Rialto</a><br>
+    <span class="meta">28 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-mibel-sy-lance-pour-gagner-videosaudio.html">Montréal-Nord: Mibel s’y lance «pour gagner» ( vidéos+Audio)</a><br>
+    <span class="meta">24 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-television-haitienne-de-montreal-est-nee.html">La Télévision haïtienne de Montréal est née</a><br>
+    <span class="meta">21 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/black-lance-sa-campagne-a-montreal-nord.html">Black lance sa campagne à Montréal-Nord</a><br>
+    <span class="meta">20 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/candidat-noir-a-mtl-nord-denis-coderre-evoque-sa-prerogative-video.html">Candidat noir à Mtl-Nord: Denis Coderre évoque sa «prérogative»( vidéo)</a><br>
+    <span class="meta">19 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-steve-anna-2-0-dans-saint-michel-videos.html">Un «Steve-Anna» 2.0 dans Saint-Michel (vidéos)</a><br>
+    <span class="meta">18 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-david-a-gagne-kerlande-mibel-de-projet-montreal.html">Montréal-Nord: «David a gagné»-Kerlande Mibel de Projet Montréal</a><br>
+    <span class="meta">17 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-je-suis-une-haitienne-dans-le-coeur-christine-black.html">Montréal-Nord : «Je suis une Haïtienne dans le cœur»- Christine Black</a><br>
+    <span class="meta">17 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-police-de-montreal-recherche-des-noirs-pour-etre-policier.html">La police de Montréal recherche des Noirs</a><br>
+    <span class="meta">14 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/journee-de-la-diaspora-la-situation-en-haiti-force-un-report.html">Journée de la diaspora : la situation en Haïti force un report</a><br>
+    <span class="meta">12 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/anemie-falciforme-ils-ont-gagne-face-au-gouvernement.html">Anémie falciforme: ils ont gagné face au gouvernement</a><br>
+    <span class="meta">10 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-la-periode-de-candidature-debute-le-11-mars.html">Montréal-Nord: la période de candidature débute le 11 mars</a><br>
+    <span class="meta">8 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-neil-armand-espere-un-message-clair-a-m-le-maire-audio.html">Montréal-Nord: Neil Armand «espère un message clair à M.le maire» (Audio)</a><br>
+    <span class="meta">7 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/montreal-nord-coderre-na-pas-choisi-un-candidat-noir.html">Montréal-Nord: Coderre n’a pas choisi un candidat noir</a><br>
+    <span class="meta">5 mars 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/je-ne-suis-pas-reginald-cange-wid-de-zenglen.html">«Je ne suis pas Réginald Cangé»-Wid de Zenglen (Audio)</a><br>
+    <span class="meta">25 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-le-duvalierisme-en-privert.html">Haïti : le duvalierisme en «Privert»</a><br>
+    <span class="meta">23 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mois-de-lhistoire-des-noirs-frantz-benjamin-au-present.html">Mois de l’histoire des Noirs : Frantz Benjamin au présent</a><br>
+    <span class="meta">21 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/de-fayo-a-webo-un-marche-haitien-2-0-a-anjou-video.html">De Fayo à Webo, un marché haïtien 2.0 à Anjou (vidéo)</a><br>
+    <span class="meta">20 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-attente-de-23-ans-pour-des-papiers.html">Une attente de 23 ans pour des papiers</a><br>
+    <span class="meta">16 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-noirs-donnent-plus-de-leur-sang.html">Les Noirs donnent plus de leur sang</a><br>
+    <span class="meta">13 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-papiers-nouveau-sursis-de-six-mois-pour-les-haitiens.html">Sans-papiers : nouveau sursis de six mois pour les Haïtiens</a><br>
+    <span class="meta">6 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/impot-ces-haitiens-comptent-aussi-bien-videos.html">Impôt: ces Haïtiens comptent aussi bien… (vidéos)</a><br>
+    <span class="meta">5 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-construction-de-cet-hotel-en-haiti-confiee-a-atp-immo.html">La construction de cet hôtel en Haïti confiée à ATP Immo</a><br>
+    <span class="meta">5 février 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-noirs-de-montreal-nord-en-mode-campagne-electorale-videos.html">Les Noirs de Montréal-Nord en mode campagne électorale (vidéos)</a><br>
+    <span class="meta">31 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/unitransfer-a-fait-des-heureux-pendant-les-fetes.html">Unitransfer a fait des heureux pendant les fêtes</a><br>
+    <span class="meta">29 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dominique-angladela-ministre-quebecoise-de-leconomie-et-haitiaudio.html">Dominique Anglade:la ministre québécoise de lÉconomie et Haïti(Audio)</a><br>
+    <span class="meta">28 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/immobilier-comment-devenir-riche.html">Immobilier : comment devenir riche</a><br>
+    <span class="meta">25 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fusillade-au-cabaret-du-mile-end-le-spvm-recherche-des-temoins.html">Fusillade au Cabaret du Mile-End : le SPVM recherche des témoins</a><br>
+    <span class="meta">19 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/a-120-ans-elle-nest-pas-au-guiness-de-records.html">À 120 ans, elle nest pas au Guiness des records</a><br>
+    <span class="meta">12 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dr-lionel-carmant-et-sa-lutte-contre-la-malkadi-en-haiti.html">Dr Lionel Carmant et sa lutte contre la «malkadi» en Haïti</a><br>
+    <span class="meta">3 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dre-yvette-bonny-toujours-une-reference-au-quebec-a-77-ans.html">Dre Yvette Bonny, toujours une référence au Québec à 77 ans</a><br>
+    <span class="meta">3 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/giraumon-jai-hesite-cette-annee.html">Giraumon: jai hésité cette année</a><br>
+    <span class="meta">3 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-martelly-et-mme-pandore.html">Haïti : Martelly et Mme Pandore</a><br>
+    <span class="meta">3 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/noel-multiculturelle-dans-saint-michel.html">Noël multiculturelle dans Saint-Michel</a><br>
+    <span class="meta">3 janvier 2016</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-autre-haitien-investit-27-millions-dans-saint-michel-videos.html">Un autre Haïtien investit 2,7 millions dans Saint-Michel ( vidéos)</a><br>
+    <span class="meta">22 novembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/tourisme-haiti-se-lance-dans-le-forfait-tout-inclus-video.html">Tourisme : Haïti se lance dans le forfait tout-inclus (vidéo)</a><br>
+    <span class="meta">17 novembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-consulat-general-dhaiti-a-montreal-change-dadresse-video.html">Le Consulat général d’Haïti à Montréal change d’adresse (vidéo)</a><br>
+    <span class="meta">16 novembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/linitiative-je-fais-mtl-chez-les-haitiens.html">Linitiative «Je fais Mtl» chez les Haïtiens (vidéos)</a><br>
+    <span class="meta">12 novembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-haitiens-laureats-de-lenap-du-quebec.html">Deux Haïtiens lauréats de l’ÉNAP du Québec</a><br>
+    <span class="meta">3 novembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/natcom-honoree-pour-son-implication-sociale-en-haiti-video.html">Natcom honorée pour son implication sociale en Haïti (vidéo)</a><br>
+    <span class="meta">2 novembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-statut-les-haitiens-sauves-par-lelection-de-trudeau-audio.html">Sans statut: les Haïtiens sauvés par lélection de Trudeau (Audio)</a><br>
+    <span class="meta">22 octobre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-des-adoptions-qui-se-terminent-mal-au-quebec.html">Haïti: des adoptions qui se terminent mal au Québec</a><br>
+    <span class="meta">14 octobre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/gang-de-rue-les-communautes-noires-se-consultent.html">Gang de rue: les communautés noires se consultent</a><br>
+    <span class="meta">7 octobre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jeanne-aux-gonaives-une-controverse-sur-un-12-million-refait-surface.html">Jeanne aux Gonaïves : une controverse sur un 1/2 million refait surface</a><br>
+    <span class="meta">27 septembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-bchm-cherche-15-m-pour-acheter-son-local.html">Le BCHM cherche 1,5 M pour acheter son local</a><br>
+    <span class="meta">21 septembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/federales-une-haitienne-en-forces-et-democratie.html">Fédérales :une Haïtienne en «Forces et Démocratie»</a><br>
+    <span class="meta">18 septembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mme-chancy-ou-la-premiere-maison-dhaiti.html">Mme Chancy ou la première «Maison dHaïti»</a><br>
+    <span class="meta">13 septembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/consulat-general-dhaiti-a-montreal-lareche-se-positionne.html">Consulat général dHaïti à Montréal: Larèche se positionne</a><br>
+    <span class="meta">9 septembre 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-haitiens-se-battent-pour-bourassa.html">Deux Haïtiens se battent pour Bourassa</a><br>
+    <span class="meta">26 août 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/citadelle-immo-ou-lagence-immobiliere-haitienne.html">Citadelle Immo ou l’agence immobilière haïtienne</a><br>
+    <span class="meta">19 août 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-femmes-noires-autorisees-a-donner-du-sang.html">Les femmes noires autorisées à donner du sang</a><br>
+    <span class="meta">11 août 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-40-candidats-refusent-de-sunir-ou-clarens-renois.html">Haïti: 40 candidats refusent de s’«UNIR» ou Clarens Renois</a><br>
+    <span class="meta">4 août 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haitirepublique-dominicaine-marche-en-blanc-a-montreal-videos.html">Haïti/République Dominicaine: marche en blanc à Montréal (vidéos)</a><br>
+    <span class="meta">2 août 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/vers-une-caisse-populaire-haitienne-a-montreal.html">Vers une caisse populaire haïtienne à Montréal</a><br>
+    <span class="meta">2 août 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/festival-mizik-kreyol-montreal-satisfaisant-malgre-la-pluie.html">Festival mizik kreyol Montréal, satisfaisant malgré la pluie</a><br>
+    <span class="meta">21 juillet 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/apres-raif-badawi-des-certificats-de-selection-aux-haitiens.html">Après Raïf Badawi, des certificats de sélection aux Haïtiens?</a><br>
+    <span class="meta">9 juillet 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-en-folie-se-lache-defile-rara-immortel-wyclef-jean.html">«Haïti en folie» se lâche: défilé rara, immortel, Wyclef Jean</a><br>
+    <span class="meta">7 juillet 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-tour-haiti-sur-mesure.html">Un « Tour Haïti » sur mesure</a><br>
+    <span class="meta">6 juillet 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-pere-et-sa-fille-en-spectacle.html">Un père et sa fille en spectacle</a><br>
+    <span class="meta">30 juin 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/jai-vecu-dabord-limmortel-dany-laferriere-video.html">« Jai vécu dabord », – limmortel Dany Laferrière (vidéo)</a><br>
+    <span class="meta">29 juin 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-meilleure-pharmacienne-chez-jean-coutu-est-haitienne.html">La meilleure pharmacienne chez Jean Coutu est Haïtienne</a><br>
+    <span class="meta">17 juin 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/canada-des-legislateurs-noirs-reflechissent-ensemble.html">Canada : des législateurs noirs réfléchissent ensemble</a><br>
+    <span class="meta">14 juin 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-accueille-haiti-chez-rire.html">Québec accueille «Haïti chez Rire»</a><br>
+    <span class="meta">11 juin 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-presidentielles-le-pourquoi-pas-moi-haitien.html">Haïti présidentielles: le «Pourquoi pas moi» haïtien</a><br>
+    <span class="meta">26 mai 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-montrealais-promoteur-immobilier-en-haiti.html">Un Montréalais promoteur immobilier en Haïti</a><br>
+    <span class="meta">15 mai 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-troisieme-edition-des-grands-prix-mosaique.html">Une troisième édition des Grands prix de Média Mosaïque</a><br>
+    <span class="meta">13 mai 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/fanfare-et-10-bands-pour-le-spectacle-de-lequipe-parole-de-vie.html">Fanfare et 10 bands pour le spectacle de l’Équipe parole de vie</a><br>
+    <span class="meta">5 mai 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/federales-lhaitien-gerard-pierre-soutient-joly-dans-ahuntsic-cartierville.html">Fédérales : l’Haïtien Gérard Pierre soutient Joly dans Ahuntsic-Cartierville</a><br>
+    <span class="meta">5 mai 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-stauts-haitiens-venez-nayez-pas-peur-kathleen-weil.html">Sans stauts haïtiens : «venez, nayez pas peur», Kathleen Weil</a><br>
+    <span class="meta">26 avril 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/christie-desir-couronnera-la-miss-black-beauty-a-montreal-audio.html">Christie Désir couronnera la miss black beauty à Montréal (audio)</a><br>
+    <span class="meta">20 avril 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/hockey-balle-haiti-de-la-rue-a-la-suisse.html">Hockey-balle Haïti : de la rue à la Suisse (vidéo)</a><br>
+    <span class="meta">20 avril 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/consommons-haitien-mais-quid-du-service-a-la-clientele.html">Consommons haïtien, mais quid du service à la clientèle</a><br>
+    <span class="meta">2 avril 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/lhomme-derriere-sodi-produits-de-beaute.html">Lhomme derrière « Sodi produits de beauté »</a><br>
+    <span class="meta">25 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-passeports-des-sans-statuts-en-priorite-a-montreal.html">Les passeports des sans statuts en priorité à Montréal</a><br>
+    <span class="meta">19 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dorothy-alexandre-boycott-des-coiffeuses-dominicaines-pas-sur.html">Dorothy Alexandre: boycott des coiffeuses dominicaines? Pas sûr!!</a><br>
+    <span class="meta">18 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-funerailles-de-la-mere-de-nachena-mathieu-ce-samedi.html">Les funérailles de la mère de Nachena MATHIEU ce samedi</a><br>
+    <span class="meta">12 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-renvoi-un-reve-brise-faute-de-papier-et-dargent.html">Haïti renvoi : un rêve brisé faute de papier et dargent</a><br>
+    <span class="meta">10 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/un-bebe-de-trois-mois-a-la-morgue-depuis-4-mois-video.html">Un bébé de trois mois à la morgue depuis 4 mois (vidéo)</a><br>
+    <span class="meta">6 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-consulat-dhaiti-soccupe-des-funerailles-de-la-mere-de-nachena-mathieu.html">Le consulat d’Haïti s’occupe des funérailles de la mère de Nachena Mathieu</a><br>
+    <span class="meta">5 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/republique-dominicaine-marche-contre-lapartheid-a-montreal.html">République Dominicaine: marche contre l’apartheid à Montréal</a><br>
+    <span class="meta">5 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/citoyens-de-nulle-part-grande-premiere-a-montreal.html">«Citoyens de nulle part»: grande première à Montréal (vidéos)</a><br>
+    <span class="meta">1 mars 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-ancienne-miss-pour-miss-beaute-noire-internationale.html">Une ancienne miss pour Miss beauté noire internationale</a><br>
+    <span class="meta">17 février 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/dorothy-vise-rhau.html">Dorothy vise «Rhau» (vidéo)</a><br>
+    <span class="meta">14 février 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/paul-dejean-retrouve-sa-place-a-rivierre-des-prairies-video.html">Paul Déjean retrouve sa «Place» à Rivièrre-des-Prairies (vidéo)</a><br>
+    <span class="meta">13 février 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/mois-de-lhistoire-des-noirs-ou-lunion-de-steve-anna-video.html">Mois de l’histoire des Noirs ou lunion de Steve-Anna (vidéo)</a><br>
+    <span class="meta">25 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/miss-beaute-noire-internationale-mbb-revient-a-montreal-video.html">Miss beauté noire internationale (MBB) revient à Montréal (vidéo)</a><br>
+    <span class="meta">22 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/deux-haitiens-injectent-4-millions-dans-saint-michel-video.html">Deux Haïtiens injectent 4 millions dans Saint-Michel (vidéo)</a><br>
+    <span class="meta">19 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-renvoi-laction-de-solidarite-sans-frontieres.html">Haïti renvoi : laction de Solidarité sans frontières</a><br>
+    <span class="meta">19 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/sans-papier-depuis-22-ans.html">Sans papier depuis 22 ans</a><br>
+    <span class="meta">14 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/bel-coq-la-cuisine-haitienne-a-louest-de-montreal.html">Bel coq, la cuisine haïtienne à l’ouest de Montréal</a><br>
+    <span class="meta">12 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/financement-le-fonds-1804-a-double-la-mise.html">Financement : le Fonds 1804 a doublé la mise avec Réno-métrix</a><br>
+    <span class="meta">10 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/le-montrealais-qui-accroche-djakout1-plus-haut-video.html">Le Montréalais qui accroche Djakout#1 plus haut (vidéo)</a><br>
+    <span class="meta">3 janvier 2015</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/500-dons-de-sang-de-femmes-noires-refuses.html">500 dons de sang de femmes noires refusés</a><br>
+    <span class="meta">28 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/zenglen-reginald-cange-nest-plus-maestro-video.html">Zenglen: Réginald Cangé n’est plus maestro (vidéo)</a><br>
+    <span class="meta">27 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/battu-dans-une-famille-daccueil-de-la-dpj.html">Battu dans une famille d’accueil de la DPJ</a><br>
+    <span class="meta">22 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/la-maison-dhaiti-a-la-rescousse-de-la-dpj.html">La Maison d’Haïti à la rescousse de la DPJ</a><br>
+    <span class="meta">22 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haitir-dominicaine-apres-sucre-noir-voici-les-apatrides.html">Haïti/R Dominicaine: après «Sucre noir», voici les «apatrides»</a><br>
+    <span class="meta">12 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ozile-la-cuisine-haitienne-au-dela-des-frontieres.html">La cuisine haïtienne au-delà des frontières (Vidéo)</a><br>
+    <span class="meta">11 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haiti-renvoi-ottawa-ecoutera-quebec.html">Haïti renvoi: Ottawa écoutera Québec (Audio)</a><br>
+    <span class="meta">7 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/quebec-soutient-les-illegaux-haitiens.html">Québec soutient les illégaux haïtiens</a><br>
+    <span class="meta">4 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haitiens-illegaux-criteres-pour-une-demande-au-canada.html">Haïtiens illégaux: critères pour une demande au Canada</a><br>
+    <span class="meta">3 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/haitiens-illegaux-six-mois-pour-une-demande-au-canada.html">Haïtiens illégaux: six mois pour une demande au Canada</a><br>
+    <span class="meta">2 décembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/une-residente-permanente-peu-ordinaire.html">Une résidente permanente peu ordinaire</a><br>
+    <span class="meta">26 novembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/pascal-et-adonis-pour-un-combat-en-haiti.html">Pascal et Adonis pour un combat en Haïti (Audio)</a><br>
+    <span class="meta">14 novembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/118-ans-le-bon-dieu-ta-oubliee-avec-nous-video.html">118 ans : «le bon Dieu t’a oubliée avec nous» (Vidéo)</a><br>
+    <span class="meta">10 novembre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/anemie-falciforme-40-cas-en-un-an-mais.html">Anémie falciforme: 40 cas en un an, mais…</a><br>
+    <span class="meta">24 octobre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/centenaire-le-bon-combat-danna-remarais-sully.html">Centenaire: le bon combat d’Anna Remarais Sully</a><br>
+    <span class="meta">23 octobre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/duvalier-les-haitiens-de-montreal-rejetaient-aussi-lidee-des-obseques-nationales.html">Duvalier: les Haïtiens de Montréal rejetaient aussi l’idée des obsèques nationales</a><br>
+    <span class="meta">22 octobre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/ledito-in-texto.html">L’édito «In Texto»</a><br>
+    <span class="meta">22 octobre 2014</span>
+  </li>
+  
+  <li>
+    <a class="titre" href="../posts/les-aquinois-de-montreal-offrent-une-ecole-a-grosse-caye.html">Les Aquinois de Montréal offrent une école à Grosse-Caye</a><br>
+    <span class="meta">22 octobre 2014</span>
+  </li>
+  
+</ul>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

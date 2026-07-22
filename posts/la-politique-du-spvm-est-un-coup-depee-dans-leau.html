@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La «Politique» du SPVM est un «coup d’épée dans l’eau» — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">La «Politique» du SPVM est un «coup d’épée dans l’eau»</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 22 juillet 2020
+  </p>
+  
+  <div class="corps">
+    <p>La «Politique» du SPVM est un «coup d’épée dans l’eau»</p>
+    <p>La « Politique sur les interpellations » présentée par le Service de police de la Ville de Montréal (SPVM), le 8 juillet dernier, «ne va absolument rien changé dans la problématique du profilage racial», analyse Me Fernando Belton, jeune avocat de race noire au Barreau du Québec qui prône plutôt une modification du Code de la sécurité routière.</p>
+    <p>Cette politique, qui sera en vigueur cet automne, fruit de 160 consultations externes, notamment auprès de membres de différentes communautés ethnoculturelles, d’organismes communautaires d’entraide et de tables de concertation citoyenne, invite dorénavant les policiers à fonder leurs interpellations « sur des faits observables ».</p>
+    <p>Des « Principes d’application » et de la raison de l’interpellation» prévus à l’article 4.1 de cette nouvelle orientation d’une quinzaine de pages, l’institution enjoint les policiers d’« informer la personne de la raison de l’interpellation de façon sommaire »</p>
+    <p>«J’ai trouvé ça très drôle qu’ils nous mettent cette formulation là comme une nouveauté.», lance, d’un air amusé, Me Belton qui rappelle que l’article 73 du Code de procédure pénal faisait déjà obligation à tout policier de décliner la raison de son intervention auprès d’un citoyen «à pied.»</p>
+    <p>« On nous présente la chose comme étant une nouveauté, un changement de culture, une révolution, souligne le criminaliste, mais en fait, ce que le SPVM nous dit : c’est qu’il va se conformer à la loi. »</p>
+    <p>« J’appelle ça un coup d’épée dans l’eau.»-Fernando Belton</p>
+    <p>Parmi les autres «points ratés» de la sortie du chef de la police de Montréal Sylvain Caron, l’avocat en droit criminel déplore le fait que la Politique soit muette sur les sanctions prévues contre des policiers récidivistes en matière de profilage. En Ontario, c’est le cas.</p>
+    <p>Il regrette surtout le fait que la solution proposée ne tienne pas compte du Code de la sécurité routière dans sa mouture actuelle.</p>
+    <p>C’est là où se trouve le nœud gordien du problème, souligne-t-il, car la plupart des cas de profilage racial se produisent lorsque les personnes racisées se trouvent sur la route et derrière le volant de leurs véhicules.</p>
+    <p>«Si un changement, dans les interpellations, ne passe par le Code la sécurité routière, et ben…, je ne vois pas exactement de quoi on parle et comment on va régler ce problème»-Me F. Belton.</p>
+    <p>Et cette question est du ressort provincial.</p>
+    <p>Pour lui, la police a tout simplement mis «le couvercle sur le chaudron», mais le problème reste entier et est en train de bouillir.</p>
+    <p>« On est très bon dans ça au Québec : multiplier les consultations. Mais quand il s’agit après ça de venir avec de véritables solutions, on a exactement ce que le chef de la police nous parle : des solutions qui font de beaux titres dans les journaux, mais dans les faits, il n’y a absolument rien qui change. »</p>
+    <p>Fernando Belton</p>
+    <p>En effet, deux jours après la publication de cette Politique, Yves Eugène, un citoyen de Repentigny depuis 22 ans, affirme avoir été victime d’interpellation abusive de la part de la police de cette ville.</p>
+    <p>Port de caméra</p>
+    <p>L’avocat en droit criminel et pénal, prône une solution plutôt « simple » à ses yeux mais combien compliqué pour « les maires qui se sont succédés »à la Ville de Montréal : le port de caméra par les policiers.</p>
+    <p>Plusieurs administrations, y compris celle de Valérie Plante aujourd’hui, hésitent à autoriser le port de caméra par les policiers en intervention. Pourtant, cela aurait permis de régler plein de problèmes à la base.</p>
+    <p>« La seule raison qui fait qu’on parle autant de profilage racial dans l’espace public, c’est parce qu’il y a eu des gens, grâce à une présence d’esprit, ont pris leurs caméras et ont filmé »</p>
+    <p>La nouvelle Politique sur les interpellations du SPVM devrait entrer en vigueur l’automne prochain. Le chef de la police de Montréal Sylvain Caron précise qu’il y a place à de l’amélioration de sa politique.</p>
+    <p>« Je vous assure qu’il ne s’agit pas d’une finalité, ajoute M. Caron. Il reste encore du travail à faire, j’en suis bien conscient. Cette politique va continuer d’évoluer dans le temps. Nous ferons encore preuve de flexibilité et d’ouverture. »</p>
+    <p>Ce n’est pas la première fois que la police de Montréal s’engage publiquement à travers des Politique ou des Plans sur le profilage racial. En novembre 2011, l’institution avait publié un Plan sur la question qui devait couvrir la période de 2012-2014.</p>
+    <p>Le problème reste encore entier.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20230819044424/https://www.intexto.ca/la-politique-du-spvm-est-un-coup-depee-dans-leau/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

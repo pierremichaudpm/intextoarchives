@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montréal-Nord/discrimination: «la mairesse Black va-t-elle démissionner?» — inTexto Archives</title>
+<meta name="description" content="Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+<style>
+/* Design aligné sur le nouveau intexto.ca (src/styles/App.css du site React) */
+:root { --accent: #fc1a1d; --accent-clair: #f06b6b; --accent-fonce: #d44545;
+  --bleu: #008bff; --texte: #1a1a1a; --texte-secondaire: #4a4a4a;
+  --gris: #6c757d; --bordure: rgba(0,0,0,.1); --bordure-forte: rgba(0,0,0,.15);
+  --ombre-sm: 0 1px 3px rgba(0,0,0,.06);
+  --transition: all 0.25s ease; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; line-height: 1.6; color: var(--texte); background: #fff;
+  margin: 0; padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, 'Times New Roman',
+  'Liberation Serif', serif; font-weight: 700; line-height: 1.2; }
+p { line-height: 1.7; color: var(--texte-secondaire); }
+a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+a:hover, a:focus { color: var(--accent-fonce); }
+
+/* Bandeau plein largeur, calqué sur .main-header du site actuel */
+header.site {
+  position: sticky; top: 0; z-index: 1000; background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  border-bottom: 1px solid var(--bordure);
+}
+.bandeau {
+  max-width: 1400px; margin: 0 auto; padding: .6rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+h1.logo { margin: 0; line-height: 1; flex-shrink: 0; }
+h1.logo a { display: inline-flex; align-items: center; gap: .5rem; }
+h1.logo a:hover { text-decoration: none; }
+h1.logo img { height: 40px; width: auto; display: block; }
+h1.logo .mot-archives { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; font-size: 1.5rem; color: var(--accent); }
+/* Nav calquée sur .nav-links : majuscules, souligné rouge au survol */
+nav.site { flex: 1; display: flex; gap: 2rem; justify-content: center; }
+nav.site a {
+  font-weight: 600; font-size: .9rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--texte);
+  padding: .5rem 0; border-bottom: 2px solid transparent;
+}
+nav.site a:hover, nav.site a:focus { color: var(--accent);
+  border-bottom-color: var(--accent); text-decoration: none; }
+.actions-entete { display: flex; gap: .75rem; align-items: center; }
+.recherche { padding: .5rem 1rem; font: inherit; font-size: .9rem;
+  border: 1px solid var(--bordure); border-radius: 50px; width: 220px; }
+.recherche:focus { outline: none; border-color: var(--accent); }
+/* CTA externe calqué sur .newsletter-btn : pilule rouge */
+.cta-site { padding: .5rem 1.25rem; background: var(--accent); color: #fff;
+  border-radius: 50px; font-weight: 600; font-size: .85rem;
+  white-space: nowrap; }
+.cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
+  color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
+
+/* Colonne de lecture */
+.conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+p.tagline { color: var(--gris); font-size: .95rem; margin: 0 0 2rem; }
+h2.annee { font-size: 1.4rem; font-weight: 700; color: var(--accent);
+  border-bottom: 1px solid var(--bordure);
+  padding-bottom: .25rem; margin: 2.2rem 0 1rem; }
+ul.articles { list-style: none; margin: 0; padding: 0; }
+ul.articles li { margin: 0 0 1.1rem; }
+/* Titres de liste calqués sur .content-card-title : Playfair, sombres */
+ul.articles .titre { font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--texte); }
+ul.articles .titre:hover { color: var(--accent); text-decoration: none; }
+ul.articles .meta { color: var(--gris); font-size: .85rem; }
+ul.articles .meta .auteur { font-weight: 600; color: var(--texte); }
+article.corps p { margin: 0 0 1.15rem; }
+/* Titre d'article calqué sur .modal-title */
+article h1.titre { font-size: 2rem; font-weight: 900; line-height: 1.2;
+  margin: 0 0 1rem; color: var(--texte); }
+/* Métas calquées sur .modal-meta */
+p.meta { color: var(--gris); font-size: .95rem;
+  margin: 0 0 1.5rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bordure); }
+p.meta .approx { font-style: italic; }
+.avis-extrait { border: 1px solid var(--accent); border-left-width: 4px;
+  background: #fff5f5; padding: .8rem 1rem; margin: 0 0 1.5rem;
+  font-size: .95rem; color: var(--texte-secondaire); }
+span.extrait { color: var(--gris); font-size: .85rem; font-style: italic; }
+.lien-retour { font-size: .9rem; margin-bottom: 1.5rem; display: inline-block;
+  font-weight: 600; }
+.lien-original { border-top: 1px solid var(--bordure); margin-top: 2.5rem;
+  padding-top: 1rem; font-size: .9rem; color: var(--gris); }
+.cache { display: none !important; }
+.resultats-vide { color: var(--gris); font-style: italic; }
+
+/* Pied de page calqué sur .main-footer du site actuel */
+footer.site { background: #fff; border-top: 1px solid var(--bordure);
+  padding: 1.5rem 1.5rem 1rem; }
+.pied-conteneur { max-width: 1400px; margin: 0 auto; }
+.pied-grille { display: flex; justify-content: space-between; gap: 2rem;
+  flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.pied-col img { height: 40px; width: auto; display: block; }
+.pied-col .nom-site { font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600; color: var(--accent); font-size: 1.05rem;
+  margin-top: .35rem; }
+.pied-col h3 { font-size: .9rem; font-weight: 600; margin: 0 0 .5rem; }
+.pied-col p, .pied-col a { color: var(--gris); font-size: .85rem;
+  line-height: 1.5; margin: 0 0 .25rem; }
+.pied-col a { display: block; }
+.pied-col a:hover { color: var(--accent); }
+.pied-bas { text-align: center; padding-top: 1rem;
+  border-top: 1px solid var(--bordure); color: var(--gris); font-size: .8rem; }
+.pied-bas p { color: var(--gris); font-size: .8rem; margin: 0; }
+
+@media (max-width: 768px) {
+  nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
+    gap: 1.25rem; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
+  .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
+}
+@media print {
+  header.site, .lien-retour, footer.site { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; }
+  .conteneur { padding: 0; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bandeau">
+    <h1 class="logo"><a href="../index.html"><img
+      src="../assets/intextologo2.png" alt="inTexto" height="40"><span
+      class="mot-archives">Archives</span></a></h1>
+    <nav class="site">
+      <a href="../index.html">Accueil</a>
+      <a href="../auteurs.html">Auteurs</a>
+      <a href="../index.html#annees">Années</a>
+    </nav>
+    <div class="actions-entete">
+      
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
+    </div>
+  </div>
+</header>
+<div class="conteneur">
+<p class="tagline">Archives du journal inTexto (intexto.ca), journal de la communauté haïtienne de Montréal, 2014–2025.</p>
+<main>
+
+<a class="lien-retour" href="../index.html">&larr; Retour aux articles</a>
+<article>
+  <h1 class="titre">Montréal-Nord/discrimination: «la mairesse Black va-t-elle démissionner?»</h1>
+  
+  <p class="meta">
+    Par <strong><a href="../auteur/jean-numa-goudou.html">Jean Numa Goudou</a></strong> · Publié le 29 mai 2021
+  </p>
+  
+  <div class="corps">
+    <p>Montréal-Nord/discrimination: «la mairesse Black va-t-elle démissionner?» - Intexto, jounal nou</p>
+    <p>- Home</p>
+    <p>- /</p>
+    <p>- Politiques</p>
+    <p>- /</p>
+    <p>- Montréal-Nord/discrimination: «la mairesse Black va-t-elle démissionner?»</p>
+    <p>Flanqué de Will Prosper de Hoodstock et de Renée-Chantal Belinga, Roger Petit-Frère, co-fondateur du Regroupement des intervenants et intervenantes d’origine haïtienne (RIIOH) avec plus de huit organismes membres, pose d’emblée la question devant l’hôtel de ville de l’arrondissement lors d’une rencontre avec la presse.</p>
+    <p>Car pour les deux hommes, l’actuelle administration n’aurait pas « la crédibilité pour agir » dans le dossier du racisme et de la discrimination à l‘endroit des cols bleus. Deux rapports de deux experts indépendants ( Angelo Soares et Tania Saba) confirment les dénonciations des victimes.</p>
+    <p>En fait, est-ce que vous appelez à la démission de la mairesse?, demande le journal à M.Petit-Frère.</p>
+    <p>«Je pense que c’est à Mme Black de répondre à cette question.», indique le directeur du Centre Jean-Paul Lemay, à Montréal-Nord.</p>
+    <p>Will Prosper qui s’interroge également sur le maintien en poste de Christine Black, va encore plus loin lorsqu’interrogé sur le sujet.</p>
+    <p>«Je partage l’avis de M.Petit-Frère. Je pense que la mairesse Black a démontré depuis plusieurs années son inaptitude à pouvoir piloter ces dossiers-là.»-Will Prosper</p>
+    <p>Il prend pour preuve le fait que depuis des années les autorités municipales sont interpellées à ce sujet, sans qu’elles puissent adresser la problématique adéquatement.</p>
+    <p>En 2017, alors que de nombreuses organisations demandaient au gouvernement québécois de mettre en place une commission sur le racisme systémique, la mairesse de l’arrondissement de Montréal-Nord, Christine Black, a, elle aussi, été interpellée par Will Prosper.</p>
+    <p>Il n’y a pas eu de suivi. En 2018, le RIIOH a envoyé une lettre à la mairesse au sujet des mêmes enjeux de racisme. Pas de suivi. En 2019 et en 2020, d’autres lettres ont été envoyées par le RIIOH sur le même sujet. Toujours pas de résultats.</p>
+    <p>Les organismes membres disent ne plus faire confiance à léquipe en place pour opéerer les changements recommandés. Ils exigent, entre autres, la mise sur pied d’un Comité indépendant de surveillance de l’application de mesures de redressement.</p>
+    <p>Quatre demandes au total</p>
+    <p>1. Le Retrait immédiat des mesures disciplinaires envers les cols bleus ayant témoigné et une rétribution des pertes financières encourues.</p>
+    <p>2. La mise en place d’une ligne téléphonique anonyme pour que toutes les personnes qui veulent se confier et partager leurs expériences puissent le faire avec facilité et sécurité.</p>
+    <p>3. La création d’un comité indépendant composé entre autres d’acteurs locaux ayant les compétences requises pour traiter ces enjeux. Ce comité aura le mandat de suivre la mise en œuvre des recommandations formulées dans le rapport du professeur Soares.</p>
+    <p>4. La tenue d’enquêtes supplémentaires sur le rapport qu’entretient l’administration municipale de Montréal-Nord avec ses autres employés, avec les citoyen∙ne∙s et avec les organismes communautaires dirigés par des personnes racisées.</p>
+    <p>La mairesse Black est actuellement en congé maternité. Comme en 2020, lorsque la crise a éclaté, c’est Chantal Rossi qui assure la suppléance à la ville. Et l’an passé, elle avait nié en entrevue à In Texto qu’il existait du racisme et de la discrimination à Montréal-Nord, ce que confirment les deux rapports.</p>
+    <p>«On ne peut pas avoir une personne comme ça qui soit en charge de l’application de ses recommandations.»- Will Prosper</p>
+    <p>« Il serait faux de penser que la seule responsable serait la mairesse par intérim. La mairesse Black a été avertie à maintes reprises.», poursuit-il.</p>
+    <p>À titre d’exemple, 47.3% des travailleurs issus de minorités visibles sont relégués à des travaux réputés plus ingrats, comme la collecte de déchets. À l’inverse, les tâches davantage convoitées, telles que la conduite de véhicules motorisés, sont composées de 75% de chauffeurs blancs ;</p>
+    <p>Le portrait qui se dégage est sans ambiguïté : il s’agit de racisme systémique.</p>
+    <p>«Comme conseillère d’arrondissement je m’assurerai de transmettre ses recommandations en conseil d’arrondissement, à faire les pressions nécessaires pour que ce Comité indépendant et l’ensemble des recommandations puissent être mis en place. », promet Renée-Chantal Belinga qui était à la table de la conférence de presse devant la mairie d’arrondissement.</p>
+    <p>Avare de commentaires à l’Arrondissement</p>
+    <p>Toutefois, une source bien informée proche de l’administration Black nous confirme que des têtes ont été coupées depuis la sortie des deux documents accablants.</p>
+    <p>Le directeur des Travaux publics ainsi que celui de la Voirie ont été remplacés</p>
+    <p>« La responsable des ressources humaines est partie en congé maladie pour une durée indéterminée.», nous confie cette source. Plusieurs employés, col bleus, que le journal a contactés se réjouissent qu’elle ait été remplacée par un Haïtien.</p>
+    <p>Position officielle de la Ville</p>
+    <p>« La Ville de Montréal a bien reçu ce rapport qui met en lumière la présence de discrimination systémique dans des pratiques de gestion de l’Arrondissement de Montréal-Nord concernant les cols bleus.</p>
+    <p>L’Arrondissement n’avait pas attendu les conclusions de ce rapport avant d’agir à ce sujet. Il a travaillé, et il continue de travailler avec ses employé.e.s pour mettre en place des procédures qui garantissent qu’ils soient toutes et tous traité.e.s de façon équitable.</p>
+    <p>Au cours de la dernière année, il a par exemple :</p>
+    <p>• procédé, avec une firme d’experts, à l’examen de ses pratiques de dotation (l’élément déclencheur des dénonciations des cols bleus);</p>
+    <p>• apporté des changements importants dans certains des processus de dotation;</p>
+    <p>• mis en œuvre un chantier d’amélioration continue sur les mouvements de personnel (dotation, formation, affectations, affichage et admissibilité), en collaboration avec le Syndicat;</p>
+    <p>• créé un nouveau forum d’échanges sur le climat de travail avec ses employés cols bleus et leurs gestionnaires;</p>
+    <p>• formé nos gestionnaires en développement de compétences interculturelles;</p>
+    <p>• formé et accompagné ses gestionnaires sur leurs responsabilités légales en matière de gestion d’équipes diversifiées.</p>
+    <p>L’Arrondissement rappelle aussi que c’est lui qui avait demandé au Contrôleur général de la Ville de Montréal et au Syndicat des Cols bleus regroupés de Montréal, section locale 301 de travailler conjointement à ces enquêtes.</p>
+    
+  </div>
+  
+  <p class="lien-original"><a href="https://web.archive.org/web/20230919115828/https://www.intexto.ca/montreal-nord-discrimination-la-mairesse-black-va-t-elle-demissionner/" rel="noopener">Voir l’original sur archive.org</a></p>
+  
+</article>
+
+</main>
+</div>
+<footer class="site">
+  <div class="pied-conteneur">
+    <div class="pied-grille">
+      <div class="pied-col">
+        <img src="../assets/intextologo2.png" alt="inTexto">
+        <div class="nom-site">Archives</div>
+      </div>
+      <div class="pied-col">
+        <h3>Navigation</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="../auteurs.html">Auteurs</a>
+        <a href="../index.html#annees">Années</a>
+      </div>
+      <div class="pied-col">
+        <h3>Site actuel</h3>
+        <a href="https://www.intexto.ca/" rel="noopener">intexto.ca</a>
+        <p>Articles récupérés depuis<br>
+        <a href="https://web.archive.org/">archive.org</a></p>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <p>&copy; 2026 inTexto Archives. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
