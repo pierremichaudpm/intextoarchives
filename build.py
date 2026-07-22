@@ -25,8 +25,7 @@ DIST_DIR = BASE_DIR / "dist"
 SITE_TITLE = "inTexto Archives"
 SITE_TAGLINE = (
     "Archives du journal inTexto (intexto.ca), journal de la communauté "
-    "haïtienne de Montréal, 2014–2026. Site d’archives en lecture seule, "
-    "reconstitué à partir de la Wayback Machine."
+    "haïtienne de Montréal, 2014–2026."
 )
 SITE_ACTUEL_URL = "https://www.intexto.ca/"
 LOGO_SRC = BASE_DIR / "assets" / "intextologo2.png"
