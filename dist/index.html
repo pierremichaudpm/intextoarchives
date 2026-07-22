@@ -65,6 +65,7 @@ nav.site a:hover, nav.site a:focus { color: var(--accent);
   white-space: nowrap; }
 .cta-site:hover, .cta-site:focus { background: var(--accent-fonce);
   color: #fff; text-decoration: none; transform: translateY(-2px); }
+.cta-court { display: none; }
 
 /* Colonne de lecture */
 .conteneur { max-width: 700px; margin: 0 auto; padding: 2rem 1rem 3rem; }
@@ -122,8 +123,10 @@ footer.site { background: #fff; border-top: 1px solid var(--bordure);
 @media (max-width: 768px) {
   nav.site { order: 3; flex-basis: 100%; justify-content: flex-start;
     gap: 1.25rem; }
-  .recherche { flex: 1; width: auto; min-width: 0; }
+  .recherche { flex: 1; width: auto; min-width: 0; max-width: calc(100% - 20px); }
   .actions-entete { flex: 1; }
+  .cta-complet { display: none; }
+  .cta-court { display: inline; }
 }
 @media print {
   header.site, .lien-retour, footer.site { display: none; }
@@ -149,7 +152,7 @@ footer.site { background: #fff; border-top: 1px solid var(--bordure);
 <input type="search" id="champ-recherche" class="recherche"
        placeholder="Rechercher…" aria-label="Rechercher un article">
 
-      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener">Site actuel intexto.ca &rarr;</a>
+      <a class="cta-site" href="https://www.intexto.ca/" rel="noopener"><span class="cta-complet">Site actuel intexto.ca &rarr;</span><span class="cta-court">Site actuel</span></a>
     </div>
   </div>
 </header>
