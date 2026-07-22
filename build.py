@@ -99,7 +99,7 @@ def charger_articles():
             "date": date,
             "date_iso": date.isoformat() if date else "",
             "date_fr": date_fr(date),
-            "date_approx": meta.get("date_source") == "wayback",
+            "date_approx": meta.get("date_source") in ("wayback", "wayback_snapshot"),
             "auteur": auteur,
             "auteur_slug": slugify(auteur) if auteur else None,
             "url_source": meta.get("source_url") or "",
@@ -340,6 +340,9 @@ TPL_ARTICLE = """{% extends "base" %}
 <article>
   <h1 class="titre">{{ a.titre }}</h1>
   {% if a.extrait %}
+  {% if a.date %}
+  <p class="meta">Publié le {{ a.date_fr }} <span class="approx">(date relevée sur une page d’accueil ou de section archivée)</span></p>
+  {% endif %}
   <p class="avis-extrait">Texte intégral non archivé — extrait provenant de
   l’index du site. Cet article récent (2025–2026) n’a pas été capturé par la
   Wayback Machine avant la disparition du site.</p>
@@ -398,7 +401,7 @@ TPL_ANNEE = """{% extends "base" %}
 <ul class="articles">
   {% for a in articles %}
   <li>
-    <a class="titre" href="../posts/{{ a.slug }}.html">{{ a.titre }}</a><br>
+    <a class="titre" href="../posts/{{ a.slug }}.html">{{ a.titre }}</a>{% if a.extrait %} <span class="extrait">(extrait)</span>{% endif %}<br>
     <span class="meta">{{ a.date_fr }}{% if a.date_approx %} (date approximative){% endif %}{% if a.auteur %} — Par <span class="auteur">{{ a.auteur }}</span>{% endif %}</span>
   </li>
   {% endfor %}
